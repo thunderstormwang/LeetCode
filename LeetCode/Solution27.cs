@@ -2,26 +2,6 @@
 {
     public class Solution27
     {
-        public int RemoveDuplicates(int[] nums)
-        {
-            if (nums.Length == 0)
-            {
-                return 0;
-            }
-
-            int index = 0;
-            for (int i = 1; i < nums.Length; i++)
-            {
-                if (nums[index] != nums[i])
-                {
-                    nums[index + 1] = nums[i];
-                    index++;
-                }
-            }
-
-            return index + 1;
-        }
-
         public int RemoveElement(int[] nums, int val)
         {
             if (nums.Length == 0)

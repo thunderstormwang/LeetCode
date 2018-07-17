@@ -2,34 +2,18 @@
 {
     public class Solution100
     {
-        public bool IsSymmetric(TreeNode root)
+        public bool IsSameTree(TreeNode p, TreeNode q)
         {
-            if (root == null)
+            if (p == null && q == null)
             {
                 return true;
             }
-
-            if (IsSymmetric(root.left) && IsSymmetric(root.right))
-            {
-                if (root.left == null && root.right == null)
-                {
-                    return true;
-                }
-                else if (root.left != null && root.right != null)
-                {
-                    return root.right.val == root.left.val;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
+            else if (p == null || q == null)
             {
                 return false;
             }
 
-            
+            return p.val == q.val && IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
         }
     }
 }

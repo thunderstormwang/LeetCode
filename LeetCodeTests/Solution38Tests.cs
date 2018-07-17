@@ -28,9 +28,9 @@ namespace LeetCode.Tests
         public void CountAndSayTest2(int param, string expected)
         {
             Solution38 solution38 = new Solution38();
-            string result = solution38.CountAndSay(param);
+            string actual = solution38.CountAndSay(param);
 
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

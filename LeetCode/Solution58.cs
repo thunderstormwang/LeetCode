@@ -1,11 +1,7 @@
 ﻿namespace LeetCode
 {
-    internal class Solution58
+    public class Solution58
     {
-        public Solution58()
-        {
-        }
-
         public int LengthOfLastWord(string s)
         {
             string[] strArray = s.Split(' ');

@@ -54,8 +54,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solution100Tests.cs" />
     <Compile Include="Solution27Tests.cs" />
+    <Compile Include="Solution35Tests.cs" />
     <Compile Include="Solution38Tests.cs" />
+    <Compile Include="Solution53Tests.cs" />
+    <Compile Include="Solution58Tests.cs" />
+    <Compile Include="Solution66Tests.cs" />
+    <Compile Include="Solution67Tests.cs" />
+    <Compile Include="Solution69Tests.cs" />
+    <Compile Include="Solution70Tests.cs" />
+    <Compile Include="Solution88Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace LeetCode.Tests
 {
@@ -13,8 +12,10 @@ namespace LeetCode.Tests
         {
             Solution27 solution27 = new Solution27();
             int result = solution27.RemoveElement(array, val);
+
             Assert.AreEqual(expected, result);
 
+            // 陣列內的順序不重要, 只要內容, 數量一致就可
             int[] actualArray = new int[result];
             for (int i = 0; i < result; i++)
             {

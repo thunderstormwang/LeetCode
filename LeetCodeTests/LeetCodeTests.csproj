@@ -58,6 +58,15 @@
     <Compile Include="Solution101Tests.cs" />
     <Compile Include="Solution104Tests.cs" />
     <Compile Include="Solution107Tests.cs" />
+    <Compile Include="Solution110Tests.cs" />
+    <Compile Include="Solution111Tests.cs" />
+    <Compile Include="Solution112Tests.cs" />
+    <Compile Include="Solution118Tests.cs" />
+    <Compile Include="Solution119Tests.cs" />
+    <Compile Include="Solution121Tests.cs" />
+    <Compile Include="Solution122Tests.cs" />
+    <Compile Include="Solution125Tests.cs" />
+    <Compile Include="Solution136Tests.cs" />
     <Compile Include="Solution27Tests.cs" />
     <Compile Include="Solution35Tests.cs" />
     <Compile Include="Solution38Tests.cs" />

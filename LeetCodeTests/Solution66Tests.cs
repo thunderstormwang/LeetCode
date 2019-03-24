@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LeetCode.Tests
 {
@@ -12,7 +13,7 @@ namespace LeetCode.Tests
 
             int[] actual = solution66.PlusOne(array);
 
-            Assert.AreEqual(expected, actual);
+            actual.Should().Equal(expected);
         }
     }
 }

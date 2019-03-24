@@ -1,10 +1,5 @@
-﻿using NUnit.Framework;
-using LeetCode;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LeetCode.Tests
 {
@@ -18,7 +13,7 @@ namespace LeetCode.Tests
             Solution125 solution125 = new Solution125();
             bool actual = solution125.IsPalindrome(s);
 
-            Assert.AreEqual(expected, actual);
+            actual.Should().Be(expected);
         }
     }
 }

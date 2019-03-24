@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LeetCode.Tests
 {
@@ -14,7 +15,7 @@ namespace LeetCode.Tests
 
             int actual = solution58.LengthOfLastWord(s);
 
-            Assert.AreEqual(expected, actual);
+            actual.Should().Be(expected);
         }
     }
 }

@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
-using LeetCode;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCode.Tests
 {
@@ -20,7 +15,7 @@ namespace LeetCode.Tests
             Solution107 solution107 = new Solution107();
             IList<IList<int>> actual = solution107.LevelOrderBottom(root);
 
-            Assert.AreEqual(new int[] { 15,7}, actual[0]);
+            Assert.AreEqual(new int[] { 15, 7 }, actual[0]);
             Assert.AreEqual(new int[] { 9, 20 }, actual[1]);
             Assert.AreEqual(new int[] { 3 }, actual[2]);
         }

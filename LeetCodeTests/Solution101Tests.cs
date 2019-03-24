@@ -5,58 +5,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentAssertions;
 
 namespace LeetCode.Tests
 {
     [TestFixture()]
     public class Solution101Tests
     {
-        [Test()]
-        public void IsSymmetricTest_ExpectTrue()
+        [TestCase("1, 2, 2, 3, 4, 4, 3", true)]
+        [TestCase("1, 2, 2, null, 3, null, 3", false)]
+        public void IsSymmetricTest(string array, bool expected)
         {
             TreeNode root = new TreeNode(0);
-            root = Utility.BuildTree(root, new int?[] { 1, 2, 2, 3, 4, 4, 3 }, 0);
+            root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
 
             Solution101 solution101 = new Solution101();
             bool actual = solution101.IsSymmetric(root);
 
-            Assert.AreEqual(true, actual);
-        }
-
-        [Test()]
-        public void IsSymmetricTest_ExpectFalse()
-        {
-            TreeNode root = new TreeNode(0);
-            root = Utility.BuildTree(root, new int?[] { 1, 2, 2, null, 3, null, 3 }, 0);
-
-            Solution101 solution101 = new Solution101();
-            bool actual = solution101.IsSymmetric(root);
-
-            Assert.AreEqual(false, actual);
-        }
-
-        [Test()]
-        public void IsSymmetricStackTest_ExpectTrue()
-        {
-            TreeNode root = new TreeNode(0);
-            root = Utility.BuildTree(root, new int?[] { 1, 2, 2, 3, 4, 4, 3 }, 0);
-
-            Solution101 solution101 = new Solution101();
-            bool actual = solution101.IsSymmetric(root);
-
-            Assert.AreEqual(true, actual);
-        }
-
-        [Test()]
-        public void IsSymmetricStackTest_ExpectFalse()
-        {
-            TreeNode root = new TreeNode(0);
-            root = Utility.BuildTree(root, new int?[] { 1, 2, 2, null, 3, null, 3 }, 0);
-
-            Solution101 solution101 = new Solution101();
-            bool actual = solution101.IsSymmetric(root);
-
-            Assert.AreEqual(false, actual);
+            actual.Should().Be(expected);
         }
     }
 }

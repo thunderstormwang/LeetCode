@@ -1,20 +1,21 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LeetCode.Tests
 {
     [TestFixture()]
     public class Solution112Tests
     {
-        [Test()]
-        public void HasPathSumTest()
+        [TestCase("5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1", 22, true)]
+        public void HasPathSumTest(string array, int pathSum, bool expected)
         {
             TreeNode root = new TreeNode(0);
-            root = Utility.BuildTree(root, new int?[] { 5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1 }, 0);
+            root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
 
             Solution112 solution112 = new Solution112();
-            bool actual = solution112.HasPathSum(root, 22);
+            bool actual = solution112.HasPathSum(root, pathSum);
 
-            Assert.AreEqual(true, actual);
+            actual.Should().Be(expected);
         }
     }
 }

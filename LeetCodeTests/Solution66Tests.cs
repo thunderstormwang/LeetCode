@@ -10,7 +10,7 @@ namespace LeetCode.Tests
         {
             Solution66 solution66 = new Solution66();
 
-            int [] actual = solution66.PlusOne(array);
+            int[] actual = solution66.PlusOne(array);
 
             Assert.AreEqual(expected, actual);
         }

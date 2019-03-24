@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace LeetCode.Tests
@@ -16,7 +17,7 @@ namespace LeetCode.Tests
             Solution119 solution119 = new Solution119();
             IList<int> actual = solution119.GetRow(rowIndex);
 
-            Assert.AreEqual(actual, expected);
+            actual.Should().Equal(expected);
         }
     }
 }

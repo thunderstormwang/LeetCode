@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace LeetCode.Tests
 {
@@ -20,5 +16,12 @@ namespace LeetCode.Tests
             return root;
         }
 
+        public static int?[] Parse2Array(string array1)
+        {
+            return array1.Split(',')
+                        .Select(x => x.TryParse())
+                        .ToList()
+                        .ToArray();
+        }
     }
 }

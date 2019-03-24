@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LeetCode.Tests
 {
@@ -13,7 +14,7 @@ namespace LeetCode.Tests
 
             int actual = solution121.MaxProfit(array);
 
-            Assert.AreEqual(actual, expected);
+            actual.Should().Be(expected);
         }
     }
 }

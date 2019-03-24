@@ -1,10 +1,5 @@
-﻿using NUnit.Framework;
-using LeetCode;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace LeetCode.Tests
 {
@@ -19,7 +14,7 @@ namespace LeetCode.Tests
 
             int actual = solution69.MySqrt(x);
 
-            Assert.AreEqual(expected, actual);
+            actual.Should().Be(expected);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using LeetCode;
 
-namespace LeetCode.Tests
+namespace LeetCodeTests
 {
     public class Utility
     {

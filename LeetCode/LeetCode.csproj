@@ -61,17 +61,18 @@
     <Compile Include="Solution125.cs" />
     <Compile Include="Solution136.cs" />
     <Compile Include="Solution141.cs" />
-    <Compile Include="Solution27.cs" />
-    <Compile Include="Solution28.cs" />
-    <Compile Include="Solution35.cs" />
-    <Compile Include="Solution38.cs" />
-    <Compile Include="Solution53.cs" />
-    <Compile Include="Solution58.cs" />
-    <Compile Include="Solution66.cs" />
-    <Compile Include="Solution67.cs" />
-    <Compile Include="Solution69.cs" />
-    <Compile Include="Solution70.cs" />
-    <Compile Include="Solution88.cs" />
+    <Compile Include="Solution160.cs" />
+    <Compile Include="Solution027.cs" />
+    <Compile Include="Solution028.cs" />
+    <Compile Include="Solution035.cs" />
+    <Compile Include="Solution038.cs" />
+    <Compile Include="Solution053.cs" />
+    <Compile Include="Solution058.cs" />
+    <Compile Include="Solution066.cs" />
+    <Compile Include="Solution067.cs" />
+    <Compile Include="Solution069.cs" />
+    <Compile Include="Solution070.cs" />
+    <Compile Include="Solution088.cs" />
     <Compile Include="TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>

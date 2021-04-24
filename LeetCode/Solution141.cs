@@ -4,8 +4,8 @@
     {
         public bool HasCycle(ListNode head)
         {
-            ListNode slow = head;
-            ListNode fast = head;
+            var slow = head;
+            var fast = head;
 
             while (fast != null && fast.next != null)
             {

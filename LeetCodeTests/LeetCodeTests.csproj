@@ -87,16 +87,16 @@
     <Compile Include="Solution122Tests.cs" />
     <Compile Include="Solution125Tests.cs" />
     <Compile Include="Solution136Tests.cs" />
-    <Compile Include="Solution27Tests.cs" />
-    <Compile Include="Solution35Tests.cs" />
-    <Compile Include="Solution38Tests.cs" />
-    <Compile Include="Solution53Tests.cs" />
-    <Compile Include="Solution58Tests.cs" />
-    <Compile Include="Solution66Tests.cs" />
-    <Compile Include="Solution67Tests.cs" />
-    <Compile Include="Solution69Tests.cs" />
-    <Compile Include="Solution70Tests.cs" />
-    <Compile Include="Solution88Tests.cs" />
+    <Compile Include="Solution027Tests.cs" />
+    <Compile Include="Solution035Tests.cs" />
+    <Compile Include="Solution038Tests.cs" />
+    <Compile Include="Solution053Tests.cs" />
+    <Compile Include="Solution058Tests.cs" />
+    <Compile Include="Solution066Tests.cs" />
+    <Compile Include="Solution067Tests.cs" />
+    <Compile Include="Solution069Tests.cs" />
+    <Compile Include="Solution070Tests.cs" />
+    <Compile Include="Solution088Tests.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

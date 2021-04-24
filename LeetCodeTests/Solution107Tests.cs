@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using LeetCode;
 
-namespace LeetCode.Tests
+namespace LeetCodeTests
 {
     [TestFixture()]
     public class Solution107Tests

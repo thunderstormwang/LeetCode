@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 
-namespace LeetCode.Tests
+namespace LeetCodeTests
 {
     [TestFixture()]
     public class Solution104Tests

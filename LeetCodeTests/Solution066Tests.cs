@@ -1,7 +1,8 @@
 ﻿using FluentAssertions;
+using LeetCode;
 using NUnit.Framework;
 
-namespace LeetCode.Tests
+namespace LeetCodeTests
 {
     public class Solution66Tests
     {

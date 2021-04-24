@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class Solution27
+    public class Solution027
     {
         public int RemoveElement(int[] nums, int val)
         {

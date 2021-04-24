@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Tests
+﻿namespace LeetCodeTests
 {
     public static class NullableHelper
     {

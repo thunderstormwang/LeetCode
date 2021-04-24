@@ -1,6 +1,7 @@
-﻿using NUnit.Framework;
+﻿using LeetCode;
+using NUnit.Framework;
 
-namespace LeetCode.Tests
+namespace LeetCodeTests
 {
     [TestFixture()]
     public class Solution27Tests
@@ -10,8 +11,8 @@ namespace LeetCode.Tests
         [TestCase(new int[] { 4, 4 }, 4, new int[] { }, 0)]
         public void RemoveElementTest(int[] array, int val, int[] expectedArray, int expected)
         {
-            Solution27 solution27 = new Solution27();
-            int result = solution27.RemoveElement(array, val);
+            Solution027 solution027 = new Solution027();
+            int result = solution027.RemoveElement(array, val);
 
             Assert.AreEqual(expected, result);
 

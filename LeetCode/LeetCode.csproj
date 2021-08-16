@@ -46,6 +46,7 @@
     <Compile Include="MinStack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solution001.cs" />
     <Compile Include="Solution100.cs" />
     <Compile Include="Solution101.cs" />
     <Compile Include="Solution104.cs" />

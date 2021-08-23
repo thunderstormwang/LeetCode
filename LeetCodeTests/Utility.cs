@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using LeetCode;
+using NUnit.Framework;
 
 namespace LeetCodeTests
 {
@@ -21,8 +22,22 @@ namespace LeetCodeTests
         {
             return array1.Split(',')
                         .Select(x => x.TryParse())
-                        .ToList()
                         .ToArray();
+        }
+        
+        public static ListNode BuildListNode(int [] array)
+        {
+            var head = new ListNode(array[0]);
+            var node = head;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                var temp = new ListNode(array[i]);
+                node.next = temp;
+                node = temp;
+            }
+
+            return head;
         }
     }
 }

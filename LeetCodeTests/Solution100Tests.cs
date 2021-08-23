@@ -6,7 +6,7 @@ using LeetCode;
 
 namespace LeetCodeTests
 {
-    [TestFixture()]
+    [TestFixture]
     public class Solution100Tests
     {
         [TestCase( "1, 2, 3", "1, 2, 3", true)]

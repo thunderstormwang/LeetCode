@@ -9,7 +9,7 @@ using NSubstitute;
 
 namespace WebRequest.Tests
 {
-    [TestFixture()]
+    [TestFixture]
     public class CustomerServiceTests
     {
         [Test()]

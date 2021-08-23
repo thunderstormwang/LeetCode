@@ -4,7 +4,7 @@ using LeetCode;
 
 namespace LeetCodeTests
 {
-    [TestFixture()]
+    [TestFixture]
     public class Solution107Tests
     {
         [Test()]

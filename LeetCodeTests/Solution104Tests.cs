@@ -9,7 +9,7 @@ using FluentAssertions;
 
 namespace LeetCodeTests
 {
-    [TestFixture()]
+    [TestFixture]
     public class Solution104Tests
     {
         [TestCase("3, 9, 20, null, null, 15, 7", 3)]

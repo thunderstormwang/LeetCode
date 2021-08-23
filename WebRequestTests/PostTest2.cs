@@ -6,7 +6,7 @@ using System.Text;
 
 namespace WebRequest.Tests
 {
-    [TestFixture()]
+    [TestFixture]
     public class PostTest2
     {
         // 未驗證

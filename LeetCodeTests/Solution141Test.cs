@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace LeetCodeTests
 {
-    [TestFixture()]
+    [TestFixture]
     public class Solution141Test
     {
         [TestCase(new int[] {3, 2, 0, 4}, 1, true)]

@@ -10,13 +10,11 @@ namespace LeetCode
             var result = new ListNode(0);
             var temp = result;
             var carry = 0;
-            var x = 0;
-            var y = 0;
 
             while (l1 != null || l2 != null)
             {
-                x = l1 != null ? l1.val : 0;
-                y = l2 != null ? l2.val : 0;
+                var x = l1 != null ? l1.val : 0;
+                var y = l2 != null ? l2.val : 0;
 
                 var sum = x + y + carry;
                 temp.next = new ListNode(sum % 10);

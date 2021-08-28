@@ -12,6 +12,9 @@ namespace LeetCodeTests
         [TestCase("pwwkew", 3)]
         [TestCase("", 0)]
         [TestCase("GEEKSFORGEEKS", 7)]
+        [TestCase(" ", 1)]
+        [TestCase("aab", 2)]
+        [TestCase("dvdf", 3)]
         public void LengthOfLongestSubstring_Brutal_Test(string input,
             int expected)
         {
@@ -27,6 +30,9 @@ namespace LeetCodeTests
         [TestCase("pwwkew", 3)]
         [TestCase("", 0)]
         [TestCase("GEEKSFORGEEKS", 7)]
+        [TestCase(" ", 1)]
+        [TestCase("aab", 2)]
+        [TestCase("dvdf", 3)]
         public void LengthOfLongestSubstring_SlideWindow_Test(string input,
             int expected)
         {
@@ -42,6 +48,9 @@ namespace LeetCodeTests
         [TestCase("pwwkew", 3)]
         [TestCase("", 0)]
         [TestCase("GEEKSFORGEEKS", 7)]
+        [TestCase(" ", 1)]
+        [TestCase("aab", 2)]
+        [TestCase("dvdf", 3)]
         public void LengthOfLongestSubstring_Linear_Test(string input,
             int expected)
         {

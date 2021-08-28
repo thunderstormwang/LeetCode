@@ -8,7 +8,7 @@ namespace LeetCode
         public int LengthOfLongestSubstring_Brutal(string s)
         {
             var result = 0;
-            
+
             for (var i = 0; i < s.Length; i++)
             {
                 for (var j = i; j < s.Length; j++)
@@ -30,44 +30,52 @@ namespace LeetCode
         {
             var result = 0;
             var charSet = new HashSet<char>();
-            
+
             for (var i = 0; i < s.Length; i++)
             {
                 for (var j = i + charSet.Count; j < s.Length; j++)
                 {
                     if (!charSet.Add(s[j]))
                     {
-                        result = Math.Max(result,
-                            j - i);
                         break;
                     }
                 }
 
+                result = Math.Max(result,
+                    charSet.Count);
                 charSet.Remove(s[i]);
             }
-            
+
             return result;
         }
 
         public int LengthOfLongestSubstring_Linear(string s)
         {
-            var result = 0;
-            var charSet = new HashSet<char>();
-            var currentHead = 0;
+            // Creating a set to store the last positions of occurrence
+            var seen = new Dictionary<char, int>();
+            var maximumLength = 0;
 
-            for (var i = 0; i < s.Length; i++)
+            // starting the initial point of window to index 0
+            var start = 0;
+
+            for (var end = 0; end < s.Length; end++)
             {
-                if (!charSet.Add(s[i]))
+                // Checking if we have already seen the element or not
+                if (seen.ContainsKey(s[end]))
                 {
-                    result = Math.Max(result,
-                        i - currentHead);
-                    currentHead = i;
-                    i = currentHead - 1;
-                    charSet.RemoveWhere(c => true);
+                    // If we have seen the number, move the start pointer
+                    // to position after the last occurrence
+                    start = Math.Max(start,
+                        seen[s[end]] + 1);
                 }
+
+                // Updating the last seen value of the character
+                seen[s[end]] = end;
+                maximumLength = Math.Max(maximumLength,
+                    end - start + 1);
             }
-            
-            return result;
+
+            return maximumLength;
         }
 
         private bool ContainRepetition(string input,
@@ -75,7 +83,7 @@ namespace LeetCode
             int end)
         {
             var charSet = new HashSet<char>();
-            
+
             for (int i = start; i <= end; i++)
             {
                 if (!charSet.Add(input[i]))

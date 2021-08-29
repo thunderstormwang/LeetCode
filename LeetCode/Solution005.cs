@@ -8,44 +8,58 @@ namespace LeetCode
     {
         public string LongestPalindrome(string s)
         {
-            var preIndex = 0;
-            var nextIndex = 0;
+            var index = 0;
+            var length = 0;
+            var dpTable = new bool[s.Length, s.Length];
+
             for (var i = 0; i < s.Length; i++)
             {
-                for (var j = 1; i - j >= 0 && i + j < s.Length; j++)
-                {
-                    if (CheckPalindrome(s.Substring(i - j + 1,
-                        2 * j)))
-                    {
-                        if (nextIndex - preIndex + 1 < 2 * j)
-                        {
-                            preIndex = i - j + 1;
-                            nextIndex = i + j;
-                        }
-                    }
+                dpTable[i,
+                    i] = true;
 
-                    if (CheckPalindrome(s.Substring(i - j,
-                        2 * j + 1)))
+                if (1 > length)
+                {
+                    index = i;
+                    length = 1;
+                }
+            }
+
+            for (var i = 0; i < s.Length - 1; i++)
+            {
+                if (s[i] == s[i + 1])
+                {
+                    dpTable[i,
+                        i + 1] = true;
+
+                    if (2 > length)
                     {
-                        if (nextIndex - preIndex + 1 < 2 * j + 1)
+                        index = i;
+                        length = 2;
+                    }
+                }
+            }
+
+            for (var len = 3; len <= s.Length; len++)
+            {
+                for (var i = 0; i + len - 1 < s.Length; i++)
+                {
+                    if (s[i] == s[i + len - 1] && dpTable[i + 1,
+                        i + len - 2])
+                    {
+                        dpTable[i,
+                            i + len - 1] = true;
+
+                        if (len > length)
                         {
-                            preIndex = i - j;
-                            nextIndex = i + j;
+                            index = i;
+                            length = len;
                         }
                     }
                 }
             }
 
-            return s.Substring(preIndex,
-                nextIndex - preIndex + 1);
-        }
-
-        private bool CheckPalindrome(string input)
-        {
-            var reverse = string.Join(string.Empty,
-                input.Reverse());
-
-            return input == reverse;
+            return s.Substring(index,
+                length);
         }
     }
 }

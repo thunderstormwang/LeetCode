@@ -12,6 +12,8 @@ namespace LeetCodeTests
         [TestCase("a", "a")]
         [TestCase("ac", "a")]
         [TestCase("aaaa", "aaaa")]
+        [TestCase("caba", "aba")]
+        [TestCase("aaaaa", "aaaaa")]
         public void LengthOfLongestSubstring_Brutal_Test(string input,
             string expected)
         {

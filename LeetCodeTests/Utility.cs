@@ -27,6 +27,11 @@ namespace LeetCodeTests
         
         public static ListNode BuildListNode(int [] array)
         {
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            
             var head = new ListNode(array[0]);
             var node = head;
 

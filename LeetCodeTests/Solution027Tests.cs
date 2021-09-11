@@ -11,7 +11,7 @@ namespace LeetCodeTests
         [TestCase(new int[] { 4, 4 }, 4, new int[] { }, 0)]
         public void RemoveElementTest(int[] array, int val, int[] expectedArray, int expected)
         {
-            Solution027 solution027 = new Solution027();
+            var solution027 = new Solution027();
             int result = solution027.RemoveElement(array, val);
 
             Assert.AreEqual(expected, result);

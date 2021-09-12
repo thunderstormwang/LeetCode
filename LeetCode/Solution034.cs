@@ -2,7 +2,7 @@
 {
     public class Solution034
     {
-        public int[] SearchRange(int[] nums,
+        public int[] SearchRange_Recursive(int[] nums,
             int target)
         {
             var result = new int[2] { -1, -1 };
@@ -12,6 +12,95 @@
                 nums.Length - 1,
                 target,
                 result);
+
+            return result;
+        }
+
+        public int[] SearchRange_NonRecursive(int[] nums,
+            int target)
+        {
+            var result = new int[2] { -1, -1 };
+            var start = 0;
+            var end = nums.Length - 1;
+
+            while (start <= end)
+            {
+                var index = start + (end - start) / 2;
+                if (target < nums[index])
+                {
+                    end = index - 1;
+                }
+                else if (target > nums[index])
+                {
+                    start = index + 1;
+                }
+                else
+                {
+                    result[0] = FindFirst(nums,
+                        target,
+                        start,
+                        index);
+                    result[1] = FindLast(nums,
+                        target,
+                        index,
+                        end);
+                    break;
+                }
+            }
+
+            return result;
+        }
+
+        private int FindFirst(int[] nums,
+            int target,
+            int start,
+            int end)
+        {
+            var result = -1;
+            while (start <= end)
+            {
+                var index = start + (end - start) / 2;
+                if (target < nums[index])
+                {
+                    end = index - 1;
+                }
+                else if (target > nums[index])
+                {
+                    start = index + 1;
+                }
+                else
+                {
+                    result = index;
+                    end = index - 1;
+                }
+            }
+
+            return result;
+        }
+
+        private int FindLast(int[] nums,
+            int target,
+            int start,
+            int end)
+        {
+            var result = -1;
+            while (start <= end)
+            {
+                var index = start + (end - start) / 2;
+                if (target < nums[index])
+                {
+                    end = index - 1;
+                }
+                else if (target > nums[index])
+                {
+                    start = index + 1;
+                }
+                else
+                {
+                    result = index;
+                    start = index + 1;
+                }
+            }
 
             return result;
         }
@@ -64,8 +153,6 @@
                     end,
                     target,
                     result);
-
-                return;
             }
         }
     }

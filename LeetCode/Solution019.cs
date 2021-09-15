@@ -36,41 +36,5 @@
 
             return head;
         }
-
-        public ListNode RemoveNthFromEnd_Old(ListNode head,
-            int n)
-        {
-            var listNodeArray = new ListNode[30];
-
-            var temp = head;
-            var index = 0;
-            while (temp != null)
-            {
-                listNodeArray[index] = temp;
-
-                temp = temp.next;
-                index++;
-            }
-
-            var length = index;
-            var targetIndex = length - n;
-
-            // remove last from end;
-            if (targetIndex == 0)
-            {
-                return head.next;
-            }
-
-            // remove first from end;
-            if (targetIndex == length - 1)
-            {
-                listNodeArray[targetIndex - 1].next = null;
-                return head;
-            }
-
-            listNodeArray[targetIndex - 1].next = listNodeArray[targetIndex + 1];
-
-            return head;
-        }
     }
 }

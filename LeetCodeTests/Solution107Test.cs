@@ -5,7 +5,7 @@ using LeetCode;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution107Tests
+    public class Solution107Test
     {
         [Test()]
         public void LevelOrderBottomTest()

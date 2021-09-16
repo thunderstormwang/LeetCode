@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution069Tests
+    public class Solution069Test
     {
         [TestCase(4, 2)]
         [TestCase(8, 2)]

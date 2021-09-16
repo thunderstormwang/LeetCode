@@ -10,17 +10,17 @@ using FluentAssertions;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution110Tests
+    public class Solution101Test
     {
-        [TestCase("3, 9, 20, null, null, 15, 7", true)]
-        [TestCase("1, 2, 2, 3, 3, null, null, 4, 4", false)]
-        public void IsBalancedTest(string array, bool expected)
+        [TestCase("1, 2, 2, 3, 4, 4, 3", true)]
+        [TestCase("1, 2, 2, null, 3, null, 3", false)]
+        public void IsSymmetricTest(string array, bool expected)
         {
             TreeNode root = new TreeNode(0);
             root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
 
-            Solution110 solution110 = new Solution110();
-            bool actual = solution110.IsBalanced(root);
+            Solution101 solution101 = new Solution101();
+            bool actual = solution101.IsSymmetric(root);
 
             actual.Should().Be(expected);
         }

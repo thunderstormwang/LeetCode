@@ -10,17 +10,16 @@ using FluentAssertions;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution101Tests
+    public class Solution104Test
     {
-        [TestCase("1, 2, 2, 3, 4, 4, 3", true)]
-        [TestCase("1, 2, 2, null, 3, null, 3", false)]
-        public void IsSymmetricTest(string array, bool expected)
+        [TestCase("3, 9, 20, null, null, 15, 7", 3)]
+        public void MaxDepthTest(string array, int expected)
         {
             TreeNode root = new TreeNode(0);
             root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
 
-            Solution101 solution101 = new Solution101();
-            bool actual = solution101.IsSymmetric(root);
+            Solution104 solution104 = new Solution104();
+            int actual = solution104.MaxDepth(root);
 
             actual.Should().Be(expected);
         }

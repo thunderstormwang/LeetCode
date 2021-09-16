@@ -10,16 +10,16 @@ using FluentAssertions;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution104Tests
+    public class Solution111Test
     {
-        [TestCase("3, 9, 20, null, null, 15, 7", 3)]
-        public void MaxDepthTest(string array, int expected)
+        [TestCase("3, 9, 20, null, null, 15, 7", 2)]
+        public void MinDepthTest(string array, int expected)
         {
             TreeNode root = new TreeNode(0);
             root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
 
-            Solution104 solution104 = new Solution104();
-            int actual = solution104.MaxDepth(root);
+            Solution111 solution111 = new Solution111();
+            int actual = solution111.MinDepth(root);
 
             actual.Should().Be(expected);
         }

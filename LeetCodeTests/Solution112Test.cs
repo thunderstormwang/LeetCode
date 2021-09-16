@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution112Tests
+    public class Solution112Test
     {
         [TestCase("5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1", 22, true)]
         public void HasPathSumTest(string array, int pathSum, bool expected)

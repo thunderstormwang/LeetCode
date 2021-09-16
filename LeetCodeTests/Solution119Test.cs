@@ -6,7 +6,7 @@ using LeetCode;
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution119Tests
+    public class Solution119Test
     {
         [TestCase(0, new int[] { 1 })]
         [TestCase(1, new int[] { 1, 1 })]

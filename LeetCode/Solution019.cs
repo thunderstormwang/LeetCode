@@ -1,40 +1,33 @@
-﻿namespace LeetCode
+﻿using System.Collections.Generic;
+
+namespace LeetCode
 {
     public class Solution019
     {
         public ListNode RemoveNthFromEnd(ListNode head,
             int n)
         {
-            var fast = head;
-            var slow = head;
+            var dummyNode = new ListNode(0);
+            dummyNode.next = head;
+            var fast = dummyNode;
+            var slow = dummyNode;
 
             var index = 0;
-            while (index < n - 1)
+            while (index < n )
             {
                 fast = fast.next;
                 index++;
             }
 
-            // remove first from head / last from end;
-            if (fast.next == null)
-            {
-                return head.next;
-            }
-
-            while (fast != null)
+            while (fast.next != null)
             {
                 fast = fast.next;
-                if (fast.next == null)
-                {
-                    break;
-                }
-
                 slow = slow.next;
             }
 
             slow.next = slow.next.next;
 
-            return head;
+            return dummyNode.next;
         }
     }
 }

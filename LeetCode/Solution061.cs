@@ -26,26 +26,24 @@
                 return head;
             }
 
-            var position = 1;
-            var fast = head;
+            var position = 0;
+            var fast = dummyNode;
             while (position < nthFromEnd)
             {
                 fast = fast.next ?? head;
                 position++;
             }
 
-            var slow = head;
-            var preSlow = dummyNode;
+            var slow = dummyNode;
             while (fast.next != null)
             {
-                preSlow = slow;
                 slow = slow.next;
                 fast = fast.next;
             }
 
-            preSlow.next = null;
             fast.next = head;
-            head = slow;
+            head = slow.next;
+            slow.next = null;
 
             return head;
         }

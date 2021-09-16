@@ -10,11 +10,11 @@ namespace LeetCodeTests
         [Test()]
         public void LevelOrderBottomTest()
         {
-            TreeNode root = new TreeNode(0);
+            var root = new TreeNode(0);
             root = Utility.BuildTree(root, new int?[] { 3, 9, 20, null, null, 15, 7 }, 0);
 
-            Solution107 solution107 = new Solution107();
-            IList<IList<int>> actual = solution107.LevelOrderBottom(root);
+            var solution107 = new Solution107();
+            var actual = solution107.LevelOrderBottom(root);
 
             Assert.AreEqual(new int[] { 15, 7 }, actual[0]);
             Assert.AreEqual(new int[] { 9, 20 }, actual[1]);

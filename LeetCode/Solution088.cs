@@ -4,7 +4,7 @@
     {
         public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
-            for (int i = 0; i < n; i++)
+            for (var i = 0; i < n; i++)
             {
                 InsertNumber(nums1, m, nums2[i]);
                 m++;
@@ -19,8 +19,8 @@
                 return;
             }
 
-            bool isInsert = false;
-            for (int i = m - 1; i >= 0; i--)
+            var isInsert = false;
+            for (var i = m - 1; i >= 0; i--)
             {
                 if (nums1[i] > target)
                 {

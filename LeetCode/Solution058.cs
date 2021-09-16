@@ -4,9 +4,9 @@
     {
         public int LengthOfLastWord(string s)
         {
-            string[] strArray = s.Split(' ');
+            var strArray = s.Split(' ');
 
-            int i = strArray.Length - 1;
+            var i = strArray.Length - 1;
             while (i >= 0)
             {
                 if (strArray[i].Length != 0)

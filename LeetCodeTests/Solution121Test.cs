@@ -11,9 +11,9 @@ namespace LeetCodeTests
         [TestCase(new int[] { 7, 6, 4, 3, 1 }, 0)]
         public void MaxProfitTest(int[] array, int expected)
         {
-            Solution121 solution121 = new Solution121();
+            var solution121 = new Solution121();
 
-            int actual = solution121.MaxProfit(array);
+            var actual = solution121.MaxProfit(array);
 
             actual.Should().Be(expected);
         }

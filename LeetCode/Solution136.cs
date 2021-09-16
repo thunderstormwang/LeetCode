@@ -6,9 +6,9 @@
         {
             var result = 0;
 
-            for (int i = 0; i < input.Length; i++)
+            foreach (var item in input)
             {
-                result ^= input[i];
+                result ^= item;
             }
 
             return result;

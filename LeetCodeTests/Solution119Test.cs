@@ -15,8 +15,8 @@ namespace LeetCodeTests
         [TestCase(4, new int[] { 1, 4, 6, 4, 1 })]
         public void GetRowTest(int rowIndex, int[] expected)
         {
-            Solution119 solution119 = new Solution119();
-            IList<int> actual = solution119.GetRow(rowIndex);
+            var solution119 = new Solution119();
+            var actual = solution119.GetRow(rowIndex);
 
             actual.Should().Equal(expected);
         }

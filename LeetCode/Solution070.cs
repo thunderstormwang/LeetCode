@@ -11,14 +11,14 @@
                 return n;
             }
 
-            int[] array = new int[n];
+            var array = new int[n];
 
             // f(1) = 1
             array[0] = 1;
             // f(2) = 2
             array[1] = 2;
 
-            for (int i = 2; i < n; i++)
+            for (var i = 2; i < n; i++)
             {
                 array[i] = array[i - 1] + array[i - 2];
             }

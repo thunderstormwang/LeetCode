@@ -11,8 +11,8 @@ namespace LeetCodeTests
         [TestCase("race a car", false)]
         public void IsPalindromeTest(string s, bool expected)
         {
-            Solution125 solution125 = new Solution125();
-            bool actual = solution125.IsPalindrome(s);
+            var solution125 = new Solution125();
+            var actual = solution125.IsPalindrome(s);
 
             actual.Should().Be(expected);
         }

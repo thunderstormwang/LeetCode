@@ -12,7 +12,7 @@ namespace LeetCodeTests
         {
             var solution53 = new Solution53();
 
-            int actual = solution53.MaxSubArray(array);
+            var actual = solution53.MaxSubArray(array);
 
             actual.Should().Be(expected);
         }

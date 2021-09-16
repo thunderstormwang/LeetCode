@@ -6,7 +6,7 @@ namespace LeetCode
     {
         public IList<IList<int>> Generate(int numRows)
         {
-            IList<IList<int>> result = new List<IList<int>>();
+            var result = new List<IList<int>>();
 
             if (numRows == 0)
             {

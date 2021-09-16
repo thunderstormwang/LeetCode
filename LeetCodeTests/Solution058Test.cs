@@ -12,9 +12,9 @@ namespace LeetCodeTests
         [TestCase("WorldOfWarcraft", 15)]
         public void LengthOfLastWordTest(string s, int expected)
         {
-            Solution58 solution58 = new Solution58();
+            var solution58 = new Solution58();
 
-            int actual = solution58.LengthOfLastWord(s);
+            var actual = solution58.LengthOfLastWord(s);
 
             actual.Should().Be(expected);
         }

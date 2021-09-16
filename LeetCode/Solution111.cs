@@ -11,17 +11,17 @@ namespace LeetCode
                 return 0;
             }
 
-            int left = MinDepth(root.left);
-            int right = MinDepth(root.right);
+            var left = MinDepth(root.left);
+            var right = MinDepth(root.right);
 
             if (left + right == 0)
             {
-                // 此為 leat node
+                // 此為 leaf node
                 return 1;
             }
             else if (left == 0 && right != 0)
             {
-                // 一邊為0, 此不為 leat node, 須回傳有 left 的那一邊的 depth
+                // 一邊為0, 此不為 leaf node, 須回傳有 left 的那一邊的 depth
                 return right + 1;
             }
             else if (left != 0 && right == 0)

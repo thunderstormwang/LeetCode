@@ -11,9 +11,9 @@ namespace LeetCodeTests
         [TestCase(3, 3)]
         public void ClimbStairsTest(int x, int expected)
         {
-            Solution70 solution70 = new Solution70();
+            var solution70 = new Solution70();
 
-            int actual = solution70.ClimbStairs(x);
+            var actual = solution70.ClimbStairs(x);
 
             actual.Should().Be(expected);
         }

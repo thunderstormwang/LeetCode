@@ -16,11 +16,11 @@ namespace LeetCodeTests
         [TestCase("1, 2, 2, null, 3, null, 3", false)]
         public void IsSymmetricTest(string array, bool expected)
         {
-            TreeNode root = new TreeNode(0);
+            var root = new TreeNode(0);
             root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
 
-            Solution101 solution101 = new Solution101();
-            bool actual = solution101.IsSymmetric(root);
+            var solution101 = new Solution101();
+            var actual = solution101.IsSymmetric(root);
 
             actual.Should().Be(expected);
         }

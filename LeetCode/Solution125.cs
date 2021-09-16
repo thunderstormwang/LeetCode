@@ -11,8 +11,8 @@
 
             s = s.ToLower();
 
-            int left = 0;
-            int right = s.Length - 1;
+            var left = 0;
+            var right = s.Length - 1;
 
             while (right > left)
             {

@@ -11,10 +11,10 @@ namespace LeetCode
                 return 0;
             }
 
-            int result = nums[0];
-            int temp = nums[0];
+            var result = nums[0];
+            var temp = nums[0];
 
-            for (int i = 1; i < nums.Length; i++)
+            for (var i = 1; i < nums.Length; i++)
             {
                 temp = Math.Max(temp + nums[i], nums[i]);
                 result = Math.Max(temp, result);

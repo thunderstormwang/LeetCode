@@ -10,8 +10,8 @@ namespace LeetCode
             // 用迴圈從最小位數開始計算, 若有進位則進到下一位
             // 迴圈結束若還有進位, 再往左補1
 
-            string result = string.Empty;
-            int numberToNextPlace = 0;
+            var result = string.Empty;
+            var numberToNextPlace = 0;
 
             if (a.Length < b.Length)
             {

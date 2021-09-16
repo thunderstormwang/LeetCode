@@ -10,8 +10,8 @@ namespace LeetCodeTests
         [Test()]
         public void GenerateTest()
         {
-            Solution118 solution118 = new Solution118();
-            IList<IList<int>> actual = solution118.Generate(5);
+            var solution118 = new Solution118();
+            var actual = solution118.Generate(5);
 
             Assert.AreEqual(new int[] { 1 }, actual[0]);
             Assert.AreEqual(new int[] { 1, 1 }, actual[1]);

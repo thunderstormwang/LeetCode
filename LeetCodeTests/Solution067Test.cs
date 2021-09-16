@@ -11,9 +11,9 @@ namespace LeetCodeTests
         [TestCase("1010", "1011", "10101")]
         public void AddBinaryTest(string s1, string s2, string expected)
         {
-            Solution67 solution67 = new Solution67();
+            var solution67 = new Solution67();
 
-            string actual = solution67.AddBinary(s1, s2);
+            var actual = solution67.AddBinary(s1, s2);
 
             actual.Should().Be(expected);
         }

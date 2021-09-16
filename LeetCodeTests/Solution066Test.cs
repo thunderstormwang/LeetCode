@@ -11,9 +11,9 @@ namespace LeetCodeTests
         [TestCase(new int[] { 4, 3, 2, 1 }, new int[] { 4, 3, 2, 2 })]
         public void PlusOneTest(int[] array, int[] expected)
         {
-            Solution66 solution66 = new Solution66();
+            var solution66 = new Solution66();
 
-            int[] actual = solution66.PlusOne(array);
+            var actual = solution66.PlusOne(array);
 
             actual.Should().Equal(expected);
         }

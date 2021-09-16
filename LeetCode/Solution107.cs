@@ -11,7 +11,7 @@ namespace LeetCode
                 return new List<IList<int>>();
             }
 
-            IList<IList<int>> result = new List<IList<int>>();
+            var result = new List<IList<int>>();
             result = Depth(root, result, 1);
             (result as List<IList<int>>).Reverse();
             return result;

@@ -1,32 +1,47 @@
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode;
 using NUnit.Framework;
 
 namespace LeetCodeTests
 {
     [TestFixture]
-    public class Solution141Test
+    public class Solution142Test
     {
+        private ListNode cycleStart;
+
         [TestCase(new int[] { 3, 2, 0, 4 },
-            1,
-            true)]
+            1)]
         [TestCase(new int[] { 1, 2 },
-            0,
-            true)]
+            0)]
         [TestCase(new int[] { 1 },
-            -1,
-            false)]
+            -1)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5 },
+            0)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5 },
+            1)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5 },
+            2)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5 },
+            3)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5 },
+            4)]
         public void HasCycleTest(int[] array,
-            int pos,
-            bool expected)
+            int pos)
         {
             var list = GetLinkedList(array,
                 pos);
 
-            var solution141 = new Solution141();
-            var actual = solution141.HasCycle(list);
+            var solution142 = new Solution142();
+            var actual = solution142.DetectCycle(list);
 
-            actual.Should().Be(expected);
+            if (actual == null)
+            {
+                Assert.IsTrue(actual == cycleStart);
+            }
+            else
+            {
+                actual.Should().Be(cycleStart);
+            }
         }
 
         private ListNode GetLinkedList(int[] input,
@@ -49,6 +64,7 @@ namespace LeetCodeTests
                 if (i == pos)
                 {
                     tail.next = result;
+                    cycleStart = result;
                 }
             }
 

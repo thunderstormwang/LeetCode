@@ -117,6 +117,7 @@
     <Compile Include="Solution070Test.cs" />
     <Compile Include="Solution088Test.cs" />
     <Compile Include="Solution141Test.cs" />
+    <Compile Include="Solution142Test.cs" />
     <Compile Include="Solution160Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>

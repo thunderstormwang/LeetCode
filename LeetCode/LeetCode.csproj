@@ -83,6 +83,7 @@
     <Compile Include="Solution121.cs" />
     <Compile Include="Solution122.cs" />
     <Compile Include="Solution125.cs" />
+    <Compile Include="Solution128.cs" />
     <Compile Include="Solution136.cs" />
     <Compile Include="Solution141.cs" />
     <Compile Include="Solution142.cs" />
@@ -98,6 +99,9 @@
     <Compile Include="Solution069.cs" />
     <Compile Include="Solution070.cs" />
     <Compile Include="Solution088.cs" />
+    <Compile Include="Solution217.cs" />
+    <Compile Include="Solution219.cs" />
+    <Compile Include="Solution220.cs" />
     <Compile Include="TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -15,6 +15,8 @@ namespace LeetCodeTests
             0)]
         [TestCase(new int[] { 1 },
             -1)]
+        [TestCase(new int[] { },
+            -1)]
         [TestCase(new int[] { 1, 2, 3, 4, 5 },
             0)]
         [TestCase(new int[] { 1, 2, 3, 4, 5 },
@@ -25,7 +27,7 @@ namespace LeetCodeTests
             3)]
         [TestCase(new int[] { 1, 2, 3, 4, 5 },
             4)]
-        public void HasCycleTest(int[] array,
+        public void DetectCycleTest(int[] array,
             int pos)
         {
             var list = GetLinkedList(array,

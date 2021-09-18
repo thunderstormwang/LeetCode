@@ -8,6 +8,12 @@ namespace LeetCodeTests
     public class Solution142Test
     {
         private ListNode cycleStart;
+        
+        [SetUp]
+        public void SetupBeforeEachTest()
+        {
+            cycleStart = null;
+        }
 
         [TestCase(new int[] { 3, 2, 0, 4 },
             1)]
@@ -36,9 +42,9 @@ namespace LeetCodeTests
             var solution142 = new Solution142();
             var actual = solution142.DetectCycle(list);
 
-            if (actual == null)
+            if (cycleStart == null)
             {
-                Assert.IsTrue(actual == cycleStart);
+                actual.Should().BeNull();
             }
             else
             {

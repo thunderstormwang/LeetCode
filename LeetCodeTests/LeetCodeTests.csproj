@@ -117,12 +117,14 @@
     <Compile Include="Solution069Test.cs" />
     <Compile Include="Solution070Test.cs" />
     <Compile Include="Solution088Test.cs" />
+    <Compile Include="Solution137Test.cs" />
     <Compile Include="Solution141Test.cs" />
     <Compile Include="Solution142Test.cs" />
     <Compile Include="Solution160Test.cs" />
     <Compile Include="Solution217Test.cs" />
     <Compile Include="Solution219Test.cs" />
     <Compile Include="Solution220Test.cs" />
+    <Compile Include="Solution260Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

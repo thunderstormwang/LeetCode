@@ -13,8 +13,8 @@ namespace LeetCode
 
             while (l1 != null || l2 != null)
             {
-                var x = l1 != null ? l1.val : 0;
-                var y = l2 != null ? l2.val : 0;
+                var x = l1?.val ?? 0;
+                var y = l2?.val ?? 0;
 
                 var sum = x + y + carry;
                 temp.next = new ListNode(sum % 10);

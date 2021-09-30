@@ -133,6 +133,7 @@
     <Compile Include="Solution219Test.cs" />
     <Compile Include="Solution220Test.cs" />
     <Compile Include="Solution260Test.cs" />
+    <Compile Include="Solution279Test.cs" />
     <Compile Include="Solution445Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>

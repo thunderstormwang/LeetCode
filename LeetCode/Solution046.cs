@@ -32,34 +32,33 @@ namespace LeetCode
         public IList<IList<int>> Permute_Recursive(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>() { };
-            var unused = new List<int>(nums);
 
             FindPermute(result,
-                new List<int>(),
-                unused);
+                0,
+                nums);
 
             return result;
         }
 
         private void FindPermute(IList<IList<int>> result,
-            List<int> curr,
-            List<int> unused)
+            int index,
+            int[] nums)
         {
-            if (unused.Count == 0)
+            if (index == nums.Length)
             {
-                result.Add(new List<int>(curr));
+                result.Add(new List<int>(nums));
+                return;
             }
 
-            for (var i = 0; i < unused.Count; i++)
+            for (var i = index; i < nums.Length; i++)
             {
-                curr.Add(unused[i]);
-                unused.RemoveAt(i);
+                (nums[i], nums[index]) = (nums[index], nums[i]);
+
                 FindPermute(result,
-                    curr,
-                    unused);
-                unused.Insert(i,
-                    curr[curr.Count - 1]);
-                curr.RemoveAt(curr.Count - 1);
+                    index + 1,
+                    nums);
+
+                (nums[i], nums[index]) = (nums[index], nums[i]);
             }
         }
     }

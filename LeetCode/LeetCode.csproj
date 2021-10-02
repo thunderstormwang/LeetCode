@@ -70,6 +70,7 @@
     <Compile Include="Solution034.cs" />
     <Compile Include="Solution036.cs" />
     <Compile Include="Solution046.cs" />
+    <Compile Include="Solution047.cs" />
     <Compile Include="Solution056.cs" />
     <Compile Include="Solution061.cs" />
     <Compile Include="Solution086.cs" />

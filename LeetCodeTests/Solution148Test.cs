@@ -14,7 +14,11 @@ namespace LeetCodeTests
             new int[] { 1, 1, 3, 3 })]
         [TestCase(new int[] { 3, 3, 3, 1 },
             new int[] { 1, 3, 3, 3 })]
-        public void InsertionSortList(int[] input,
+        [TestCase(new int[] { },
+            new int[] { })]
+        [TestCase(new int[] { 666 },
+            new int[] { 666 })]
+        public void SortList(int[] input,
             int[] expected)
         {
             var solution148 = new Solution148();

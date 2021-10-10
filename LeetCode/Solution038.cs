@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class Solution38
+    public class Solution038
     {
         public string CountAndSay(int n)
         {

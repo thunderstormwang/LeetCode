@@ -14,8 +14,8 @@ namespace LeetCodeTests
         [TestCase(5, "111221")]
         public void CountAndSayTest(int param, string expected)
         {
-            var solution38 = new Solution38();
-            var actual = solution38.CountAndSay(param);
+            var solution038 = new Solution038();
+            var actual = solution038.CountAndSay(param);
 
             actual.Should().Be(expected);
         }

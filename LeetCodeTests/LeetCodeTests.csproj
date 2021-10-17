@@ -133,6 +133,7 @@
     <Compile Include="Solution148Test.cs" />
     <Compile Include="Solution160Test.cs" />
     <Compile Include="Solution167Test.cs" />
+    <Compile Include="Solution169Test.cs" />
     <Compile Include="Solution179Test.cs" />
     <Compile Include="Solution189Test.cs" />
     <Compile Include="Solution190Test.cs" />

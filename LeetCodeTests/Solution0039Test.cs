@@ -19,7 +19,7 @@ namespace LeetCodeTests
             var expected = new List<List<int>>();
             foreach (var item in expectedArray)
             {
-                expected.Add(item);
+                expected.Add(new List<int>(item));
             }
 
             actual.Should().BeEquivalentTo(expected);
@@ -34,7 +34,9 @@ namespace LeetCodeTests
                     2
                 },
                 1,
-                null,
+                new int[][]
+                {
+                }
             },
             new object[]
             {
@@ -84,7 +86,7 @@ namespace LeetCodeTests
                 new int[][]
                 {
                     new int[] { 2, 2, 3 },
-                    new int[] { 7 },
+                    new int[] { 7 }
                 },
             }
         };

@@ -46,9 +46,9 @@ namespace LeetCodeTests
         private ListNode GetLinkedList(int[] input,
             in ListNode tail)
         {
-            ListNode result = tail;
+            var result = tail;
 
-            for (int i = input.Length - 1; i >= 0; i--)
+            for (var i = input.Length - 1; i >= 0; i--)
             {
                 var temp = result;
                 result = new ListNode(input[i]);

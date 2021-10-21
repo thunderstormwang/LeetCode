@@ -46,8 +46,8 @@ namespace LeetCodeTests
             int val,
             int[] expected)
         {
-            var solution034 = new Solution0034();
-            var actual = solution034.SearchRange_NonRecursive(array,
+            var solution = new Solution0034();
+            var actual = solution.SearchRange_NonRecursive(array,
                 val);
 
             actual.Should().BeEquivalentTo(expected);

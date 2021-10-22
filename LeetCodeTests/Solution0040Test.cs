@@ -36,10 +36,10 @@ namespace LeetCodeTests
                 8,
                 new int[][]
                 {
-                    { 1, 1, 6 },
-                    { 1, 2, 5 },
-                    { 1, 7 },
-                    { 2, 6 }
+                    new int[] { 1, 1, 6 },
+                    new int[] { 1, 2, 5 },
+                    new int[] { 1, 7 },
+                    new int[] { 2, 6 }
                 }
             },
             new object[]
@@ -53,6 +53,18 @@ namespace LeetCodeTests
                 {
                     new int[] { 1, 2, 2 },
                     new int[] { 5 }
+                },
+            },
+            new object[]
+            {
+                new int[]
+                {
+                    2, 2, 2, 2
+                },
+                6,
+                new int[][]
+                {
+                    new int[] { 2, 2, 2 }
                 },
             }
         };

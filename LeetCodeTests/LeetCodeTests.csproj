@@ -89,6 +89,9 @@
     <Compile Include="Solution0019Test.cs" />
     <Compile Include="Solution0039Test.cs" />
     <Compile Include="Solution0042Test.cs" />
+    <Compile Include="Solution0054Test.cs" />
+    <Compile Include="Solution0078Test.cs" />
+    <Compile Include="Solution0090Test.cs" />
     <Compile Include="Solution0229Test.cs" />
     <Compile Include="Solution0022Test.cs" />
     <Compile Include="Solution0024Test.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="Solution0128Test.cs" />
     <Compile Include="Solution0268Test.cs" />
     <Compile Include="Solution0040Test.cs" />
+    <Compile Include="Solution0491Test.cs" />
     <Compile Include="Solution1356Test.cs" />
     <Compile Include="Solution0136Test.cs" />
     <Compile Include="Solution0027Test.cs" />

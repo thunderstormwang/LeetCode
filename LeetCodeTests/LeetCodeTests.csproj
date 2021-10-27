@@ -124,6 +124,7 @@
     <Compile Include="Solution0268Test.cs" />
     <Compile Include="Solution0040Test.cs" />
     <Compile Include="Solution0491Test.cs" />
+    <Compile Include="Solution0885Test.cs" />
     <Compile Include="Solution1356Test.cs" />
     <Compile Include="Solution0136Test.cs" />
     <Compile Include="Solution0027Test.cs" />

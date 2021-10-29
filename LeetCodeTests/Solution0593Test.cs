@@ -27,6 +27,16 @@ namespace LeetCodeTests
             new int[] { 5, 4 },
             new int[] { 0, 4 },
             false)]
+        [TestCase(new int[] { 0, 0 },
+            new int[] { 1, 1 },
+            new int[] { 0, 0 },
+            new int[] { 0, 0 },
+            false)]
+        [TestCase(new int[] { 0, 0 },
+            new int[] { 1, 1 },
+            new int[] { 1, 0 },
+            new int[] { 0, 0 },
+            false)]
         public void ValidSquareTest(int[] p1,
             int[] p2,
             int[] p3,

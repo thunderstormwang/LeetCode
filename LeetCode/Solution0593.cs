@@ -18,14 +18,19 @@ namespace LeetCode
                 p3));
             lengthDict.Add(LengthPower(p1,
                 p4));
-            
+
             lengthDict.Add(LengthPower(p2,
                 p3));
             lengthDict.Add(LengthPower(p2,
                 p4));
-            
+
             lengthDict.Add(LengthPower(p3,
                 p4));
+
+            if (lengthDict.Contains(0))
+            {
+                return false;
+            }
 
             return lengthDict.Count == 2;
         }

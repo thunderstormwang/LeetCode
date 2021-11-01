@@ -25,6 +25,8 @@ namespace LeetCode
 
             return result;
         }
+        
+        // 用暴力法
 
         public int LengthOfLongestSubstring_SlideWindow(string s)
         {
@@ -84,7 +86,7 @@ namespace LeetCode
         {
             var charSet = new HashSet<char>();
 
-            for (int i = start; i <= end; i++)
+            for (var i = start; i <= end; i++)
             {
                 if (!charSet.Add(input[i]))
                 {

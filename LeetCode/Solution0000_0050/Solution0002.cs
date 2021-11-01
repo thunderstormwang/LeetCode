@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace LeetCode
+﻿namespace LeetCode.Solution0000_0050
 {
     public class Solution0002
     {
         public ListNode AddTwoNumbers(ListNode l1,
             ListNode l2)
         {
-            var result = new ListNode(0);
-            var temp = result;
+            var dummyNode = new ListNode(0);
+            var temp = dummyNode;
             var carry = 0;
 
             while (l1 != null || l2 != null)
@@ -30,7 +28,10 @@ namespace LeetCode
                 temp.next = new ListNode(1);
             }
 
-            return result.next;
+            return dummyNode.next;
         }
+        
+        // 注意最後是否需要進位
+        // Time: O(max(l1,l2)), Space: 
     }
 }

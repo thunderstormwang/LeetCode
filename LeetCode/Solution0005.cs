@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution0005
     {
@@ -16,50 +12,60 @@ namespace LeetCode
             {
                 dpTable[i,
                     i] = true;
-
-                if (1 > length)
-                {
-                    index = i;
-                    length = 1;
-                }
             }
+
+            index = 0;
+            length = 1;
 
             for (var i = 0; i < s.Length - 1; i++)
             {
-                if (s[i] == s[i + 1])
+                if (s[i] != s[i + 1])
                 {
-                    dpTable[i,
-                        i + 1] = true;
-
-                    if (2 > length)
-                    {
-                        index = i;
-                        length = 2;
-                    }
+                    continue;
                 }
+
+                dpTable[i,
+                    i + 1] = true;
+
+                if (2 <= length)
+                {
+                    continue;
+                }
+
+                index = i;
+                length = 2;
             }
 
             for (var len = 3; len <= s.Length; len++)
             {
                 for (var i = 0; i + len - 1 < s.Length; i++)
                 {
-                    if (s[i] == s[i + len - 1] && dpTable[i + 1,
+                    if (s[i] != s[i + len - 1] || !dpTable[i + 1,
                         i + len - 2])
                     {
-                        dpTable[i,
-                            i + len - 1] = true;
-
-                        if (len > length)
-                        {
-                            index = i;
-                            length = len;
-                        }
+                        continue;
                     }
+
+                    dpTable[i,
+                        i + len - 1] = true;
+
+                    if (len <= length)
+                    {
+                        continue;
+                    }
+
+                    index = i;
+                    length = len;
                 }
             }
 
             return s.Substring(index,
                 length);
         }
+        
+        // 暴力法
+        // Time: O(n^3), Space: O(1)
+        
+        
     }
 }

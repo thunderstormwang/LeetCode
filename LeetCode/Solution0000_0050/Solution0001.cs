@@ -28,9 +28,13 @@ namespace LeetCode.Solution0000_0050
         }
         
         // 用暴力法, 在陣列 nums 裡尋找能跟 nums[i] 配對的數字
-        // Time: O(N^2), Space: O(1)
+        // Time: O(N^2)
+        // Space: O(1)
+        
+        //------------------------
         
         // 用 hash table 儲存每個找過的 nums[i]
-        // Time: O(N), Space: O(N)
+        // Time: O(N)
+        // Space: O(N)
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0003
     {
@@ -27,6 +27,7 @@ namespace LeetCode
         }
         
         // 用暴力法
+        // Time: O(n^3), Space: O(min(size of string, size of charset ))
 
         public int LengthOfLongestSubstring_SlideWindow(string s)
         {
@@ -50,6 +51,10 @@ namespace LeetCode
 
             return result;
         }
+        
+        // 用 SlideWindow
+        // Time: O(2n) = O(n), 最差情況下, 該字串都是同個字元, 會被 i, j 各走一次 
+        // Space: O(min(size of string, size of charset ))
 
         public int LengthOfLongestSubstring_Linear(string s)
         {
@@ -79,6 +84,9 @@ namespace LeetCode
 
             return maximumLength;
         }
+        
+        // Time: O(n)
+        // Space: O(min(size of string, size of charset ))
 
         private bool ContainRepetition(string input,
             int start,

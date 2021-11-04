@@ -32,6 +32,7 @@
         }
         
         // 注意最後是否需要進位
-        // Time: O(max(l1,l2)), Space: 
+        // Time: O(max(l1,l2))
+        // Space: 
     }
 }

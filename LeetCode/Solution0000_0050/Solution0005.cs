@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Solution0000_0050
 {
     public class Solution0005
     {
@@ -64,8 +64,21 @@
         }
         
         // 暴力法
-        // Time: O(n^3), Space: O(1)
+        // 一共有 n(n-1)/2 個子字串, 每個子字串比較需要 O(n)
+        // Time: O(n^3)
+        // Space: O(1)
         
+        //------------------------
         
+        // 動態規劃
+        // 判斷 s[i, j] 是不是 palindrome 可以拆解成
+        //  - s[i+1, j-1]
+        //  - s[i] == s[j]
+        
+        // 基本情況
+        // P[i,i] = true
+        // P[i,i+1] = s[i] == s[i+1]
+        // Time: O(n^2)
+        // Space: O(n)
     }
 }

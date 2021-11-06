@@ -1,25 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace LeetCode.Properties
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0015
     {
         public IList<IList<int>> ThreeSum(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
-            
-            for (var i = 0; i < nums.Length; i++)
-            {
-                for (var j = i + 1; j < nums.Length; j++)
-                {
-                    if (nums[i] > nums[j])
-                    {
-                        Swap(nums,
-                            i,
-                            j);
-                    }
-                }
-            }
+
+            Array.Sort(nums);
 
             var target = 0;
             for (var i = 0; i < nums.Length - 2; i++)
@@ -64,14 +54,18 @@ namespace LeetCode.Properties
 
             return result;
         }
-
-        private void Swap(int[] nums,
-            int i,
-            int j)
-        {
-            var temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
+        
+        // 用暴力法
+        // Time: O(N^3)
+        // Space: O(1)
+        
+        //------------------------
+        
+        // 用 two pointer
+        // 先做排序
+        // 再輪詢每個元素, 再用兩個指標, 分別從該次元素的下一個位置(left), 和從陣列尾端(right)
+        // 如果三者的和比較小, 將 left + 1, 反之將 right - 1
+        // Time: O(log) + O(N^2) = O(N^2) 
+        // Space: O(1)
     }
 }

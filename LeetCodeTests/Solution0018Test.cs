@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
 using LeetCode;
-using LeetCode.Properties;
 using NUnit.Framework;
 
 namespace LeetCodeTests

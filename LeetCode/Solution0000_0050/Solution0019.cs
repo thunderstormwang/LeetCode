@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode
+﻿namespace LeetCode.Solution0000_0050
 {
     public class Solution0019
     {
@@ -13,7 +11,7 @@ namespace LeetCode
             var slow = dummyNode;
 
             var index = 0;
-            while (index < n )
+            while (index < n)
             {
                 fast = fast.next;
                 index++;
@@ -29,5 +27,10 @@ namespace LeetCode
 
             return dummyNode.next;
         }
+        
+        // 這題考你能否找到在一次 traverse 就做完的解法
+        
+        // Time: O(N)
+        // Space: O(1)
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Solution0000_0050
 {
     public class Solution0024
     {
@@ -27,5 +27,8 @@
             temp.next = fast.next;
             fast.next = temp;
         }
+        
+        // Time: O(N)
+        // Space: O(1)
     }
 }

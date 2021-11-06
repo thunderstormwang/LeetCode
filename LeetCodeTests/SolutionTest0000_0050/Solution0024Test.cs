@@ -1,7 +1,8 @@
-﻿using LeetCode;
+﻿using FluentAssertions;
+using LeetCode.Solution0000_0050;
 using NUnit.Framework;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.SolutionTest0000_0050
 {
     [TestFixture]
     public class Solution0024Test
@@ -25,9 +26,9 @@ namespace LeetCodeTests
             var actual = solution.SwapPairs(list);
 
             var expectedListNode = Utility.BuildListNode(expected);
-            Assert.AreEqual(Utility.CheckListNode(actual,
-                    expectedListNode),
-                true);
+
+            Utility.CheckListNode(actual,
+                expectedListNode).Should().BeTrue();
         }
     }
 }

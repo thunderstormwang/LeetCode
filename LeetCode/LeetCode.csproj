@@ -58,11 +58,12 @@
     <Compile Include="Solution0000_0050\Solution0002.cs" />
     <Compile Include="Solution0000_0050\Solution0003.cs" />
     <Compile Include="Solution0000_0050\Solution0005.cs" />
+    <Compile Include="Solution0000_0050\Solution0006.cs" />
     <Compile Include="Solution0000_0050\Solution0007.cs" />
+    <Compile Include="Solution0000_0050\Solution0009.cs" />
     <Compile Include="Solution0000_0050\Solution0011.cs" />
     <Compile Include="Solution0000_0050\Solution0012.cs" />
-    <Compile Include="Solution0006.cs" />
-    <Compile Include="Solution0013.cs" />
+    <Compile Include="Solution0000_0050\Solution0013.cs" />
     <Compile Include="Solution0015.cs" />
     <Compile Include="Solution0016.cs" />
     <Compile Include="Solution0017.cs" />

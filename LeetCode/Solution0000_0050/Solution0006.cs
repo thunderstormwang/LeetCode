@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
+﻿using System.Text;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0006
     {
@@ -26,11 +24,11 @@ namespace LeetCode
             indexArr[numRows - 1] = new int[1];
             indexArr[numRows - 1][0] = numRows - 1;
 
-            for (int i = 1; i <= numRows - 2; i++)
+            for (var i = 1; i <= numRows - 2; i++)
             {
                 indexArr[i] = new int[2];
-                indexArr[i][0] = indexArr[i - 1][0] + 1;
-                indexArr[i][1] = (2 * (numRows-1)) - indexArr[i][0];
+                indexArr[i][0] = i;
+                indexArr[i][1] = cycle - i;
             }
 
             for (var i = 0; i < numRows; i++)
@@ -51,5 +49,8 @@ namespace LeetCode
 
             return result.ToString();
         }
+        
+        // Time: O(n)
+        // Space: O(n)
     }
 }

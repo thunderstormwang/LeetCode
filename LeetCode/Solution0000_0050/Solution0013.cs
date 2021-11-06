@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Solution0000_0050
 {
     public class Solution0013
     {
@@ -6,22 +6,26 @@
         {
             var result = 0;
 
+            var curr = GetNumber(s[0]);
             for (var i = 0; i < s.Length - 1; i++)
             {
-                var left = GetNumber(s[i]);
-                var right = GetNumber(s[i + 1]);
+                var next = GetNumber(s[i + 1]);
 
-                if (left < right)
+                if (curr < next)
                 {
-                    result -= left;
+                    result -= curr;
                 }
                 else
                 {
-                    result += left;
+                    result += curr;
                 }
+
+                curr = next;
             }
 
-            return result + GetNumber(s[s.Length - 1]);
+            result += GetNumber(s[s.Length - 1]);
+
+            return result;
         }
 
         private int GetNumber(char c)
@@ -53,5 +57,8 @@
                     return 0;
             }
         }
+        
+        // Time: O(N)
+        // Space: O(1)
     }
 }

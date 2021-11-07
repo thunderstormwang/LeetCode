@@ -67,12 +67,12 @@
     <Compile Include="Solution0000_0050\Solution0014.cs" />
     <Compile Include="Solution0000_0050\Solution0015.cs" />
     <Compile Include="Solution0000_0050\Solution0016.cs" />
+    <Compile Include="Solution0000_0050\Solution0017.cs" />
+    <Compile Include="Solution0000_0050\Solution0018.cs" />
     <Compile Include="Solution0000_0050\Solution0019.cs" />
     <Compile Include="Solution0000_0050\Solution0020.cs" />
     <Compile Include="Solution0000_0050\Solution0022.cs" />
     <Compile Include="Solution0000_0050\Solution0024.cs" />
-    <Compile Include="Solution0017.cs" />
-    <Compile Include="Solution0018.cs" />
     <Compile Include="Solution0039.cs" />
     <Compile Include="Solution0042.cs" />
     <Compile Include="Solution0043.cs" />

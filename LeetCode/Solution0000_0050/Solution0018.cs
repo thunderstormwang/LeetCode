@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0018
     {
@@ -9,19 +9,8 @@ namespace LeetCode
             int target)
         {
             IList<IList<int>> result = new List<IList<int>>();
-            
-            for (var i = 0; i < nums.Length; i++)
-            {
-                for (var j = i + 1; j < nums.Length; j++)
-                {
-                    if (nums[i] > nums[j])
-                    {
-                        Swap(nums,
-                            i,
-                            j);
-                    }
-                }
-            }
+
+            Array.Sort(nums);
 
             var k = 4;
             return FindKSum(nums,
@@ -36,7 +25,7 @@ namespace LeetCode
             int start)
         {
             IList<IList<int>> result = new List<IList<int>>();
-            
+
             if (k == 2)
             {
                 return FindTwoSum(nums,
@@ -106,14 +95,14 @@ namespace LeetCode
 
             return result;
         }
-
-        private void Swap(int[] nums,
-            int i,
-            int j)
-        {
-            var temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
+        
+        // 排序 O(log(n))
+        // 尋找
+        //   當 k = 3, 複雜度 = O(N^2)
+        //   當 k = 4, (n^2 + ... + 1) * n / 2, 所以複雜度為 O(N^3)
+        //   由此推算, O(N^(k-1))
+        
+        // Time: O(log(N)) + O(N^3)
+        // Space: O(N)
     }
 }

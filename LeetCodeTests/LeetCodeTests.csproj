@@ -74,8 +74,6 @@
   <ItemGroup>
     <Compile Include="NullableHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solution0017Test.cs" />
-    <Compile Include="Solution0018Test.cs" />
     <Compile Include="Solution0039Test.cs" />
     <Compile Include="Solution0042Test.cs" />
     <Compile Include="Solution0043Test.cs" />
@@ -162,6 +160,8 @@
     <Compile Include="SolutionTest0000_0050\Solution0014Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0015Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0016Test.cs" />
+    <Compile Include="SolutionTest0000_0050\Solution0017Test.cs" />
+    <Compile Include="SolutionTest0000_0050\Solution0018Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0019Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0020Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0022Test.cs" />

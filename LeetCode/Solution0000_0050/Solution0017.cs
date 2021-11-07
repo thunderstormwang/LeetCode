@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0017
     {
@@ -47,44 +48,49 @@ namespace LeetCode
 
         public IList<string> LetterCombinations_Recursive(string digits)
         {
-            return FindCombinations(digits,
-                0);
+            var result = new List<string>();
+            if (digits.Length == 0)
+            {
+                return result;
+            }
+            
+            FindCombinations(digits,
+                0,
+                new StringBuilder(),
+                result);
+
+            return result;
+        }
+
+        private void FindCombinations(string digits,
+            int index,
+            StringBuilder strBuilder,
+            IList<string> result)
+        {
+            if (index == digits.Length)
+            {
+                result.Add(strBuilder.ToString());
+                return;
+            }
+
+            var currentStr = _letterArray[FindIndex(digits[index].ToString())];
+
+            foreach (var item in currentStr)
+            {
+                strBuilder.Append(item);
+                FindCombinations(digits,
+                    index + 1,
+                    strBuilder,
+                    result);
+
+                strBuilder.Remove(strBuilder.Length - 1,
+                    1);
+            }
         }
 
         private int FindIndex(string input)
         {
             return int.Parse(input) - 2;
-        }
-
-        private IList<string> FindCombinations(string digits,
-            int index)
-        {
-            if (digits.Length == 0)
-            {
-                return new List<string>();
-            }
-
-            if (index == digits.Length - 1)
-            {
-                return new List<string>(_letterArray[FindIndex(digits[index].ToString())]);
-            }
-
-            var result = new List<string>();
-            var preResult = FindCombinations(digits,
-                index + 1);
-            var currentStr = _letterArray[FindIndex(digits[index].ToString())];
-
-            foreach (var item in currentStr)
-            {
-                foreach (var preItem in preResult)
-                {
-                    var temp = preItem.Insert(0,
-                        item);
-                    result.Add(temp);
-                }
-            }
-
-            return result;
         }
     }
 }

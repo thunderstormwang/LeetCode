@@ -74,7 +74,6 @@
   <ItemGroup>
     <Compile Include="NullableHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solution0039Test.cs" />
     <Compile Include="Solution0042Test.cs" />
     <Compile Include="Solution0043Test.cs" />
     <Compile Include="Solution0045Test.cs" />
@@ -85,9 +84,7 @@
     <Compile Include="Solution0090Test.cs" />
     <Compile Include="Solution0229Test.cs" />
     <Compile Include="Solution0029Test.cs" />
-    <Compile Include="Solution0031Test.cs" />
     <Compile Include="Solution0034Test.cs" />
-    <Compile Include="Solution0036Test.cs" />
     <Compile Include="Solution0046Test.cs" />
     <Compile Include="Solution0047Test.cs" />
     <Compile Include="Solution0048Test.cs" />
@@ -110,7 +107,6 @@
     <Compile Include="Solution0125Test.cs" />
     <Compile Include="Solution0128Test.cs" />
     <Compile Include="Solution0268Test.cs" />
-    <Compile Include="Solution0040Test.cs" />
     <Compile Include="Solution0491Test.cs" />
     <Compile Include="Solution0593Test.cs" />
     <Compile Include="Solution0885Test.cs" />
@@ -168,6 +164,10 @@
     <Compile Include="SolutionTest0000_0050\Solution0026Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0027Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0028Test.cs" />
+    <Compile Include="SolutionTest0000_0050\Solution0031Test.cs" />
+    <Compile Include="SolutionTest0000_0050\Solution0036Test.cs" />
+    <Compile Include="SolutionTest0000_0050\Solution0039Test.cs" />
+    <Compile Include="SolutionTest0000_0050\Solution0040Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

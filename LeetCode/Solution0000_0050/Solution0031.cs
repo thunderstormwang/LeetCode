@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Solution0000_0050
 {
     public class Solution0031
     {
@@ -43,5 +43,13 @@
                 endIndex--;
             }
         }
+        
+        // 用暴力法
+        // Time: O(N!)
+        // Space: O(N)
+        
+        // 官方解法
+        // Time: O(N)
+        // Space: O(1)
     }
 }

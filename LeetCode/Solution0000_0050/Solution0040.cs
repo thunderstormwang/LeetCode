@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0040
     {
@@ -52,5 +52,11 @@ namespace LeetCode
                 curr.Remove(candidates[i]);
             }
         }
+
+        // 因為陣列每個元素不是唯一, 在每次遞迴中要注意不能挑到相同的元素, 不然會計算出相同組合
+        // ex: 2, 2, 2, 5, target = 7
+
+        // Time: O(2^N)
+        // Space: O(N)
     }
 }

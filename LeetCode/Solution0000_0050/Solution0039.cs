@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using FluentAssertions;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0039
     {
@@ -47,5 +45,7 @@ namespace LeetCode
                 curr.Remove(candidates[i]);
             }
         }
+        
+        // 因為陣列每個元素都是唯一, 在每次遞迴中不用擔心在 i 和 i+1 挑到相同元素而計算出相同組合  
     }
 }

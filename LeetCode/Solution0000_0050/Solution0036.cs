@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeetCode
+namespace LeetCode.Solution0000_0050
 {
     public class Solution0036
     {
@@ -56,5 +56,8 @@ namespace LeetCode
 
             return true;
         }
+        
+        // Time: O(1)
+        // Space: O(1)
     }
 }

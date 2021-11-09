@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using LeetCode;
+using LeetCode.Solution0051_0100;
 using NUnit.Framework;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.SolutionTest0050_0100
 {
     [TestFixture]
     public class Solution0055Test
@@ -13,6 +13,8 @@ namespace LeetCodeTests
             false)]
         [TestCase(new int[] { 0, 0, 4 },
             false)]
+        [TestCase(new int[] { 0 },
+            true)]
         public void CanJump(int[] nums,
             bool expected)
         {

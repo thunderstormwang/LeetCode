@@ -83,11 +83,14 @@
     <Compile Include="Solution0042.cs" />
     <Compile Include="Solution0043.cs" />
     <Compile Include="Solution0045.cs" />
+    <Compile Include="Solution0051_0100\Solution0051.cs" />
+    <Compile Include="Solution0051_0100\Solution0052.cs" />
     <Compile Include="Solution0054.cs" />
     <Compile Include="Solution0055.cs" />
     <Compile Include="Solution0059.cs" />
     <Compile Include="Solution0078.cs" />
     <Compile Include="Solution0090.cs" />
+    <Compile Include="Solution0200_9999\Solution0279.cs" />
     <Compile Include="Solution0229.cs" />
     <Compile Include="Solution0029.cs" />
     <Compile Include="Solution0034.cs" />
@@ -146,7 +149,6 @@
     <Compile Include="Solution0219.cs" />
     <Compile Include="Solution0220.cs" />
     <Compile Include="Solution0260.cs" />
-    <Compile Include="Solution0279.cs" />
     <Compile Include="Solution0445.cs" />
     <Compile Include="Solution0092.cs" />
     <Compile Include="TreeNode.cs" />

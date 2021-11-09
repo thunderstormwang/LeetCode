@@ -140,7 +140,6 @@
     <Compile Include="Solution0219Test.cs" />
     <Compile Include="Solution0220Test.cs" />
     <Compile Include="Solution0260Test.cs" />
-    <Compile Include="Solution0279Test.cs" />
     <Compile Include="Solution0445Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0001Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0002Test.cs" />
@@ -168,6 +167,9 @@
     <Compile Include="SolutionTest0000_0050\Solution0036Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0039Test.cs" />
     <Compile Include="SolutionTest0000_0050\Solution0040Test.cs" />
+    <Compile Include="SolutionTest0050_0100\Solution0051Test.cs" />
+    <Compile Include="SolutionTest0050_0100\Solution0052Test.cs" />
+    <Compile Include="SolutionTest0200_9999\Solution0279Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

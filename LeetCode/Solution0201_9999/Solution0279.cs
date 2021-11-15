@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LeetCode.Solution0200_9999
+namespace LeetCode.Solution0201_9999
 {
     public class Solution0279
     {

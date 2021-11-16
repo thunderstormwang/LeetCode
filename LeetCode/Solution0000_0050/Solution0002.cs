@@ -11,24 +11,24 @@
 
             while (l1 != null || l2 != null)
             {
-                var x = l1?.val ?? 0;
-                var y = l2?.val ?? 0;
+                var x = l1?.Val ?? 0;
+                var y = l2?.Val ?? 0;
 
                 var sum = x + y + carry;
-                temp.next = new ListNode(sum % 10);
+                temp.Next = new ListNode(sum % 10);
                 carry = sum / 10;
-                temp = temp.next;
+                temp = temp.Next;
 
-                l1 = l1 != null ? l1.next : l1;
-                l2 = l2 != null ? l2.next : l2;
+                l1 = l1 != null ? l1.Next : l1;
+                l2 = l2 != null ? l2.Next : l2;
             }
 
             if (carry > 0)
             {
-                temp.next = new ListNode(1);
+                temp.Next = new ListNode(1);
             }
 
-            return dummyNode.next;
+            return dummyNode.Next;
         }
         
         // 注意最後是否需要進位

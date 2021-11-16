@@ -7,10 +7,10 @@
             var slow = head;
             var fast = head;
 
-            while (fast != null && fast.next != null)
+            while (fast != null && fast.Next != null)
             {
-                slow = slow.next;
-                fast = fast.next.next;
+                slow = slow.Next;
+                fast = fast.Next.Next;
 
                 if (slow == fast)
                 {

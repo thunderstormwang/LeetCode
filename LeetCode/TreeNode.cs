@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class TreeNode
     {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
+        public readonly int Val;
+        public TreeNode Left;
+        public TreeNode Right;
 
         public TreeNode(int x)
         {
-            val = x;
+            Val = x;
         }
     }
 }

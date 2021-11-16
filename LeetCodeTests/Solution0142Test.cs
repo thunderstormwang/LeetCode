@@ -62,7 +62,7 @@ namespace LeetCodeTests
             {
                 var temp = result;
                 result = new ListNode(input[i]);
-                result.next = temp;
+                result.Next = temp;
 
                 if (tail == null)
                 {
@@ -71,7 +71,7 @@ namespace LeetCodeTests
 
                 if (i == pos)
                 {
-                    tail.next = result;
+                    tail.Next = result;
                     cycleStart = result;
                 }
             }

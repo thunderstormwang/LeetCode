@@ -11,7 +11,7 @@ namespace LeetCode
                 return true;
             }
 
-            return IsSymmetric(root.left, root.right);
+            return IsSymmetric(root.Left, root.Right);
         }
 
         private bool IsSymmetric(TreeNode left, TreeNode right)
@@ -24,13 +24,13 @@ namespace LeetCode
             {
                 return false;
             }
-            else if (left.val != right.val)
+            else if (left.Val != right.Val)
             {
                 return false;
             }
             else
             {
-                return IsSymmetric(left.left, right.right) && IsSymmetric(left.right, right.left);
+                return IsSymmetric(left.Left, right.Right) && IsSymmetric(left.Right, right.Left);
             }
         }
 
@@ -42,8 +42,8 @@ namespace LeetCode
             }
 
             Stack<TreeNode> stack = new Stack<TreeNode>();
-            stack.Push(root.left);
-            stack.Push(root.right);
+            stack.Push(root.Left);
+            stack.Push(root.Right);
             while (stack.Count > 0)
             {
                 TreeNode right = stack.Pop();
@@ -56,16 +56,16 @@ namespace LeetCode
                 {
                     return false;
                 }
-                else if (left.val != right.val)
+                else if (left.Val != right.Val)
                 {
                     return false;
                 }
                 else
                 {
-                    stack.Push(left.left);
-                    stack.Push(right.right);
-                    stack.Push(left.right);
-                    stack.Push(right.left);
+                    stack.Push(left.Left);
+                    stack.Push(right.Right);
+                    stack.Push(left.Right);
+                    stack.Push(right.Left);
                 }
             }
 

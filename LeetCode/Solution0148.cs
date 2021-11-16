@@ -12,7 +12,7 @@ namespace LeetCode
 
         private ListNode MergeSort(ListNode head)
         {
-            if (head == null || head.next == null)
+            if (head == null || head.Next == null)
             {
                 return head;
             }
@@ -29,17 +29,17 @@ namespace LeetCode
         private ListNode GetMiddle(ListNode head)
         {
             var dummyNode = new ListNode(0);
-            dummyNode.next = head;
+            dummyNode.Next = head;
             var slow = dummyNode;
             var fast = dummyNode;
-            while (fast.next != null && fast.next.next != null)
+            while (fast.Next != null && fast.Next.Next != null)
             {
-                slow = slow.next;
-                fast = fast.next.next;
+                slow = slow.Next;
+                fast = fast.Next.Next;
             }
 
-            var result = slow.next;
-            slow.next = null;
+            var result = slow.Next;
+            slow.Next = null;
             return result;
         }
 
@@ -50,31 +50,31 @@ namespace LeetCode
             var curr = dummyNode;
             while (head1 != null && head2 != null)
             {
-                if (head1.val < head2.val)
+                if (head1.Val < head2.Val)
                 {
-                    curr.next = head1;
-                    head1 = head1.next;
+                    curr.Next = head1;
+                    head1 = head1.Next;
                 }
                 else
                 {
-                    curr.next = head2;
-                    head2 = head2.next;
+                    curr.Next = head2;
+                    head2 = head2.Next;
                 }
 
-                curr = curr.next;
+                curr = curr.Next;
             }
 
             if (head1 != null)
             {
-                curr.next = head1;
+                curr.Next = head1;
             }
 
             if (head2 != null)
             {
-                curr.next = head2;
+                curr.Next = head2;
             }
 
-            return dummyNode.next;
+            return dummyNode.Next;
         }
     }
 }

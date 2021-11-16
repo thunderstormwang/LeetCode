@@ -25,13 +25,13 @@ namespace LeetCode.Solution0101_0200
 
             if (result.Count < depth)
             {
-                result.Add(root.val);
+                result.Add(root.Val);
             }
 
-            DepthFirstSearch(root.right,
+            DepthFirstSearch(root.Right,
                 depth + 1,
                 result);
-            DepthFirstSearch(root.left,
+            DepthFirstSearch(root.Left,
                 depth + 1,
                 result);
         }

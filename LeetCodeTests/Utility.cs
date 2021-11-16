@@ -14,9 +14,9 @@ namespace LeetCodeTests
 
             var root = new TreeNode(input[i].Value);
 
-            root.left = BuildTree(input,
+            root.Left = BuildTree(input,
                 2 * i + 1);
-            root.right = BuildTree(input,
+            root.Right = BuildTree(input,
                 2 * i + 2);
 
             return root;
@@ -35,7 +35,7 @@ namespace LeetCodeTests
             for (int i = 1; i < array.Length; i++)
             {
                 var temp = new ListNode(array[i]);
-                node.next = temp;
+                node.Next = temp;
                 node = temp;
             }
 
@@ -47,16 +47,16 @@ namespace LeetCodeTests
         {
             while (list1 != null || list2 != null)
             {
-                var x = list1 != null ? list1.val : -99;
-                var y = list2 != null ? list2.val : -99;
+                var x = list1 != null ? list1.Val : -99;
+                var y = list2 != null ? list2.Val : -99;
 
                 if (x != y)
                 {
                     return false;
                 }
 
-                list1 = list1 != null ? list1.next : list1;
-                list2 = list2 != null ? list2.next : list2;
+                list1 = list1 != null ? list1.Next : list1;
+                list2 = list2 != null ? list2.Next : list2;
             }
 
             return true;

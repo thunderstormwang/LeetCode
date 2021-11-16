@@ -29,10 +29,10 @@ namespace LeetCode
                 list.Add(new List<int>());
             }
 
-            list = Depth(root.left, list, depth + 1);
-            list = Depth(root.right, list, depth + 1);
+            list = Depth(root.Left, list, depth + 1);
+            list = Depth(root.Right, list, depth + 1);
 
-            list[depth - 1].Add(root.val);
+            list[depth - 1].Add(root.Val);
 
             return list;
         }

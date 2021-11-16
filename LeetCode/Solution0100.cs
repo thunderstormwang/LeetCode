@@ -13,7 +13,7 @@
                 return false;
             }
 
-            return p.val == q.val && IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
+            return p.Val == q.Val && IsSameTree(p.Left, q.Left) && IsSameTree(p.Right, q.Right);
         }
     }
 }

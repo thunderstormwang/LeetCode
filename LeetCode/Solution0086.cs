@@ -15,25 +15,25 @@ namespace LeetCode
             var temp = head;
             while (temp != null)
             {
-                if (temp.val < x)
+                if (temp.Val < x)
                 {
-                    var tempNode = new ListNode(temp.val);
-                    currBefore.next = tempNode;
-                    currBefore = currBefore.next;
+                    var tempNode = new ListNode(temp.Val);
+                    currBefore.Next = tempNode;
+                    currBefore = currBefore.Next;
                 }
                 else
                 {
-                    var tempNode = new ListNode(temp.val);
-                    currAfter.next = tempNode;
-                    currAfter = currAfter.next;
+                    var tempNode = new ListNode(temp.Val);
+                    currAfter.Next = tempNode;
+                    currAfter = currAfter.Next;
                 }
 
-                temp = temp.next;
+                temp = temp.Next;
             }
 
-            currBefore.next = dummyNodeAfter.next;
+            currBefore.Next = dummyNodeAfter.Next;
 
-            return dummyNodeBefore.next;
+            return dummyNodeBefore.Next;
         }
     }
 }

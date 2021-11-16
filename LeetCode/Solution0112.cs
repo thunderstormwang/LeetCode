@@ -19,17 +19,17 @@
                 return sum == 0;
             }
 
-            if (root.left != null && root.right != null)
+            if (root.Left != null && root.Right != null)
             {
-                return RecursivePathSum(root.left, sum - root.val) || RecursivePathSum(root.right, sum - root.val);
+                return RecursivePathSum(root.Left, sum - root.Val) || RecursivePathSum(root.Right, sum - root.Val);
             }
-            else if (root.left == null && root.right != null)
+            else if (root.Left == null && root.Right != null)
             {
-                return RecursivePathSum(root.right, sum - root.val);
+                return RecursivePathSum(root.Right, sum - root.Val);
             }
             else
             {
-                return RecursivePathSum(root.left, sum - root.val);
+                return RecursivePathSum(root.Left, sum - root.Val);
             }
         }
     }

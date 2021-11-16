@@ -29,8 +29,8 @@ namespace LeetCode
             int rightDepth;
             bool rightResult;
 
-            leftResult = Depth(root.left, out leftDepth);
-            rightResult = Depth(root.right, out rightDepth);
+            leftResult = Depth(root.Left, out leftDepth);
+            rightResult = Depth(root.Right, out rightDepth);
             depth = Math.Max(leftDepth, rightDepth) + 1;
 
             if (leftResult && rightResult && Math.Abs(leftDepth - rightDepth) <= 1)

@@ -9,25 +9,25 @@ namespace LeetCode
             int right)
         {
             var dummyNode = new ListNode(0);
-            dummyNode.next = head;
+            dummyNode.Next = head;
 
             var leftPreNode = FindNodeByPosition(dummyNode,
                 left - 1);
-            var leftNode = leftPreNode.next;
+            var leftNode = leftPreNode.Next;
 
             var rightNode = FindNodeByPosition(dummyNode,
                 right);
-            var rightNextNode = rightNode.next;
+            var rightNextNode = rightNode.Next;
 
-            leftPreNode.next = null;
-            rightNode.next = null;
+            leftPreNode.Next = null;
+            rightNode.Next = null;
 
             var reverse = ReverseList(leftNode);
 
-            leftPreNode.next = reverse;
-            leftNode.next = rightNextNode;
+            leftPreNode.Next = reverse;
+            leftNode.Next = rightNextNode;
 
-            return dummyNode.next;
+            return dummyNode.Next;
         }
 
         private ListNode FindNodeByPosition(ListNode head,
@@ -38,7 +38,7 @@ namespace LeetCode
             while (count < position)
             {
                 count++;
-                result = result.next;
+                result = result.Next;
             }
 
             return result;
@@ -49,8 +49,8 @@ namespace LeetCode
             ListNode result = null;
             while (head != null)
             {
-                var temp = head.next;
-                head.next = result;
+                var temp = head.Next;
+                head.Next = result;
                 result = head;
                 head = temp;
             }

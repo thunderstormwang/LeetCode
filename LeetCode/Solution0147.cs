@@ -9,21 +9,21 @@
             while (head != null)
             {
                 var pre = dummyNode;
-                var curr = dummyNode.next;
+                var curr = dummyNode.Next;
 
-                while (curr != null && curr.val < head.val)
+                while (curr != null && curr.Val < head.Val)
                 {
-                    curr = curr.next;
-                    pre = pre.next;
+                    curr = curr.Next;
+                    pre = pre.Next;
                 }
 
-                var temp = head.next;
-                pre.next = head;
-                head.next = curr;
+                var temp = head.Next;
+                pre.Next = head;
+                head.Next = curr;
                 head = temp;
             }
 
-            return dummyNode.next;
+            return dummyNode.Next;
         }
     }
 }

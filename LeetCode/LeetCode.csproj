@@ -93,6 +93,7 @@
     <Compile Include="Solution0090.cs" />
     <Compile Include="Solution0101_0200\Solution0199.cs" />
     <Compile Include="Solution0201_9999\Solution0279.cs" />
+    <Compile Include="Solution0201_9999\Solution1824.cs" />
     <Compile Include="Solution0229.cs" />
     <Compile Include="Solution0029.cs" />
     <Compile Include="Solution0034.cs" />

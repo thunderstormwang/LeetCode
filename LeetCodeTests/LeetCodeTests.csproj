@@ -170,6 +170,7 @@
     <Compile Include="SolutionTest0050_0100\Solution0055Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0199Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0279Test.cs" />
+    <Compile Include="SolutionTest0201_9999\Solution1824Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

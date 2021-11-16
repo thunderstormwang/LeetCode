@@ -7,36 +7,36 @@ namespace LeetCode
         public void ReorderList(ListNode head)
         {
             var dummyNode = new ListNode(0);
-            dummyNode.Next = head;
+            dummyNode.next = head;
 
             var secondHalf = CutHalf(dummyNode);
             secondHalf = ReverseNode(secondHalf);
 
-            var firstHalf = dummyNode.Next;
+            var firstHalf = dummyNode.next;
             var curr = dummyNode;
             while (firstHalf != null && secondHalf != null)
             {
-                curr.Next = firstHalf;
-                firstHalf = firstHalf.Next;
-                curr = curr.Next;
+                curr.next = firstHalf;
+                firstHalf = firstHalf.next;
+                curr = curr.next;
 
-                curr.Next = secondHalf;
-                secondHalf = secondHalf.Next;
-                curr = curr.Next;
+                curr.next = secondHalf;
+                secondHalf = secondHalf.next;
+                curr = curr.next;
             }
 
             while (firstHalf != null)
             {
-                curr.Next = firstHalf;
-                firstHalf = firstHalf.Next;
-                curr = curr.Next;
+                curr.next = firstHalf;
+                firstHalf = firstHalf.next;
+                curr = curr.next;
             }
 
             while (secondHalf != null)
             {
-                curr.Next = secondHalf;
-                secondHalf = secondHalf.Next;
-                curr = curr.Next;
+                curr.next = secondHalf;
+                secondHalf = secondHalf.next;
+                curr = curr.next;
             }
         }
 
@@ -44,14 +44,14 @@ namespace LeetCode
         {
             var fast = dummyNode;
             var slow = dummyNode;
-            while (fast.Next != null && fast.Next.Next != null)
+            while (fast.next != null && fast.next.next != null)
             {
-                slow = slow.Next;
-                fast = fast.Next.Next;
+                slow = slow.next;
+                fast = fast.next.next;
             }
 
-            var result = slow.Next;
-            slow.Next = null;
+            var result = slow.next;
+            slow.next = null;
             return result;
         }
 
@@ -61,8 +61,8 @@ namespace LeetCode
 
             while (head != null)
             {
-                var temp = head.Next;
-                head.Next = result;
+                var temp = head.next;
+                head.next = result;
                 result = head;
                 head = temp;
             }

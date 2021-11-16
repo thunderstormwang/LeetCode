@@ -34,17 +34,17 @@ namespace LeetCode.Solution0101_0200
 
                     if (i == queueSize - 1)
                     {
-                        result.Add(node.Val);
+                        result.Add(node.val);
                     }
 
-                    if (node.Left != null)
+                    if (node.left != null)
                     {
-                        queue.Enqueue(node.Left);
+                        queue.Enqueue(node.left);
                     }
 
-                    if (node.Right != null)
+                    if (node.right != null)
                     {
-                        queue.Enqueue(node.Right);
+                        queue.Enqueue(node.right);
                     }
                 }
 
@@ -65,13 +65,13 @@ namespace LeetCode.Solution0101_0200
 
             if (result.Count < depth)
             {
-                result.Add(root.Val);
+                result.Add(root.val);
             }
 
-            DepthFirstSearch(root.Right,
+            DepthFirstSearch(root.right,
                 depth + 1,
                 result);
-            DepthFirstSearch(root.Left,
+            DepthFirstSearch(root.left,
                 depth + 1,
                 result);
         }

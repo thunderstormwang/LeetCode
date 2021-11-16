@@ -2,13 +2,13 @@
 {
     public class TreeNode
     {
-        public readonly int Val;
-        public TreeNode Left;
-        public TreeNode Right;
+        public readonly int val;
+        public TreeNode left;
+        public TreeNode right;
 
         public TreeNode(int x)
         {
-            Val = x;
+            val = x;
         }
     }
 }

@@ -11,12 +11,12 @@
             }
             
             var dummyNode = new ListNode(0);
-            dummyNode.Next = head;
+            dummyNode.next = head;
             var listLength = 0;
             var temp = dummyNode;
-            while (temp.Next != null)
+            while (temp.next != null)
             {
-                temp = temp.Next;
+                temp = temp.next;
                 listLength++;
             }
 
@@ -30,20 +30,20 @@
             var fast = dummyNode;
             while (position < nthFromEnd)
             {
-                fast = fast.Next ?? head;
+                fast = fast.next ?? head;
                 position++;
             }
 
             var slow = dummyNode;
-            while (fast.Next != null)
+            while (fast.next != null)
             {
-                slow = slow.Next;
-                fast = fast.Next;
+                slow = slow.next;
+                fast = fast.next;
             }
 
-            fast.Next = head;
-            head = slow.Next;
-            slow.Next = null;
+            fast.next = head;
+            head = slow.next;
+            slow.next = null;
 
             return head;
         }

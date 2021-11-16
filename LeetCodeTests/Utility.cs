@@ -14,9 +14,9 @@ namespace LeetCodeTests
 
             var root = new TreeNode(input[i].Value);
 
-            root.Left = BuildTree(input,
+            root.left = BuildTree(input,
                 2 * i + 1);
-            root.Right = BuildTree(input,
+            root.right = BuildTree(input,
                 2 * i + 2);
 
             return root;
@@ -30,11 +30,11 @@ namespace LeetCodeTests
             foreach (var item in array)
             {
                 var temp = new ListNode(item);
-                node.Next = temp;
+                node.next = temp;
                 node = temp;
             }
 
-            return dummyNode.Next;
+            return dummyNode.next;
         }
 
         public static bool CheckListNode(ListNode list1,
@@ -42,16 +42,16 @@ namespace LeetCodeTests
         {
             while (list1 != null || list2 != null)
             {
-                var x = list1 != null ? list1.Val : -99;
-                var y = list2 != null ? list2.Val : -99;
+                var x = list1 != null ? list1.val : -99;
+                var y = list2 != null ? list2.val : -99;
 
                 if (x != y)
                 {
                     return false;
                 }
 
-                list1 = list1 != null ? list1.Next : list1;
-                list2 = list2 != null ? list2.Next : list2;
+                list1 = list1 != null ? list1.next : list1;
+                list2 = list2 != null ? list2.next : list2;
             }
 
             return true;

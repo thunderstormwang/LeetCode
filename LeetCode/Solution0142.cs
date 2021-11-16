@@ -9,14 +9,14 @@ namespace LeetCode
             // Floyd Cycle Detection Algorithm
 
             var dummyNode = new ListNode(0);
-            dummyNode.Next = head;
+            dummyNode.next = head;
             var fast = dummyNode;
             var slow = dummyNode;
 
-            while (fast != null && fast.Next != null)
+            while (fast != null && fast.next != null)
             {
-                fast = fast.Next.Next;
-                slow = slow.Next;
+                fast = fast.next.next;
+                slow = slow.next;
 
                 if (slow == fast)
                 {
@@ -32,8 +32,8 @@ namespace LeetCode
             fast = dummyNode;
             while (fast != slow)
             {
-                fast = fast.Next;
-                slow = slow.Next;
+                fast = fast.next;
+                slow = slow.next;
             }
 
             return slow;

@@ -6,26 +6,26 @@
             int n)
         {
             var dummyNode = new ListNode(0);
-            dummyNode.Next = head;
+            dummyNode.next = head;
             var fast = dummyNode;
             var slow = dummyNode;
 
             var index = 0;
             while (index < n)
             {
-                fast = fast.Next;
+                fast = fast.next;
                 index++;
             }
 
-            while (fast.Next != null)
+            while (fast.next != null)
             {
-                fast = fast.Next;
-                slow = slow.Next;
+                fast = fast.next;
+                slow = slow.next;
             }
 
-            slow.Next = slow.Next.Next;
+            slow.next = slow.next.next;
 
-            return dummyNode.Next;
+            return dummyNode.next;
         }
         
         // 這題考你能否找到在一次 traverse 就做完的解法

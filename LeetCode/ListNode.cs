@@ -2,13 +2,13 @@
 {
     public class ListNode
     {
-        public int Val;
-        public ListNode Next;
+        public readonly int val;
+        public ListNode next;
 
         public ListNode(int x)
         {
-            Val = x;
-            Next = null;
+            val = x;
+            next = null;
         }
     }
 }

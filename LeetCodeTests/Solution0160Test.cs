@@ -52,7 +52,7 @@ namespace LeetCodeTests
             {
                 var temp = result;
                 result = new ListNode(input[i]);
-                result.Next = temp;
+                result.next = temp;
             }
 
             return result;

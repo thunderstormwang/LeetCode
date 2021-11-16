@@ -5,27 +5,27 @@
         public ListNode SwapPairs(ListNode head)
         {
             var dummyNode = new ListNode(0);
-            dummyNode.Next = head;
+            dummyNode.next = head;
             var temp = dummyNode;
            
-            while (temp.Next != null && temp.Next.Next != null)
+            while (temp.next != null && temp.next.next != null)
             {
                 SwapNode(temp,
-                    temp.Next.Next);
+                    temp.next.next);
 
-                temp = temp.Next.Next;
+                temp = temp.next.next;
             }
 
-            return dummyNode.Next;
+            return dummyNode.next;
         }
 
         private void SwapNode(ListNode slow,
             ListNode fast)
         {
-            var temp = slow.Next;
-            slow.Next = fast;
-            temp.Next = fast.Next;
-            fast.Next = temp;
+            var temp = slow.next;
+            slow.next = fast;
+            temp.next = fast.next;
+            fast.next = temp;
         }
         
         // Time: O(N)

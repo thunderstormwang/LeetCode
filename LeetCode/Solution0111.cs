@@ -11,8 +11,8 @@ namespace LeetCode
                 return 0;
             }
 
-            var left = MinDepth(root.Left);
-            var right = MinDepth(root.Right);
+            var left = MinDepth(root.left);
+            var right = MinDepth(root.right);
 
             if (left + right == 0)
             {

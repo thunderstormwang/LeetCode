@@ -7,8 +7,8 @@
             ListNode result = null;
             while (head != null)
             {
-                var temp = head.Next;
-                head.Next = result;
+                var temp = head.next;
+                head.next = result;
                 result = head;
                 head = temp;
             }
@@ -31,17 +31,17 @@
         {
             ListNode tail = null;
             var currNode = head;
-            if (currNode.Next == null)
+            if (currNode.next == null)
             {
                 tail = head;
-                tail.Next = null;
+                tail.next = null;
                 return tail;
             }
 
-            head = head.Next;
+            head = head.next;
             tail = ReverseListByRecursive(ref head);
-            tail.Next = currNode;
-            currNode.Next = null;
+            tail.next = currNode;
+            currNode.next = null;
             return currNode;
         }
     }

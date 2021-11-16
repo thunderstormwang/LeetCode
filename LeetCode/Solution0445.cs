@@ -16,14 +16,14 @@ namespace LeetCode
 
             while (tempHead1 != null)
             {
-                stack1.Push(tempHead1.Val);
-                tempHead1 = tempHead1.Next;
+                stack1.Push(tempHead1.val);
+                tempHead1 = tempHead1.next;
             }
 
             while (tempHead2 != null)
             {
-                stack2.Push(tempHead2.Val);
-                tempHead2 = tempHead2.Next;
+                stack2.Push(tempHead2.val);
+                tempHead2 = tempHead2.next;
             }
 
             while (stack1.Count > 0 || stack2.Count > 0)
@@ -34,14 +34,14 @@ namespace LeetCode
                 var newValue = value1 + value2 + carry;
                 carry = newValue / 10;
                 var node = new ListNode(newValue % 10);
-                node.Next = result;
+                node.next = result;
                 result = node;
             }
 
             if (carry > 0) 
             {
                 var node = new ListNode(carry);
-                node.Next = result;
+                node.next = result;
                 result = node;
             }
 

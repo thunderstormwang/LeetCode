@@ -10,10 +10,10 @@ namespace LeetCode
             ListNode headB)
         {
             var dummyA = new ListNode(0);
-            dummyA.Next = headA;
+            dummyA.next = headA;
             
             var dummyB = new ListNode(0);
-            dummyB.Next = headB;
+            dummyB.next = headB;
             
             var traverseA = dummyA;
             var traverseB = dummyB;
@@ -21,46 +21,46 @@ namespace LeetCode
             var lengthA = 0;
             var lengthB = 0;
             
-            while (traverseA.Next != null )
+            while (traverseA.next != null )
             {
-                traverseA = traverseA.Next;
+                traverseA = traverseA.next;
                 lengthA++;
             }
             
-            while (traverseB.Next != null )
+            while (traverseB.next != null )
             {
-                traverseB = traverseB.Next;
+                traverseB = traverseB.next;
                 lengthB++;
             }
 
             if (lengthA > lengthB)
             {
                 var diff = 0;
-                traverseB = dummyA.Next;
+                traverseB = dummyA.next;
                 while (diff < Math.Abs(lengthA - lengthB))
                 {
-                    traverseB = traverseB.Next;
+                    traverseB = traverseB.next;
                     diff++;
                 }
 
-                traverseA = dummyB.Next;
+                traverseA = dummyB.next;
             }
             else if(lengthA < lengthB)
             {
                 var diff = 0;
-                traverseA = dummyB.Next;
+                traverseA = dummyB.next;
                 while (diff < Math.Abs(lengthA - lengthB))
                 {
-                    traverseA = traverseA.Next;
+                    traverseA = traverseA.next;
                     diff++;
                 }
                 
-                traverseB = dummyA.Next;
+                traverseB = dummyA.next;
             }
             else
             {
-                traverseA = dummyB.Next;
-                traverseB = dummyA.Next;
+                traverseA = dummyB.next;
+                traverseB = dummyA.next;
             }
 
             while (traverseA != null && traverseB != null)
@@ -70,8 +70,8 @@ namespace LeetCode
                     return traverseA;
                 }
 
-                traverseA = traverseA.Next;
-                traverseB = traverseB.Next;
+                traverseA = traverseA.next;
+                traverseB = traverseB.next;
             }
 
             return null;

@@ -9,21 +9,38 @@ namespace LeetCodeTests
     [TestFixture]
     public class Solution0100Test
     {
-        [TestCase( "1, 2, 3", "1, 2, 3", true)]
-        [TestCase("1, 2", "1, null ,2", false)]
-        [TestCase("1, 2, 1", "1, 1 ,2", false)]
-        public void IsSymmetricTest(string array1, string array2, bool expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void IsSymmetricTest(int?[] array1, int?[] array2, bool expected)
         {
-            var root1 = new TreeNode(0);
-            root1 = Utility.BuildTree(root1, Utility.Parse2Array(array1), 0);
-
-            var root2 = new TreeNode(0);
-            root2 = Utility.BuildTree(root2, Utility.Parse2Array(array2), 0);
+            var root1 = Utility.BuildTree( array1, 0);
+            var root2 = Utility.BuildTree( array2, 0);
 
             var solution = new Solution0100();
             var actual = solution.IsSameTree(root1, root2);
 
             actual.Should().Be(expected);
         }
+        
+        private static readonly object[] TestCases =
+        {
+            new object[]
+            {
+                new int?[] { 1, 2, 3 },
+                new int?[] { 1, 2, 3 },
+                true
+            },
+            new object[]
+            {
+                new int?[] { 1, 2 },
+                new int?[] { 1, null ,2 },
+                false
+            },
+            new object[]
+            {
+                new int?[] { 1, 2, 1 },
+                new int?[] { 1, 1 ,2 },
+                false
+            }
+        };
     }
 }

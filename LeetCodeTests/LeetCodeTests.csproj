@@ -72,7 +72,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="NullableHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution0042Test.cs" />
     <Compile Include="Solution0043Test.cs" />

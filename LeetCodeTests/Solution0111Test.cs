@@ -12,16 +12,24 @@ namespace LeetCodeTests
     [TestFixture]
     public class Solution0111Test
     {
-        [TestCase("3, 9, 20, null, null, 15, 7", 2)]
-        public void MinDepthTest(string array, int expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void MinDepthTest(int?[] array, int expected)
         {
-            var root = new TreeNode(0);
-            root = Utility.BuildTree(root, Utility.Parse2Array(array), 0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0111();
             var actual = solution.MinDepth(root);
 
             actual.Should().Be(expected);
         }
+        
+        private static readonly object[] TestCases =
+        {
+            new object[]
+            {
+                new int?[] { 3, 9, 20, null, null, 15, 7 },
+                2
+            }
+        };
     }
 }

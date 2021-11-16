@@ -12,7 +12,7 @@ namespace LeetCodeTests.SolutionTest0101_0200
         public void RightSideView(int?[] array,
             int[] expected)
         {
-            var root = Utility.BuildTreeV2(array,
+            var root = Utility.BuildTree(array,
                 0);
 
             var solution = new Solution0199();

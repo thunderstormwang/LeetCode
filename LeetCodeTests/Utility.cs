@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using LeetCode;
+﻿using LeetCode;
 
 namespace LeetCodeTests
 {
     public class Utility
     {
-        public static TreeNode BuildTreeV2(int?[] input,
+        public static TreeNode BuildTree(int?[] input,
             int i)
         {
             if (i >= input.Length || input[i] == null)
@@ -15,38 +14,12 @@ namespace LeetCodeTests
 
             var root = new TreeNode(input[i].Value);
 
-            root.left = BuildTreeV2(input,
+            root.left = BuildTree(input,
                 2 * i + 1);
-            root.right = BuildTreeV2(input,
+            root.right = BuildTree(input,
                 2 * i + 2);
 
             return root;
-        }
-
-        public static TreeNode BuildTree(TreeNode root,
-            int?[] input,
-            int i)
-        {
-            if (i < input.Length && input[i] != null)
-            {
-                root = new TreeNode(input[i].Value);
-
-                root.left = BuildTree(root.left,
-                    input,
-                    2 * i + 1);
-                root.right = BuildTree(root.right,
-                    input,
-                    2 * i + 2);
-            }
-
-            return root;
-        }
-
-        public static int?[] Parse2Array(string array)
-        {
-            return array.Split(',')
-                .Select(x => x.TryParse())
-                .ToArray();
         }
 
         public static ListNode BuildListNode(int[] array)

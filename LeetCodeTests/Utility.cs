@@ -24,22 +24,17 @@ namespace LeetCodeTests
 
         public static ListNode BuildListNode(int[] array)
         {
-            if (array.Length == 0)
-            {
-                return null;
-            }
+            var dummyNode = new ListNode(0);
+            var node = dummyNode;
 
-            var head = new ListNode(array[0]);
-            var node = head;
-
-            for (int i = 1; i < array.Length; i++)
+            foreach (var item in array)
             {
-                var temp = new ListNode(array[i]);
+                var temp = new ListNode(item);
                 node.Next = temp;
                 node = temp;
             }
 
-            return head;
+            return dummyNode.Next;
         }
 
         public static bool CheckListNode(ListNode list1,

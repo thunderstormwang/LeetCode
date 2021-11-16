@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace LeetCode.Solution0101_0200
 {
@@ -22,29 +20,35 @@ namespace LeetCode.Solution0101_0200
             {
                 return new List<int>();
             }
-            
+
             var result = new List<int>();
             var queue = new Queue<TreeNode>();
 
             queue.Enqueue(root);
-            while (queue.Count != 0)
+            var queueSize = queue.Count;
+            while (queueSize != 0)
             {
-                var array = queue.ToArray();
-                queue.Clear();
-                result.Add(array[array.Length - 1].Val);
-
-                foreach (var item in array)
+                for (var i = 0; i < queueSize; i++)
                 {
-                    if (item.Left != null)
+                    var node = queue.Dequeue();
+
+                    if (i == queueSize - 1)
                     {
-                        queue.Enqueue(item.Left);
+                        result.Add(node.Val);
                     }
-                    
-                    if (item.Right != null)
+
+                    if (node.Left != null)
                     {
-                        queue.Enqueue(item.Right);
+                        queue.Enqueue(node.Left);
+                    }
+
+                    if (node.Right != null)
+                    {
+                        queue.Enqueue(node.Right);
                     }
                 }
+
+                queueSize = queue.Count;
             }
 
             return result;
@@ -72,6 +76,13 @@ namespace LeetCode.Solution0101_0200
                 result);
         }
 
+        // DFS
+        // Time: O(N)
+        // Space: O(N)
+
+        // ======
+
+        // BFS
         // Time: O(N)
         // Space: O(N)
     }

@@ -1,18 +1,28 @@
 ﻿using FluentAssertions;
-using LeetCode;
+using LeetCode.Solution0051_0100;
 using NUnit.Framework;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.SolutionTest0050_0100
 {
     [TestFixture]
     public class Solution0054Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void SpiralOrderTest(int[][] input,
+        public void SpiralOrderTest_Version1(int[][] input,
             int[] expected)
         {
             var solution = new Solution0054();
-            var actual = solution.SpiralOrder(input);
+            var actual = solution.SpiralOrder_Version1(input);
+
+            actual.Should().BeEquivalentTo(expected);
+        }
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void SpiralOrderTest_Version2(int[][] input,
+            int[] expected)
+        {
+            var solution = new Solution0054();
+            var actual = solution.SpiralOrder_Version2(input);
 
             actual.Should().BeEquivalentTo(expected);
         }

@@ -1,17 +1,26 @@
 ﻿using FluentAssertions;
-using LeetCode;
+using LeetCode.Solution0051_0100;
 using NUnit.Framework;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.SolutionTest0050_0100
 {
     [TestFixture]
     public class Solution0059Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void GenerateMatrix(int n, int [][] expected)
+        public void GenerateMatrix_Version1(int n, int [][] expected)
         {
             var solution = new Solution0059();
-            var actual = solution.GenerateMatrix(n);
+            var actual = solution.GenerateMatrix_Version1(n);
+
+            actual.Should().BeEquivalentTo(expected);
+        }
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void GenerateMatrix_Version2(int n, int [][] expected)
+        {
+            var solution = new Solution0059();
+            var actual = solution.GenerateMatrix_Version2(n);
 
             actual.Should().BeEquivalentTo(expected);
         }

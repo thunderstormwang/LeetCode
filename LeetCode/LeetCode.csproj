@@ -86,10 +86,10 @@
     <Compile Include="Solution0051_0100\Solution0051.cs" />
     <Compile Include="Solution0051_0100\Solution0052.cs" />
     <Compile Include="Solution0051_0100\Solution0053.cs" />
+    <Compile Include="Solution0051_0100\Solution0054.cs" />
     <Compile Include="Solution0051_0100\Solution0055.cs" />
+    <Compile Include="Solution0051_0100\Solution0059.cs" />
     <Compile Include="Solution0051_0100\Solution0070.cs" />
-    <Compile Include="Solution0054.cs" />
-    <Compile Include="Solution0059.cs" />
     <Compile Include="Solution0078.cs" />
     <Compile Include="Solution0090.cs" />
     <Compile Include="Solution0101_0200\Solution0199.cs" />

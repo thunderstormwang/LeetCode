@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using LeetCode;
+using LeetCode.Solution0051_0100;
 using NUnit.Framework;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.SolutionTest0050_0100
 {
     [TestFixture]
     public class Solution0070Test
@@ -11,11 +11,12 @@ namespace LeetCodeTests
         [TestCase(2, 2)]
         [TestCase(3, 3)]
         [TestCase(4, 5)]
-        public void ClimbStairsTest(int x, int expected)
+        [TestCase(5, 8)]
+        public void ClimbStairsTest(int n, int expected)
         {
             var solution = new Solution0070();
 
-            var actual = solution.ClimbStairs(x);
+            var actual = solution.ClimbStairs(n);
 
             actual.Should().Be(expected);
         }

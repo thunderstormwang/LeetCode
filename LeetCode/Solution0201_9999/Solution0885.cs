@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace LeetCode
+﻿namespace LeetCode.Solution0201_9999
 {
     public class Solution0885
     {

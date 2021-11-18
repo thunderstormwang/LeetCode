@@ -12,15 +12,14 @@ namespace LeetCode.Solution0000_0050
             }
 
             var slow = 0;
-            var fast = 0;
-
-            for (slow = 1; slow < nums.Length && fast < nums.Length; slow++)
+            for (slow = 1; slow < nums.Length; slow++)
             {
-                if (nums[slow] > nums[slow - 1])
+                if (nums[slow - 1] < nums[slow])
                 {
                     continue;
                 }
 
+                var fast = slow + 1;
                 while (fast < nums.Length && nums[fast] <= nums[slow - 1])
                 {
                     fast++;
@@ -32,7 +31,6 @@ namespace LeetCode.Solution0000_0050
                 }
 
                 (nums[slow], nums[fast]) = (nums[fast], nums[slow]);
-                fast++;
             }
 
             return slow;
@@ -48,25 +46,25 @@ namespace LeetCode.Solution0000_0050
                 return nums.Length;
             }
 
-            var index = 0;
-            for (var i = 1; i < nums.Length; i++)
+            var slow = 0;
+            for (var fast = 1; fast < nums.Length; fast++)
             {
-                if (nums[index] == nums[i])
+                if (nums[slow] == nums[fast])
                 {
                     continue;
                 }
 
-                nums[index + 1] = nums[i];
-                index++;
+                nums[slow + 1] = nums[fast];
+                slow++;
             }
 
-            return index + 1;
+            return slow + 1;
         }
 
         // 官方給的解法簡潔許多
-        // index 為當前被比較的值的索引值
-        // 跳過所有的重複值, 將第一個不重複的值放在 index + 1 的位置
-        // 然後將 index + 1
+        // slow 為當前被比較的值的索引值
+        // 跳過所有的重複值, 將第一個不重複的值放在 slow + 1 的位置
+        // 然後將 slow + 1
         // 直到將陣列走完
 
         // Time: O(N)

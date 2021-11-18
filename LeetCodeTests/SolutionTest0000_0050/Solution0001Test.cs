@@ -1,4 +1,5 @@
-﻿using LeetCode.Solution0000_0050;
+﻿using FluentAssertions;
+using LeetCode.Solution0000_0050;
 using NUnit.Framework;
 
 namespace LeetCodeTests.SolutionTest0000_0050
@@ -12,9 +13,9 @@ namespace LeetCodeTests.SolutionTest0000_0050
         public void RemoveElementTest(int[] nums, int target, int[] expectedArray)
         {
             var solution = new Solution0001();
-            var result = solution.TwoSum(nums, target);
+            var actual = solution.TwoSum(nums, target);
 
-            Assert.AreEqual(expectedArray, result);
+            actual.Should().Equal(expectedArray);
         }
     }
 }

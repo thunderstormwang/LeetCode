@@ -34,11 +34,10 @@ namespace LeetCode.Solution0201_9999
                 Math.Min(dp[1],
                     dp[2]));
         }
+        
+        // https://www.youtube.com/watch?v=6-49f0eystc
 
-        // 如果該賽道在 i 點有障礙, 即視為不可到達
-        // 如果該賽道在 i-1 點有障礙, 即視 i 為不可到達
-
-        // https://www.youtube.com/watch?v=tQ8-KefhgoM
-        // ??
+        // Time: O(N)
+        // Space: O(1)
     }
 }

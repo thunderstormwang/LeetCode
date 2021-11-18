@@ -1,4 +1,5 @@
-﻿using LeetCode.Solution0000_0050;
+﻿using FluentAssertions;
+using LeetCode.Solution0000_0050;
 using NUnit.Framework;
 
 namespace LeetCodeTests.SolutionTest0000_0050
@@ -27,9 +28,8 @@ namespace LeetCodeTests.SolutionTest0000_0050
                 list2);
             var expected = Utility.BuildListNode(expectedArray);
 
-            Assert.AreEqual(Utility.CheckListNode(actual,
-                    expected),
-                true);
+            Utility.CheckListNode(actual,
+                expected).Should().BeTrue();
         }
     }
 }

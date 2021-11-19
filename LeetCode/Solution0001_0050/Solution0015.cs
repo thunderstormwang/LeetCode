@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeetCode.Solution0000_0050
+namespace LeetCode.Solution0001_0050
 {
     public class Solution0015
     {

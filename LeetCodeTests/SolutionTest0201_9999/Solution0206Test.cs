@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using LeetCode;
+using LeetCode.Solution0201_9999;
 using NUnit.Framework;
 
-namespace LeetCodeTests
+namespace LeetCodeTests.SolutionTest0201_9999
 {
     [TestFixture]
     public class Solution0206Test

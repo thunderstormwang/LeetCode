@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ListNode.cs" />
+    <Compile Include="Solution0101_0200\Solution0142.cs" />
     <Compile Include="Solution0101_0200\Solution0160.cs" />
     <Compile Include="Solution0155.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,7 +135,6 @@
     <Compile Include="Solution0136.cs" />
     <Compile Include="Solution0137.cs" />
     <Compile Include="Solution0141.cs" />
-    <Compile Include="Solution0142.cs" />
     <Compile Include="Solution0143.cs" />
     <Compile Include="Solution0147.cs" />
     <Compile Include="Solution0148.cs" />

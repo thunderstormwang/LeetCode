@@ -126,7 +126,7 @@ namespace LeetCode.Solution0101_0200
         // 
         // version 2: 同時走兩個 list, 一邊先走 A 再走 B, 一邊先走 B 再走 A
         // 只要兩個 list 有同樣的節點, 那麼最終會同時走到同一個節點上
-        // 只是要特別處理 list A 和 list B 的長度一樣且沒交集的 special case 
+        // 只是要特別處理 list A 和 list B 的長度一樣且沒交集的 special case(只換交換 list 一次, 避免無窮迴圈)
 
         // Time: O(N), N = 兩個 linked list 的長度
         // Space: O(1)

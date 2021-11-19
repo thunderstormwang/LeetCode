@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ListNode.cs" />
-    <Compile Include="MinStack.cs" />
+    <Compile Include="Solution0155.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution0000_0050\Solution0001.cs" />
     <Compile Include="Solution0000_0050\Solution0002.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="Solution0201_9999\Solution0203.cs" />
     <Compile Include="Solution0201_9999\Solution0209.cs" />
     <Compile Include="Solution0201_9999\Solution0279.cs" />
+    <Compile Include="Solution0201_9999\Solution0707.cs" />
     <Compile Include="Solution0201_9999\Solution0704.cs" />
     <Compile Include="Solution0201_9999\Solution0885.cs" />
     <Compile Include="Solution0201_9999\Solution0977.cs" />

@@ -102,7 +102,7 @@ namespace LeetCode.Solution0001_0050
         //   當 k = 4, (n^2 + ... + 1) * n / 2, 所以複雜度為 O(N^3)
         //   由此推算, O(N^(k-1))
         
-        // Time: O(log(N)) + O(N^3)
+        // Time: O(log(N)) + O(N^3) = O(N^3) 
         // Space: O(N)
     }
 }

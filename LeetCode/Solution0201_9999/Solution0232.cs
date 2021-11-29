@@ -126,12 +126,7 @@ namespace LeetCode.Solution0201_9999
             /// <returns></returns>
             public int Peek()
             {
-                if (outputStack.Count == 0)
-                {
-                    return front;
-                }
-
-                return outputStack.Peek();
+                return outputStack.Count == 0 ? front : outputStack.Peek();
             }
 
             /// <summary>

@@ -165,12 +165,14 @@
     <Compile Include="SolutionTest0051_0100\Solution0059Test.cs" />
     <Compile Include="SolutionTest0051_0100\Solution0070Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0142Test.cs" />
+    <Compile Include="SolutionTest0101_0200\Solution0146Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0151Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0160Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0199Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0203Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0206Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0209Test.cs" />
+    <Compile Include="SolutionTest0201_9999\Solution0225Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0232Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0242Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0279Test.cs" />

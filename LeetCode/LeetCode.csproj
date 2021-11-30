@@ -119,6 +119,7 @@
     <Compile Include="Solution0201_9999\Solution1002.cs" />
     <Compile Include="Solution0201_9999\Solution1047.cs" />
     <Compile Include="Solution0201_9999\Solution1824.cs" />
+    <Compile Include="Solution0201_9999\Solution0239.cs" />
     <Compile Include="Solution0229.cs" />
     <Compile Include="Solution0029.cs" />
     <Compile Include="Solution0034.cs" />

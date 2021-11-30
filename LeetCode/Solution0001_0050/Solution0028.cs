@@ -30,7 +30,14 @@
             return -1;
         }
         
+        // 用暴力法
         // Time: O(N*M), N: haystack 長度, M: needle 長度
+        // Space: O(1)
+        
+        // ========
+        
+        // 用 KMP 演算法
+        // Time: O(N)
         // Space: O(1)
     }
 }

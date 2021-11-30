@@ -17,11 +17,30 @@ namespace LeetCodeTests.SolutionTest0201_9999
             "abaca")]
         [TestCase("aaaaaaaaa",
             "a")]
-        public void RemoveDuplicates(string s,
+        public void RemoveDuplicates_Version1(string s,
             string expected)
         {
             var solution = new Solution1047();
-            var actual = solution.RemoveDuplicates(s);
+            var actual = solution.RemoveDuplicates_Version1(s);
+
+            actual.Should().Be(expected);
+        }
+        
+        [TestCase("abbaca",
+            "ca")]
+        [TestCase("azxxzy",
+            "ay")]
+        [TestCase("aababaab",
+            "ba")]
+        [TestCase("abbbaca",
+            "abaca")]
+        [TestCase("aaaaaaaaa",
+            "a")]
+        public void RemoveDuplicates_Version2(string s,
+            string expected)
+        {
+            var solution = new Solution1047();
+            var actual = solution.RemoveDuplicates_Version2(s);
 
             actual.Should().Be(expected);
         }

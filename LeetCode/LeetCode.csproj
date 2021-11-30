@@ -55,6 +55,7 @@
     <Compile Include="ListNode.cs" />
     <Compile Include="Solution0101_0200\Solution0142.cs" />
     <Compile Include="Solution0101_0200\Solution0146.cs" />
+    <Compile Include="Solution0101_0200\Solution0150.cs" />
     <Compile Include="Solution0101_0200\Solution0151.cs" />
     <Compile Include="Solution0101_0200\Solution0160.cs" />
     <Compile Include="Solution0155.cs" />

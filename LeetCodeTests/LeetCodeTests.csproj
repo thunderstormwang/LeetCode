@@ -187,6 +187,7 @@
     <Compile Include="SolutionTest0201_9999\Solution0885Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution0977Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution1002Test.cs" />
+    <Compile Include="SolutionTest0201_9999\Solution1047Test.cs" />
     <Compile Include="SolutionTest0201_9999\Solution1824Test.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>

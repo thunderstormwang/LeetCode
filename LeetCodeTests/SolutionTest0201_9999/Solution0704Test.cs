@@ -42,12 +42,12 @@ namespace LeetCodeTests.SolutionTest0201_9999
         [TestCase(new int[] { 5 },
             -5,
             -1)]
-        public void Search_NonRecursive(int[] nums,
+        public void Search_Iterative(int[] nums,
             int target,
             int expected)
         {
             var solution = new Solution0704();
-            var actual = solution.Search_NonRecursive(nums,
+            var actual = solution.Search_Iterative(nums,
                 target);
 
             actual.Should().Be(expected);

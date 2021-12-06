@@ -14,13 +14,13 @@ namespace LeetCodeTests.SolutionTest0001_0050
             new string[] { })]
         [TestCase("2",
             new string[] { "a", "b", "c" })]
-        public void LetterCombinations_NonRecursiveTest(string input,
+        public void LetterCombinations_IterativeTest(string input,
             string[] expectedArray)
         {
             var solution = new Solution0017();
             var expectedList = new List<string>(expectedArray);
 
-            var actual = solution.LetterCombinations_NonRecursive(input);
+            var actual = solution.LetterCombinations_Iterative(input);
 
             actual.Should().BeEquivalentTo(expectedList);
         }

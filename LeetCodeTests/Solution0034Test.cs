@@ -42,12 +42,12 @@ namespace LeetCodeTests
         [TestCase(new int[] { },
             0,
             new int[] { -1, -1 })]
-        public void SearchRange_NonRecursiveTest(int[] array,
+        public void SearchRange_IterativeTest(int[] array,
             int val,
             int[] expected)
         {
             var solution = new Solution0034();
-            var actual = solution.SearchRange_NonRecursive(array,
+            var actual = solution.SearchRange_Iterative(array,
                 val);
 
             actual.Should().BeEquivalentTo(expected);

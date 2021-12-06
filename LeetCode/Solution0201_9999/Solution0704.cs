@@ -11,7 +11,7 @@
                 nums.Length - 1);
         }
 
-        public int Search_NonRecursive(int[] nums,
+        public int Search_Iterative(int[] nums,
             int target)
         {
             var start = 0;

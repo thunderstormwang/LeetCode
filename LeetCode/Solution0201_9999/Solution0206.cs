@@ -2,7 +2,7 @@
 {
     public class Solution0206
     {
-        public ListNode ReverseList_NonRecursive(ListNode head)
+        public ListNode ReverseList_Iterative(ListNode head)
         {
             var dummyNode = new ListNode(0);
             while (head != null)

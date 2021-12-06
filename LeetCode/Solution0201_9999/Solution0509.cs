@@ -2,7 +2,7 @@
 {
     public class Solution0509
     {
-        public int Fib_NonRecursive(int n)
+        public int Fib_Iterative(int n)
         {
             if (n <= 1)
             {

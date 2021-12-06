@@ -19,11 +19,11 @@ namespace LeetCodeTests.SolutionTest0201_9999
             3)]
         [TestCase(5,
             5)]
-        public void Fib_NonRecursive(int n,
+        public void Fib_Iterative(int n,
             int expected)
         {
             var solution = new Solution0509();
-            var actual = solution.Fib_NonRecursive(n);
+            var actual = solution.Fib_Iterative(n);
 
             actual.Should().Be(expected);
         }

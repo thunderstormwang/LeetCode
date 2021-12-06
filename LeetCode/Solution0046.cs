@@ -4,7 +4,7 @@ namespace LeetCode
 {
     public class Solution0046
     {
-        public IList<IList<int>> Permute_NonRecursive(int[] nums)
+        public IList<IList<int>> Permute_Iterative(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>() { new List<int>() { nums[0] } };
 

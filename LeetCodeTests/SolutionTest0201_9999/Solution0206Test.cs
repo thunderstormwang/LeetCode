@@ -13,13 +13,13 @@ namespace LeetCodeTests.SolutionTest0201_9999
             new int[] { 2, 1 })]
         [TestCase(new int[] { },
             new int[] { })]
-        public void ReverseList_NonRecursive(int[] inputArray,
+        public void ReverseList_Iterative(int[] inputArray,
             int[] expectedArray)
         {
             var solution = new Solution0206();
 
             var list = Utility.BuildListNode(inputArray);
-            var actual = solution.ReverseList_NonRecursive(list);
+            var actual = solution.ReverseList_Iterative(list);
 
             var expectedListNode = Utility.BuildListNode(expectedArray);
             Utility.CheckListNode(actual,

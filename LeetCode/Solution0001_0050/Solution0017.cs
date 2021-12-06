@@ -17,7 +17,7 @@ namespace LeetCode.Solution0001_0050
             new string[] { "w", "x", "y", "z" },
         };
 
-        public IList<string> LetterCombinations_NonRecursive(string digits)
+        public IList<string> LetterCombinations_Iterative(string digits)
         {
             var result = new List<string>();
             for (var i = digits.Length - 1; i >= 0; i--)

@@ -9,7 +9,7 @@ namespace LeetCodeTests
     public class Solution0046Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void Permute_NonRecursiveTest(int[] input,
+        public void Permute_IterativeTest(int[] input,
             int[][] expectedArray)
         {
             var solution = new Solution0046();
@@ -19,7 +19,7 @@ namespace LeetCodeTests
                 expectList.Add(new List<int>(array));
             }
 
-            var actual = solution.Permute_NonRecursive(input);
+            var actual = solution.Permute_Iterative(input);
 
             actual.Should().BeEquivalentTo(expectList);
         }

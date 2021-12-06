@@ -16,7 +16,7 @@
             return result;
         }
 
-        public int[] SearchRange_NonRecursive(int[] nums,
+        public int[] SearchRange_Iterative(int[] nums,
             int target)
         {
             var result = new int[2] { -1, -1 };

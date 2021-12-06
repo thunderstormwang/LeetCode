@@ -53,7 +53,10 @@
   <ItemGroup>
     <Compile Include="DoublyListNode.cs" />
     <Compile Include="ListNode.cs" />
+    <Compile Include="Solution0051_0100\Solution0094.cs" />
     <Compile Include="Solution0101_0200\Solution0142.cs" />
+    <Compile Include="Solution0101_0200\Solution0144.cs" />
+    <Compile Include="Solution0101_0200\Solution0145.cs" />
     <Compile Include="Solution0101_0200\Solution0146.cs" />
     <Compile Include="Solution0101_0200\Solution0150.cs" />
     <Compile Include="Solution0101_0200\Solution0151.cs" />

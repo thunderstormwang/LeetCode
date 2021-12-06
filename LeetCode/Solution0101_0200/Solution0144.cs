@@ -48,5 +48,8 @@ namespace LeetCode.Solution0101_0200
             PreorderTraversal(root.right,
                 result);
         }
+        
+        // Time: O(N)
+        // Space: O(N)
     }
 }

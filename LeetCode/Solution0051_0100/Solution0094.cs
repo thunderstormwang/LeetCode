@@ -14,7 +14,25 @@ namespace LeetCode.Solution0051_0100
 
         public IList<int> InorderTraversal_Iterative(TreeNode root)
         {
-            throw new System.NotImplementedException();
+            var result = new List<int>();
+            var stack = new Stack<TreeNode>();
+
+            while (root != null || stack.Count != 0)
+            {
+                if (root != null)
+                {
+                    stack.Push(root);
+                    root = root.left;
+                }
+                else
+                {
+                    root = stack.Pop();
+                    result.Add(root.val);
+                    root = root.right;
+                }
+            }
+
+            return result;
         }
 
         private void InorderTraversal(TreeNode root,
@@ -31,5 +49,13 @@ namespace LeetCode.Solution0051_0100
             InorderTraversal(root.right,
                 result);
         }
+        
+        // Time: O(N)
+        // Space: O(N)
+        
+        // ==========
+        
+        // 用迭代方式
+        // 迭代方式不好想, 要使用 pointer
     }
 }

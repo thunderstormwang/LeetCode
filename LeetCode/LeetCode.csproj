@@ -55,6 +55,7 @@
     <Compile Include="ListNode.cs" />
     <Compile Include="Solution0051_0100\Solution0094.cs" />
     <Compile Include="Solution0101_0200\Solution0102.cs" />
+    <Compile Include="Solution0101_0200\Solution0107.cs" />
     <Compile Include="Solution0101_0200\Solution0142.cs" />
     <Compile Include="Solution0101_0200\Solution0144.cs" />
     <Compile Include="Solution0101_0200\Solution0145.cs" />
@@ -138,7 +139,6 @@
     <Compile Include="Solution0100.cs" />
     <Compile Include="Solution0101.cs" />
     <Compile Include="Solution0104.cs" />
-    <Compile Include="Solution0107.cs" />
     <Compile Include="Solution0108.cs" />
     <Compile Include="Solution0110.cs" />
     <Compile Include="Solution0111.cs" />

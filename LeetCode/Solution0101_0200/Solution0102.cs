@@ -12,9 +12,9 @@ namespace LeetCode.Solution0101_0200
             queue.Enqueue(root);
             while (queue.Count != 0)
             {
-                var count = queue.Count;
+                var nodeNumInCurrLevel = queue.Count;
                 var list = new List<int>();
-                while (count > 0)
+                while (nodeNumInCurrLevel > 0)
                 {
                     var node = queue.Dequeue();
                     if (node != null)
@@ -24,7 +24,7 @@ namespace LeetCode.Solution0101_0200
                         queue.Enqueue(node.right);
                     }
 
-                    count--;
+                    nodeNumInCurrLevel--;
                 }
 
                 if (list.Count != 0)
@@ -36,4 +36,7 @@ namespace LeetCode.Solution0101_0200
             return result;
         }
     }
+    
+    // Time: O(N)
+    // Space: O(N)
 }

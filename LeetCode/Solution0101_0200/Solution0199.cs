@@ -25,14 +25,14 @@ namespace LeetCode.Solution0101_0200
             var queue = new Queue<TreeNode>();
 
             queue.Enqueue(root);
-            var queueSize = queue.Count;
-            while (queueSize != 0)
+            var nodeNumInCurrLevel = queue.Count;
+            while (nodeNumInCurrLevel != 0)
             {
-                for (var i = 0; i < queueSize; i++)
+                for (var i = 0; i < nodeNumInCurrLevel; i++)
                 {
                     var node = queue.Dequeue();
 
-                    if (i == queueSize - 1)
+                    if (i == nodeNumInCurrLevel - 1)
                     {
                         result.Add(node.val);
                     }
@@ -48,7 +48,7 @@ namespace LeetCode.Solution0101_0200
                     }
                 }
 
-                queueSize = queue.Count;
+                nodeNumInCurrLevel = queue.Count;
             }
 
             return result;

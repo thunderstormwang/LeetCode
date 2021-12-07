@@ -1,4 +1,5 @@
-﻿using LeetCode;
+﻿using System.Collections.Generic;
+using LeetCode;
 
 namespace LeetCodeTests
 {
@@ -55,6 +56,39 @@ namespace LeetCodeTests
             }
 
             return true;
+        }
+
+        public static Node Build_N_ary_Tree(int?[] array)
+        {
+            if (array.Length == 0)
+            {
+                return null;
+            }
+
+            var queue = new Queue<Node>();
+            var root = new Node(array[0].Value);
+
+            queue.Enqueue(root);
+            Node curr = null;
+            for (var i = 1; i < array.Length; i++)
+            {
+                if (array[i] == null)
+                {
+                    curr = queue.Dequeue();
+                    continue;
+                }
+
+                var child = new Node(array[i].Value);
+                if (curr.children == null)
+                {
+                    curr.children = new List<Node>();
+                }
+
+                curr.children.Add(child);
+                queue.Enqueue(child);
+            }
+
+            return root;
         }
     }
 }

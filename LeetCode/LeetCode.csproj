@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DoublyListNode.cs" />
     <Compile Include="ListNode.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Solution0051_0100\Solution0094.cs" />
     <Compile Include="Solution0101_0200\Solution0102.cs" />
     <Compile Include="Solution0101_0200\Solution0107.cs" />
@@ -115,8 +116,10 @@
     <Compile Include="Solution0201_9999\Solution0347.cs" />
     <Compile Include="Solution0201_9999\Solution0349.cs" />
     <Compile Include="Solution0201_9999\Solution0383.cs" />
+    <Compile Include="Solution0201_9999\Solution0429.cs" />
     <Compile Include="Solution0201_9999\Solution0454.cs" />
     <Compile Include="Solution0201_9999\Solution0509.cs" />
+    <Compile Include="Solution0201_9999\Solution0515.cs" />
     <Compile Include="Solution0201_9999\Solution0541.cs" />
     <Compile Include="Solution0201_9999\Solution0637.cs" />
     <Compile Include="Solution0201_9999\Solution0707.cs" />

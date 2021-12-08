@@ -57,6 +57,8 @@
     <Compile Include="Solution0051_0100\Solution0094.cs" />
     <Compile Include="Solution0101_0200\Solution0102.cs" />
     <Compile Include="Solution0101_0200\Solution0107.cs" />
+    <Compile Include="Solution0101_0200\Solution0116.cs" />
+    <Compile Include="Solution0101_0200\Solution0117.cs" />
     <Compile Include="Solution0101_0200\Solution0142.cs" />
     <Compile Include="Solution0101_0200\Solution0144.cs" />
     <Compile Include="Solution0101_0200\Solution0145.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="Solution0445.cs" />
     <Compile Include="Solution0092.cs" />
     <Compile Include="TreeNode.cs" />
+    <Compile Include="TreeNodeV2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -166,6 +166,8 @@
     <Compile Include="SolutionTest0051_0100\Solution0094Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0102Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0107Test.cs" />
+    <Compile Include="SolutionTest0101_0200\Solution0116Test.cs" />
+    <Compile Include="SolutionTest0101_0200\Solution0117Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0142Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0144Test.cs" />
     <Compile Include="SolutionTest0101_0200\Solution0145Test.cs" />

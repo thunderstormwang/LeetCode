@@ -23,6 +23,86 @@ namespace LeetCodeTests
             return root;
         }
 
+        public static TreeNodeV2 BuildTreeV2(int?[] input,
+            int i)
+        {
+            if (i >= input.Length || input[i] == null)
+            {
+                return null;
+            }
+
+            var root = new TreeNodeV2(input[i].Value);
+
+            root.left = BuildTreeV2(input,
+                2 * i + 1);
+            root.right = BuildTreeV2(input,
+                2 * i + 2);
+
+            return root;
+        }
+
+        public static string GetNodeString(TreeNodeV2 root)
+        {
+            var queue = new Queue<TreeNodeV2>();
+            var nodeStr = new List<string>();
+            var firstNodeFromLeft = new List<TreeNodeV2>();
+
+            if (root != null)
+            {
+                queue.Enqueue(root);
+            }
+
+            while (queue.Count != 0)
+            {
+                var nodeNumberInCurrLevel = queue.Count;
+                var node = queue.Dequeue();
+                firstNodeFromLeft.Add(node);
+
+                if (node.left != null)
+                {
+                    queue.Enqueue(node.left);
+                }
+
+                if (node.right != null)
+                {
+                    queue.Enqueue(node.right);
+                }
+
+                nodeNumberInCurrLevel--;
+
+                while (nodeNumberInCurrLevel > 0)
+                {
+                    node = queue.Dequeue();
+                    if (node.left != null)
+                    {
+                        queue.Enqueue(node.left);
+                    }
+
+                    if (node.right != null)
+                    {
+                        queue.Enqueue(node.right);
+                    }
+
+                    nodeNumberInCurrLevel--;
+                }
+            }
+
+            foreach (var item in firstNodeFromLeft)
+            {
+                var node = item;
+                while (node != null)
+                {
+                    nodeStr.Add(node.val.ToString());
+                    node = node.next;
+                }
+
+                nodeStr.Add("#");
+            }
+
+            return string.Join(",",
+                nodeStr);
+        }
+
         public static ListNode BuildListNode(int[] array)
         {
             var dummyNode = new ListNode(0);
@@ -36,26 +116,6 @@ namespace LeetCodeTests
             }
 
             return dummyNode.next;
-        }
-
-        public static bool CheckListNode(ListNode list1,
-            ListNode list2)
-        {
-            while (list1 != null || list2 != null)
-            {
-                var x = list1 != null ? list1.val : -99;
-                var y = list2 != null ? list2.val : -99;
-
-                if (x != y)
-                {
-                    return false;
-                }
-
-                list1 = list1 != null ? list1.next : list1;
-                list2 = list2 != null ? list2.next : list2;
-            }
-
-            return true;
         }
 
         public static Node Build_N_ary_Tree(int?[] array)
@@ -89,6 +149,26 @@ namespace LeetCodeTests
             }
 
             return root;
+        }
+
+        public static bool CheckListNode(ListNode list1,
+            ListNode list2)
+        {
+            while (list1 != null || list2 != null)
+            {
+                var x = list1 != null ? list1.val : -99;
+                var y = list2 != null ? list2.val : -99;
+
+                if (x != y)
+                {
+                    return false;
+                }
+
+                list1 = list1 != null ? list1.next : list1;
+                list2 = list2 != null ? list2.next : list2;
+            }
+
+            return true;
         }
     }
 }

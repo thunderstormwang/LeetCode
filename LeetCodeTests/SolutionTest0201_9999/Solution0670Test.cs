@@ -1,0 +1,31 @@
+﻿using FluentAssertions;
+using LeetCode.Solution0201_9999;
+using NUnit.Framework;
+
+namespace LeetCodeTests.SolutionTest0201_9999
+{
+    [TestFixture]
+    public class Solution0670Test
+    {
+        [TestCase(2736,
+            7236)]
+        [TestCase(9973,
+            9973)]
+        [TestCase(1993,
+            9913)]
+        [TestCase(9678,
+            9876)]
+        [TestCase(333,
+            333)]
+        [TestCase(323,
+            332)]
+        public void MaximumSwap(int num,
+            int expected)
+        {
+            var solution = new Solution0670();
+            var actual = solution.MaximumSwap(num);
+
+            actual.Should().Be(expected);
+        }
+    }
+}

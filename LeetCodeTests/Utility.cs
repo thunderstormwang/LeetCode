@@ -139,19 +139,19 @@ namespace LeetCodeTests
                 }
 
                 var child = new Node(array[i].Value);
-                if (curr.children == null)
+                if (curr != null && curr.children == null)
                 {
                     curr.children = new List<Node>();
                 }
 
-                curr.children.Add(child);
+                curr?.children.Add(child);
                 queue.Enqueue(child);
             }
 
             return root;
         }
 
-        public static bool CheckListNode(ListNode list1,
+        public static bool CheckLinkedList(ListNode list1,
             ListNode list2)
         {
             while (list1 != null || list2 != null)
@@ -169,6 +169,26 @@ namespace LeetCodeTests
             }
 
             return true;
+        }
+
+        public static bool CheckBinaryTree(TreeNode root1,
+            TreeNode root2)
+        {
+            if (root1 == null && root2 == null)
+            {
+                return true;
+            }
+
+            if (root1 == null || root2 == null)
+            {
+                return false;
+            }
+
+            return root1.val == root2.val
+                   && CheckBinaryTree(root1.left,
+                       root2.left)
+                   && CheckBinaryTree(root1.right,
+                       root2.right);
         }
     }
 }

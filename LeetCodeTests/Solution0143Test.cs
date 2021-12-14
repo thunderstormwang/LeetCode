@@ -26,7 +26,7 @@ namespace LeetCodeTests
             solution.ReorderList(list);
             var expected = Utility.BuildListNode(expectedArray);
 
-            Utility.CheckListNode(list,
+            Utility.CheckLinkedList(list,
                 expected).Should().BeTrue();
         }
     }

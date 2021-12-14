@@ -28,7 +28,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
                 list2);
             var expected = Utility.BuildListNode(expectedArray);
 
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expected).Should().BeTrue();
         }
     }

@@ -30,7 +30,7 @@ namespace LeetCodeTests
                 list2);
             var expected = Utility.BuildListNode(expectedArray);
 
-            Assert.AreEqual(Utility.CheckListNode(actual,
+            Assert.AreEqual(Utility.CheckLinkedList(actual,
                     expected),
                 true);
         }

@@ -22,7 +22,7 @@ namespace LeetCodeTests.SolutionTest0201_9999
             var actual = solution.ReverseList_Iterative(list);
 
             var expectedListNode = Utility.BuildListNode(expectedArray);
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expectedListNode).Should().BeTrue();
         }
         
@@ -41,7 +41,7 @@ namespace LeetCodeTests.SolutionTest0201_9999
             var actual = solution206.ReverseList_Recursive(list);
 
             var expectedListNode = Utility.BuildListNode(expectedArray);
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expectedListNode).Should().BeTrue();
         }
     }

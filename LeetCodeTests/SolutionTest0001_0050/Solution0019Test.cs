@@ -38,7 +38,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
                 n);
 
             var expectedListNode = Utility.BuildListNode(expected);
-            Assert.AreEqual(Utility.CheckListNode(actual,
+            Assert.AreEqual(Utility.CheckLinkedList(actual,
                     expectedListNode),
                 true);
         }

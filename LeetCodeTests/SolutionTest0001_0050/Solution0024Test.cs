@@ -27,7 +27,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
 
             var expectedListNode = Utility.BuildListNode(expected);
 
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expectedListNode).Should().BeTrue();
         }
         
@@ -51,7 +51,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
 
             var expectedListNode = Utility.BuildListNode(expected);
 
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expectedListNode).Should().BeTrue();
         }
     }

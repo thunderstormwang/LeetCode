@@ -38,7 +38,7 @@ namespace LeetCodeTests
                 right);
 
             var expectedListNode = Utility.BuildListNode(expectedArray);
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expectedListNode).Should().BeTrue();
         }
     }

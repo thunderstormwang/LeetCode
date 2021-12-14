@@ -30,7 +30,7 @@ namespace LeetCodeTests.SolutionTest0201_9999
                 val);
 
             var expectedListNode = Utility.BuildListNode(expectedArray);
-            Utility.CheckListNode(actual,
+            Utility.CheckLinkedList(actual,
                 expectedListNode).Should().BeTrue();
         }
     }

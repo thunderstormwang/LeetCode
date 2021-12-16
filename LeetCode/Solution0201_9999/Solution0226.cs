@@ -4,7 +4,7 @@ namespace LeetCode.Solution0201_9999
 {
     public class Solution0226
     {
-        public TreeNode InvertTree_DFS(TreeNode root)
+        public TreeNode InvertTree_DFS_Recursive(TreeNode root)
         {
             if (root == null)
             {
@@ -13,8 +13,30 @@ namespace LeetCode.Solution0201_9999
 
             (root.left, root.right) = (root.right, root.left);
 
-            InvertTree_DFS(root.left);
-            InvertTree_DFS(root.right);
+            InvertTree_DFS_Recursive(root.left);
+            InvertTree_DFS_Recursive(root.right);
+
+            return root;
+        }
+        
+        public TreeNode InvertTree_DFS_Iterative(TreeNode root)
+        {
+            var stack = new Stack<TreeNode>();
+            stack.Push(root);
+
+            while (stack.Count != 0)
+            {
+                var node = stack.Pop();
+                if (node == null)
+                {
+                    continue;
+                }
+
+                (node.left, node.right) = (node.right, node.left);
+                
+                stack.Push(node.left);
+                stack.Push(node.right);
+            }
 
             return root;
         }

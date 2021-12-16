@@ -9,13 +9,26 @@ namespace LeetCodeTests.SolutionTest0201_9999
     public class Solution0226Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void InvertTree_DFSTest(int?[] inputArray, int?[] expectedArray)
+        public void InvertTree_DFS_RecursiveTest(int?[] inputArray, int?[] expectedArray)
         {
             var root = Utility.BuildTree( inputArray, 0);
             var expected = Utility.BuildTree( expectedArray, 0);
 
             var solution = new Solution0226();
-            var actual = solution.InvertTree_DFS(root);
+            var actual = solution.InvertTree_DFS_Recursive(root);
+
+            Utility.CheckBinaryTree(actual,
+                expected).Should().BeTrue();
+        }
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void InvertTree_DFS_IterativeTest(int?[] inputArray, int?[] expectedArray)
+        {
+            var root = Utility.BuildTree( inputArray, 0);
+            var expected = Utility.BuildTree( expectedArray, 0);
+
+            var solution = new Solution0226();
+            var actual = solution.InvertTree_DFS_Iterative(root);
 
             Utility.CheckBinaryTree(actual,
                 expected).Should().BeTrue();

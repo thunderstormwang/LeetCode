@@ -19,45 +19,23 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void IsSymmetric_DFS_Iterative_Version1Test(int? [] array, bool expected)
+        public void IsSymmetric_DFS_Iterative_Test(int? [] array, bool expected)
         {
             var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0101();
-            var actual = solution.IsSymmetric_DFS_Iterative_Version1(root);
+            var actual = solution.IsSymmetric_DFS_Iterative(root);
 
             actual.Should().Be(expected);
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void IsSymmetric_DFS_Iterative_Version2Test(int? [] array, bool expected)
+        public void IsSymmetric_BFS_Test(int? [] array, bool expected)
         {
             var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0101();
-            var actual = solution.IsSymmetric_DFS_Iterative_Version2(root);
-
-            actual.Should().Be(expected);
-        }
-        
-        [TestCaseSource(nameof(TestCases))]
-        public void IsSymmetric_BFS_Version1Test(int? [] array, bool expected)
-        {
-            var root = Utility.BuildTree(array, 0);
-
-            var solution = new Solution0101();
-            var actual = solution.IsSymmetric_BFS_Version1(root);
-
-            actual.Should().Be(expected);
-        }
-        
-        [TestCaseSource(nameof(TestCases))]
-        public void IsSymmetric_BFS_Version2Test(int? [] array, bool expected)
-        {
-            var root = Utility.BuildTree(array, 0);
-
-            var solution = new Solution0101();
-            var actual = solution.IsSymmetric_BFS_Version2(root);
+            var actual = solution.IsSymmetric_BFS(root);
 
             actual.Should().Be(expected);
         }

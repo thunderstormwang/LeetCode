@@ -15,56 +15,7 @@ namespace LeetCode.Solution0101_0200
                 root.right);
         }
 
-        /// <summary>
-        /// Implement with 2 stack
-        /// </summary>
-        /// <param name="root"></param>
-        /// <returns></returns>
-        public bool IsSymmetric_DFS_Iterative_Version1(TreeNode root)
-        {
-            if (root == null)
-            {
-                return true;
-            }
-
-            var leftStack = new Stack<TreeNode>();
-            var rightStack = new Stack<TreeNode>();
-            leftStack.Push(root.left);
-            rightStack.Push(root.right);
-            while (leftStack.Count > 0 && rightStack.Count > 0)
-            {
-                var left = leftStack.Pop();
-                var right = rightStack.Pop();
-                if (left == null && right == null)
-                {
-                    continue;
-                }
-
-                if (left == null || right == null)
-                {
-                    return false;
-                }
-
-                if (left.val != right.val)
-                {
-                    return false;
-                }
-
-                leftStack.Push(left.left);
-                leftStack.Push(left.right);
-                rightStack.Push(right.right);
-                rightStack.Push(right.left);
-            }
-
-            return leftStack.Count == 0 && rightStack.Count == 0;
-        }
-        
-        /// <summary>
-        /// Implement with 1 stack
-        /// </summary>
-        /// <param name="root"></param>
-        /// <returns></returns>
-        public bool IsSymmetric_DFS_Iterative_Version2(TreeNode root)
+        public bool IsSymmetric_DFS_Iterative(TreeNode root)
         {
             if (root == null)
             {
@@ -102,57 +53,7 @@ namespace LeetCode.Solution0101_0200
             return true;
         }
 
-        /// <summary>
-        /// Implement with 2 queue
-        /// </summary>
-        /// <param name="root"></param>
-        /// <returns></returns>
-        public bool IsSymmetric_BFS_Version1(TreeNode root)
-        {
-            if (root == null)
-            {
-                return true;
-            }
-
-            var leftQueue = new Queue<TreeNode>();
-            var rightQueue = new Queue<TreeNode>();
-            leftQueue.Enqueue(root.left);
-            rightQueue.Enqueue(root.right);
-            while (leftQueue.Count > 0 && rightQueue.Count > 0)
-            {
-                var left = leftQueue.Dequeue();
-                var right = rightQueue.Dequeue();
-
-                if (left == null && right == null)
-                {
-                    continue;
-                }
-
-                if (left == null || right == null)
-                {
-                    return false;
-                }
-
-                if (left.val != right.val)
-                {
-                    return false;
-                }
-                
-                leftQueue.Enqueue(left.left);
-                leftQueue.Enqueue(left.right);
-                rightQueue.Enqueue(right.right);
-                rightQueue.Enqueue(right.left);
-            }
-
-            return leftQueue.Count == 0 && rightQueue.Count == 0;
-        }
-
-        /// <summary>
-        /// Implement with 1 queue
-        /// </summary>
-        /// <param name="root"></param>
-        /// <returns></returns>
-        public bool IsSymmetric_BFS_Version2(TreeNode root)
+        public bool IsSymmetric_BFS(TreeNode root)
         {
             if (root == null)
             {

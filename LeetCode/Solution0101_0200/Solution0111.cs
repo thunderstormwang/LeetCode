@@ -22,15 +22,9 @@ namespace LeetCode.Solution0101_0200
             }
 
             // 一邊為 0, 此不為 leaf node, 須回傳有 leaf 的那一邊的 depth
-            if (leftDepth == 0 && rightDepth != 0)
+            if (leftDepth == 0 || rightDepth == 0)
             {
-                return rightDepth + 1;
-            }
-
-            // 一邊為 0, 此不為 leaf node, 須回傳有 leaf 的那一邊的 depth
-            if (leftDepth != 0 && rightDepth == 0)
-            {
-                return leftDepth + 1;
+                return Math.Max(leftDepth ,rightDepth) + 1;
             }
 
             return Math.Min(leftDepth,

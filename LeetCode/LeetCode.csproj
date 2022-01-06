@@ -126,6 +126,7 @@
     <Compile Include="Solution0201_0500\Solution0347.cs" />
     <Compile Include="Solution0201_0500\Solution0349.cs" />
     <Compile Include="Solution0201_0500\Solution0383.cs" />
+    <Compile Include="Solution0201_0500\Solution0404.cs" />
     <Compile Include="Solution0201_0500\Solution0429.cs" />
     <Compile Include="Solution0201_0500\Solution0454.cs" />
     <Compile Include="Solution0201_0500\Solution0239.cs" />

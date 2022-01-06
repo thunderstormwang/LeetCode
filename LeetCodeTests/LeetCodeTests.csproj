@@ -191,6 +191,7 @@
     <Compile Include="SolutionTest0201_0500\Solution0347Test.cs" />
     <Compile Include="SolutionTest0201_0500\Solution0349Test.cs" />
     <Compile Include="SolutionTest0201_0500\Solution0383Test.cs" />
+    <Compile Include="SolutionTest0201_0500\Solution0404Test.cs" />
     <Compile Include="SolutionTest0201_0500\Solution0429Test.cs" />
     <Compile Include="SolutionTest0201_0500\Solution0454Test.cs" />
     <Compile Include="SolutionTest0501_9999\Solution0509Test.cs" />

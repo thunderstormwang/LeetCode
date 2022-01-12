@@ -151,6 +151,7 @@
     <Compile Include="Solution0268.cs" />
     <Compile Include="Solution0491.cs" />
     <Compile Include="Solution0501_9999\Solution0509.cs" />
+    <Compile Include="Solution0501_9999\Solution0513.cs" />
     <Compile Include="Solution0501_9999\Solution0515.cs" />
     <Compile Include="Solution0501_9999\Solution0541.cs" />
     <Compile Include="Solution0501_9999\Solution0559.cs" />

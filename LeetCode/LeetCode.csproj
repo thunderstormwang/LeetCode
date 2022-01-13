@@ -62,6 +62,7 @@
     <Compile Include="Solution0101_0200\Solution0107.cs" />
     <Compile Include="Solution0101_0200\Solution0110.cs" />
     <Compile Include="Solution0101_0200\Solution0111.cs" />
+    <Compile Include="Solution0101_0200\Solution0112.cs" />
     <Compile Include="Solution0101_0200\Solution0116.cs" />
     <Compile Include="Solution0101_0200\Solution0117.cs" />
     <Compile Include="Solution0101_0200\Solution0142.cs" />
@@ -141,7 +142,6 @@
     <Compile Include="Solution0061.cs" />
     <Compile Include="Solution0086.cs" />
     <Compile Include="Solution0108.cs" />
-    <Compile Include="Solution0112.cs" />
     <Compile Include="Solution0118.cs" />
     <Compile Include="Solution0119.cs" />
     <Compile Include="Solution0121.cs" />

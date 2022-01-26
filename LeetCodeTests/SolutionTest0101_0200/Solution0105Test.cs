@@ -8,7 +8,7 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0105Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void BuildTree(int[] preorder,
+        public void BuildTreeTest(int[] preorder,
             int[] inorder,
             int?[] expectedArray)
         {
@@ -23,7 +23,7 @@ namespace LeetCodeTests.SolutionTest0101_0200
             Utility.CheckBinaryTree(actual,
                 expected).Should().BeTrue();
         }
-
+        
         private static readonly object[] TestCases =
         {
             new object[]

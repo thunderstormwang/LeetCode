@@ -25,41 +25,40 @@ namespace LeetCode.Solution0101_0200
             int inorderEnd)
         {
             var root = new TreeNode(preorder[preorderBegin]);
-            
+
             if (preorderBegin == preorderEnd)
             {
                 return root;
             }
 
-            var inorderRoot = Array.IndexOf(inorder,
+            var inorderRootIndex = Array.IndexOf(inorder,
                 root.val);
-            if (inorderRoot > inorderBegin)
+            if (inorderRootIndex > inorderBegin)
             {
-                var leftLength = (inorderRoot - 1) - inorderBegin + 1;
+                var leftLength = (inorderRootIndex - 1) - inorderBegin + 1;
                 root.left = BuildTree(preorder,
                     preorderBegin + 1,
                     preorderBegin + 1 + leftLength - 1,
                     inorder,
                     inorderBegin,
-                    inorderRoot - 1);
+                    inorderRootIndex - 1);
             }
 
-            if (inorderEnd > inorderRoot)
+            if (inorderEnd > inorderRootIndex)
             {
-                var rightLength = inorderEnd - (inorderRoot + 1) + 1;
+                var rightLength = inorderEnd - (inorderRootIndex + 1) + 1;
                 root.right = BuildTree(preorder,
                     preorderEnd - rightLength + 1,
                     preorderEnd,
                     inorder,
-                    inorderRoot + 1,
+                    inorderRootIndex + 1,
                     inorderEnd);
             }
 
             return root;
         }
-
-        // new int[] { 1, 2, 4, 5, 3, 6, 7 },
-        // new int[] { 4, 2, 5, 1, 6, 3, 7 },
-        // new int?[] { 1, 2, 4, 5, 3, 6, 7 }
     }
+    
+    // Time: O(N)
+    // Space: O(1)
 }

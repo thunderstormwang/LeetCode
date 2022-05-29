@@ -2,8 +2,7 @@
 {
     public class Solution0061
     {
-        public ListNode RotateRight(ListNode head,
-            int k)
+        public ListNode RotateRight(ListNode head, int k)
         {
             if (head == null)
             {

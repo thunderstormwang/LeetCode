@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode.Solution0001_0050;
 using NUnit.Framework;
 
@@ -9,8 +8,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
     public class Solution0015Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void ThreeSumTest(int[] input,
-            int[][] expectedArray)
+        public void ThreeSumTest(int[] input, int[][] expectedArray)
         {
             var solution = new Solution0015();
             var expectList = new List<List<int>>();

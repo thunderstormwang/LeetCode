@@ -2,8 +2,7 @@
 {
     public class Solution0027
     {
-        public int RemoveElement(int[] nums,
-            int val)
+        public int RemoveElement(int[] nums, int val)
         {
             var slow = 0;
             for (var fast = 0; fast < nums.Length; fast++)

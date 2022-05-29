@@ -8,14 +8,10 @@ namespace LeetCodeTests.SolutionTest0001_0050
     [TestFixture]
     public class Solution0022Test
     {
-        [TestCase(1,
-            new string[] { "()" })]
-        [TestCase(2,
-            new string[] { "(())" ,"()()"})]
-        [TestCase(3,
-            new string[] { "((()))", "(()())", "(())()", "()(())", "()()()" })]
-        public void ThreeSumClosestTest(int input,
-            string[] expected)
+        [TestCase(1, new string[] { "()" })]
+        [TestCase(2, new string[] { "(())" ,"()()"})]
+        [TestCase(3, new string[] { "((()))", "(()())", "(())()", "()(())", "()()()" })]
+        public void ThreeSumClosestTest(int input, string[] expected)
         {
             var solution = new Solution0022();
 
@@ -26,12 +22,9 @@ namespace LeetCodeTests.SolutionTest0001_0050
             actual.Should().BeEquivalentTo(expectedList);
         }
         
-        [TestCase(1,
-            new string[] { "()" })]
-        [TestCase(2,
-            new string[] { "(())" ,"()()"})]
-        [TestCase(3,
-            new string[] { "((()))", "(()())", "(())()", "()(())", "()()()" })]
+        [TestCase(1, new string[] { "()" })]
+        [TestCase(2, new string[] { "(())" ,"()()"})]
+        [TestCase(3, new string[] { "((()))", "(()())", "(())()", "()(())", "()()()" })]
         public void ThreeSumClosestTest_Approach2(int input,
             string[] expected)
         {

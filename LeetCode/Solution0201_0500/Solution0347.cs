@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode.Solution0201_0500
+﻿namespace LeetCode.Solution0201_0500
 {
     public class Solution0347
     {
-        public int[] TopKFrequentTest_SortedSet(int[] nums,
-            int k)
+        public int[] TopKFrequentTest_SortedSet(int[] nums, int k)
         {
             var dict = new Dictionary<int, int>();
             foreach (var item in nums)
@@ -33,8 +28,7 @@ namespace LeetCode.Solution0201_0500
             return set.Select(s => s.Key).ToArray();
         }
 
-        public int[] TopKFrequentTest_HeapArray(int[] nums,
-            int k)
+        public int[] TopKFrequentTest_HeapArray(int[] nums, int k)
         {
             var result = new int [k];
             var dict = new Dictionary<int, int>();
@@ -48,17 +42,13 @@ namespace LeetCode.Solution0201_0500
                 dict[item]++;
             }
 
-            var heap = new MinHeap(k,
-                (x,
-                    y) => dict[x] < dict[y] ? 1 : -1);
+            var heap = new MinHeap(k, (x, y) => dict[x] < dict[y] ? 1 : -1);
             foreach (var item in dict)
             {
                 heap.Insert(item.Key);
             }
 
-            Array.Copy(heap.Array,
-                result,
-                k);
+            Array.Copy(heap.Array, result, k);
             return result;
         }
 
@@ -73,8 +63,7 @@ namespace LeetCode.Solution0201_0500
 
             public readonly int[] Array;
 
-            public MinHeap(int size,
-                Func<int, int, int> comparer)
+            public MinHeap(int size, Func<int, int, int> comparer)
             {
                 _curr = -1;
                 Array = new int[size + 1];
@@ -107,18 +96,12 @@ namespace LeetCode.Solution0201_0500
 
                 if (left <= _curr)
                 {
-                    target = _comparer(Array[target],
-                        Array[left]) >= 1
-                        ? target
-                        : left;
+                    target = _comparer(Array[target], Array[left]) >= 1 ? target : left;
                 }
 
                 if (right <= _curr)
                 {
-                    target = _comparer(Array[target],
-                        Array[right]) >= 1
-                        ? target
-                        : right;
+                    target = _comparer(Array[target], Array[right]) >= 1 ? target : right;
                 }
 
                 if (target != index)
@@ -143,8 +126,7 @@ namespace LeetCode.Solution0201_0500
 
         private class Comparer : IComparer<KeyValuePair<int, int>>
         {
-            public int Compare(KeyValuePair<int, int> x,
-                KeyValuePair<int, int> y)
+            public int Compare(KeyValuePair<int, int> x, KeyValuePair<int, int> y)
             {
                 return x.Value == y.Value ? x.Key.CompareTo(y.Key) : x.Value.CompareTo(y.Value);
             }

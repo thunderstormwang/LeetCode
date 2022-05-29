@@ -23,8 +23,7 @@
             return dummyNode.next;
         }
 
-        private void Recursive(ListNode dummyNode,
-            ListNode currNode)
+        private void Recursive(ListNode dummyNode, ListNode currNode)
         {
             if (currNode == null)
             {
@@ -34,8 +33,7 @@
             var temp = currNode.next;
             currNode.next = dummyNode.next;
             dummyNode.next = currNode;
-            Recursive(dummyNode,
-                temp);
+            Recursive(dummyNode, temp);
         }
 
         // Time: O(N)

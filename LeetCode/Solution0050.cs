@@ -4,8 +4,7 @@ namespace LeetCode
 {
     public class Solution0050
     {
-        public double MyPow(double x,
-            int n)
+        public double MyPow(double x, int n)
         {
             var result = 1d;
 
@@ -15,12 +14,10 @@ namespace LeetCode
                 n = -n;
             }
 
-            return CalculatePow(x,
-                n);
+            return CalculatePow(x, n);
         }
 
-        private double CalculatePow(double x,
-            int n)
+        private double CalculatePow(double x, int n)
         {
             if (n == 0)
             {
@@ -32,8 +29,7 @@ namespace LeetCode
                 return x;
             }
 
-            var half = CalculatePow(x,
-                n / 2);
+            var half = CalculatePow(x, n / 2);
 
             return half * half * (n % 2 == 0 ? 1 : x);
         }

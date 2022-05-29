@@ -15,8 +15,7 @@ namespace LeetCode.Solution0051_0100
                     return false;
                 }
 
-                max = Math.Max(nums[i] + i,
-                    max);
+                max = Math.Max(nums[i] + i, max);
             }
 
             return max >= nums.Length - 1;

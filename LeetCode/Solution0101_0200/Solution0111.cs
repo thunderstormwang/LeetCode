@@ -27,28 +27,23 @@ namespace LeetCode.Solution0101_0200
                 return Math.Max(leftDepth ,rightDepth) + 1;
             }
 
-            return Math.Min(leftDepth,
-                rightDepth) + 1;
+            return Math.Min(leftDepth, rightDepth) + 1;
         }
 
         public int MinDepth_DFS_TopDown(TreeNode root)
         {
-            return DepthFirstSearch(root,
-                0);
+            return DepthFirstSearch(root, 0);
         }
 
-        private int DepthFirstSearch(TreeNode root,
-            int depth)
+        private int DepthFirstSearch(TreeNode root, int depth)
         {
             if (root == null)
             {
                 return depth;
             }
 
-            var leftDepth = DepthFirstSearch(root.left,
-                depth + 1);
-            var rightDepth = DepthFirstSearch(root.right,
-                depth + 1);
+            var leftDepth = DepthFirstSearch(root.left, depth + 1);
+            var rightDepth = DepthFirstSearch(root.right, depth + 1);
 
             if (root.left == null && root.right == null)
             {
@@ -57,8 +52,7 @@ namespace LeetCode.Solution0101_0200
 
             if (root.left != null && root.right != null)
             {
-                return Math.Min(leftDepth,
-                    rightDepth);
+                return Math.Min(leftDepth, rightDepth);
             }
 
             return root.left != null ? leftDepth : rightDepth;

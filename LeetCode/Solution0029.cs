@@ -4,8 +4,7 @@ namespace LeetCode
 {
     public class Solution0029
     {
-        public int Divide(int dividend,
-            int divisor)
+        public int Divide(int dividend, int divisor)
         {
             var a = int.MaxValue;
             var b = a + 1;

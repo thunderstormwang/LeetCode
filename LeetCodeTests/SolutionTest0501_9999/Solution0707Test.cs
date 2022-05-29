@@ -14,8 +14,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
 
             solution.AddAtHead(1);
             solution.AddAtTail(3);
-            solution.AddAtIndex(1,
-                2);
+            solution.AddAtIndex(1, 2);
             solution.Get(1).Should().Be(2);
             solution.DeleteAtIndex(1);
             solution.Get(1).Should().Be(3);
@@ -48,8 +47,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
 
             solution.AddAtHead(1);
             solution.AddAtTail(3);
-            solution.AddAtIndex(1,
-                2);
+            solution.AddAtIndex(1, 2);
             solution.Get(1).Should().Be(2);
             solution.DeleteAtIndex(1);
             solution.Get(1).Should().Be(3);

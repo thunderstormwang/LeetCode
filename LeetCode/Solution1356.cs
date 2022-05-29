@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution1356
     {
         public int[] SortByBits(int[] arr)
         {
             IComparer<int> comparer = new Comparer();
-            Array.Sort(arr,
-                comparer);
+            Array.Sort(arr, comparer);
             return arr;
         }
 
         private class Comparer : IComparer<int>
         {
-            public int Compare(int x,
-                int y)
+            public int Compare(int x, int y)
             {
                 if (x == y)
                 {

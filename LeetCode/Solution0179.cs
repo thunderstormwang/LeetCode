@@ -9,8 +9,7 @@ namespace LeetCode
     {
         private class Comparer : IComparer<int>
         {
-            public int Compare(int x,
-                int y)
+            public int Compare(int x, int y)
             {
                 var str1 = $"{x}{y}";
                 var str2 = $"{y}{x}";
@@ -21,8 +20,7 @@ namespace LeetCode
 
         public string LargestNumber(int[] nums)
         {
-            Array.Sort(nums,
-                new Comparer());
+            Array.Sort(nums, new Comparer());
 
             if (nums.Last().ToString()[0] == '0')
             {

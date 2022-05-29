@@ -12,8 +12,8 @@ namespace LeetCodeTests.SolutionTest0001_0050
         [TestCase("(]", false)]
         [TestCase("([)]", false)]
         [TestCase("{[]}", true)]
-        public void IsValid(string s, bool expected) {
-        
+        public void IsValid(string s, bool expected) 
+        {
             var solution = new Solution0020();
 
             var actual = solution.IsValid(s);

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode.Solution0101_0200;
 using NUnit.Framework;
 
@@ -9,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0102Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void LevelOrder(int?[] array,
-            IList<IList<int>> expected)
+        public void LevelOrder(int?[] array, IList<IList<int>> expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0102();
             var actual = solution.LevelOrder(root);

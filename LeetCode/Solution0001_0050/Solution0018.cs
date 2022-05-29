@@ -5,8 +5,7 @@ namespace LeetCode.Solution0001_0050
 {
     public class Solution0018
     {
-        public IList<IList<int>> FourSum(int[] nums,
-            int target)
+        public IList<IList<int>> FourSum(int[] nums, int target)
         {
             IList<IList<int>> result = new List<IList<int>>();
 

@@ -2,8 +2,7 @@
 {
     public class Solution0383
     {
-        public bool CanConstruct(string ransomNote,
-            string magazine)
+        public bool CanConstruct(string ransomNote, string magazine)
         {
             var array = new int[26];
             foreach (var item in magazine)

@@ -46,8 +46,7 @@ namespace LeetCode.Solution0501_9999
                 node.next = temp;
             }
 
-            public void AddAtIndex(int index,
-                int val)
+            public void AddAtIndex(int index, int val)
             {
                 var count = -1;
                 var pre = dummyNode;
@@ -155,8 +154,7 @@ namespace LeetCode.Solution0501_9999
                 size++;
             }
 
-            public void AddAtIndex(int index,
-                int val)
+            public void AddAtIndex(int index, int val)
             {
                 if (size < index)
                 {

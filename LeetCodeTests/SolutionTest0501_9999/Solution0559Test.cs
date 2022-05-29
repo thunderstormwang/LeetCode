@@ -8,8 +8,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0559Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void MaxDepth_DFS_TopDownTest(int?[] array,
-            int expected)
+        public void MaxDepth_DFS_TopDownTest(int?[] array, int expected)
         {
             var root = Utility.Build_N_ary_Tree(array);
 
@@ -20,8 +19,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void MaxDepth_DFS_BottomUpTest(int?[] array,
-            int expected)
+        public void MaxDepth_DFS_BottomUpTest(int?[] array, int expected)
         {
             var root = Utility.Build_N_ary_Tree(array);
 
@@ -32,8 +30,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void MaxDepth_BSFTest(int?[] array,
-            int expected)
+        public void MaxDepth_BSFTest(int?[] array, int expected)
         {
             var root = Utility.Build_N_ary_Tree(array);
 

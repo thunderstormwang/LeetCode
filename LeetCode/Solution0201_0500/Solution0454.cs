@@ -4,10 +4,7 @@ namespace LeetCode.Solution0201_0500
 {
     public class Solution0454
     {
-        public int FourSumCount(int[] nums1,
-            int[] nums2,
-            int[] nums3,
-            int[] nums4)
+        public int FourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4)
         {
             var result = 0;
             var dict = new Dictionary<int, int>();

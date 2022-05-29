@@ -9,8 +9,7 @@ namespace LeetCodeTests
     public class Solution0090Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void SubsetsWithDupTest(int[] inputArray,
-            int[][] expectedArray)
+        public void SubsetsWithDupTest(int[] inputArray, int[][] expectedArray)
         {
             var solution = new Solution0090();
             var actual = solution.SubsetsWithDup(inputArray);

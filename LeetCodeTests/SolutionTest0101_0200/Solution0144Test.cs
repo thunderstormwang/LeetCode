@@ -8,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0144Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void PreorderTraversal_Recursive(int?[] array,
-            int[] expected)
+        public void PreorderTraversal_Recursive(int?[] array, int[] expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0144();
             var actual = solution.PreorderTraversal_Recursive(root);
@@ -21,11 +19,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void PreorderTraversal_Iterative(int?[] array,
-            int[] expected)
+        public void PreorderTraversal_Iterative(int?[] array, int[] expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0144();
             var actual = solution.PreorderTraversal_Iterative(root);

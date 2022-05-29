@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode;
 using NUnit.Framework;
 
@@ -10,8 +8,7 @@ namespace LeetCodeTests
     public class Solution0491Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void FindSubsequencesTest(int[] inputArray,
-            int[][] expectedArray)
+        public void FindSubsequencesTest(int[] inputArray, int[][] expectedArray)
         {
             var solution = new Solution0491();
             var actual = solution.FindSubsequences(inputArray);

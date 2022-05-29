@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode.Solution0501_9999
+﻿namespace LeetCode.Solution0501_9999
 {
     public class Solution0515
     {
@@ -22,8 +19,7 @@ namespace LeetCode.Solution0501_9999
                 while (nodeNumberInCurrLevel > 0)
                 {
                     var node = queue.Dequeue();
-                    max = Math.Max(max,
-                        node.val);
+                    max = Math.Max(max, node.val);
 
                     if (node.left != null)
                     {

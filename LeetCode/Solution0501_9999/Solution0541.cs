@@ -5,8 +5,7 @@ namespace LeetCode.Solution0501_9999
 {
     public class Solution0541
     {
-        public string ReverseStr(string s,
-            int k)
+        public string ReverseStr(string s, int k)
         {
             var charArray = s.ToArray();
             var begin = 0;
@@ -14,8 +13,7 @@ namespace LeetCode.Solution0501_9999
             while (begin < s.Length)
             {
                 var low = begin;
-                var high = Math.Min(begin + k,
-                    s.Length) - 1;
+                var high = Math.Min(begin + k, s.Length) - 1;
 
                 while (low < high)
                 {

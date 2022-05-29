@@ -2,10 +2,7 @@
 {
     public class Solution0885
     {
-        public int[][] SpiralMatrixIII(int rows,
-            int cols,
-            int rStart,
-            int cStart)
+        public int[][] SpiralMatrixIII(int rows, int cols, int rStart, int cStart)
         {
             var result = new int[rows * cols][];
             var counter = 0;
@@ -31,10 +28,7 @@
                 {
                     rStart += directArray[direction][0];
                     cStart += directArray[direction][1];
-                    if (IsBeyondBoundary(rows,
-                        cols,
-                        rStart,
-                        cStart))
+                    if (IsBeyondBoundary(rows, cols, rStart, cStart))
                     {
                         result[counter++] = new int [2] { rStart, cStart };
                     }
@@ -47,10 +41,7 @@
             return result;
         }
 
-        private bool IsBeyondBoundary(int rows,
-            int cols,
-            int rStart,
-            int cStart)
+        private bool IsBeyondBoundary(int rows, int cols, int rStart, int cStart)
         {
             return 0 <= rStart && rStart <= (rows - 1) && 0 <= cStart && cStart <= (cols - 1);
         }

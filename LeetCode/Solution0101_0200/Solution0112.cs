@@ -4,20 +4,17 @@ namespace LeetCode.Solution0101_0200
 {
     public class Solution0112
     {
-        public bool HasPathSum_Recursive(TreeNode root,
-            int targetSum)
+        public bool HasPathSum_Recursive(TreeNode root, int targetSum)
         {
             if (root == null)
             {
                 return false;
             }
 
-            return DepthFirstSearch(root,
-                targetSum);
+            return DepthFirstSearch(root, targetSum);
         }
 
-        public bool HasPathSum_Iterative(TreeNode root,
-            int targetSum)
+        public bool HasPathSum_Iterative(TreeNode root, int targetSum)
         {
             if (root == null)
             {
@@ -49,8 +46,7 @@ namespace LeetCode.Solution0101_0200
             return false;
         }
 
-        private bool DepthFirstSearch(TreeNode root,
-            int targetSum)
+        private bool DepthFirstSearch(TreeNode root, int targetSum)
         {
             if (root == null)
             {
@@ -59,28 +55,22 @@ namespace LeetCode.Solution0101_0200
 
             if (root.left != null && root.right != null)
             {
-                return DepthFirstSearch(root.left,
-                           targetSum - root.val) ||
-                       DepthFirstSearch(root.right,
-                           targetSum - root.val);
+                return DepthFirstSearch(root.left, targetSum - root.val) 
+                       || DepthFirstSearch(root.right, targetSum - root.val);
             }
 
             if (root.left == null && root.right != null)
             {
-                return DepthFirstSearch(root.right,
-                    targetSum - root.val);
+                return DepthFirstSearch(root.right, targetSum - root.val);
             }
 
             if (root.left != null && root.right == null)
             {
-                return DepthFirstSearch(root.left,
-                    targetSum - root.val);
+                return DepthFirstSearch(root.left, targetSum - root.val);
             }
 
-            return DepthFirstSearch(root.left,
-                       targetSum - root.val) &&
-                   DepthFirstSearch(root.right,
-                       targetSum - root.val);
+            return DepthFirstSearch(root.left, targetSum - root.val) 
+                   && DepthFirstSearch(root.right, targetSum - root.val);
         }
     }
     

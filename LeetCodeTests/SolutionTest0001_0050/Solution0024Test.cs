@@ -7,18 +7,12 @@ namespace LeetCodeTests.SolutionTest0001_0050
     [TestFixture]
     public class Solution0024Test
     {
-        [TestCase(new int[] { 1, 2, 3, 4 },
-            new int[] { 2, 1, 4, 3 })]
-        [TestCase(new int[] { 1, 2, 3 },
-            new int[] { 2, 1, 3 })]
-        [TestCase(new int[] { 1, 2 },
-            new int[] { 2, 1 })]
-        [TestCase(new int[] { 1 },
-            new int[] { 1 })]
-        [TestCase(new int[] { },
-            new int[] { })]
-        public void SwapPairsTest_Version1(int[] input,
-            int[] expected)
+        [TestCase(new int[] { 1, 2, 3, 4 }, new int[] { 2, 1, 4, 3 })]
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 2, 1, 3 })]
+        [TestCase(new int[] { 1, 2 }, new int[] { 2, 1 })]
+        [TestCase(new int[] { 1 }, new int[] { 1 })]
+        [TestCase(new int[] { }, new int[] { })]
+        public void SwapPairsTest_Version1(int[] input, int[] expected)
         {
             var solution = new Solution0024();
 
@@ -27,20 +21,14 @@ namespace LeetCodeTests.SolutionTest0001_0050
 
             var expectedListNode = Utility.BuildListNode(expected);
 
-            Utility.CheckLinkedList(actual,
-                expectedListNode).Should().BeTrue();
+            Utility.CheckLinkedList(actual, expectedListNode).Should().BeTrue();
         }
         
-        [TestCase(new int[] { 1, 2, 3, 4 },
-            new int[] { 2, 1, 4, 3 })]
-        [TestCase(new int[] { 1, 2, 3 },
-            new int[] { 2, 1, 3 })]
-        [TestCase(new int[] { 1, 2 },
-            new int[] { 2, 1 })]
-        [TestCase(new int[] { 1 },
-            new int[] { 1 })]
-        [TestCase(new int[] { },
-            new int[] { })]
+        [TestCase(new int[] { 1, 2, 3, 4 }, new int[] { 2, 1, 4, 3 })]
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 2, 1, 3 })]
+        [TestCase(new int[] { 1, 2 }, new int[] { 2, 1 })]
+        [TestCase(new int[] { 1 }, new int[] { 1 })]
+        [TestCase(new int[] { }, new int[] { })]
         public void SwapPairsTest_Version2(int[] input,
             int[] expected)
         {
@@ -51,8 +39,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
 
             var expectedListNode = Utility.BuildListNode(expected);
 
-            Utility.CheckLinkedList(actual,
-                expectedListNode).Should().BeTrue();
+            Utility.CheckLinkedList(actual, expectedListNode).Should().BeTrue();
         }
     }
 }

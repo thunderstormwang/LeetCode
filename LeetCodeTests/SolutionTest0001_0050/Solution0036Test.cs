@@ -8,8 +8,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
     public class Solution0036Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void IsValidSudoku(char[][] board,
-            bool expected)
+        public void IsValidSudoku(char[][] board, bool expected)
         {
             var solution = new Solution0036();
 

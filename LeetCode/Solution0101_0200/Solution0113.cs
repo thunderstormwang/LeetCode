@@ -6,8 +6,7 @@ namespace LeetCode.Solution0101_0200
 {
     public class Solution0113
     {
-        public IList<IList<int>> PathSum_Recursive(TreeNode root,
-            int targetSum)
+        public IList<IList<int>> PathSum_Recursive(TreeNode root, int targetSum)
         {
             IList<IList<int>> result = new List<IList<int>>();
             if (root == null)
@@ -15,16 +14,12 @@ namespace LeetCode.Solution0101_0200
                 return result;
             }
 
-            DepthFirstSearch(root,
-                targetSum,
-                new List<int>(),
-                result);
+            DepthFirstSearch(root, targetSum, new List<int>(), result);
 
             return result;
         }
 
-        public IList<IList<int>> PathSum_Iterative(TreeNode root,
-            int targetSum)
+        public IList<IList<int>> PathSum_Iterative(TreeNode root, int targetSum)
         {
             IList<IList<int>> result = new List<IList<int>>();
             if (root == null)
@@ -48,24 +43,19 @@ namespace LeetCode.Solution0101_0200
 
                 if (item.Node.right != null)
                 {
-                    stack.Push((item.Node.right, item.TargetSum,
-                        new List<int>(item.CurrPath.ToArray())));
+                    stack.Push((item.Node.right, item.TargetSum, new List<int>(item.CurrPath.ToArray())));
                 }
 
                 if (item.Node.left != null)
                 {
-                    stack.Push((item.Node.left, item.TargetSum,
-                        new List<int>(item.CurrPath.ToArray())));
+                    stack.Push((item.Node.left, item.TargetSum, new List<int>(item.CurrPath.ToArray())));
                 }
             }
 
             return result;
         }
 
-        private void DepthFirstSearch(TreeNode root,
-            int targetSum,
-            IList<int> currPath,
-            IList<IList<int>> allPaths)
+        private void DepthFirstSearch(TreeNode root, int targetSum, IList<int> currPath, IList<IList<int>> allPaths)
         {
             targetSum -= root.val;
             currPath.Add(root.val);

@@ -8,17 +8,10 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0885Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void SpiralMatrixIIITest(int rows,
-            int cols,
-            int rStart,
-            int cStart,
-            int[][] expected)
+        public void SpiralMatrixIIITest(int rows, int cols, int rStart, int cStart, int[][] expected)
         {
             var solution = new Solution0885();
-            var actual = solution.SpiralMatrixIII(rows,
-                cols,
-                rStart,
-                cStart);
+            var actual = solution.SpiralMatrixIII(rows, cols, rStart, cStart);
 
             actual.Should().BeEquivalentTo(expected);
         }

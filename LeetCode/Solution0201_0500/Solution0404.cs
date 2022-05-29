@@ -7,9 +7,7 @@ namespace LeetCode.Solution0201_0500
     {
         public int SumOfLeftLeaves_Recursive(TreeNode root)
         {
-            return DepthFirstSearch(root,
-                false,
-                0);
+            return DepthFirstSearch(root, false, 0);
         }
 
         public int SumOfLeftLeaves_Iterative(TreeNode root)
@@ -44,9 +42,7 @@ namespace LeetCode.Solution0201_0500
             return result;
         }
 
-        private int DepthFirstSearch(TreeNode root,
-            bool isLeft,
-            int currSum)
+        private int DepthFirstSearch(TreeNode root, bool isLeft, int currSum)
         {
             if (isLeft && root.left == null && root.right == null)
             {
@@ -55,16 +51,12 @@ namespace LeetCode.Solution0201_0500
 
             if (root.left != null)
             {
-                currSum = DepthFirstSearch(root.left,
-                    true,
-                    currSum);
+                currSum = DepthFirstSearch(root.left, true, currSum);
             }
 
             if (root.right != null)
             {
-                currSum = DepthFirstSearch(root.right,
-                    false,
-                    currSum);
+                currSum = DepthFirstSearch(root.right, false, currSum);
             }
 
             return currSum;

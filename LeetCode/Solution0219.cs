@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution0219
     {
-        public bool ContainsNearbyDuplicate(int[] nums,
-            int k)
+        public bool ContainsNearbyDuplicate(int[] nums, int k)
         {
             var indexDict = new Dictionary<int, int>();
             for (var i = 0; i < nums.Length; i++)
             {
                 if (!indexDict.ContainsKey(nums[i]))
                 {
-                    indexDict.Add(nums[i],
-                        i);
+                    indexDict.Add(nums[i], i);
                     continue;
                 }
 

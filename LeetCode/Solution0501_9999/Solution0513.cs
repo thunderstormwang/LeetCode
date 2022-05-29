@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode.Solution0501_9999
+﻿namespace LeetCode.Solution0501_9999
 {
     public class Solution0513
     {
         public int FindBottomLeftValue_DFS_Recursive(TreeNode root)
         {
             var valueList = new List<int>();
-            DepthFirstSearch(root,
-                1,
-                valueList);
+            DepthFirstSearch(root, 1, valueList);
 
             return valueList.Last();
         }
@@ -74,9 +69,7 @@ namespace LeetCode.Solution0501_9999
             return result;
         }
 
-        private void DepthFirstSearch(TreeNode root,
-            int depth,
-            List<int> valueList)
+        private void DepthFirstSearch(TreeNode root, int depth, List<int> valueList)
         {
             if (root == null)
             {
@@ -88,12 +81,8 @@ namespace LeetCode.Solution0501_9999
                 valueList.Add(root.val);
             }
 
-            DepthFirstSearch(root.left,
-                depth + 1,
-                valueList);
-            DepthFirstSearch(root.right,
-                depth + 1,
-                valueList);
+            DepthFirstSearch(root.left, depth + 1, valueList);
+            DepthFirstSearch(root.right, depth + 1, valueList);
         }
     }
     

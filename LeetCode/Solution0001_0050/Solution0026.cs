@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.Solution0001_0050
+﻿namespace LeetCode.Solution0001_0050
 {
     public class Solution0026
     {

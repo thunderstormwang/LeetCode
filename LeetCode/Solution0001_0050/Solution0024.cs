@@ -10,8 +10,7 @@
 
             while (temp.next != null && temp.next.next != null)
             {
-                SwapNode(temp,
-                    temp.next.next);
+                SwapNode(temp, temp.next.next);
 
                 temp = temp.next.next;
             }

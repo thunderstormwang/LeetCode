@@ -7,12 +7,10 @@ namespace LeetCode.Solution0501_9999
     {
         public int MaxDepth_DFS_TopDown(Node root)
         {
-            return DepthFirstSearch(root,
-                0);
+            return DepthFirstSearch(root, 0);
         }
 
-        private int DepthFirstSearch(Node root,
-            int depth)
+        private int DepthFirstSearch(Node root, int depth)
         {
             if (root == null)
             {
@@ -27,10 +25,8 @@ namespace LeetCode.Solution0501_9999
 
             foreach (var item in root.children)
             {
-                var temp = DepthFirstSearch(item,
-                    depth + 1);
-                result = Math.Max(result,
-                    temp);
+                var temp = DepthFirstSearch(item, depth + 1);
+                result = Math.Max(result, temp);
             }
 
             return result;
@@ -52,8 +48,7 @@ namespace LeetCode.Solution0501_9999
             foreach (var item in root.children)
             {
                 var temp = 1 + MaxDepth_DFS_BottomUp(item);
-                result = Math.Max(result,
-                    temp);
+                result = Math.Max(result, temp);
             }
 
             return result;

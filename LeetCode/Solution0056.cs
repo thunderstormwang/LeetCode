@@ -14,9 +14,7 @@ namespace LeetCode
                 {
                     if (intervals[j][0] > intervals[j + 1][0])
                     {
-                        Swap(intervals,
-                            j,
-                            j + 1);
+                        Swap(intervals, j, j + 1);
                     }
                 }
             }
@@ -41,9 +39,7 @@ namespace LeetCode
             return mergeList.ToArray();
         }
 
-        private void Swap(int[][] intervals,
-            int i,
-            int j)
+        private void Swap(int[][] intervals, int i, int j)
         {
             var temp = intervals[i];
             intervals[i] = intervals[j];

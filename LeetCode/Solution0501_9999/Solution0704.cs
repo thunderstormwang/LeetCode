@@ -5,14 +5,10 @@
         public int Search_Recursive(int[] nums,
             int target)
         {
-            return BinarySearch(nums,
-                target,
-                0,
-                nums.Length - 1);
+            return BinarySearch(nums, target, 0, nums.Length - 1);
         }
 
-        public int Search_Iterative(int[] nums,
-            int target)
+        public int Search_Iterative(int[] nums, int target)
         {
             var start = 0;
             var end = nums.Length - 1;
@@ -37,10 +33,7 @@
             return -1;
         }
 
-        private int BinarySearch(int[] nums,
-            int target,
-            int start,
-            int end)
+        private int BinarySearch(int[] nums, int target, int start, int end)
         {
             if (start > end)
             {
@@ -55,17 +48,11 @@
             }
             else if (nums[half] < target)
             {
-                return BinarySearch(nums,
-                    target,
-                    half + 1,
-                    end);
+                return BinarySearch(nums, target, half + 1, end);
             }
             else
             {
-                return BinarySearch(nums,
-                    target,
-                    start,
-                    half - 1);
+                return BinarySearch(nums, target, start, half - 1);
             }
         }
 

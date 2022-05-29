@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode.Solution0001_0050
+﻿namespace LeetCode.Solution0001_0050
 {
     public class Solution0022
     {
@@ -13,21 +10,16 @@ namespace LeetCode.Solution0001_0050
         public IList<string> GenerateParenthesis_Approach1(int n)
         {
             var result = new List<string>();
-            FindCombination_PutAndCheck(new int[n * 2],
-                0,
-                result);
+            FindCombination_PutAndCheck(new int[n * 2], 0, result);
 
             return result;
         }
 
-        private void FindCombination_PutAndCheck(int[] parenthesisArray,
-            int index,
-            List<string> result)
+        private void FindCombination_PutAndCheck(int[] parenthesisArray, int index, List<string> result)
         {
             if (index == parenthesisArray.Length)
             {
-                var temp = string.Join(string.Empty,
-                    parenthesisArray.Select(p => p == 1 ? "(" : ")"));
+                var temp = string.Join(string.Empty, parenthesisArray.Select(p => p == 1 ? "(" : ")"));
                 result.Add(temp);
 
                 return;

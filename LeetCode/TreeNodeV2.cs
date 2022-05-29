@@ -12,10 +12,7 @@
             this.val = val;
         }
 
-        public TreeNodeV2(int val,
-            TreeNodeV2 left,
-            TreeNodeV2 right,
-            TreeNodeV2 next)
+        public TreeNodeV2(int val, TreeNodeV2 left, TreeNodeV2 right, TreeNodeV2 next)
         {
             this.val = val;
             this.left = left;

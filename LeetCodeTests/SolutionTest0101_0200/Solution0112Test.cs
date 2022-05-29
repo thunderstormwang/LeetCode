@@ -8,31 +8,23 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0112Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void HasPathSum_RecursiveTest(int?[] array,
-            int pathSum,
-            bool expected)
+        public void HasPathSum_RecursiveTest(int?[] array, int pathSum, bool expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0112();
-            var actual = solution.HasPathSum_Recursive(root,
-                pathSum);
+            var actual = solution.HasPathSum_Recursive(root, pathSum);
 
             actual.Should().Be(expected);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void HasPathSum_IterativeTest(int?[] array,
-            int pathSum,
-            bool expected)
+        public void HasPathSum_IterativeTest(int?[] array, int pathSum, bool expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0112();
-            var actual = solution.HasPathSum_Iterative(root,
-                pathSum);
+            var actual = solution.HasPathSum_Iterative(root, pathSum);
 
             actual.Should().Be(expected);
         }

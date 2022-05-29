@@ -12,14 +12,12 @@ namespace LeetCode.Solution0101_0200
                 return 0;
             }
 
-            return Math.Max(MaxDepth_DFS_BottomUp(root.left),
-                MaxDepth_DFS_BottomUp(root.right)) + 1;
+            return Math.Max(MaxDepth_DFS_BottomUp(root.left), MaxDepth_DFS_BottomUp(root.right)) + 1;
         }
 
         public int MaxDepth_DFS_TopDown(TreeNode root)
         {
-            return DepthFirstSearch(root,
-                0);
+            return DepthFirstSearch(root, 0);
         }
 
         public int MaxDepth_BFS(TreeNode root)
@@ -56,18 +54,14 @@ namespace LeetCode.Solution0101_0200
             return depth;
         }
 
-        private int DepthFirstSearch(TreeNode root,
-            int depth)
+        private int DepthFirstSearch(TreeNode root, int depth)
         {
             if (root == null)
             {
                 return depth;
             }
 
-            return Math.Max(DepthFirstSearch(root.left,
-                    depth + 1),
-                DepthFirstSearch(root.right,
-                    depth + 1));
+            return Math.Max(DepthFirstSearch(root.left, depth + 1), DepthFirstSearch(root.right, depth + 1));
         }
     }
     

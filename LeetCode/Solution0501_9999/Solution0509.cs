@@ -17,7 +17,7 @@
             for (var i = 2; i <= n; i++)
             {
                 var temp = result;
-                result = result + pre;
+                result += pre;
                 pre = temp;
             }
 
@@ -26,12 +26,10 @@
 
         public int Fib_Recursive(int n)
         {
-            return CalculateByRecursive(n,
-                new int [n + 1]);
+            return CalculateByRecursive(n, new int [n + 1]);
         }
 
-        private int CalculateByRecursive(int n,
-            int[] array)
+        private int CalculateByRecursive(int n, int[] array)
         {
             if (n <= 1)
             {
@@ -43,9 +41,7 @@
                 return array[n];
             }
 
-            array[n] = CalculateByRecursive(n - 1,
-                array) + CalculateByRecursive(n - 2,
-                array);
+            array[n] = CalculateByRecursive(n - 1, array) + CalculateByRecursive(n - 2, array);
 
             return array[n];
         }

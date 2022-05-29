@@ -6,8 +6,7 @@ namespace LeetCode.Solution0001_0050
 {
     public class Solution0040
     {
-        public IList<IList<int>> CombinationSum2(int[] candidates,
-            int target)
+        public IList<IList<int>> CombinationSum2(int[] candidates, int target)
         {
             Array.Sort(candidates);
             var result = new List<IList<int>>();

@@ -30,8 +30,7 @@ namespace LeetCode.Solution0201_0500
 
             if (leftDepth == rightDepth)
             {
-                return ((int)Math.Pow(2,
-                    leftDepth) - 1) * 2 + 1;
+                return ((int)Math.Pow(2, leftDepth) - 1) * 2 + 1;
             }
 
             return CountNodes(root.left) + CountNodes(root.right) + 1;

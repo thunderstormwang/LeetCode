@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode;
 using NUnit.Framework;
 
@@ -9,8 +8,7 @@ namespace LeetCodeTests
     public class Solution0046Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void Permute_IterativeTest(int[] input,
-            int[][] expectedArray)
+        public void Permute_IterativeTest(int[] input, int[][] expectedArray)
         {
             var solution = new Solution0046();
             var expectList = new List<List<int>>();
@@ -25,8 +23,7 @@ namespace LeetCodeTests
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void Permute_RecursiveTest(int[] input,
-            int[][] expectedArray)
+        public void Permute_RecursiveTest(int[] input, int[][] expectedArray)
         {
             var solution046 = new Solution0046();
             var expectList = new List<List<int>>();
@@ -45,20 +42,31 @@ namespace LeetCodeTests
             new object[]
             {
                 new int[] { 0 },
-                new int[][] { new int[] { 0 } }
+                new int[][]
+                {
+                    new int[] { 0 }
+                }
             },
             new object[]
             {
                 new int[] { 0, 1 },
-                new int[][] { new int[] { 0, 1 }, new int[] { 1, 0 } }
+                new int[][]
+                {
+                    new int[] { 0, 1 },
+                    new int[] { 1, 0 }
+                }
             },
             new object[]
             {
                 new int[] { 0, 1, 2 },
                 new int[][]
                 {
-                    new int[] { 2, 0, 1 }, new int[] { 0, 2, 1 }, new int[] { 0, 1, 2 },
-                    new int[] { 2, 1, 0 }, new int[] { 1, 2, 0 }, new int[] { 1, 0, 2 }
+                    new int[] { 2, 0, 1 }, 
+                    new int[] { 0, 2, 1 }, 
+                    new int[] { 0, 1, 2 },
+                    new int[] { 2, 1, 0 }, 
+                    new int[] { 1, 2, 0 }, 
+                    new int[] { 1, 0, 2 }
                 }
             }
         };

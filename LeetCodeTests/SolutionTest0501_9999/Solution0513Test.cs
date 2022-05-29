@@ -8,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0513Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void FindBottomLeftValue_DFS_RecursiveTest(int?[] array,
-            int expected)
+        public void FindBottomLeftValue_DFS_RecursiveTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0513();
             var actual = solution.FindBottomLeftValue_DFS_Recursive(root);
@@ -21,11 +19,9 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void FindBottomLeftValue_DFS_IterativeTest(int?[] array,
-            int expected)
+        public void FindBottomLeftValue_DFS_IterativeTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0513();
             var actual = solution.FindBottomLeftValue_DFS_Iterative(root);
@@ -34,11 +30,9 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void FindBottomLeftValue_BFSTest(int?[] array,
-            int expected)
+        public void FindBottomLeftValue_BFSTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0513();
             var actual = solution.FindBottomLeftValue_BFS(root);

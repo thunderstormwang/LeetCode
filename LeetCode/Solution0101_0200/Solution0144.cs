@@ -7,8 +7,7 @@ namespace LeetCode.Solution0101_0200
         public IList<int> PreorderTraversal_Recursive(TreeNode root)
         {
             var result = new List<int>();
-            PreorderTraversal(root,
-                result);
+            PreorderTraversal(root, result);
             return result;
         }
 
@@ -34,8 +33,7 @@ namespace LeetCode.Solution0101_0200
             return result;
         }
 
-        private void PreorderTraversal(TreeNode root,
-            IList<int> result)
+        private void PreorderTraversal(TreeNode root, IList<int> result)
         {
             if (root == null)
             {
@@ -43,10 +41,8 @@ namespace LeetCode.Solution0101_0200
             }
 
             result.Add(root.val);
-            PreorderTraversal(root.left,
-                result);
-            PreorderTraversal(root.right,
-                result);
+            PreorderTraversal(root.left, result);
+            PreorderTraversal(root.right, result);
         }
         
         // Time: O(N)

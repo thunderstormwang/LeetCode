@@ -17,8 +17,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
             var solution = new Solution0226();
             var actual = solution.InvertTree_DFS_Recursive(root);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
         
         [TestCaseSource(nameof(TestCases))]
@@ -30,8 +29,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
             var solution = new Solution0226();
             var actual = solution.InvertTree_DFS_Iterative(root);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
         
         [TestCaseSource(nameof(TestCases))]
@@ -43,8 +41,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
             var solution = new Solution0226();
             var actual = solution.InvertTree_BFS(root);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
 
         private static readonly object[] TestCases =

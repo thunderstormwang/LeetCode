@@ -19,8 +19,7 @@ namespace LeetCode.Solution0001_0050
                 var end = i + nums[i];
                 for (var j = start; j <= end && j < nums.Length; j++)
                 {
-                    dp[j] = Math.Min(dp[j],
-                        dp[i] + 1);
+                    dp[j] = Math.Min(dp[j], dp[i] + 1);
                 }
             }
 
@@ -39,8 +38,7 @@ namespace LeetCode.Solution0001_0050
                 step++;
                 for (var i = start; i <= end; i++)
                 {
-                    maxFar = Math.Max(i + nums[i],
-                        maxFar);
+                    maxFar = Math.Max(i + nums[i], maxFar);
                 }
 
                 start = end + 1;

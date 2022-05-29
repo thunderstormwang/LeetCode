@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode.Solution0501_9999
+﻿namespace LeetCode.Solution0501_9999
 {
     public class Solution1002
     {
@@ -28,8 +25,7 @@ namespace LeetCode.Solution0501_9999
                 var temp = int.MaxValue;
                 foreach (var item in record)
                 {
-                    temp = Math.Min(temp,
-                        item[j]);
+                    temp = Math.Min(temp, item[j]);
                 }
 
                 while (temp > 0)

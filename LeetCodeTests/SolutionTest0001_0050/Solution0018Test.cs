@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode.Solution0001_0050;
 using NUnit.Framework;
 
@@ -9,9 +8,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
     public class Solution0018Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void FourSumTest(int[] input,
-            int target,
-            int[][] expectedArray)
+        public void FourSumTest(int[] input, int target, int[][] expectedArray)
         {
             var solution = new Solution0018();
             var expectList = new List<List<int>>();
@@ -20,8 +17,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
                 expectList.Add(new List<int>(array));
             }
 
-            var actual = solution.FourSum(input,
-                target);
+            var actual = solution.FourSum(input, target);
 
             actual.Should().BeEquivalentTo(expectList);
         }
@@ -32,13 +28,21 @@ namespace LeetCodeTests.SolutionTest0001_0050
             {
                 new int[] { 1, 0, -1, 0, -2, 2 },
                 0,
-                new int[][] { new int[] { -2, -1, 1, 2 }, new int[] { -2, 0, 0, 2 }, new int[] { -1, 0, 0, 1 } }
+                new int[][]
+                {
+                    new int[] { -2, -1, 1, 2 },
+                    new int[] { -2, 0, 0, 2 }, 
+                    new int[] { -1, 0, 0, 1 }
+                }
             },
             new object[]
             {
                 new int[] { 2, 2, 2, 2, 2 },
                 8,
-                new int[][] { new int[] { 2, 2, 2, 2 } }
+                new int[][]
+                {
+                    new int[] { 2, 2, 2, 2 }
+                }
             }
         };
     }

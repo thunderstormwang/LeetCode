@@ -5,8 +5,7 @@ namespace LeetCode.Solution0001_0050
 {
     public class Solution0039
     {
-        public IList<IList<int>> CombinationSum(int[] candidates,
-            int target)
+        public IList<IList<int>> CombinationSum(int[] candidates, int target)
         {
             var result = new List<IList<int>>();
             FindCombinationSum(candidates,

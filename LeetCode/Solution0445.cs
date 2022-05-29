@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution0445
     {
-        public ListNode AddTwoNumbers(ListNode l1,
-            ListNode l2)
+        public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
             var stack1 = new Stack<int>();
             var stack2 = new Stack<int>();

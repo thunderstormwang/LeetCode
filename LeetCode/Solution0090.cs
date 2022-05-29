@@ -10,18 +10,12 @@ namespace LeetCode
         {
             Array.Sort(nums);
             IList<IList<int>> result = new List<IList<int>>();
-            FindSubsetsWithDup(nums,
-                0,
-                new List<int>(),
-                result);
+            FindSubsetsWithDup(nums, 0, new List<int>(), result);
 
             return result;
         }
 
-        private void FindSubsetsWithDup(int[] nums,
-            int index,
-            IList<int> curr,
-            IList<IList<int>> result)
+        private void FindSubsetsWithDup(int[] nums, int index, IList<int> curr, IList<IList<int>> result)
         {
             result.Add(curr.ToArray());
 
@@ -33,10 +27,7 @@ namespace LeetCode
                 }
 
                 curr.Add(nums[i]);
-                FindSubsetsWithDup(nums,
-                    i + 1,
-                    curr,
-                    result);
+                FindSubsetsWithDup(nums, i + 1, curr, result);
                 curr.Remove(nums[i]);
             }
         }

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode.Solution0201_0500
+﻿namespace LeetCode.Solution0201_0500
 {
     public class Solution0242
     {
@@ -18,8 +15,7 @@ namespace LeetCode.Solution0201_0500
             {
                 if (!dict.ContainsKey(item))
                 {
-                    dict.Add(item,
-                        0);
+                    dict.Add(item, 0);
                 }
 
                 dict[item] += 1;

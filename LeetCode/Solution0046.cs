@@ -17,8 +17,7 @@ namespace LeetCode
                     {
                         var temp = new List<int>();
                         temp.AddRange(item);
-                        temp.Insert(index,
-                            nums[i]);
+                        temp.Insert(index, nums[i]);
                         stepResult.Add(temp);
                     }
                 }
@@ -33,16 +32,12 @@ namespace LeetCode
         {
             IList<IList<int>> result = new List<IList<int>>() { };
 
-            FindPermute(result,
-                0,
-                nums);
+            FindPermute(result, 0, nums);
 
             return result;
         }
 
-        private void FindPermute(IList<IList<int>> result,
-            int index,
-            int[] nums)
+        private void FindPermute(IList<IList<int>> result, int index, int[] nums)
         {
             if (index == nums.Length)
             {

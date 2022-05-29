@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Resources;
-
-namespace LeetCode.Solution0501_9999
+﻿namespace LeetCode.Solution0501_9999
 {
     public class Solution0617
     {
-        public TreeNode MergeTrees_Recursive(TreeNode root1,
-            TreeNode root2)
+        public TreeNode MergeTrees_Recursive(TreeNode root1, TreeNode root2)
         {
             if (root1 == null && root2 == null)
             {
@@ -19,16 +14,13 @@ namespace LeetCode.Solution0501_9999
             value += root2?.val ?? 0;
             var result = new TreeNode(value);
 
-            result.left = MergeTrees_Recursive(root1?.left,
-                root2?.left);
-            result.right = MergeTrees_Recursive(root1?.right,
-                root2?.right);
+            result.left = MergeTrees_Recursive(root1?.left, root2?.left);
+            result.right = MergeTrees_Recursive(root1?.right, root2?.right);
 
             return result;
         }
 
-        public TreeNode MergeTrees_Iterative(TreeNode root1,
-            TreeNode root2)
+        public TreeNode MergeTrees_Iterative(TreeNode root1, TreeNode root2)
         {
             var stack = new Stack<TreeNode>();
             var parentStack = new Stack<(TreeNode Parent, bool IsLeft)>();

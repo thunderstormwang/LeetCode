@@ -2,8 +2,7 @@
 {
     public class Solution0028
     {
-        public int StrStr(string haystack,
-            string needle)
+        public int StrStr(string haystack, string needle)
         {
             if (string.IsNullOrEmpty(needle))
             {

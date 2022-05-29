@@ -8,45 +8,31 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0617Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void MergeTrees_RecursiveTest(int?[] array1,
-            int?[] array2,
-            int?[] expectedArray)
+        public void MergeTrees_RecursiveTest(int?[] array1, int?[] array2, int?[] expectedArray)
         {
-            var root1 = Utility.BuildTree(array1,
-                0);
-            var root2 = Utility.BuildTree(array2,
-                0);
-            var expected = Utility.BuildTree(expectedArray,
-                0);
+            var root1 = Utility.BuildTree(array1, 0);
+            var root2 = Utility.BuildTree(array2, 0);
+            var expected = Utility.BuildTree(expectedArray, 0);
 
             var solution = new Solution0617();
 
-            var actual = solution.MergeTrees_Recursive(root1,
-                root2);
+            var actual = solution.MergeTrees_Recursive(root1, root2);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void MergeTrees_IterativeTest(int?[] array1,
-            int?[] array2,
-            int?[] expectedArray)
+        public void MergeTrees_IterativeTest(int?[] array1, int?[] array2, int?[] expectedArray)
         {
-            var root1 = Utility.BuildTree(array1,
-                0);
-            var root2 = Utility.BuildTree(array2,
-                0);
-            var expected = Utility.BuildTree(expectedArray,
-                0);
+            var root1 = Utility.BuildTree(array1, 0);
+            var root2 = Utility.BuildTree(array2, 0);
+            var expected = Utility.BuildTree(expectedArray, 0);
 
             var solution = new Solution0617();
 
-            var actual = solution.MergeTrees_Iterative(root1,
-                root2);
+            var actual = solution.MergeTrees_Iterative(root1, root2);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
 
         private static readonly object[] TestCases =

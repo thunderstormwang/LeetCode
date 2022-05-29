@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution0119
     {
@@ -20,7 +18,7 @@ namespace LeetCode
 
                 for (var reverseIndex = i - 1; reverseIndex > 0; reverseIndex--)
                 {
-                    result[reverseIndex] = result[reverseIndex] + result[reverseIndex - 1];
+                    result[reverseIndex] += result[reverseIndex - 1];
                 }
             }
 

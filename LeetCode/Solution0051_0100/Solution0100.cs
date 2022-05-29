@@ -4,8 +4,7 @@ namespace LeetCode.Solution0051_0100
 {
     public class Solution0100
     {
-        public bool IsSameTree_DFS_Recursive(TreeNode p,
-            TreeNode q)
+        public bool IsSameTree_DFS_Recursive(TreeNode p, TreeNode q)
         {
             if (p == null && q == null)
             {
@@ -17,13 +16,12 @@ namespace LeetCode.Solution0051_0100
                 return false;
             }
 
-            return p.val == q.val && IsSameTree_DFS_Recursive(p.left,
-                q.left) && IsSameTree_DFS_Recursive(p.right,
-                q.right);
+            return p.val == q.val 
+                   && IsSameTree_DFS_Recursive(p.left, q.left)
+                   && IsSameTree_DFS_Recursive(p.right, q.right);
         }
 
-        public bool IsSameTree_DFS_Iterative(TreeNode p,
-            TreeNode q)
+        public bool IsSameTree_DFS_Iterative(TreeNode p, TreeNode q)
         {
             var stack = new Stack<TreeNode>();
             stack.Push(q);
@@ -58,8 +56,7 @@ namespace LeetCode.Solution0051_0100
             return true;
         }
         
-        public bool IsSameTree_BFS(TreeNode p,
-            TreeNode q)
+        public bool IsSameTree_BFS(TreeNode p, TreeNode q)
         {
             var queue = new Queue<TreeNode>();
             queue.Enqueue(p);

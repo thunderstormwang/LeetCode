@@ -7,8 +7,7 @@ namespace LeetCode.Solution0101_0200
         public IList<int> PostorderTraversal_Recursive(TreeNode root)
         {
             var result = new List<int>();
-            PostorderTraversal(root,
-                result);
+            PostorderTraversal(root, result);
             return result;
         }
 
@@ -36,18 +35,15 @@ namespace LeetCode.Solution0101_0200
             return result;
         }
 
-        private void PostorderTraversal(TreeNode root,
-            IList<int> result)
+        private void PostorderTraversal(TreeNode root, IList<int> result)
         {
             if (root == null)
             {
                 return;
             }
 
-            PostorderTraversal(root.left,
-                result);
-            PostorderTraversal(root.right,
-                result);
+            PostorderTraversal(root.left, result);
+            PostorderTraversal(root.right, result);
             result.Add(root.val);
         }
         

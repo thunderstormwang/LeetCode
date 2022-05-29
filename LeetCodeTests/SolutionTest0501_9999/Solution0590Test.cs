@@ -8,8 +8,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0590Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void Postorder_Recursive(int?[] array,
-            int[] expected)
+        public void Postorder_Recursive(int?[] array, int[] expected)
         {
             var root = Utility.Build_N_ary_Tree(array);
 
@@ -20,8 +19,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Postorder_Iterative(int?[] array,
-            int[] expected)
+        public void Postorder_Iterative(int?[] array, int[] expected)
         {
             var root = Utility.Build_N_ary_Tree(array);
 

@@ -4,8 +4,7 @@ namespace LeetCode.Solution0101_0200
 {
     public class Solution0160
     {
-        public ListNode GetIntersectionNode_Version1(ListNode headA,
-            ListNode headB)
+        public ListNode GetIntersectionNode_Version1(ListNode headA, ListNode headB)
         {
             var dummyA = new ListNode(0);
             dummyA.next = headA;
@@ -75,8 +74,7 @@ namespace LeetCode.Solution0101_0200
             return null;
         }
 
-        public ListNode GetIntersectionNode_Version2(ListNode headA,
-            ListNode headB)
+        public ListNode GetIntersectionNode_Version2(ListNode headA, ListNode headB)
         {
             var currA = headA;
             var currB = headB;

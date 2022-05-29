@@ -14,8 +14,7 @@ namespace LeetCode.Solution0201_0500
 
                 for (var j = 1; j * j <= i; j++)
                 {
-                    dp[i] = Math.Min(dp[i],
-                        dp[i - j * j] + 1);
+                    dp[i] = Math.Min(dp[i], dp[i - j * j] + 1);
                 }
             }
 

@@ -2,22 +2,16 @@
 {
     public class Solution0034
     {
-        public int[] SearchRange_Recursive(int[] nums,
-            int target)
+        public int[] SearchRange_Recursive(int[] nums, int target)
         {
             var result = new int[2] { -1, -1 };
 
-            Find(nums,
-                0,
-                nums.Length - 1,
-                target,
-                result);
+            Find(nums, 0, nums.Length - 1, target, result);
 
             return result;
         }
 
-        public int[] SearchRange_Iterative(int[] nums,
-            int target)
+        public int[] SearchRange_Iterative(int[] nums, int target)
         {
             var result = new int[2] { -1, -1 };
             var start = 0;
@@ -36,14 +30,8 @@
                 }
                 else
                 {
-                    result[0] = FindFirst(nums,
-                        target,
-                        start,
-                        index);
-                    result[1] = FindLast(nums,
-                        target,
-                        index,
-                        end);
+                    result[0] = FindFirst(nums, target, start, index);
+                    result[1] = FindLast(nums, target, index, end);
                     break;
                 }
             }
@@ -51,10 +39,7 @@
             return result;
         }
 
-        private int FindFirst(int[] nums,
-            int target,
-            int start,
-            int end)
+        private int FindFirst(int[] nums, int target, int start, int end)
         {
             var result = -1;
             while (start <= end)
@@ -78,10 +63,7 @@
             return result;
         }
 
-        private int FindLast(int[] nums,
-            int target,
-            int start,
-            int end)
+        private int FindLast(int[] nums, int target, int start, int end)
         {
             var result = -1;
             while (start <= end)

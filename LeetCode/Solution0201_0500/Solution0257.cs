@@ -8,9 +8,7 @@ namespace LeetCode.Solution0201_0500
         {
             IList<string> result = new List<string>();
 
-            DepthFirstSearch(root,
-                string.Empty,
-                result);
+            DepthFirstSearch(root, string.Empty, result);
 
             return result;
         }
@@ -51,9 +49,7 @@ namespace LeetCode.Solution0201_0500
             return result;
         }
 
-        private void DepthFirstSearch(TreeNode root,
-            string currentPath,
-            IList<string> result)
+        private void DepthFirstSearch(TreeNode root, string currentPath, IList<string> result)
         {
             currentPath += currentPath == string.Empty ? $"{root.val}" : $"->{root.val}";
 
@@ -65,16 +61,12 @@ namespace LeetCode.Solution0201_0500
 
             if (root.left != null)
             {
-                DepthFirstSearch(root.left,
-                    currentPath,
-                    result);
+                DepthFirstSearch(root.left, currentPath, result);
             }
 
             if (root.right != null)
             {
-                DepthFirstSearch(root.right,
-                    currentPath,
-                    result);
+                DepthFirstSearch(root.right, currentPath, result);
             }
         }
         

@@ -2,8 +2,7 @@
 {
     public class Solution0189
     {
-        public void Rotate(int[] nums,
-            int k)
+        public void Rotate(int[] nums, int k)
         {
             k %= nums.Length;
 
@@ -12,8 +11,7 @@
                 return;
             }
 
-            var loop = FindGreatestCommonFactor(nums.Length,
-                k);
+            var loop = FindGreatestCommonFactor(nums.Length, k);
             
             for (var i = 0; i < loop; i++)
             {
@@ -21,16 +19,13 @@
 
                 while (newIndex != i)
                 {
-                    Swap(nums,
-                        i,
-                        newIndex);
+                    Swap(nums, i, newIndex);
                     newIndex = (newIndex + k) % nums.Length;
                 }
             }
         }
 
-        private int FindGreatestCommonFactor(int a,
-            int b)
+        private int FindGreatestCommonFactor(int a, int b)
         {
             if (a < b)
             {
@@ -47,9 +42,7 @@
             return b;
         }
 
-        private void Swap(int[] nums,
-            int i,
-            int j)
+        private void Swap(int[] nums, int i, int j)
         {
             (nums[i], nums[j]) = (nums[j], nums[i]);
         }

@@ -9,13 +9,10 @@ namespace LeetCodeTests.SolutionTest0001_0050
     public class Solution0040Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void CombinationSum2(int[] inputArray,
-            int target,
-            int[][] expectedArray)
+        public void CombinationSum2(int[] inputArray, int target, int[][] expectedArray)
         {
             var solution = new Solution0040();
-            var actual = solution.CombinationSum2(inputArray,
-                target);
+            var actual = solution.CombinationSum2(inputArray, target);
             var expected = new List<List<int>>();
             foreach (var item in expectedArray)
             {
@@ -29,10 +26,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
         {
             new object[]
             {
-                new int[]
-                {
-                    10, 1, 2, 7, 6, 1, 5
-                },
+                new int[] { 10, 1, 2, 7, 6, 1, 5 },
                 8,
                 new int[][]
                 {
@@ -44,10 +38,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
             },
             new object[]
             {
-                new int[]
-                {
-                    2, 5, 2, 1, 2
-                },
+                new int[] { 2, 5, 2, 1, 2 },
                 5,
                 new int[][]
                 {
@@ -57,10 +48,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
             },
             new object[]
             {
-                new int[]
-                {
-                    2, 2, 2, 2
-                },
+                new int[] { 2, 2, 2, 2 },
                 6,
                 new int[][]
                 {

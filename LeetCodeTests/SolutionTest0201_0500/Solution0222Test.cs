@@ -11,8 +11,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
         [TestCaseSource(nameof(TestCases))]
         public void CountNodes(int? [] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0222();
             var actual = solution.CountNodes(root);

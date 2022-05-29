@@ -8,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0111Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void MinDepth_DFS_BottomUpTest(int?[] array,
-            int expected)
+        public void MinDepth_DFS_BottomUpTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0111();
             var actual = solution.MinDepth_DFS_BottomUp(root);
@@ -21,11 +19,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void MinDepth_DFS_TopDownTest(int?[] array,
-            int expected)
+        public void MinDepth_DFS_TopDownTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0111();
             var actual = solution.MinDepth_DFS_TopDown(root);
@@ -34,11 +30,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void MinDepth_BFSTest(int?[] array,
-            int expected)
+        public void MinDepth_BFSTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0111();
             var actual = solution.MinDepth_BFS(root);

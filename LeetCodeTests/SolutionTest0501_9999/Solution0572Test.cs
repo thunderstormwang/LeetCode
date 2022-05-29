@@ -8,8 +8,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0572Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void IsSubtree_DFS_RecursiveTest(int?[] rootArray,
-            int?[] subRootArray, bool expected)
+        public void IsSubtree_DFS_RecursiveTest(int?[] rootArray, int?[] subRootArray, bool expected)
         {
             var root = Utility.BuildTree( rootArray, 0);
             var subRoot = Utility.BuildTree( subRootArray, 0);
@@ -21,8 +20,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void IsSubtree_DFS_IterativeTest(int?[] rootArray,
-            int?[] subRootArray, bool expected)
+        public void IsSubtree_DFS_IterativeTest(int?[] rootArray, int?[] subRootArray, bool expected)
         {
             var root = Utility.BuildTree( rootArray, 0);
             var subRoot = Utility.BuildTree( subRootArray, 0);
@@ -34,8 +32,7 @@ namespace LeetCodeTests.SolutionTest0501_9999
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void IsSubtree_BFSTest(int?[] rootArray,
-            int?[] subRootArray, bool expected)
+        public void IsSubtree_BFSTest(int?[] rootArray, int?[] subRootArray, bool expected)
         {
             var root = Utility.BuildTree( rootArray, 0);
             var subRoot = Utility.BuildTree( subRootArray, 0);

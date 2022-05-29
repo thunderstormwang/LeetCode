@@ -8,18 +8,15 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0654Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void ConstructMaximumBinaryTree(int[] nums,
-            int?[] expectedArray)
+        public void ConstructMaximumBinaryTree(int[] nums, int?[] expectedArray)
         {
-            var expected = Utility.BuildTree(expectedArray,
-                0);
+            var expected = Utility.BuildTree(expectedArray, 0);
 
             var solution = new Solution0654();
 
             var actual = solution.ConstructMaximumBinaryTree(nums);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
 
         private static readonly object[] TestCases =

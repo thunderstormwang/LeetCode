@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution0491
     {
@@ -10,18 +6,12 @@ namespace LeetCode
         {
             IList<IList<int>> result = new List<IList<int>>();
 
-            FindIncreasingSubsequences(nums,
-                0,
-                new List<int>(),
-                result);
+            FindIncreasingSubsequences(nums, 0, new List<int>(), result);
 
             return result;
         }
 
-        private void FindIncreasingSubsequences(int[] nums,
-            int index,
-            IList<int> curr,
-            IList<IList<int>> result)
+        private void FindIncreasingSubsequences(int[] nums, int index, IList<int> curr, IList<IList<int>> result)
         {
             var notInChoice = new HashSet<int>();
             for (var i = index; i < nums.Length; i++)
@@ -42,10 +32,7 @@ namespace LeetCode
                     result.Add(curr.ToArray());
                 }
 
-                FindIncreasingSubsequences(nums,
-                    i + 1,
-                    curr,
-                    result);
+                FindIncreasingSubsequences(nums, i + 1, curr, result);
                 curr.RemoveAt(curr.Count - 1);
                 notInChoice.Add(nums[i]);
             }

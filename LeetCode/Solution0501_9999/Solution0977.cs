@@ -13,10 +13,8 @@ namespace LeetCode.Solution0501_9999
 
             while (left <= right)
             {
-                var leftPower = (int)Math.Pow(nums[left],
-                    2);
-                var rightPower = (int)Math.Pow(nums[right],
-                    2);
+                var leftPower = (int)Math.Pow(nums[left], 2);
+                var rightPower = (int)Math.Pow(nums[right], 2);
                 if (leftPower >= rightPower)
                 {
                     result[index--] = leftPower;

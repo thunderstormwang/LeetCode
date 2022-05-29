@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode.Solution0501_9999;
 using NUnit.Framework;
 
@@ -9,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0501_9999
     public class Solution0515Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void LargestValues(int?[] array,
-            IList<int> expected)
+        public void LargestValues(int?[] array, IList<int> expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0515();
             var actual = solution.LargestValues(root);

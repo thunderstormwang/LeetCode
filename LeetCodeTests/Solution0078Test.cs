@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode;
 using NUnit.Framework;
 
@@ -9,8 +8,7 @@ namespace LeetCodeTests
     public class Solution0078Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void SubsetsTest(int[] inputArray,
-            int[][] expectedArray)
+        public void SubsetsTest(int[] inputArray, int[][] expectedArray)
         {
             var solution = new Solution0078();
             var actual = solution.Subsets(inputArray);

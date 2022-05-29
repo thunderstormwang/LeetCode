@@ -8,16 +8,12 @@ namespace LeetCode
         {
             IList<IList<int>> result = new List<IList<int>>();
 
-            FindByRecursivie(result,
-                0,
-                nums);
+            FindByRecursivie(result, 0, nums);
 
             return result;
         }
 
-        private void FindByRecursivie(IList<IList<int>> result,
-            int index,
-            int[] nums)
+        private void FindByRecursivie(IList<IList<int>> result, int index, int[] nums)
         {
             if (index == nums.Length)
             {

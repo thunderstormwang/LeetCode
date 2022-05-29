@@ -8,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0117Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void Connect_BFS(int?[] array,
-            string expected)
+        public void Connect_BFS(int?[] array, string expected)
         {
-            var root = Utility.BuildTreeV2(array,
-                0);
+            var root = Utility.BuildTreeV2(array, 0);
 
             var solution = new Solution0117();
             var actual = solution.Connect_BFS(root);
@@ -21,11 +19,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Connect_DFS(int?[] array,
-            string expected)
+        public void Connect_DFS(int?[] array, string expected)
         {
-            var root = Utility.BuildTreeV2(array,
-                0);
+            var root = Utility.BuildTreeV2(array, 0);
 
             var solution = new Solution0117();
             var actual = solution.Connect_DFS(root);

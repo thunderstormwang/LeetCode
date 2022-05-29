@@ -38,8 +38,7 @@ namespace LeetCode.Solution0101_0200
                 return target.val;
             }
 
-            public void Put(int key,
-                int value)
+            public void Put(int key, int value)
             {
                 if (Get(key) != -1)
                 {
@@ -48,10 +47,8 @@ namespace LeetCode.Solution0101_0200
                 }
 
                 var target = new DoublyListNode(value);
-                dict.Add(key,
-                    target);
-                dictReverse.Add(target,
-                    key);
+                dict.Add(key, target);
+                dictReverse.Add(target, key);
 
                 InsertAtHead(target);
                 RemoveLeastRecentlyUsed();
@@ -117,8 +114,7 @@ namespace LeetCode.Solution0101_0200
                 return target.Value.Value;
             }
 
-            public void Put(int key,
-                int value)
+            public void Put(int key, int value)
             {
                 if (Get(key) != -1)
                 {

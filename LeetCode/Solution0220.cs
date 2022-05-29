@@ -7,9 +7,7 @@ namespace LeetCode
 {
     public class Solution0220
     {
-        public bool ContainsNearbyAlmostDuplicate(int[] nums,
-            int k,
-            int t)
+        public bool ContainsNearbyAlmostDuplicate(int[] nums, int k, int t)
         {
             var bucketDict = new Dictionary<long, long>();
             var width = (long)t + 1;
@@ -42,8 +40,7 @@ namespace LeetCode
 
                 if (i >= k)
                 {
-                    var tempId = GetBucketId(nums[i - k],
-                        width);
+                    var tempId = GetBucketId(nums[i - k], width);
                     bucketDict.Remove(tempId);
                 }
             }
@@ -51,8 +48,7 @@ namespace LeetCode
             return false;
         }
 
-        private long GetBucketId(long input,
-            long width)
+        private long GetBucketId(long input, long width)
         {
             return input >= 0 ? input / width : input / width - 1;
         }

@@ -44,16 +44,12 @@ namespace LeetCode.Solution0101_0200
             }
 
             IList<IList<int>> result = new List<IList<int>>();
-            DepthFirst(root,
-                result,
-                1);
+            DepthFirst(root, result, 1);
             (result as List<IList<int>>).Reverse();
             return result;
         }
 
-        private void DepthFirst(TreeNode root,
-            IList<IList<int>> list,
-            int depth)
+        private void DepthFirst(TreeNode root, IList<IList<int>> list, int depth)
         {
             if (root == null)
             {
@@ -65,12 +61,8 @@ namespace LeetCode.Solution0101_0200
                 list.Add(new List<int>());
             }
 
-            DepthFirst(root.left,
-                list,
-                depth + 1);
-            DepthFirst(root.right,
-                list,
-                depth + 1);
+            DepthFirst(root.left, list, depth + 1);
+            DepthFirst(root.right, list, depth + 1);
 
             list[depth - 1].Add(root.val);
         }

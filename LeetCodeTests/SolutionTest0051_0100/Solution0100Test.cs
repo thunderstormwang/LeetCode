@@ -8,52 +8,37 @@ namespace LeetCodeTests.SolutionTest0051_0100
     public class Solution0100Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void IsSameTree_DFS_RecursiveTest(int?[] array1,
-            int?[] array2,
-            bool expected)
+        public void IsSameTree_DFS_RecursiveTest(int?[] array1, int?[] array2, bool expected)
         {
-            var root1 = Utility.BuildTree(array1,
-                0);
-            var root2 = Utility.BuildTree(array2,
-                0);
+            var root1 = Utility.BuildTree(array1, 0);
+            var root2 = Utility.BuildTree(array2, 0);
 
             var solution = new Solution0100();
-            var actual = solution.IsSameTree_DFS_Recursive(root1,
-                root2);
+            var actual = solution.IsSameTree_DFS_Recursive(root1, root2);
 
             actual.Should().Be(expected);
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void IsSameTree_DFS_IterativeTest(int?[] array1,
-            int?[] array2,
-            bool expected)
+        public void IsSameTree_DFS_IterativeTest(int?[] array1, int?[] array2, bool expected)
         {
-            var root1 = Utility.BuildTree(array1,
-                0);
-            var root2 = Utility.BuildTree(array2,
-                0);
+            var root1 = Utility.BuildTree(array1, 0);
+            var root2 = Utility.BuildTree(array2, 0);
 
             var solution = new Solution0100();
-            var actual = solution.IsSameTree_DFS_Iterative(root1,
-                root2);
+            var actual = solution.IsSameTree_DFS_Iterative(root1, root2);
 
             actual.Should().Be(expected);
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void IsSameTree_BFSTest(int?[] array1,
-            int?[] array2,
-            bool expected)
+        public void IsSameTree_BFSTest(int?[] array1, int?[] array2, bool expected)
         {
-            var root1 = Utility.BuildTree(array1,
-                0);
-            var root2 = Utility.BuildTree(array2,
-                0);
+            var root1 = Utility.BuildTree(array1, 0);
+            var root2 = Utility.BuildTree(array2, 0);
 
             var solution = new Solution0100();
-            var actual = solution.IsSameTree_BFS(root1,
-                root2);
+            var actual = solution.IsSameTree_BFS(root1, root2);
 
             actual.Should().Be(expected);
         }

@@ -7,21 +7,12 @@ namespace LeetCodeTests
     [TestFixture]
     public class Solution0141Test
     {
-        [TestCase(new int[] { 3, 2, 0, 4 },
-            1,
-            true)]
-        [TestCase(new int[] { 1, 2 },
-            0,
-            true)]
-        [TestCase(new int[] { 1 },
-            -1,
-            false)]
-        public void HasCycleTest(int[] array,
-            int pos,
-            bool expected)
+        [TestCase(new int[] { 3, 2, 0, 4 }, 1, true)]
+        [TestCase(new int[] { 1, 2 }, 0, true)]
+        [TestCase(new int[] { 1 }, -1, false)]
+        public void HasCycleTest(int[] array, int pos, bool expected)
         {
-            var list = GetLinkedList(array,
-                pos);
+            var list = GetLinkedList(array, pos);
 
             var solution = new Solution0141();
             var actual = solution.HasCycle(list);
@@ -29,8 +20,7 @@ namespace LeetCodeTests
             actual.Should().Be(expected);
         }
 
-        private ListNode GetLinkedList(int[] input,
-            int pos)
+        private ListNode GetLinkedList(int[] input, int pos)
         {
             ListNode result = null;
             ListNode tail = null;

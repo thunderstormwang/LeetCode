@@ -10,10 +10,7 @@ namespace LeetCode.Solution0051_0100
         public IList<IList<string>> SolveNQueens(int n)
         {
             IList<IList<int>> columns = new List<IList<int>>();
-            FindNQueens(n,
-                0,
-                new int [n],
-                columns);
+            FindNQueens(n, 0, new int [n], columns);
 
             IList<IList<string>> result = new List<IList<string>>();
             foreach (var item in columns)
@@ -21,8 +18,7 @@ namespace LeetCode.Solution0051_0100
                 var temp = new List<string>();
                 foreach (var element in item)
                 {
-                    var str = new StringBuilder(new String('.',
-                        n))
+                    var str = new StringBuilder(new String('.', n))
                     {
                         [element] = 'Q'
                     };
@@ -35,10 +31,7 @@ namespace LeetCode.Solution0051_0100
             return result;
         }
 
-        private void FindNQueens(int n,
-            int index,
-            int[] columns,
-            IList<IList<int>> result)
+        private void FindNQueens(int n, int index, int[] columns, IList<IList<int>> result)
         {
             if (index == n)
             {
@@ -50,7 +43,7 @@ namespace LeetCode.Solution0051_0100
             {
                 columns[index] = i;
                 if (!IsValid(columns,
-                    index))
+                        index))
                 {
                     continue;
                 }
@@ -77,7 +70,7 @@ namespace LeetCode.Solution0051_0100
 
             return true;
         }
-        
+
         // Time: O(N^2)
         // Space: O(N)
     }

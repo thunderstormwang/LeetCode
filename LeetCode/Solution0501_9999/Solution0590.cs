@@ -8,8 +8,7 @@ namespace LeetCode.Solution0501_9999
         {
             var result = new List<int>();
 
-            DepthFirstSearch(root,
-                result);
+            DepthFirstSearch(root, result);
 
             return result;
         }
@@ -45,8 +44,7 @@ namespace LeetCode.Solution0501_9999
             return result;
         }
 
-        private void DepthFirstSearch(Node root,
-            IList<int> result)
+        private void DepthFirstSearch(Node root, IList<int> result)
         {
             if (root == null)
             {
@@ -57,8 +55,7 @@ namespace LeetCode.Solution0501_9999
             {
                 foreach (var item in root.children)
                 {
-                    DepthFirstSearch(item,
-                        result);
+                    DepthFirstSearch(item, result);
                 }
             }
 

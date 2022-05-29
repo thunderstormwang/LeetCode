@@ -4,8 +4,7 @@ namespace LeetCode.Solution0201_0500
 {
     public class Solution0239
     {
-        public int[] MaxSlidingWindow_Version1(int[] nums,
-            int k)
+        public int[] MaxSlidingWindow_Version1(int[] nums, int k)
         {
             var result = new int[nums.Length - k + 1];
             IMonotonicQueue queue = new ImpWithQueue();
@@ -25,8 +24,7 @@ namespace LeetCode.Solution0201_0500
             return result;
         }
 
-        public int[] MaxSlidingWindow_Version2(int[] nums,
-            int k)
+        public int[] MaxSlidingWindow_Version2(int[] nums, int k)
         {
             var result = new int[nums.Length - k + 1];
             IMonotonicQueue list = new ImpWithLinkedList();
@@ -47,8 +45,7 @@ namespace LeetCode.Solution0201_0500
             return result;
         }
 
-        public int[] MaxSlidingWindow_Version3(int[] nums,
-            int k)
+        public int[] MaxSlidingWindow_Version3(int[] nums, int k)
         {
             var result = new int[nums.Length - k + 1];
             IMonotonicQueue array = new ImpWithArray(k);

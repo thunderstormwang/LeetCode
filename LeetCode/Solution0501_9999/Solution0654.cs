@@ -4,14 +4,10 @@
     {
         public TreeNode ConstructMaximumBinaryTree(int[] nums)
         {
-            return ConstructMaximumBinaryTree(nums,
-                0,
-                nums.Length - 1);
+            return ConstructMaximumBinaryTree(nums, 0, nums.Length - 1);
         }
 
-        private TreeNode ConstructMaximumBinaryTree(int[] nums,
-            int begin,
-            int end)
+        private TreeNode ConstructMaximumBinaryTree(int[] nums, int begin, int end)
         {
             var maxIndex = begin;
             for (var i = begin + 1; i <= end; i++)
@@ -25,16 +21,12 @@
             var node = new TreeNode(nums[maxIndex]);
             if (begin < maxIndex)
             {
-                node.left = ConstructMaximumBinaryTree(nums,
-                    begin,
-                    maxIndex - 1);
+                node.left = ConstructMaximumBinaryTree(nums, begin, maxIndex - 1);
             }
 
             if (maxIndex < end)
             {
-                node.right = ConstructMaximumBinaryTree(nums,
-                    maxIndex + 1,
-                    end);
+                node.right = ConstructMaximumBinaryTree(nums, maxIndex + 1, end);
             }
 
             return node;

@@ -12,16 +12,12 @@ namespace LeetCodeTests.SolutionTest0101_0200
         {
             var solution = new Solution0146.LRUCache_Version1(2);
 
-            solution.Put(1,
-                1);
-            solution.Put(2,
-                2);
+            solution.Put(1, 1);
+            solution.Put(2, 2);
             solution.Get(1).Should().Be(1);
-            solution.Put(3,
-                3);
+            solution.Put(3, 3);
             solution.Get(2).Should().Be(-1);
-            solution.Put(4,
-                4);
+            solution.Put(4, 4);
             solution.Get(1).Should().Be(-1);
             solution.Get(3).Should().Be(3);
             solution.Get(4).Should().Be(4);
@@ -32,15 +28,11 @@ namespace LeetCodeTests.SolutionTest0101_0200
         {
             var solution = new Solution0146.LRUCache_Version1(2);
 
-            solution.Put(2,
-                1);
-            solution.Put(2,
-                2);
+            solution.Put(2, 1);
+            solution.Put(2, 2);
             solution.Get(2).Should().Be(2);
-            solution.Put(1,
-                1);
-            solution.Put(4,
-                1);
+            solution.Put(1, 1);
+            solution.Put(4, 1);
             solution.Get(2).Should().Be(-1);
         }
         
@@ -49,16 +41,12 @@ namespace LeetCodeTests.SolutionTest0101_0200
         {
             var solution = new Solution0146.LRUCache_Version2(2);
 
-            solution.Put(1,
-                1);
-            solution.Put(2,
-                2);
+            solution.Put(1, 1);
+            solution.Put(2, 2);
             solution.Get(1).Should().Be(1);
-            solution.Put(3,
-                3);
+            solution.Put(3, 3);
             solution.Get(2).Should().Be(-1);
-            solution.Put(4,
-                4);
+            solution.Put(4, 4);
             solution.Get(1).Should().Be(-1);
             solution.Get(3).Should().Be(3);
             solution.Get(4).Should().Be(4);
@@ -69,15 +57,11 @@ namespace LeetCodeTests.SolutionTest0101_0200
         {
             var solution = new Solution0146.LRUCache_Version2(2);
 
-            solution.Put(2,
-                1);
-            solution.Put(2,
-                2);
+            solution.Put(2, 1);
+            solution.Put(2, 2);
             solution.Get(2).Should().Be(2);
-            solution.Put(1,
-                1);
-            solution.Put(4,
-                1);
+            solution.Put(1, 1);
+            solution.Put(4, 1);
             solution.Get(2).Should().Be(-1);
         }
     }

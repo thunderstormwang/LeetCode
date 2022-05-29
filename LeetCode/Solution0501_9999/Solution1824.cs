@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.Solution0501_9999
+﻿namespace LeetCode.Solution0501_9999
 {
     public class Solution1824
     {
@@ -24,15 +22,11 @@ namespace LeetCode.Solution0501_9999
 
                     var aLane = (j + 1) % 3;
                     var bLane = (j + 2) % 3;
-                    dp[j] = Math.Min(dp[j],
-                        Math.Min(dp[aLane],
-                            dp[bLane]) + 1);
+                    dp[j] = Math.Min(dp[j], Math.Min(dp[aLane], dp[bLane]) + 1);
                 }
             }
 
-            return Math.Min(dp[0],
-                Math.Min(dp[1],
-                    dp[2]));
+            return Math.Min(dp[0], Math.Min(dp[1], dp[2]));
         }
         
         // https://www.youtube.com/watch?v=6-49f0eystc

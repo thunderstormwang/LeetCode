@@ -23,10 +23,7 @@
                         continue;
                     }
 
-                    DiscoverIsland(grid,
-                        visit,
-                        i,
-                        j);
+                    DiscoverIsland(grid, visit, i, j);
                     result++;
                 }
             }
@@ -34,10 +31,7 @@
             return result;
         }
 
-        private void DiscoverIsland(char[][] grid,
-            bool[][] visit,
-            int i,
-            int j)
+        private void DiscoverIsland(char[][] grid, bool[][] visit, int i, int j)
         {
             if (i < 0 || i >= grid.Length || j < 0 || j >= grid[i].Length)
             {
@@ -53,10 +47,7 @@
 
             for (var index = 0; index < 4; index++)
             {
-                DiscoverIsland(grid,
-                    visit,
-                    i + xAxis[index],
-                    j + yAxis[index]);
+                DiscoverIsland(grid, visit, i + xAxis[index], j + yAxis[index]);
             }
         }
     }

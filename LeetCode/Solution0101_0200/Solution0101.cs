@@ -92,8 +92,7 @@ namespace LeetCode.Solution0101_0200
             return true;
         }
 
-        private bool DepthFirstSearch(TreeNode left,
-            TreeNode right)
+        private bool DepthFirstSearch(TreeNode left, TreeNode right)
         {
             if (left == null && right == null)
             {

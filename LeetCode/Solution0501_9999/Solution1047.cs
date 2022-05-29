@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace LeetCode.Solution0501_9999
 {
@@ -23,8 +22,7 @@ namespace LeetCode.Solution0501_9999
             var sBuilder = new StringBuilder();
             while (stack.Count != 0)
             {
-                sBuilder.Insert(0,
-                    stack.Pop());
+                sBuilder.Insert(0, stack.Pop());
             }
 
             return sBuilder.ToString();
@@ -43,8 +41,7 @@ namespace LeetCode.Solution0501_9999
 
                 if (sBuilder[sBuilder.Length - 1] == item)
                 {
-                    sBuilder.Remove(sBuilder.Length - 1,
-                        1);
+                    sBuilder.Remove(sBuilder.Length - 1, 1);
                     continue;
                 }
 

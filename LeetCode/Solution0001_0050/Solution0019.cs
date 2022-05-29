@@ -2,8 +2,7 @@
 {
     public class Solution0019
     {
-        public ListNode RemoveNthFromEnd(ListNode head,
-            int n)
+        public ListNode RemoveNthFromEnd(ListNode head, int n)
         {
             var dummyNode = new ListNode(0);
             dummyNode.next = head;

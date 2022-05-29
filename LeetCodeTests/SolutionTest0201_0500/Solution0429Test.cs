@@ -9,8 +9,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
     public class Solution0429Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void LevelOrder(int?[] array,
-            IList<IList<int>> expected)
+        public void LevelOrder(int?[] array, IList<IList<int>> expected)
         {
             var root = Utility.Build_N_ary_Tree(array);
 

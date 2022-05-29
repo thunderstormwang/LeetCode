@@ -12,8 +12,7 @@ namespace LeetCodeTests.SolutionTest0051_0100
         public void InorderTraversal_Recursive(int?[] array,
             int[] expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0094();
             var actual = solution.InorderTraversal_Recursive(root);
@@ -22,11 +21,9 @@ namespace LeetCodeTests.SolutionTest0051_0100
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void InorderTraversal_Iterative(int?[] array,
-            int[] expected)
+        public void InorderTraversal_Iterative(int?[] array, int[] expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0094();
             var actual = solution.InorderTraversal_Iterative(root);

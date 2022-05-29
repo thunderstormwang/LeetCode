@@ -11,12 +11,10 @@ namespace LeetCode
             var dummyNode = new ListNode(0);
             dummyNode.next = head;
 
-            var leftPreNode = FindNodeByPosition(dummyNode,
-                left - 1);
+            var leftPreNode = FindNodeByPosition(dummyNode, left - 1);
             var leftNode = leftPreNode.next;
 
-            var rightNode = FindNodeByPosition(dummyNode,
-                right);
+            var rightNode = FindNodeByPosition(dummyNode, right);
             var rightNextNode = rightNode.next;
 
             leftPreNode.next = null;
@@ -30,8 +28,7 @@ namespace LeetCode
             return dummyNode.next;
         }
 
-        private ListNode FindNodeByPosition(ListNode head,
-            int position)
+        private ListNode FindNodeByPosition(ListNode head, int position)
         {
             var result = head;
             var count = 0;

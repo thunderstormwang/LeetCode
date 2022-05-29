@@ -8,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0110Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void IsBalanced_BottomUpTest(int?[] array,
-            bool expected)
+        public void IsBalanced_BottomUpTest(int?[] array, bool expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0110();
             var actual = solution.IsBalanced_BottomUp(root);
@@ -21,11 +19,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void IsBalanced_TopDownTest(int?[] array,
-            bool expected)
+        public void IsBalanced_TopDownTest(int?[] array, bool expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0110();
             var actual = solution.IsBalanced_TopDown(root);

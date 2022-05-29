@@ -2,8 +2,7 @@
 {
     public class Solution0167
     {
-        public int[] TwoSum(int[] numbers,
-            int target)
+        public int[] TwoSum(int[] numbers, int target)
         {
             var lowIndex = 0;
             var highIndex = numbers.Length - 1;

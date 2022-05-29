@@ -4,8 +4,7 @@ namespace LeetCode.Solution0201_0500
 {
     public class Solution0209
     {
-        public int MinSubArrayLen_Brutal(int target,
-            int[] nums)
+        public int MinSubArrayLen_Brutal(int target, int[] nums)
         {
             var result = int.MaxValue;
             for (var i = 0; i < nums.Length; i++)
@@ -21,8 +20,7 @@ namespace LeetCode.Solution0201_0500
                         continue;
                     }
 
-                    result = Math.Min(result,
-                        tempLength);
+                    result = Math.Min(result, tempLength);
                     break;
                 }
             }
@@ -30,8 +28,7 @@ namespace LeetCode.Solution0201_0500
             return result != int.MaxValue ? result : 0;
         }
         
-        public int MinSubArrayLen_TwoPointer_Version1(int target,
-            int[] nums)
+        public int MinSubArrayLen_TwoPointer_Version1(int target, int[] nums)
         {
             var left = 0;
             var right = 0;
@@ -64,8 +61,7 @@ namespace LeetCode.Solution0201_0500
                     sum += nums[right];
                     if (target <= sum)
                     {
-                        result = Math.Min(result,
-                            right - left + 1);
+                        result = Math.Min(result, right - left + 1);
                         break;
                     }
 
@@ -78,8 +74,7 @@ namespace LeetCode.Solution0201_0500
             return result;
         }
 
-        public int MinSubArrayLen_TwoPointer_Version2(int target,
-            int[] nums)
+        public int MinSubArrayLen_TwoPointer_Version2(int target, int[] nums)
         {
             var left = 0;
             var right = 0;

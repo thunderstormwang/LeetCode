@@ -10,8 +10,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
         [TestCaseSource(nameof(TestCases))]
         public void SumOfLeftLeaves_RecursiveTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0404();
             var actual = solution.SumOfLeftLeaves_Recursive(root);
@@ -22,8 +21,7 @@ namespace LeetCodeTests.SolutionTest0201_0500
         [TestCaseSource(nameof(TestCases))]
         public void SumOfLeftLeaves_IterativeTest(int?[] array, int expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0404();
             var actual = solution.SumOfLeftLeaves_Iterative(root);

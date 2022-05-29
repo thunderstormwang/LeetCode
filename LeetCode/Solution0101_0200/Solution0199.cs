@@ -7,9 +7,7 @@ namespace LeetCode.Solution0101_0200
         public IList<int> RightSideView_DFS(TreeNode root)
         {
             var result = new List<int>();
-            DepthFirstSearch(root,
-                1,
-                result);
+            DepthFirstSearch(root, 1, result);
 
             return result;
         }
@@ -54,9 +52,7 @@ namespace LeetCode.Solution0101_0200
             return result;
         }
 
-        private void DepthFirstSearch(TreeNode root,
-            int depth,
-            IList<int> result)
+        private void DepthFirstSearch(TreeNode root, int depth, IList<int> result)
         {
             if (root == null)
             {
@@ -68,12 +64,8 @@ namespace LeetCode.Solution0101_0200
                 result.Add(root.val);
             }
 
-            DepthFirstSearch(root.right,
-                depth + 1,
-                result);
-            DepthFirstSearch(root.left,
-                depth + 1,
-                result);
+            DepthFirstSearch(root.right, depth + 1, result);
+            DepthFirstSearch(root.left, depth + 1, result);
         }
 
         // DFS

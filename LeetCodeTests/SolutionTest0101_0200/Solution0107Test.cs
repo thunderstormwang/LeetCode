@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
 using LeetCode.Solution0101_0200;
 using NUnit.Framework;
 
@@ -9,11 +8,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0107Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void LevelOrderBottom_BFSTest(int?[] array,
-            IList<IList<int>> expected)
+        public void LevelOrderBottom_BFSTest(int?[] array, IList<IList<int>> expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0107();
             var actual = solution.LevelOrderBottom_BFS(root);
@@ -22,11 +19,9 @@ namespace LeetCodeTests.SolutionTest0101_0200
         }
         
         [TestCaseSource(nameof(TestCases))]
-        public void LevelOrderBottom_DFSTest(int?[] array,
-            IList<IList<int>> expected)
+        public void LevelOrderBottom_DFSTest(int?[] array, IList<IList<int>> expected)
         {
-            var root = Utility.BuildTree(array,
-                0);
+            var root = Utility.BuildTree(array, 0);
 
             var solution = new Solution0107();
             var actual = solution.LevelOrderBottom_DFS(root);

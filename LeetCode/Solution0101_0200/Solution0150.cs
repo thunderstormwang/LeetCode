@@ -10,20 +10,16 @@ namespace LeetCode.Solution0101_0200
             var dict = new Dictionary<string, Func<int, int, int>>()
             {
                 {
-                    "+", (left,
-                        right) => left + right
+                    "+", (left, right) => left + right
                 },
                 {
-                    "-", (left,
-                        right) => left - right
+                    "-", (left, right) => left - right
                 },
                 {
-                    "*", (left,
-                        right) => left * right
+                    "*", (left, right) => left * right
                 },
                 {
-                    "/", (left,
-                        right) => left / right
+                    "/", (left, right) => left / right
                 }
             };
 
@@ -35,8 +31,7 @@ namespace LeetCode.Solution0101_0200
                 {
                     var right = stack.Pop();
                     var left = stack.Pop();
-                    stack.Push(dict[item](left,
-                        right));
+                    stack.Push(dict[item](left, right));
                 }
                 else
                 {

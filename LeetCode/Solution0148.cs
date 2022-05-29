@@ -1,7 +1,4 @@
-﻿using System;
-using System.Data;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public class Solution148
     {

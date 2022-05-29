@@ -6,14 +6,10 @@ namespace LeetCode.Solution0051_0100
     {
         public int TotalNQueens(int n)
         {
-            return FindNQueens(n,
-                0,
-                new int [n]);
+            return FindNQueens(n, 0, new int [n]);
         }
         
-        private int FindNQueens(int n,
-            int index,
-            int[] columns)
+        private int FindNQueens(int n, int index, int[] columns)
         {
             if (index == n)
             {

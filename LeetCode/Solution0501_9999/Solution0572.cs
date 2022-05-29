@@ -12,14 +12,12 @@ namespace LeetCode.Solution0501_9999
                 return false;
             }
 
-            return IsSameTree_DFS_Recursive(root,
-                subRoot) || IsSubtree_DFS_Recursive(root.left,
-                subRoot) || IsSubtree_DFS_Recursive(root.right,
-                subRoot);
+            return IsSameTree_DFS_Recursive(root, subRoot) 
+                   || IsSubtree_DFS_Recursive(root.left, subRoot) 
+                   || IsSubtree_DFS_Recursive(root.right, subRoot);
         }
 
-        public bool IsSubtree_DFS_Iterative(TreeNode root,
-            TreeNode subRoot)
+        public bool IsSubtree_DFS_Iterative(TreeNode root, TreeNode subRoot)
         {
             var stack = new Stack<TreeNode>();
             stack.Push(root);
@@ -32,8 +30,7 @@ namespace LeetCode.Solution0501_9999
                     continue;
                 }
 
-                if (IsSameTree_DFS_Iterative(node,
-                        subRoot))
+                if (IsSameTree_DFS_Iterative(node, subRoot))
                 {
                     return true;
                 }
@@ -45,8 +42,7 @@ namespace LeetCode.Solution0501_9999
             return false;
         }
 
-        public bool IsSubtree_BFS(TreeNode root,
-            TreeNode subRoot)
+        public bool IsSubtree_BFS(TreeNode root, TreeNode subRoot)
         {
             var queue = new Queue<TreeNode>();
 
@@ -59,8 +55,7 @@ namespace LeetCode.Solution0501_9999
                     continue;
                 }
 
-                if (IsSameTree_BFS(node,
-                        subRoot))
+                if (IsSameTree_BFS(node, subRoot))
                 {
                     return true;
                 }
@@ -72,8 +67,7 @@ namespace LeetCode.Solution0501_9999
             return false;
         }
 
-        private bool IsSameTree_DFS_Recursive(TreeNode p,
-            TreeNode q)
+        private bool IsSameTree_DFS_Recursive(TreeNode p, TreeNode q)
         {
             if (p == null && q == null)
             {
@@ -85,13 +79,12 @@ namespace LeetCode.Solution0501_9999
                 return false;
             }
 
-            return p.val == q.val && IsSameTree_DFS_Recursive(p.left,
-                q.left) && IsSameTree_DFS_Recursive(p.right,
-                q.right);
+            return p.val == q.val 
+                   && IsSameTree_DFS_Recursive(p.left, q.left) 
+                   && IsSameTree_DFS_Recursive(p.right, q.right);
         }
 
-        private bool IsSameTree_DFS_Iterative(TreeNode p,
-            TreeNode q)
+        private bool IsSameTree_DFS_Iterative(TreeNode p, TreeNode q)
         {
             var stack = new Stack<TreeNode>();
 
@@ -126,8 +119,7 @@ namespace LeetCode.Solution0501_9999
             return true;
         }
 
-        private bool IsSameTree_BFS(TreeNode p,
-            TreeNode q)
+        private bool IsSameTree_BFS(TreeNode p, TreeNode q)
         {
             var queue = new Queue<TreeNode>();
 

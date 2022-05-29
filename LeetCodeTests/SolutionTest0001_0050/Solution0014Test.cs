@@ -8,8 +8,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
     public class Solution0014Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void LongestCommonPrefixTest(string[] strs,
-            string expected)
+        public void LongestCommonPrefixTest(string[] strs, string expected)
         {
             var solution = new Solution0014();
 
@@ -22,32 +21,27 @@ namespace LeetCodeTests.SolutionTest0001_0050
         {
             new object[]
             {
-                new string[]
-                    { "flower", "flow", "flight" },
+                new string[] { "flower", "flow", "flight" },
                 "fl"
             },
             new object[]
             {
-                new string[]
-                    { "flower", "flower", "flower" },
+                new string[] { "flower", "flower", "flower" },
                 "flower"
             },
             new object[]
             {
-                new string[]
-                    { "dog", "racecar", "car" },
+                new string[] { "dog", "racecar", "car" },
                 string.Empty
             },
             new object[]
             {
-                new string[]
-                    { "dog" },
+                new string[] { "dog" },
                 "dog"
             },
             new object[]
             {
-                new string[]
-                    { "dog", string.Empty, "car" },
+                new string[] { "dog", string.Empty, "car" },
                 string.Empty
             }
         };

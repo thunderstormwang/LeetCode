@@ -2,8 +2,7 @@
 {
     public class Solution0002
     {
-        public ListNode AddTwoNumbers(ListNode l1,
-            ListNode l2)
+        public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
             var dummyNode = new ListNode(0);
             var temp = dummyNode;

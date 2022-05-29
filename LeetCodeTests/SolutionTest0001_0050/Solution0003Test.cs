@@ -15,8 +15,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
         [TestCase(" ", 1)]
         [TestCase("aab", 2)]
         [TestCase("dvdf", 3)]
-        public void LengthOfLongestSubstring_Brutal_Test(string input,
-            int expected)
+        public void LengthOfLongestSubstring_Brutal_Test(string input, int expected)
         {
             var solution = new Solution0003();
 

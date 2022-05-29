@@ -4,8 +4,7 @@ namespace LeetCode.Solution0001_0050
 {
     public class Solution0006
     {
-        public string Convert(string s,
-            int numRows)
+        public string Convert(string s, int numRows)
         {
             if (numRows == 1)
             {

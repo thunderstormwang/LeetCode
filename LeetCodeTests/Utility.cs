@@ -5,8 +5,7 @@ namespace LeetCodeTests
 {
     public class Utility
     {
-        public static TreeNode BuildTree(int?[] input,
-            int i)
+        public static TreeNode BuildTree(int?[] input, int i)
         {
             if (i >= input.Length || input[i] == null)
             {
@@ -23,8 +22,7 @@ namespace LeetCodeTests
             return root;
         }
 
-        public static TreeNodeV2 BuildTreeV2(int?[] input,
-            int i)
+        public static TreeNodeV2 BuildTreeV2(int?[] input, int i)
         {
             if (i >= input.Length || input[i] == null)
             {
@@ -151,8 +149,7 @@ namespace LeetCodeTests
             return root;
         }
 
-        public static bool CheckLinkedList(ListNode list1,
-            ListNode list2)
+        public static bool CheckLinkedList(ListNode list1, ListNode list2)
         {
             while (list1 != null || list2 != null)
             {
@@ -171,8 +168,7 @@ namespace LeetCodeTests
             return true;
         }
 
-        public static bool CheckBinaryTree(TreeNode root1,
-            TreeNode root2)
+        public static bool CheckBinaryTree(TreeNode root1, TreeNode root2)
         {
             if (root1 == null && root2 == null)
             {

@@ -9,7 +9,7 @@ namespace LeetCode
         {
             var a = int.MaxValue;
             var b = a + 1;
-            
+
             if (dividend == 0)
             {
                 return 0;

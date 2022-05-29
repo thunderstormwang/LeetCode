@@ -24,8 +24,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
             var list1 = Utility.BuildListNode(array1);
             var list2 = Utility.BuildListNode(array2);
 
-            var actual = solution.AddTwoNumbers(list1,
-                list2);
+            var actual = solution.AddTwoNumbers(list1, list2);
             var expected = Utility.BuildListNode(expectedArray);
 
             Utility.CheckLinkedList(actual,

@@ -8,20 +8,15 @@ namespace LeetCodeTests.SolutionTest0101_0200
     public class Solution0105Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void BuildTreeTest(int[] preorder,
-            int[] inorder,
-            int?[] expectedArray)
+        public void BuildTreeTest(int[] preorder, int[] inorder, int?[] expectedArray)
         {
-            var expected = Utility.BuildTree(expectedArray,
-                0);
+            var expected = Utility.BuildTree(expectedArray, 0);
 
             var solution = new Solution0105();
 
-            var actual = solution.BuildTree(preorder,
-                inorder);
+            var actual = solution.BuildTree(preorder, inorder);
 
-            Utility.CheckBinaryTree(actual,
-                expected).Should().BeTrue();
+            Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
         }
         
         private static readonly object[] TestCases =

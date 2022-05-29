@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode.Solution0001_0050
+﻿namespace LeetCode.Solution0001_0050
 {
     public class Solution0001
     {
-        public int[] TwoSum(int[] nums,
-            int target)
+        public int[] TwoSum(int[] nums, int target)
         {
             var dict = new Dictionary<int, int>();
             var i = 0;

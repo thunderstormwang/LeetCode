@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace LeetCode.Solution0001_0050
 {
@@ -34,8 +33,7 @@ namespace LeetCode.Solution0001_0050
                 {
                     foreach (var preItem in result)
                     {
-                        var temp = preItem.Insert(0,
-                            item);
+                        var temp = preItem.Insert(0, item);
                         tempResult.Add(temp);
                     }
                 }
@@ -53,19 +51,13 @@ namespace LeetCode.Solution0001_0050
             {
                 return result;
             }
-            
-            FindCombinations(digits,
-                0,
-                new StringBuilder(),
-                result);
+
+            FindCombinations(digits, 0, new StringBuilder(), result);
 
             return result;
         }
 
-        private void FindCombinations(string digits,
-            int index,
-            StringBuilder strBuilder,
-            IList<string> result)
+        private void FindCombinations(string digits, int index, StringBuilder strBuilder, IList<string> result)
         {
             if (index == digits.Length)
             {
@@ -78,13 +70,8 @@ namespace LeetCode.Solution0001_0050
             foreach (var item in currentStr)
             {
                 strBuilder.Append(item);
-                FindCombinations(digits,
-                    index + 1,
-                    strBuilder,
-                    result);
-
-                strBuilder.Remove(strBuilder.Length - 1,
-                    1);
+                FindCombinations(digits, index + 1, strBuilder, result);
+                strBuilder.Remove(strBuilder.Length - 1, 1);
             }
         }
 

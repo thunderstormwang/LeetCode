@@ -25,6 +25,10 @@ public class Solution0077
         }
 
         // 剩餘元素不夠使用, 立即結束
+        // i < array.Length && _k - curr.Count <= _array.Length - i
+        // 移項 => i < array.Length && i <= _array.Length - (_k - curr.Count)
+        // 兩者可合併 => i <= _array.Length - (_k - curr.Count)
+        
         for (var i = index; i <= _array.Length - (_k - curr.Count); i++)
         {
             curr.Add(_array[i]);

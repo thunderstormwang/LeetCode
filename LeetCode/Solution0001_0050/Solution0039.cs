@@ -1,26 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode.Solution0001_0050
+﻿namespace LeetCode.Solution0001_0050
 {
     public class Solution0039
     {
+        private int[] _candidates;
+
         public IList<IList<int>> CombinationSum(int[] candidates, int target)
         {
+            _candidates = candidates;
             var result = new List<IList<int>>();
-            FindCombinationSum(candidates,
-                target,
-                0,
-                new List<int>(),
-                result);
+            FindCombinationSum(target, 0, new List<int>(), result);
             return result;
         }
 
-        private void FindCombinationSum(int[] candidates,
-            int target,
-            int startIndex,
-            IList<int> curr,
-            IList<IList<int>> result)
+        private void FindCombinationSum(int target, int startIndex, IList<int> curr, IList<IList<int>> result)
         {
             if (target == 0)
             {
@@ -28,9 +20,9 @@ namespace LeetCode.Solution0001_0050
                 return;
             }
 
-            for (var i = startIndex; i < candidates.Length; i++)
+            for (var i = startIndex; i < _candidates.Length; i++)
             {
-                if (target < candidates[i])
+                if (target < _candidates[i])
                 {
                     continue;
                 }

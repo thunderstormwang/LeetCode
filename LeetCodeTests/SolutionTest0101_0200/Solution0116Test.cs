@@ -17,7 +17,7 @@ namespace LeetCodeTests.SolutionTest0101_0200
 
             Utility.GetNodeString(actual).Should().Be(expected);
         }
-        
+
         [TestCaseSource(nameof(TestCases))]
         public void Connect_DFS(int?[] array,
             string expected)

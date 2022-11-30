@@ -27,13 +27,9 @@
                     continue;
                 }
 
-                curr.Add(candidates[i]);
-                FindCombinationSum(candidates,
-                    target - candidates[i],
-                    i,
-                    curr,
-                    result);
-                curr.Remove(candidates[i]);
+                curr.Add(_candidates[i]);
+                FindCombinationSum(target - _candidates[i], i, curr, result);
+                curr.Remove(_candidates[i]);
             }
         }
         

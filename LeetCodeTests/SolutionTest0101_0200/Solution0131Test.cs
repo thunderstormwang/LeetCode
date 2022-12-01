@@ -8,19 +8,19 @@ namespace LeetCodeTests.SolutionTest0101_0200;
 public class Solution0131Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void Partition(string s, IList<IList<string>> expected)
+    public void Partition_IndexAndLength(string s, IList<IList<string>> expected)
     {
         var solution = new Solution0131();
-        var actual = solution.Partition(s);
+        var actual = solution.Partition_IndexAndLength(s);
 
         actual.Should().BeEquivalentTo(expected);
     }
     
     [TestCaseSource(nameof(TestCases))]
-    public void Partition2(string s, IList<IList<string>> expected)
+    public void Partition_Index(string s, IList<IList<string>> expected)
     {
         var solution = new Solution0131();
-        var actual = solution.Partition2(s);
+        var actual = solution.Partition_Index(s);
 
         actual.Should().BeEquivalentTo(expected);
     }

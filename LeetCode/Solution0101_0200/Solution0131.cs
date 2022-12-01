@@ -4,16 +4,16 @@ public class Solution0131
 {
     private string _input;
 
-    public IList<IList<string>> Partition(string s)
+    public IList<IList<string>> Partition_IndexAndLength(string s)
     {
         _input = s;
 
         var result = new List<IList<string>>();
-        Backtrack(0, new List<string>(), result);
+        Backtrack_IndexAndLength(0, new List<string>(), result);
         return result;
     }
 
-    private void Backtrack(int index, List<string> curr, List<IList<string>> result)
+    private void Backtrack_IndexAndLength(int index, List<string> curr, List<IList<string>> result)
     {
         if (index > _input.Length - 1)
         {
@@ -30,21 +30,21 @@ public class Solution0131
             }
 
             curr.Add(subStr);
-            Backtrack(index + length, curr, result);
+            Backtrack_IndexAndLength(index + length, curr, result);
             curr.RemoveAt(curr.Count - 1);
         }
     }
 
-    public IList<IList<string>> Partition2(string s)
+    public IList<IList<string>> Partition_Index(string s)
     {
         _input = s;
 
         var result = new List<IList<string>>();
-        Backtrack2(0, new List<string>(), result);
+        Backtrack_Index(0, new List<string>(), result);
         return result;
     }
 
-    private void Backtrack2(int index, List<string> curr, List<IList<string>> result)
+    private void Backtrack_Index(int index, List<string> curr, List<IList<string>> result)
     {
         if (index > _input.Length - 1)
         {
@@ -61,7 +61,7 @@ public class Solution0131
             }
 
             curr.Add(subStr);
-            Backtrack(endIndex + 1, curr, result);
+            Backtrack_IndexAndLength(endIndex + 1, curr, result);
             curr.RemoveAt(curr.Count - 1);
         }
     }
@@ -81,4 +81,7 @@ public class Solution0131
 
         return true;
     }
+    
+    // Time: O(2^N) -- N 個字元有 N-1 個逗點，所以子字串的切法有 2^(N-1) 種，每種組合都要跑過
+    // Space: O(N) -- 遞迴最多走到 N 層
 }

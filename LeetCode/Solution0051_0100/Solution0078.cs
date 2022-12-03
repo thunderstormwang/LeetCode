@@ -32,7 +32,7 @@ public class Solution0078
         }
 
         Backtrack_WithEndCondition(index + 1, curr, result);
-
+        
         curr.Add(_nums[index]);
         Backtrack_WithEndCondition(index + 1, curr, result);
         curr.RemoveAt(curr.Count - 1);

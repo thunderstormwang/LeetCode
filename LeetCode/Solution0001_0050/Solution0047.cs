@@ -5,6 +5,15 @@ public class Solution0047
     private int[] _nums;
     private bool[] _used;
 
+    /// <summary>
+    /// Time: O(N!) -- N 個元素, 假設都不重覆, 一共有 N! 種排列
+    /// <br/>因為已是 O(N!), 那也可以先對輸入的陣列 nums 做排序, 那就不需要記錄每層使用過的元素 usedByCurrLevel,
+    /// 也不影嚮複雜度的計算
+    /// <br/>
+    /// <br/>Memory: O(N) -- 最多遞迴 N 層, 加上長度為 N 的陣列記錄被使用過的元素 O(N) + O(N) 仍為 O(N)
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
     public IList<IList<int>> PermuteUnique(int[] nums)
     {
         _nums = nums;

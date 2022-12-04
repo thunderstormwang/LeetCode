@@ -8,33 +8,12 @@ namespace LeetCodeTests.SolutionTest0051_0100;
 public class Solution0078Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void SubsetsTest_WithEndCondition(int[] inputArray, int[][] expectedArray)
+    public void SubsetsTest(int[] inputArray, int[][] expectedArray)
     {
         var solution = new Solution0078();
-        var actual = solution.Subsets_WithEndCondition(inputArray);
+        var actual = solution.Subsets(inputArray);
 
-        var expected = new List<List<int>>();
-        foreach (var item in expectedArray)
-        {
-            expected.Add(new List<int>(item));
-        }
-
-        actual.Should().BeEquivalentTo(expected);
-    }
-    
-    [TestCaseSource(nameof(TestCases))]
-    public void SubsetsTest_NoEndCondition(int[] inputArray, int[][] expectedArray)
-    {
-        var solution = new Solution0078();
-        var actual = solution.Subsets_NoEndCondtion(inputArray);
-
-        var expected = new List<List<int>>();
-        foreach (var item in expectedArray)
-        {
-            expected.Add(new List<int>(item));
-        }
-
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().BeEquivalentTo(expectedArray);
     }
 
     private static readonly object[] TestCases =

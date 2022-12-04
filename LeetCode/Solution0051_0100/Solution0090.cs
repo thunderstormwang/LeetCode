@@ -15,13 +15,19 @@ public class Solution0090
         return result;
     }
 
+    /// <summary>
+    /// 走過每個節點皆記錄現在的結果
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="curr"></param>
+    /// <param name="result"></param>
     private void Backtrack(int index, IList<int> curr, IList<IList<int>> result)
     {
         result.Add(curr.ToArray());
 
         for (var i = index; i < _nums.Length; i++)
         {
-            if (i > index && i < _nums.Length && _nums[i - 1] == _nums[i])
+            if (i > index && _nums[i - 1] == _nums[i])
             {
                 continue;
             }

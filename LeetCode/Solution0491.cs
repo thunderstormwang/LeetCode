@@ -2,40 +2,80 @@
 {
     public class Solution0491
     {
+        private int[] _nums;
+        
         public IList<IList<int>> FindSubsequences(int[] nums)
         {
-            IList<IList<int>> result = new List<IList<int>>();
-
-            FindIncreasingSubsequences(nums, 0, new List<int>(), result);
+            _nums = nums;
+            
+            var result = new List<IList<int>>();
+            Backtrack(0, new List<int>(), result);
 
             return result;
         }
-
-        private void FindIncreasingSubsequences(int[] nums, int index, IList<int> curr, IList<IList<int>> result)
+        
+        // 新寫版本
+        private void Backtrack(int index, IList<int> curr, IList<IList<int>> result)
         {
-            var notInChoice = new HashSet<int>();
-            for (var i = index; i < nums.Length; i++)
+            var used = new HashSet<int>();
+            
+            if (curr.Count >= 2)
             {
-                if (curr.Count != 0 && curr.Last() > nums[i])
+                result.Add(curr.ToArray());
+            }
+
+            if (index == _nums.Length)
+            {
+                return;
+            }
+            
+            //Backtrack(index + 1, curr, result);
+            
+            for (var i = index; i < _nums.Length; i++)
+            {
+                if (curr.Count != 0 && curr.Last() > _nums[i])
                 {
                     continue;
                 }
 
-                if (notInChoice.Contains(nums[i]))
+                if (used.Contains(_nums[i]))
                 {
                     continue;
                 }
 
-                curr.Add(nums[i]);
-                if (curr.Count >= 2)
-                {
-                    result.Add(curr.ToArray());
-                }
-
-                FindIncreasingSubsequences(nums, i + 1, curr, result);
+                curr.Add(_nums[i]);
+                Backtrack(i + 1, curr, result);
                 curr.RemoveAt(curr.Count - 1);
-                notInChoice.Add(nums[i]);
+                used.Add(_nums[i]);
             }
         }
+
+        // 舊版本
+        // private void Backtrack(int index, IList<int> curr, IList<IList<int>> result)
+        // {
+        //     var notInChoice = new HashSet<int>();
+        //     for (var i = index; i < _nums.Length; i++)
+        //     {
+        //         if (curr.Count != 0 && curr.Last() > _nums[i])
+        //         {
+        //             continue;
+        //         }
+        //
+        //         if (notInChoice.Contains(_nums[i]))
+        //         {
+        //             continue;
+        //         }
+        //
+        //         curr.Add(_nums[i]);
+        //         if (curr.Count >= 2)
+        //         {
+        //             result.Add(curr.ToArray());
+        //         }
+        //
+        //         Backtrack(i + 1, curr, result);
+        //         curr.RemoveAt(curr.Count - 1);
+        //         notInChoice.Add(_nums[i]);
+        //     }
+        // }
     }
 }

@@ -12,13 +12,8 @@ namespace LeetCodeTests.SolutionTest0001_0050
         {
             var solution = new Solution0039();
             var actual = solution.CombinationSum(inputArray, target);
-            var expected = new List<List<int>>();
-            foreach (var item in expectedArray)
-            {
-                expected.Add(new List<int>(item));
-            }
 
-            actual.Should().BeEquivalentTo(expected);
+            actual.Should().BeEquivalentTo(expectedArray);
         }
 
         private static readonly object[] TestCases =

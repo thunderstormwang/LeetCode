@@ -46,4 +46,7 @@ public class Solution332
 
         return false;
     }
+    
+    // Time: O(N!) -- 排序: O(N * Log(N)) + 所有排列組合: O(N!) = O(N!)
+    // Memory: O(N) -- 最多遞迴 N 層
 }

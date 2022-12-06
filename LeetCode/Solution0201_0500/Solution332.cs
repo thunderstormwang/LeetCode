@@ -13,15 +13,14 @@ public class Solution332
         _tickets = tickets.ToList();
         _tickets.Sort((x, y) => string.Compare(x[0], y[0]) != 0 ? string.Compare(x[0], y[0]) : string.Compare(x[1], y[1]));
 
-        var backtrackResult = new List<IList<string>>();
-        backtrackResult.Add(new List<string>() { "JFK", "JFK" });
-        Backtrack(backtrackResult);
+        var result = new List<string>();
+        result.Add("JFK");
+        Backtrack(result);
 
-        var result = backtrackResult.Select(b => b[1]).ToList();
         return result;
     }
 
-    private bool Backtrack(IList<IList<string>> result)
+    private bool Backtrack(IList<string> result)
     {
         if (result.Count == _tickets.Count + 1)
         {
@@ -30,18 +29,20 @@ public class Solution332
 
         for (var i = 0; i < _tickets.Count; i++)
         {
-            if (_tickets[i][0] == result.Last()[1] && !_used[i])
+            if (_tickets[i][0] != result.Last() || _used[i])
             {
-                result.Add(_tickets[i]);
-                _used[i] = true;
-                if (Backtrack(result))
-                {
-                    return true;
-                }
-
-                result.RemoveAt(result.Count - 1);
-                _used[i] = false;
+                continue;
             }
+            
+            result.Add(_tickets[i][1]);
+            _used[i] = true;
+            if (Backtrack(result))
+            {
+                return true;
+            }
+
+            result.RemoveAt(result.Count - 1);
+            _used[i] = false;
         }
 
         return false;

@@ -15,6 +15,40 @@ public class Solution0051
         return result;
     }
 
+    /// <summary>
+    /// 以一維陣列記錄 column 的位置, 只記 column 是因為陣列的位置就足以代表 row
+    /// <br/>ex: 第 i 個皇后放的行列位置可記作 i, array[i]
+    /// <br/>
+    /// <br/>
+    /// 以複雜度的計算來看, 這樣沒有比較快
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public IList<IList<string>> SolveNQueens_1Dim(int n)
+    {
+        _n = n;
+        var columns = new List<IList<int>>();
+        Backtrack_1Dim(0, new int [n], columns);
+
+        var result = new List<IList<string>>();
+        foreach (var item in columns)
+        {
+            var temp = new List<string>();
+            foreach (var element in item)
+            {
+                var str = new StringBuilder(new String('.', n))
+                {
+                    [element] = 'Q'
+                };
+                temp.Add(str.ToString());
+            }
+
+            result.Add(temp);
+        }
+
+        return result;
+    }
+
     private void Backtrack(List<string> curr, List<IList<string>> result)
     {
         if (curr.Count == _n)
@@ -44,8 +78,8 @@ public class Solution0051
     {
         var i = 0;
         var j = 0;
-            
-        // 看直線有沒有其它皇后
+
+        // 直線上不能有其它皇后
         for (i = row - 1; i >= 0; i--)
         {
             if (curr[i][column] == 'Q')
@@ -54,7 +88,7 @@ public class Solution0051
             }
         }
 
-        // 看對角線有沒有其它皇后
+        // 對角線上不能有其它皇后
         for (i = row - 1, j = column - 1; i >= 0 && j >= 0; i--, j--)
         {
             if (curr[i][j] == 'Q')
@@ -62,8 +96,8 @@ public class Solution0051
                 return false;
             }
         }
-            
-        // 看對角線有沒有其它皇后
+
+        // 對角線上不能有其它皇后
         for (i = row - 1, j = column + 1; i >= 0 && j < _n; i--, j++)
         {
             if (curr[i][j] == 'Q')
@@ -75,67 +109,44 @@ public class Solution0051
         return true;
     }
 
-    /// <summary>
-    /// 以複雜度的計算來看, 這樣沒有比較快
-    /// </summary>
-    /// <param name="n"></param>
-    /// <returns></returns>
-    public IList<IList<string>> SolveNQueens_1Dim(int n)
+    private void Backtrack_1Dim(int index, int[] curr, IList<IList<int>> result)
     {
-        IList<IList<int>> columns = new List<IList<int>>();
-        Backtrack_1Dim(n, 0, new int [n], columns);
-    
-        IList<IList<string>> result = new List<IList<string>>();
-        foreach (var item in columns)
+        if (index == _n)
         {
-            var temp = new List<string>();
-            foreach (var element in item)
-            {
-                var str = new StringBuilder(new String('.', n))
-                {
-                    [element] = 'Q'
-                };
-                temp.Add(str.ToString());
-            }
-    
-            result.Add(temp);
-        }
-    
-        return result;
-    }
-    
-    private void Backtrack_1Dim(int n, int index, int[] columns, IList<IList<int>> result)
-    {
-        if (index == n)
-        {
-            result.Add(columns.ToArray());
+            result.Add(curr.ToArray());
             return;
         }
-    
-        for (var i = 0; i < n; i++)
+
+        for (var j = 0; j < _n; j++)
         {
-            columns[index] = i;
-            if (!IsValid_1Dim(columns, index))
+            if (!IsValid_1Dim(index, j, curr))
             {
                 continue;
             }
-    
-            Backtrack_1Dim(n, index + 1, columns, result);
+
+            curr[index] = j;
+            Backtrack_1Dim(index + 1, curr, result);
+            curr[index] = 0;
         }
     }
-    
-    private bool IsValid_1Dim(int[] curr, int index)
+
+    private bool IsValid_1Dim(int row, int column, int[] curr)
     {
-        for (var i = 0; i < index; i++)
+        for (var i = row - 1; i >= 0; i--)
         {
-            // 不能在同一個 column, 也不能在對角線
-            if (curr[i] == curr[index] ||
-                Math.Abs(index - i) == Math.Abs(curr[index] - curr[i]))
+            // 直線上不能有其它皇后
+            if (curr[i] == column)
+            {
+                return false;
+            }
+
+            // 對角線上不能有其它皇后
+            if (Math.Abs(row - i) == Math.Abs(column - curr[i]))
             {
                 return false;
             }
         }
-    
+
         return true;
     }
 

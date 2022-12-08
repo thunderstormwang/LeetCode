@@ -6,6 +6,13 @@ public class Solution0037
     private HashSet<char>[] _rowSet = new HashSet<char>[9];
     private HashSet<char>[] _columnSet = new HashSet<char>[9];
 
+    private HashSet<char>[][] _subBoxSet = new HashSet<char>[3][]
+    {
+        new HashSet<char>[3] { new HashSet<char>(), new HashSet<char>(), new HashSet<char>() },
+        new HashSet<char>[3] { new HashSet<char>(), new HashSet<char>(), new HashSet<char>() },
+        new HashSet<char>[3] { new HashSet<char>(), new HashSet<char>(), new HashSet<char>() }
+    };
+
     public void SolveSudoku(char[][] board)
     {
         for (var i = 0; i < _number; i++)
@@ -22,6 +29,7 @@ public class Solution0037
                 {
                     _rowSet[i].Add(board[i][j]);
                     _columnSet[j].Add(board[i][j]);
+                    _subBoxSet[i / 3][j / 3].Add(board[i][j]);
                 }
             }
         }
@@ -33,7 +41,7 @@ public class Solution0037
     {
         if (row == _number && column == 0)
         {
-            return CheckSubBox(board);
+            return true;
         }
 
         var nextRow = row;
@@ -51,16 +59,17 @@ public class Solution0037
 
         for (var i = 1; i <= _number; i++)
         {
-            var c = i.ToString()[0];
+            var candidate = i.ToString()[0];
 
-            if (_rowSet[row].Contains(c) || _columnSet[column].Contains(c))
+            if (_rowSet[row].Contains(candidate) || _columnSet[column].Contains(candidate) || _subBoxSet[row / 3][column / 3].Contains(candidate))
             {
                 continue;
             }
 
-            board[row][column] = c;
-            _rowSet[row].Add(c);
-            _columnSet[column].Add(c);
+            board[row][column] = candidate;
+            _rowSet[row].Add(candidate);
+            _columnSet[column].Add(candidate);
+            _subBoxSet[row / 3][column / 3].Add(candidate);
 
             if (Backtrack(nextRow, nextColumn, board))
             {
@@ -68,39 +77,11 @@ public class Solution0037
             }
 
             board[row][column] = '.';
-            _rowSet[row].Remove(c);
-            _columnSet[column].Remove(c);
+            _rowSet[row].Remove(candidate);
+            _columnSet[column].Remove(candidate);
+            _subBoxSet[row / 3][column / 3].Remove(candidate);
         }
 
         return false;
-    }
-
-    private bool CheckSubBox(char[][] borad)
-    {
-        var subBoxIndexes = new List<(int R, int C)>
-        {
-            (-1, -1), (-1, 0), (-1, 1),
-            (0, -1), (0, 0), (0, 1),
-            (1, -1), (1, 0), (1, 1),
-        };
-
-        for (var i = 1; i < _number; i += 3)
-        {
-            for (var j = 1; j < _number; j += 3)
-            {
-                var hashSet = new HashSet<char>();
-                foreach (var item in subBoxIndexes)
-                {
-                    if (hashSet.Contains(borad[i + item.R][j + item.C]))
-                    {
-                        return false;
-                    }
-
-                    hashSet.Add(borad[i + item.R][j + item.C]);
-                }
-            }
-        }
-
-        return true;
     }
 }

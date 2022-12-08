@@ -45,8 +45,8 @@ namespace LeetCodeTests.SolutionTest0201_0500
                 new int?[] { 1, 2, 3, 5, 4 },
                 new List<string>()
                 {
-                    "1->2->5", 
-                    "1->2->4", 
+                    "1->2->5",
+                    "1->2->4",
                     "1->3"
                 }
             },

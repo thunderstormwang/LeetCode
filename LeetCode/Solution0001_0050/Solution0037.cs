@@ -84,4 +84,7 @@ public class Solution0037
 
         return false;
     }
+    
+    // Time: O(9^m) -- m 為 「.」的個數, 每個「.」有 9 個選擇
+    // Memory: O(m) -- m 為 「.」的個數, 最多遞迴 一層
 }

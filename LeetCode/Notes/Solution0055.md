@@ -70,6 +70,8 @@ public bool CanJump(int[] nums)
 所以只要從 0 開始跑完陣列，也不需要倒退
 一直更新 max = MAX(max, 0+nums[0], 1+nums[1], ... , i+nums[i])
 
+如果現在位置 > max，就代表到不了最後一個位置，可提早結束
+
 只要迴圈結束後 max 有大於等於陣列長度-1，就代表能到最後一個位置
 
 Time: O(N)

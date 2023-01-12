@@ -5,20 +5,17 @@ public class Solution0763
     public IList<int> PartitionLabels(string s)
     {
         var result = new List<int>();
-        var rightMostDict = new Dictionary<char, int>();
+        var rightMostIndex = new int [26];
         for (var i = s.Length - 1; i >= 0; i--)
         {
-            if (!rightMostDict.ContainsKey(s[i]))
-            {
-                rightMostDict.Add(s[i], i);
-            }
+            rightMostIndex[s[i] - 'a'] = Math.Max(rightMostIndex[s[i] - 'a'], i);
         }
 
         var tempStart = 0;
         var tempEnd = 0;
         for (var i = 0; i < s.Length; i++)
         {
-            tempEnd = Math.Max(tempEnd, rightMostDict[s[i]]);
+            tempEnd = Math.Max(tempEnd, rightMostIndex[s[i] - 'a']);
             if (i == tempEnd)
             {
                 result.Add(tempEnd - tempStart + 1);

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using LeetCode;
+﻿using LeetCode;
 
 namespace LeetCodeTests
 {
@@ -14,10 +13,8 @@ namespace LeetCodeTests
 
             var root = new TreeNode(input[i].Value);
 
-            root.left = BuildTree(input,
-                2 * i + 1);
-            root.right = BuildTree(input,
-                2 * i + 2);
+            root.left = BuildTree(input, 2 * i + 1);
+            root.right = BuildTree(input, 2 * i + 2);
 
             return root;
         }
@@ -31,10 +28,8 @@ namespace LeetCodeTests
 
             var root = new TreeNodeV2(input[i].Value);
 
-            root.left = BuildTreeV2(input,
-                2 * i + 1);
-            root.right = BuildTreeV2(input,
-                2 * i + 2);
+            root.left = BuildTreeV2(input, 2 * i + 1);
+            root.right = BuildTreeV2(input, 2 * i + 2);
 
             return root;
         }
@@ -97,8 +92,7 @@ namespace LeetCodeTests
                 nodeStr.Add("#");
             }
 
-            return string.Join(",",
-                nodeStr);
+            return string.Join(",", nodeStr);
         }
 
         public static ListNode BuildListNode(int[] array)
@@ -181,10 +175,8 @@ namespace LeetCodeTests
             }
 
             return root1.val == root2.val
-                   && CheckBinaryTree(root1.left,
-                       root2.left)
-                   && CheckBinaryTree(root1.right,
-                       root2.right);
+                   && CheckBinaryTree(root1.left, root2.left)
+                   && CheckBinaryTree(root1.right, root2.right);
         }
     }
 }

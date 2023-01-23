@@ -7,32 +7,69 @@ namespace LeetCodeTests.SolutionTest0501_9999
     [TestFixture]
     public class Solution0509Test
     {
-        [TestCase(0, 0)]
-        [TestCase(1, 1)]
-        [TestCase(2, 1)]
-        [TestCase(3, 2)]
-        [TestCase(4, 3)]
-        [TestCase(5, 5)]
-        public void Fib_Iterative(int n, int expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Fib_Iterative_Ver1(int n, int expected)
         {
             var solution = new Solution0509();
-            var actual = solution.Fib_Iterative(n);
+            var actual = solution.Fib_Iterative_Ver1(n);
+
+            actual.Should().Be(expected);
+        }
+
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void Fib_Iterative_Ver2(int n, int expected)
+        {
+            var solution = new Solution0509();
+            var actual = solution.Fib_Iterative_Ver2(n);
 
             actual.Should().Be(expected);
         }
         
-        [TestCase(0, 0)]
-        [TestCase(1, 1)] 
-        [TestCase(2, 1)]
-        [TestCase(3, 2)]
-        [TestCase(4, 3)]
-        [TestCase(5, 5)]
-        public void Fib_Recursive(int n, int expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void Fib_Recursive_Ver1(int n, int expected)
         {
             var solution = new Solution0509();
-            var actual = solution.Fib_Recursive(n);
+            var actual = solution.Fib_Recursive_Ver1(n);
 
             actual.Should().Be(expected);
         }
+
+        [TestCaseSource(nameof(TestCases))]
+        public void Fib_Recursive_Ver2(int n, int expected)
+        {
+            var solution = new Solution0509();
+            var actual = solution.Fib_Recursive_Ver2(n);
+
+            actual.Should().Be(expected);
+        }
+
+        private static readonly object[] TestCases =
+        {
+            new object[]
+            {
+                0, 0
+            },
+            new object[]
+            {
+                1, 1
+            },
+            new object[]
+            {
+                2, 1
+            },
+            new object[]
+            {
+                3, 2
+            },
+            new object[]
+            {
+                4, 3
+            },
+            new object[]
+            {
+                5, 5
+            }
+        };
     }
 }

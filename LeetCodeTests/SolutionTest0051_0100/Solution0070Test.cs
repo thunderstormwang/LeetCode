@@ -7,11 +7,7 @@ namespace LeetCodeTests.SolutionTest0051_0100
     [TestFixture]
     public class Solution0070Test
     {
-        [TestCase(1, 1)]
-        [TestCase(2, 2)]
-        [TestCase(3, 3)]
-        [TestCase(4, 5)]
-        [TestCase(5, 8)]
+        [TestCaseSource(nameof(TestCases))]
         public void ClimbStairsTest(int n, int expected)
         {
             var solution = new Solution0070();
@@ -20,5 +16,29 @@ namespace LeetCodeTests.SolutionTest0051_0100
 
             actual.Should().Be(expected);
         }
+        
+        private static readonly object[] TestCases =
+        {
+            new object[]
+            {
+                1, 1
+            },
+            new object[]
+            {
+                2, 2
+            },
+            new object[]
+            {
+                3, 3
+            },
+            new object[]
+            {
+                4, 5
+            },
+            new object[]
+            {
+                5, 8
+            }
+        };
     }
 }

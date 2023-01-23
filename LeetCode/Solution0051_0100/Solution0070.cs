@@ -17,17 +17,11 @@
             for (var i = 2; i < n; i++)
             {
                 var temp = result;
-                result = result + pre;
+                result += pre;
                 pre = temp;
             }
 
             return result;
         }
-        
-        // dp[n] = dp[n-2] + dp[n-1]
-        // 可以用陣列記住每一步的結果, 不過如果只要第 n 的結果的話, 不必用到陣列 
-        
-        // Time: O(N)
-        // Space: O(1)
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Solution0201_0500;
 
-public class Solution332
+public class Solution0332
 {
     private List<IList<string>> _tickets;
     private bool[] _used;

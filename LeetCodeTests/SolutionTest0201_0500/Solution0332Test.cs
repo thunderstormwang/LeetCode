@@ -9,7 +9,7 @@ public class Solution0332Test
     [TestCaseSource(nameof(TestCases))]
     public void LevelOrder(IList<IList<string>> tickets, List<string> expected)
     {
-        var solution = new Solution332();
+        var solution = new Solution0332();
         var actual = solution.FindItinerary(tickets);
 
         actual.Should().Equal(expected);

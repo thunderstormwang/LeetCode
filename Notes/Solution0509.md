@@ -3,7 +3,9 @@
 #### 動態規劃 Iterative Ver1
 
 - 找出 dp 的意義：Fib(n) = dp[n]
+
 - 找出 dp 的狀態推導：dp[i] = dp[i-2] + dp[i-1]
+
 - 找出 dp 初始值：dp[0] = 0, dp[1] = 1
 
 Time: O(N)

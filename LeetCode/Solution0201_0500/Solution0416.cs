@@ -75,11 +75,7 @@ public class Solution0416
         {
             for (var j = weight; j >= 1; j--)
             {
-                if (j < nums[i])
-                {
-                    dp[j] = dp[j];
-                }
-                else
+                if (j >= nums[i])
                 {
                     dp[j] = Math.Max(dp[j], dp[j - nums[i]] + nums[i]);
                 }

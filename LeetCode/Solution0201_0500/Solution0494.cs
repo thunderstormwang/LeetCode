@@ -124,7 +124,8 @@ public class Solution0494
     /// <summary>
     /// 以 dp[i][j] 為來源做計算
     /// <br/>修改 2_1
-    /// <br/>dp[0][offset] = 1;
+    /// <br/>dp[0][nums[0] + offset] += 1
+    /// <br/>dp[0][-nums[0] + offset] += 1
     /// </summary>
     /// <param name="nums"></param>
     /// <param name="target"></param>

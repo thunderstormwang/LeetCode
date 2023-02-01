@@ -163,4 +163,86 @@ public class Solution0494
 
         return dp[nums.Length - 1][target + offset];
     }
+
+    /// <summary>
+    /// 以 01 背包去解
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public int FindTargetSumWays_Ver3_1(int[] nums, int target)
+    {
+        var sum = nums.Sum();
+
+        if (Math.Abs(target) > sum || (target + sum) % 2 == 1)
+        {
+            return 0;
+        }
+
+        var newTarget = (target + sum) / 2;
+
+        var dp = new int[nums.Length][];
+        for (var i = 0; i < nums.Length; i++)
+        {
+            dp[i] = new int[newTarget + 1];
+        }
+
+        // 選 num[0]
+        dp[0][nums[0]] += 1;
+        // 不選 num[0]
+        dp[0][0] += 1;
+
+        for (var i = 1; i < nums.Length; i++)
+        {
+            for (var j = 0; j <= newTarget; j++)
+            {
+                if (j < nums[i])
+                {
+                    dp[i][j] = dp[i - 1][j];
+                }
+                else
+                {
+                    dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i]];
+                }
+            }
+        }
+
+        return dp[nums.Length - 1][newTarget];
+    }
+
+    public int FindTargetSumWays_Ver3_2(int[] nums, int target)
+    {
+        var sum = nums.Sum();
+
+        if (Math.Abs(target) > sum || (target + sum) % 2 == 1)
+        {
+            return 0;
+        }
+
+        var newTarget = (target + sum) / 2;
+        var dp = new int[newTarget + 1];
+
+        // 選 num[0]
+        dp[nums[0]] += 1;
+        // 不選 num[0]
+        dp[0] += 1;
+
+        for (var i = 1; i < nums.Length; i++)
+        {
+            for (var j = newTarget; j >= 0; j--)
+            {
+
+                if (j >= nums[i])
+                {
+                    dp[j] += dp[j - nums[i]];
+                }
+                else
+                {
+                    dp[j] = dp[j];
+                }
+            }
+        }
+
+        return dp[newTarget];
+    }
 }

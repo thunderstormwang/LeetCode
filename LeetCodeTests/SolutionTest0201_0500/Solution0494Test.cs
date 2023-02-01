@@ -42,6 +42,24 @@ public class Solution0494Test
 
         actual.Should().Be(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void FindSubsequences_Ver3_1Test(int[] nums, int target, int expected)
+    {
+        var solution = new Solution0494();
+        var actual = solution.FindTargetSumWays_Ver3_1(nums, target);
+
+        actual.Should().Be(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void FindSubsequences_Ver3_2Test(int[] nums, int target, int expected)
+    {
+        var solution = new Solution0494();
+        var actual = solution.FindTargetSumWays_Ver3_2(nums, target);
+
+        actual.Should().Be(expected);
+    }
 
     private static readonly object[] TestCases =
     {

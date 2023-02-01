@@ -166,6 +166,8 @@ public class Solution0494
 
     /// <summary>
     /// 以 01 背包去解
+    /// <br/>二維 DP
+    /// <br/>以選不選 num[0] 為初值 
     /// </summary>
     /// <param name="nums"></param>
     /// <param name="target"></param>
@@ -210,6 +212,14 @@ public class Solution0494
         return dp[nums.Length - 1][newTarget];
     }
 
+    /// <summary>
+    /// 以 01 背包去解
+    /// <br/>一 維 DP
+    /// <br/>以選不選 num[0] 為初值 
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
     public int FindTargetSumWays_Ver3_2(int[] nums, int target)
     {
         var sum = nums.Sum();
@@ -231,7 +241,92 @@ public class Solution0494
         {
             for (var j = newTarget; j >= 0; j--)
             {
+                if (j >= nums[i])
+                {
+                    dp[j] += dp[j - nums[i]];
+                }
+                else
+                {
+                    dp[j] = dp[j];
+                }
+            }
+        }
 
+        return dp[newTarget];
+    }
+
+    /// <summary>
+    /// 以 01 背包去解
+    /// <br/>二維 DP
+    /// <br/>以 0 為初值 
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public int FindTargetSumWays_Ver4_1(int[] nums, int target)
+    {
+        var sum = nums.Sum();
+
+        if (Math.Abs(target) > sum || (target + sum) % 2 == 1)
+        {
+            return 0;
+        }
+
+        var newTarget = (target + sum) / 2;
+
+        var dp = new int[nums.Length + 1][];
+        for (var i = 0; i <= nums.Length; i++)
+        {
+            dp[i] = new int[newTarget + 1];
+        }
+
+        dp[0][0] = 1;
+
+        for (var i = 0; i < nums.Length; i++)
+        {
+            for (var j = 0; j <= newTarget; j++)
+            {
+                if (j < nums[i])
+                {
+                    dp[i + 1][j] = dp[i][j];
+                }
+                else
+                {
+                    dp[i + 1][j] = dp[i][j] + dp[i][j - nums[i]];
+                }
+            }
+        }
+
+        return dp[nums.Length][newTarget];
+    }
+    
+    /// <summary>
+    /// 以 01 背包去解
+    /// <br/>一維 DP
+    /// <br/>以 0 為初值 
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public int FindTargetSumWays_Ver4_2(int[] nums, int target)
+    {
+        var sum = nums.Sum();
+
+        if (Math.Abs(target) > sum || (target + sum) % 2 == 1)
+        {
+            return 0;
+        }
+
+        var newTarget = (target + sum) / 2;
+
+        var dp = new int[newTarget + 1];
+
+        dp[0] = 1;
+
+        for (var i = 0; i < nums.Length; i++)
+        {
+            for (var j = newTarget; j >= 0; j--)
+            {
                 if (j >= nums[i])
                 {
                     dp[j] += dp[j - nums[i]];

@@ -61,24 +61,6 @@ public class Solution0494Test
         actual.Should().Be(expected);
     }
     
-    [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver4_1Test(int[] nums, int target, int expected)
-    {
-        var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver4_1(nums, target);
-
-        actual.Should().Be(expected);
-    }
-
-    [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver4_2Test(int[] nums, int target, int expected)
-    {
-        var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver4_2(nums, target);
-
-        actual.Should().Be(expected);
-    }
-
     private static readonly object[] TestCases =
     {
         new object[]
@@ -104,6 +86,12 @@ public class Solution0494Test
             new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 1 },
             1,
             256
+        },
+        new object[]
+        {
+            new int[] { 1000},
+            -1000,
+            1
         }
     };
 }

@@ -52,7 +52,7 @@ dp[0][0] = 1，不選 num<sub>0</sub> 且總和為 0 的組合有 1
 
 dp[0][num<sub>0</sub>] = 1，選 num<sub>0</sub> 且總和為 num<sub>0</sub> 的組合有 1
 
-要注意的 num<sub>0</sub> 可能為 0，那就要讓 d[0][0] = 2
+要注意 num<sub>0</sub> 可能比 (target + sum) / 2 還大，那就造成 index out of range 了，所以就令 dp[-1][0]為 1，不用任何數的總和為 0 的組合有 1
 
 ### 複雜度
 

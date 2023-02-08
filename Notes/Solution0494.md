@@ -1,22 +1,34 @@
 # Solution0494
 
-## 動態規劃
+## 動態規劃 Ver1
 
-todo 待補充
+很容易就想到算法，但很容易在細節卡住
 
-很容易就想到推導
+從 num<sub>0</sub>, ..., num<sub>n-1</sub> 共 n 個數字任意做加或減，求和 target 的給合數目 = dp(n, target)
 
-dp[i][j] = dp[i-1][j-nums[i]] + dp[i-1][j+nums[i]]，column 的範圍其實就是 2*sum + 1
+換算成陣列就是求 dp[n-1][target]
 
-但是會發現不好寫...因為實際上陣列不能有負的 index，得做個平移，[0] 為 -sum，...，[sum] 為 0，...，[2*sum] 為 sum
+column 的數目最多到 2 * sum - 1，sum 為陣列所有數的總和
+
+狀態推導就是 dp[i][j] = dp[i-1][j-nums[i]] + dp[i-1][j+nums[i]]
+- 當 j-nums[i] < -sum，dp[i-1][j-nums[i]] 為 0
+- 當 j+nums[i] > sum，dp[i-1][j+nums[i]] 為 0
+
+但是會發現程式很不好寫...因為實際上陣列不能有負的 index，得做個平移，讓 [0] 代表 -sum，...，[sum] 代表 0，...，[2*sum] 代表 sum
+
+---
+
+## 動態規劃 Ver2
 
 看解答將 dp[i][j] 轉化為來源，覺得很神奇
 - dp[i+1][j+num<sub>i</sub>] += dp[i][j]
 - dp[i+1][j-num<sub>i</sub>] += dp[i][j]
 
+也就是 dp[i][j] 有值才將它往下帶，也因為總和是 sum，j+num<sub>i</sub> 再怎麼都不會超過 sum，也就省去檢查邊界的程式碼
+
 ---
 
-## 動態規劃 - 01背包 2維陣列
+## 動態規劃 - Ver3 01背包 2維陣列
 
 這題想好久...很難想做是 01 背包，因為不是加就就是減，跟選或不選扯不上邊。
 
@@ -62,7 +74,7 @@ dp[0][num<sub>0</sub>] = 1，選 num<sub>0</sub> 且總和為 num<sub>0</sub> �
 
 ---
 
-## 動態規劃 - 01背包 1維陣列
+## 動態規劃 - Ver4 01背包 1維陣列
 
 從二維陣列改一維陣列需要顧慮的點有，前一個要被計算的數值不能被蓋掉
 

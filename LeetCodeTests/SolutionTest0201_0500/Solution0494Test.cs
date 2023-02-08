@@ -8,55 +8,37 @@ namespace LeetCodeTests.SolutionTest0201_0500;
 public class Solution0494Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver1_1Test(int[] nums, int target, int expected)
+    public void FindSubsequences_Ver1Test(int[] nums, int target, int expected)
     {
         var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver1_1(nums, target);
+        var actual = solution.FindTargetSumWays_Ver1(nums, target);
 
         actual.Should().Be(expected);
     }
 
     [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver1_2Test(int[] nums, int target, int expected)
+    public void FindSubsequences_Ver2Test(int[] nums, int target, int expected)
     {
         var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver1_2(nums, target);
+        var actual = solution.FindTargetSumWays_Ver2(nums, target);
 
         actual.Should().Be(expected);
     }
 
     [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver2_1Test(int[] nums, int target, int expected)
+    public void FindSubsequences_Ver3Test(int[] nums, int target, int expected)
     {
         var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver2_1(nums, target);
-
-        actual.Should().Be(expected);
-    }
-
-    [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver2_2Test(int[] nums, int target, int expected)
-    {
-        var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver2_2(nums, target);
+        var actual = solution.FindTargetSumWays_Ver3(nums, target);
 
         actual.Should().Be(expected);
     }
     
     [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver3_1Test(int[] nums, int target, int expected)
+    public void FindSubsequences_Ver4Test(int[] nums, int target, int expected)
     {
         var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver3_1(nums, target);
-
-        actual.Should().Be(expected);
-    }
-    
-    [TestCaseSource(nameof(TestCases))]
-    public void FindSubsequences_Ver3_2Test(int[] nums, int target, int expected)
-    {
-        var solution = new Solution0494();
-        var actual = solution.FindTargetSumWays_Ver3_2(nums, target);
+        var actual = solution.FindTargetSumWays_Ver4(nums, target);
 
         actual.Should().Be(expected);
     }

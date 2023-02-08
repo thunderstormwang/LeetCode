@@ -8,10 +8,19 @@ namespace LeetCodeTests.SolutionTest0201_0500;
 public class Solution0474Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void FindMaxForm(string[] strs, int m, int n, int expected)
+    public void FindMaxForm_Ver1Test(string[] strs, int m, int n, int expected)
     {
         var solution = new Solution0474();
-        var actual = solution.FindMaxForm(strs, m, n);
+        var actual = solution.FindMaxForm_Ver1(strs, m, n);
+
+        actual.Should().Be(expected);
+    }
+
+    [TestCaseSource(nameof(TestCases))]
+    public void FindMaxForm_Ver2Test(string[] strs, int m, int n, int expected)
+    {
+        var solution = new Solution0474();
+        var actual = solution.FindMaxForm_Ver2(strs, m, n);
 
         actual.Should().Be(expected);
     }

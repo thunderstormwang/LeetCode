@@ -19,10 +19,18 @@ public class Solution0518
 
         for (var i = 0; i < coins.Length; i++)
         {
-            for (var j = coins[i]; j <= amount; j++)
+            for (var j = 0; j <= amount; j++)
             {
-                Debug.WriteLine($"{coins[i]}, dp[{i+1}][{j}] = dp[{i}][{j}] + dp[{i + 1}][{j - coins[i]}] = {dp[i][j] + dp[i + 1][j - coins[i]]}");
-                dp[i + 1][j] = dp[i][j] + dp[i + 1][j - coins[i]];
+                //Debug.WriteLine($"{coins[i]}, dp[{i+1}][{j}] = dp[{i}][{j}] + dp[{i + 1}][{j - coins[i]}] = {dp[i][j] + dp[i + 1][j - coins[i]]}");
+
+                if (j < coins[i])
+                {
+                    dp[i + 1][j] = dp[i][j];
+                }
+                else
+                {
+                    dp[i + 1][j] = dp[i][j] + dp[i + 1][j - coins[i]];
+                }
             }
         }
 

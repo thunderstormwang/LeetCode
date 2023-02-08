@@ -8,10 +8,19 @@ namespace LeetCodeTests.SolutionTest0501_9999;
 public class Solution0518Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void ChangeTest(int amount, int[] coins, int expected)
+    public void ChangeVer1_Test(int amount, int[] coins, int expected)
     {
         var solution = new Solution0518();
-        var actual = solution.Change(amount, coins);
+        var actual = solution.Change_Ver1(amount, coins);
+
+        actual.Should().Be(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ChangeVer2_Test(int amount, int[] coins, int expected)
+    {
+        var solution = new Solution0518();
+        var actual = solution.Change_Ver2(amount, coins);
 
         actual.Should().Be(expected);
     }

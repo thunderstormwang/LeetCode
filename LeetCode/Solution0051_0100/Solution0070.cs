@@ -2,7 +2,7 @@
 {
     public class Solution0070
     {
-        public int ClimbStairs(int n)
+        public int ClimbStairs_Ver1(int n)
         {
             if (n <= 2)
             {
@@ -22,6 +22,32 @@
             }
 
             return result;
+        }
+        
+        /// <summary>
+        /// 動態規劃 - 完全背包 1維陣列
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public int ClimbStairs_Ver2(int n)
+        {
+            var dp = new int[n + 1];
+            var step = new int[] { 1, 2 };
+
+            dp[0] = 1;
+
+            for (var j = 1; j <= n; j++)
+            {
+                for (var i = 0; i < step.Length; i++)
+                {
+                    if (j >= step[i])
+                    {
+                        dp[j] += dp[j - step[i]];
+                    }
+                }
+            }
+
+            return dp[n];
         }
     }
 }

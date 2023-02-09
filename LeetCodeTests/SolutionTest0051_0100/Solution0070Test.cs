@@ -8,11 +8,21 @@ namespace LeetCodeTests.SolutionTest0051_0100
     public class Solution0070Test
     {
         [TestCaseSource(nameof(TestCases))]
-        public void ClimbStairsTest(int n, int expected)
+        public void ClimbStairs_Ver1Test(int n, int expected)
         {
             var solution = new Solution0070();
 
-            var actual = solution.ClimbStairs(n);
+            var actual = solution.ClimbStairs_Ver1(n);
+
+            actual.Should().Be(expected);
+        }
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void ClimbStairs_Ver2Test(int n, int expected)
+        {
+            var solution = new Solution0070();
+
+            var actual = solution.ClimbStairs_Ver2(n);
 
             actual.Should().Be(expected);
         }

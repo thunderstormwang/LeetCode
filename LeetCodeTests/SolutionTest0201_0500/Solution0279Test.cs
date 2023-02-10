@@ -7,20 +7,66 @@ namespace LeetCodeTests.SolutionTest0201_0500
     [TestFixture]
     public class Solution0279Test
     {
-        [TestCase(75, 3)]
-        [TestCase(43, 3)]
-        [TestCase(38, 3)]
-        [TestCase(32, 2)]
-        [TestCase(25, 1)]
-        [TestCase(13, 2)]
-        [TestCase(12, 3)]
-        [TestCase(1, 1)]
-        public void NumSquaresTest(int input, int expected)
+        [TestCaseSource(nameof(TestCases))]
+        public void NumSquares_Ver1Test(int input, int expected)
         {
             var solution = new Solution0279();
-            var actual = solution.NumSquares(input);
+            var actual = solution.NumSquares_Ver1(input);
 
             actual.Should().Be(expected);
         }
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void NumSquares_Ver2Test(int input, int expected)
+        {
+            var solution = new Solution0279();
+            var actual = solution.NumSquares_Ver2(input);
+
+            actual.Should().Be(expected);
+        }
+
+        private static readonly object[] TestCases =
+        {
+            new object[]
+            {
+                75,
+                3
+            },
+            new object[]
+            {
+                43,
+                3
+            },
+            new object[]
+            {
+                38,
+                3
+            },
+            new object[]
+            {
+                32,
+                2
+            },
+            new object[]
+            {
+                25,
+                1
+            },
+            new object[]
+            {
+                13,
+                2
+            },
+            new object[]
+            {
+                12,
+                3
+            },
+            new object[]
+            {
+                1,
+                1
+            }
+        };
     }
 }

@@ -1,35 +1,84 @@
-﻿using System;
-
-namespace LeetCode.Solution0201_0500
+﻿namespace LeetCode.Solution0201_0500
 {
     public class Solution0279
     {
-        public int NumSquares(int n)
+        /// <summary>
+        /// 完全背包 二維陣列
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public int NumSquares_Ver1(int n)
+        {
+            var square = 0;
+            while (square * square <= n)
+            {
+                square++;
+            }
+
+            square--;
+
+            var dp = new int[square + 1][];
+            for (var i = 0; i < square + 1; i++)
+            {
+                dp[i] = new int[n + 1];
+            }
+
+            for (var j = 1; j < n + 1; j++)
+            {
+                dp[0][j] = int.MaxValue;
+            }
+
+            for (var i = 0; i < square + 1; i++)
+            {
+                dp[i][0] = 0;
+            }
+
+            for (var i = 1; i < square + 1; i++)
+            {
+                for (var j = 1; j < n + 1; j++)
+                {
+                    if (j < i * i)
+                    {
+                        dp[i][j] = dp[i - 1][j];
+                    }
+                    else
+                    {
+                        dp[i][j] = Math.Min(dp[i - 1][j], dp[i][j - i * i] + 1);
+                    }
+                }
+            }
+
+            return dp[square][n];
+        }
+
+        /// <summary>
+        /// 完全背包 一維陣列
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public int NumSquares_Ver2(int n)
         {
             var dp = new int[n + 1];
 
-            for (var i = 1; i <= n; i++)
+            for (var j = 1; j < n + 1; j++)
             {
-                dp[i] = int.MaxValue;
+                dp[j] = int.MaxValue;
+            }
 
-                for (var j = 1; j * j <= i; j++)
+            dp[0] = 0;
+
+            for (var i = 1; i * i <= n; i++)
+            {
+                for (var j = 1; j < n + 1; j++)
                 {
-                    dp[i] = Math.Min(dp[i], dp[i - j * j] + 1);
+                    if (j >= i * i)
+                    {
+                        dp[j] = Math.Min(dp[j], dp[j - i * i] + 1);
+                    }
                 }
             }
 
             return dp[n];
         }
-        
-        // 一開始想到的解法是 greedy 的方法
-        // 找到僅次於 n 的平方數, 然後將 n 減去該平方數, 再找到下一個僅次於 n 的平方根
-        // 但這做法並不會得到最佳解...
-        // ex: 12 以上述做法會找到 9, 1, 1, 1, 用 4 個平方數組合, 但實際上可用 2 個平方數: 9 + 4
-        
-        // 用動態規劃
-        // dp[n] 等於從 dp[n-1] + 1, dp[n-4] + 1, dp[n-9] + 1, ... 從中取最小
-        
-        // Time: O(N * sqrt(N))
-        // Space: O(N)
     }
 }

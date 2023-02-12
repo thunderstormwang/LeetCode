@@ -3,6 +3,7 @@
 public class Solution0968
 {
     private int _result = 0;
+    
     public int MinCameraCover(TreeNode root)
     {
         var traverse = Traverse(root);

@@ -26,6 +26,16 @@ namespace LeetCodeTests.SolutionTest0101_0200
 
             actual.Should().Be(expected);
         }
+        
+        [TestCaseSource(nameof(TestCases))]
+        public void MaxProfit_DPTest(int[] array, int expected)
+        {
+            var solution = new Solution0121();
+
+            var actual = solution.MaxProfit_DP(array);
+
+            actual.Should().Be(expected);
+        }
 
         private static readonly object[] TestCases =
         {

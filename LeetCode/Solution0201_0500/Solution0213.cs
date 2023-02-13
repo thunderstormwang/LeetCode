@@ -24,12 +24,12 @@ public class Solution0213
     {
         var dp = new int[endIndex - startIndex + 1];
 
-        dp[0] = nums[startIndex];
-        dp[1] = Math.Max(nums[startIndex], nums[startIndex + 1]);
+        dp[0] = nums[0 + startIndex];
+        dp[1] = Math.Max(nums[startIndex], nums[1 + startIndex]);
 
         for (var i = 2; i < endIndex - startIndex + 1; i++)
         {
-            dp[i] = Math.Max(dp[i - 1], dp[i - 2] + nums[startIndex + i]);
+            dp[i] = Math.Max(dp[i - 1], dp[i - 2] + nums[i + startIndex]);
         }
 
         return dp[endIndex - startIndex];

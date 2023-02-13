@@ -6,10 +6,10 @@ public class Solution0337
     {
         var result = Traverse(root);
 
-        return Math.Max(result.Pick, result.NotPick);
+        return Math.Max(result.PickCurr, result.NotPickCurr);
     }
 
-    private (int Pick, int NotPick) Traverse(TreeNode root)
+    private (int PickCurr, int NotPickCurr) Traverse(TreeNode root)
     {
         if (root == null)
         {
@@ -19,8 +19,8 @@ public class Solution0337
         var leftResult = Traverse(root.left);
         var rightResult = Traverse(root.right);
 
-        var pickCurrentNode = leftResult.NotPick + rightResult.NotPick + root.val;
-        var notPickCurrentNode = leftResult.Pick + rightResult.Pick
+        var pickCurrentNode = leftResult.NotPickCurr + rightResult.NotPickCurr + root.val;
+        var notPickCurrentNode = leftResult.PickCurr + rightResult.PickCurr;
 
         return (pickCurrentNode, notPickCurrentNode);
     }

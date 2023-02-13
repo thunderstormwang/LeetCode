@@ -34,11 +34,19 @@
 
 dp_buy(n) 為買股票的最低成本，換算成陣列，求 dp_buy[n-1]
 
-dp_sell(n) 為賣股票的最高獲利，求 dp_sell[n-1]
+dp_sell(n) 為賣股票的最高獲利，換算成陣列，求 dp_sell[n-1]
 
 ### 找出 dp 的狀態推導
 
+dp_buy[i] = Min(dp_buy[i-1], prices[i])，0 ~ i-1 天買入股票的最低成本與第 i 天買入股票的成本，兩者取最小
+
+dp_sell[i] = Min(dp_sell[i-1], prices[i] - dp[buy[i-1])，0 ~ i-1 天賣出股票的最高獲利與第 i 天賣出股票的獲利，兩者取最大
+
 ### 找出 dp 初始值
+
+dp_buy[0] = prices[0]，第 0 天就買股票，成本為 prices[0]
+
+dp_sell[0] = 0，股票不能同一天買賣，獲利為 0
 
 #### Time: O(n)
 

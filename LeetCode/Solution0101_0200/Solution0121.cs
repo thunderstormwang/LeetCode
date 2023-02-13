@@ -33,7 +33,7 @@
 
             return result;
         }
-        
+
         public int MaxProfit_DP(int[] prices)
         {
             var buy = new int [prices.Length];
@@ -41,11 +41,11 @@
 
             buy[0] = prices[0];
             sell[0] = 0;
-            
+
             for (var i = 1; i < prices.Length; i++)
             {
                 buy[i] = Math.Min(buy[i - 1], prices[i]);
-                sell[i] = Math.Max(sell[i - 1], prices[i] - buy[i]);
+                sell[i] = Math.Max(sell[i - 1], prices[i] - buy[i - 1]);
             }
 
             return sell[prices.Length - 1];

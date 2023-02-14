@@ -46,7 +46,7 @@ dp_sell[i] = Min(dp_sell[i-1], prices[i] - dp[buy[i-1])，0 ~ i-1 天賣出股�
 
 dp_buy[0] = prices[0]，第 0 天就買股票，成本為 prices[0]
 
-dp_sell[0] = 0，股票不能同一天買賣，獲利為 0
+dp_sell[0] = 0，股票不能同一天買賣，第 0 天的獲利為 0
 
 #### Time: O(n)
 

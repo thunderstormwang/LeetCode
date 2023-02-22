@@ -26,4 +26,38 @@
 
 #### Memory: O(1)
 
-#### 動態規劃：
+## 動態規劃
+
+跟 [Solution121](Solution0121.md) 不同的是，獲利得累積到下一天，所以 dp 的定義也不一樣
+
+### 找出 dp 和下標的的意義
+
+第 n 天持有股票的最大獲利: dp_stock(n)，換算成陣列，求 dp_stock[n-1]
+
+第 n 天無持有股票的最大獲利: dp_no_stock(n)，換算成陣列，求 dp_no_stock[n-1]
+
+### 找出 dp 的狀態推導
+
+dp_stock[i] 的來源有以下
+- 第 i-1 天持有股票的最大獲利，dp_stock[i-1]
+- 第 i-1 天無持有股票的最大獲利 扣掉 第 i 天買股票的成本，dp_no_stock[i-1] - prices[i]
+
+兩者取最大
+
+dp_no_stock[i] 的來源有以下
+- 第 i-1 天無持有股票的最大獲利，dp_no_stock[i-1]
+- 第 i-1 天持有股票的最大獲利 加上 第 i 天賣股票的獲利，dp_stock[i-1] + prices[i]
+
+兩者取最大
+
+### 找出 dp 初始值
+
+dp_stock[0] = -prices[0]，第一天前面不會再有前一天了，只有買入股票此一情況
+
+dp_no_stock[0] = 0，第一天沒股票可賣
+
+### 複雜度
+
+#### Time: O(n)
+
+#### Memory: O(n)

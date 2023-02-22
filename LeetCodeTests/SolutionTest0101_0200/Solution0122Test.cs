@@ -8,11 +8,21 @@ namespace LeetCodeTests.SolutionTest0101_0200;
 public class Solution0122Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void MaxProfitTest(int[] array, int expected)
+    public void MaxProfit_GreedyTest(int[] prices, int expected)
     {
         var solution = new Solution0122();
 
-        var actual = solution.MaxProfit(array);
+        var actual = solution.MaxProfit_Greedy(prices);
+
+        actual.Should().Be(expected);
+    }
+
+    [TestCaseSource(nameof(TestCases))]
+    public void MaxProfit_DPTest(int[] prices, int expected)
+    {
+        var solution = new Solution0122();
+
+        var actual = solution.MaxProfit_DP(prices);
 
         actual.Should().Be(expected);
     }
@@ -26,7 +36,7 @@ public class Solution0122Test
         },
         new object[]
         {
-            new int[] { 1, 2, 3, 4, 5 }, 
+            new int[] { 1, 2, 3, 4, 5 },
             4
         },
         new object[]

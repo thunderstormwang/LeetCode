@@ -8,10 +8,19 @@ namespace LeetCodeTests.SolutionTest0501_9999;
 public class Solution0714Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void MaxProfitTest(int[] prices, int fee, int expected)
+    public void MaxProfit_GreedyTest(int[] prices, int fee, int expected)
     {
         var solution = new Solution0714();
-        var actual = solution.MaxProfit(prices, fee);
+        var actual = solution.MaxProfit_Greedy(prices, fee);
+
+        actual.Should().Be(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void MaxProfit_DPTest(int[] prices, int fee, int expected)
+    {
+        var solution = new Solution0714();
+        var actual = solution.MaxProfit_DP(prices, fee);
 
         actual.Should().Be(expected);
     }

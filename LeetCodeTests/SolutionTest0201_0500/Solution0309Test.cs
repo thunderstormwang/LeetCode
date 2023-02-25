@@ -15,7 +15,7 @@ public class Solution0309Test
 
         actual.Should().Be(expected);
     }
-    
+
     [TestCaseSource(nameof(TestCases))]
     public void NumSquares_Ver2Test(int[] prices, int expected)
     {

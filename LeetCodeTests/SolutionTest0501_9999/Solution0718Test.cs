@@ -8,6 +8,15 @@ namespace LeetCodeTests.SolutionTest0501_9999;
 public class Solution0718Test
 {
     [TestCaseSource(nameof(TestCases))]
+    public void FindLength_MyFirstAnswerTest(int[] nums1, int[] nums2, int expected)
+    {
+        var solution = new Solution0718();
+        var actual = solution.FindLength_MyFirstAnswer(nums1, nums2);
+
+        actual.Should().Be(expected);
+    }
+
+    [TestCaseSource(nameof(TestCases))]
     public void FindLength_Ver1Test(int[] nums1, int[] nums2, int expected)
     {
         var solution = new Solution0718();
@@ -15,7 +24,7 @@ public class Solution0718Test
 
         actual.Should().Be(expected);
     }
-    
+
     [TestCaseSource(nameof(TestCases))]
     public void FindLength_Ver2Test(int[] nums1, int[] nums2, int expected)
     {

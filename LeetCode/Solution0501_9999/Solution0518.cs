@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace LeetCode.Solution0501_9999;
+﻿namespace LeetCode.Solution0501_9999;
 
 public class Solution0518
 {

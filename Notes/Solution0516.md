@@ -18,7 +18,6 @@ dp[i][j] 的來源
 
 dp[i][i] = 1，0 <= i <= n-1
 
-
 #### Time: O(n<sup>2</sup>)
 
 #### Space: O(n<sup>2</sup>)

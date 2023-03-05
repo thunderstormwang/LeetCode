@@ -24,6 +24,24 @@ public class Solution0583Test
 
         actual.Should().Be(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void MinDistance_Ver3Test(string word1, string word2, int expected)
+    {
+        var solution = new Solution0583();
+        var actual = solution.MinDistance_Ver3(word1, word2);
+
+        actual.Should().Be(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void MinDistance_Ver4Test(string word1, string word2, int expected)
+    {
+        var solution = new Solution0583();
+        var actual = solution.MinDistance_Ver4(word1, word2);
+
+        actual.Should().Be(expected);
+    }
 
     private static readonly object[] TestCases =
     {
@@ -38,6 +56,12 @@ public class Solution0583Test
             "leetcode",
             "etco",
             4
+        },
+        new object[]
+        {
+            "a",
+            "b",
+            2
         }
     };
 }

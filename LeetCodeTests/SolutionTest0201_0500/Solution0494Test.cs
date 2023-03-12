@@ -33,7 +33,7 @@ public class Solution0494Test
 
         actual.Should().Be(expected);
     }
-    
+
     [TestCaseSource(nameof(TestCases))]
     public void FindSubsequences_Ver4Test(int[] nums, int target, int expected)
     {
@@ -42,7 +42,7 @@ public class Solution0494Test
 
         actual.Should().Be(expected);
     }
-    
+
     private static readonly object[] TestCases =
     {
         new object[]
@@ -71,7 +71,7 @@ public class Solution0494Test
         },
         new object[]
         {
-            new int[] { 1000},
+            new int[] { 1000 },
             -1000,
             1
         }

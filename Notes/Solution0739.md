@@ -21,7 +21,8 @@
 
 想出暴力法後，直覺認為有 O(n) 的解法，不過沒想到...
 
-建立 Stack，儲存 index
+建立 Stack，儲存走過的 index  
+並將 Stack 的元素保持為越往頂端，則溫度越低，也就是單調棧  
 
 跑迴圈，每個 temperatures<sub>i</sub> 做跟 Stack 的第一個元素比較
 - temperatures<sub>i</sub> <= temperatures<sub>top</sub>，將 i 也 push 進 stack，然後看下一個 i

@@ -16,7 +16,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
             var solution = new Solution0027();
             var result = solution.RemoveElement(array, val);
 
-            Assert.AreEqual(expectedLength, result);
+            Assert.That(result, Is.EqualTo(expectedLength));
 
             // 陣列內的順序不重要, 只要內容, 數量一致就可
             var actualArray = new int[result];

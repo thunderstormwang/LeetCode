@@ -21,7 +21,7 @@ namespace LeetCodeTests.SolutionTest0001_0050
             var actual = solution.RemoveNthFromEnd(list, n);
 
             var expectedListNode = Utility.BuildListNode(expected);
-            Assert.AreEqual(Utility.CheckLinkedList(actual, expectedListNode), true);
+            Assert.That(Utility.CheckLinkedList(actual, expectedListNode), Is.EqualTo(true));
         }
     }
 }

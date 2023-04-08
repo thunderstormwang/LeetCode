@@ -8,10 +8,19 @@ namespace LeetCodeTests.SolutionTest0201_0500;
 public class Solution0238Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void ProductExceptSelfTest(int[] nums, int[] expected)
+    public void ProductExceptSelf_Ver1Test(int[] nums, int[] expected)
     {
         var solution = new Solution0238();
-        var actual = solution.ProductExceptSelf(nums);
+        var actual = solution.ProductExceptSelf_Ver1(nums);
+
+        actual.Should().BeEquivalentTo(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ProductExceptSelf_Ver2Test(int[] nums, int[] expected)
+    {
+        var solution = new Solution0238();
+        var actual = solution.ProductExceptSelf_Ver2(nums);
 
         actual.Should().BeEquivalentTo(expected);
     }
@@ -20,23 +29,13 @@ public class Solution0238Test
     {
         new object[]
         {
-            new int[] { 10, 9, 2, 5, 3, 7, 101, 18 },
-            4
+            new int[] { 1, 2, 3, 4 },
+            new int[] { 24, 12, 8, 6 }
         },
         new object[]
         {
-            new int[] { 0, 1, 0, 3, 2, 3 },
-            4
-        },
-        new object[]
-        {
-            new int[] { 7, 7, 7, 7, 7, 7, 7 },
-            1
-        },
-        new object[]
-        {
-            new int[] { 0 },
-            1
+            new int[] { -1, 1, 0, -3, 3 },
+            new int[] { 0, 0, 9, 0, 0 },
         }
     };
 }

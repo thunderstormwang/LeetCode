@@ -15,7 +15,7 @@ public class Solution0518Test
 
         actual.Should().Be(expected);
     }
-    
+
     [TestCaseSource(nameof(TestCases))]
     public void ChangeVer2_Test(int amount, int[] coins, int expected)
     {

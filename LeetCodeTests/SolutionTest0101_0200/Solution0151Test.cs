@@ -5,6 +5,7 @@ using NUnit.Framework;
 namespace LeetCodeTests.SolutionTest0101_0200
 {
     [TestFixture]
+    [Category("SolutionTest0101_0200")]
     public class Solution0151Test
     {
         [TestCase("the sky is blue", "blue is sky the")]

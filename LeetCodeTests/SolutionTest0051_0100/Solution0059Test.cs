@@ -5,6 +5,7 @@ using NUnit.Framework;
 namespace LeetCodeTests.SolutionTest0051_0100
 {
     [TestFixture]
+    [Category("SolutionTest0051_0100")]
     public class Solution0059Test
     {
         [TestCaseSource(nameof(TestCases))]

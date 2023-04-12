@@ -6,6 +6,7 @@ using NUnit.Framework;
 namespace LeetCodeTests.SolutionTest0101_0200
 {
     [TestFixture]
+    [Category("SolutionTest0101_0200")]
     public class Solution0142Test
     {
         private ListNode cycleStart;

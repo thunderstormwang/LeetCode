@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TreeNode = LeetCode.Models.TreeNode;
 
 namespace LeetCode.Solution0301_0500
 {

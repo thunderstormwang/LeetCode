@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using LeetCode.Models;
 
 namespace LeetCode.Solution0501_9999
 {

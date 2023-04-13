@@ -1,4 +1,4 @@
-﻿namespace LeetCodeTests.SolutionTest0501_9999;
+﻿namespace LeetCode.Models;
 
 public class Interval
 {

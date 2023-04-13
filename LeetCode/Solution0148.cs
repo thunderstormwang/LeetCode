@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using LeetCode.Models;
+
+namespace LeetCode
 {
     public class Solution148
     {

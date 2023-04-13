@@ -1,4 +1,4 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Models
 {
     public class ListNode
     {

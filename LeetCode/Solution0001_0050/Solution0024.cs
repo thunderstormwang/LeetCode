@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Solution0001_0050
+﻿using LeetCode.Models;
+
+namespace LeetCode.Solution0001_0050
 {
     public class Solution0024
     {

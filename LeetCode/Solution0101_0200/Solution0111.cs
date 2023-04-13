@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LeetCode.Models;
 
 namespace LeetCode.Solution0101_0200
 {

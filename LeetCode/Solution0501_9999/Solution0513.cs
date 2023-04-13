@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Solution0501_9999
+﻿using TreeNode = LeetCode.Models.TreeNode;
+
+namespace LeetCode.Solution0501_9999
 {
     public class Solution0513
     {

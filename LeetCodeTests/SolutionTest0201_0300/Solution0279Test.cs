@@ -2,10 +2,10 @@
 using LeetCode.Solution0201_0300;
 using NUnit.Framework;
 
-namespace LeetCodeTests.SolutionTest0301_0500
+namespace LeetCodeTests.SolutionTest0201_0300
 {
     [TestFixture]
-    [Category("SolutionTest0301_0500")]
+    [Category("SolutionTest0201_0300")]
     public class Solution0279Test
     {
         [TestCaseSource(nameof(TestCases))]

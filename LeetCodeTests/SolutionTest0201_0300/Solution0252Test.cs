@@ -2,17 +2,17 @@
 using LeetCode.Solution0201_0300;
 using NUnit.Framework;
 
-namespace LeetCodeTests.SolutionTest0301_0500;
+namespace LeetCodeTests.SolutionTest0201_0300;
 
 [TestFixture]
 [Category("SolutionTest0301_0500")]
 public class Solution0252Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void OOOTest(int[][] nums, bool expected)
+    public void CanAttendMeetingsTest(int[][] intervals, bool expected)
     {
         var solution = new Solution0252();
-        var actual = solution.CanAttendMeetings(nums);
+        var actual = solution.CanAttendMeetings(intervals);
 
         actual.Should().Be(expected);
     }

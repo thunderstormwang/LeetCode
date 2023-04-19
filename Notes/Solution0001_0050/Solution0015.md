@@ -21,8 +21,9 @@
 ### 複雜度
 
 #### Time: O(n<sup>2</sup>)
-排序 - O(n * log(n))  
-輪詢每個元素 - O(n<sup>2</sup>)  
-取最大項，所以是 O(n<sup>2</sup>)
+- 排序: O(n * log(n))  
+- 輪詢每個元素: O(n<sup>2</sup>)  
+
+相加後取最大項:  O(n<sup>2</sup>)
 
 #### Space: O(1)

@@ -2,27 +2,7 @@
 {
     public class Solution0239
     {
-        public int[] MaxSlidingWindow_Version1(int[] nums, int k)
-        {
-            var result = new int[nums.Length - k + 1];
-            IMonotonicQueue queue = new ImpWithQueue();
-            for (var i = 0; i < k; i++)
-            {
-                queue.Push(nums[i]);
-            }
-
-            result[0] = queue.Peek();
-            for (var i = k; i < nums.Length; i++)
-            {
-                queue.Pop(nums[i - k]);
-                queue.Push(nums[i]);
-                result[i - k + 1] = queue.Peek();
-            }
-
-            return result;
-        }
-
-        public int[] MaxSlidingWindow_Version2(int[] nums, int k)
+        public int[] MaxSlidingWindow_Ver1(int[] nums, int k)
         {
             var result = new int[nums.Length - k + 1];
             IMonotonicQueue list = new ImpWithLinkedList();
@@ -43,7 +23,7 @@
             return result;
         }
 
-        public int[] MaxSlidingWindow_Version3(int[] nums, int k)
+        public int[] MaxSlidingWindow_Ve2(int[] nums, int k)
         {
             var result = new int[nums.Length - k + 1];
             IMonotonicQueue array = new ImpWithArray(k);
@@ -86,52 +66,6 @@
             /// </summary>
             /// <param name="input"></param>
             void Push(int input);
-        }
-
-        private class ImpWithQueue : IMonotonicQueue
-        {
-            private readonly Queue<int> queue;
-
-            public ImpWithQueue()
-            {
-                queue = new Queue<int>();
-            }
-
-            /// <inheritdoc />
-            public int Peek()
-            {
-                return queue.Peek();
-            }
-
-            /// <inheritdoc />
-            public void Pop(int input)
-            {
-                if (queue.Peek() == input)
-                {
-                    queue.Dequeue();
-                }
-            }
-
-            /// <inheritdoc />
-            public void Push(int input)
-            {
-                var count = queue.Count;
-                while (count > 0)
-                {
-                    if (queue.Peek() >= input)
-                    {
-                        queue.Enqueue(queue.Dequeue());
-                    }
-                    else
-                    {
-                        queue.Dequeue();
-                    }
-
-                    count--;
-                }
-
-                queue.Enqueue(input);
-            }
         }
 
         private class ImpWithLinkedList : IMonotonicQueue
@@ -197,20 +131,20 @@
             {
                 if (_array[_top] == input)
                 {
-                    _top = MoveBackward(_top);
+                    _top = MoveForward(_top);
                 }
             }
 
             /// <inheritdoc />
             public void Push(int input)
             {
-                while (!IsEmpty() && _array[MoveForward(_bottom)] < input)
+                while (!IsEmpty() && _array[MoveBackward(_bottom)] < input)
                 {
-                    _bottom = MoveForward(_bottom);
+                    _bottom = MoveBackward(_bottom);
                 }
 
                 _array[_bottom] = input;
-                _bottom = MoveBackward(_bottom);
+                _bottom = MoveForward(_bottom);
             }
 
             private int MoveForward(int pointer)
@@ -230,19 +164,8 @@
 
             private bool IsFull()
             {
-                return MoveForward(_top) == _bottom;
+                return _top == MoveBackward(_bottom);
             }
         }
-
-        // 用暴力法
-        // 每移動一個位置, 即比較 k 個元素的最大值
-        // Time: O(N*K)
-        // Space: O(N-K)
-        
-        //=======
-        
-        // 用 Monotonic Queue
-        // Time: O(N)
-        // Space: O(N)
     }
 }

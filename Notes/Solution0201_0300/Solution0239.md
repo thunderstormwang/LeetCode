@@ -14,8 +14,6 @@
 
 ## Multi Set
 
-好難 ....
-
 C# 沒有像 C++ 的 multiset 的資料結構  
 一種有排序且允許重覆元素存在的集合  
 實現方式為 balanced binary search tree  
@@ -29,13 +27,15 @@ C# 沒有像 C++ 的 multiset 的資料結構
 
 ## Monotonic Queue
 
-好難 ....
+在 C# 寫這題好煩，要自己做資料結構
 
 C# 沒有 C++ 的 deque(Double-Ended Queue)  
 LinkedList 最接近  
 或是自己用 array 實現
 
-在 C# 寫這題好煩，要自己做資料結構
+保持 queue 裡的元素是由小到大  
+移除元素從頭部移除  
+新增元素從底部加入，在加入新元素之前，先將所有小於新元素的底部元素都移除
 
 ### 複雜度
 

@@ -1,108 +1,86 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace LeetCode.Solution0001_0050;
 
-namespace LeetCode.Solution0001_0050
+public class Solution0003
 {
-    public class Solution0003
+    public int LengthOfLongestSubstring_SlideWindow_Ver1(string s)
     {
-        public int LengthOfLongestSubstring_Brutal(string s)
-        {
-            var result = 0;
+        var result = 0;
+        var charSet = new HashSet<char>();
 
-            for (var i = 0; i < s.Length; i++)
+        for (var i = 0; i < s.Length; i++)
+        {
+            for (var j = i + charSet.Count; j < s.Length; j++)
             {
-                for (var j = i; j < s.Length; j++)
+                if (!charSet.Add(s[j]))
                 {
-                    if (!ContainRepetition(s,
-                        i,
-                        j))
-                    {
-                        result = Math.Max(result,
-                            j - i + 1);
-                    }
+                    break;
                 }
             }
 
-            return result;
+            result = Math.Max(result, charSet.Count);
+            charSet.Remove(s[i]);
         }
-        
-        // 用暴力法
-        // Time: O(n^3), Space: O(min(size of string, size of charset ))
 
-        public int LengthOfLongestSubstring_SlideWindow(string s)
+        return result;
+    }
+
+    // 用 SlideWindow
+    // Time: O(2n) = O(n), 最差情況下, 該字串都是同個字元, 會被 i, j 各走一次 
+    // Space: O(min(size of string, size of charset ))
+
+    public int LengthOfLongestSubstring_SlideWindow_Ver2(string s)
+    {
+        // Creating a set to store the last positions of occurrence
+        var seen = new Dictionary<char, int>();
+        var maximumLength = 0;
+
+        // starting the initial point of window to index 0
+        var start = 0;
+
+        for (var end = 0; end < s.Length; end++)
         {
-            var result = 0;
-            var charSet = new HashSet<char>();
-
-            for (var i = 0; i < s.Length; i++)
+            // Checking if we have already seen the element or not
+            if (seen.ContainsKey(s[end]))
             {
-                for (var j = i + charSet.Count; j < s.Length; j++)
-                {
-                    if (!charSet.Add(s[j]))
-                    {
-                        break;
-                    }
-                }
-
-                result = Math.Max(result,
-                    charSet.Count);
-                charSet.Remove(s[i]);
+                // If we have seen the number, move the start pointer
+                // to position after the last occurrence
+                start = Math.Max(start, seen[s[end]] + 1);
             }
 
-            return result;
+            // Updating the last seen value of the character
+            seen[s[end]] = end;
+            maximumLength = Math.Max(maximumLength, end - start + 1);
         }
-        
-        // 用 SlideWindow
-        // Time: O(2n) = O(n), 最差情況下, 該字串都是同個字元, 會被 i, j 各走一次 
-        // Space: O(min(size of string, size of charset ))
 
-        public int LengthOfLongestSubstring_Linear(string s)
+        return maximumLength;
+    }
+
+    // Time: O(n)
+    // Space: O(min(size of string, size of charset ))
+
+    public int LengthOfLongestSubstring_SlideWindow_Ver3(string s)
+    {
+        var result = 0;
+        var length = 0;
+        var dict = new Dictionary<int, int>();
+        var left = -1;
+
+        for (var i = 0; i < s.Length; i++)
         {
-            // Creating a set to store the last positions of occurrence
-            var seen = new Dictionary<char, int>();
-            var maximumLength = 0;
-
-            // starting the initial point of window to index 0
-            var start = 0;
-
-            for (var end = 0; end < s.Length; end++)
+            if (!dict.ContainsKey(s[i]) || dict[s[i]] < left)
             {
-                // Checking if we have already seen the element or not
-                if (seen.ContainsKey(s[end]))
-                {
-                    // If we have seen the number, move the start pointer
-                    // to position after the last occurrence
-                    start = Math.Max(start,
-                        seen[s[end]] + 1);
-                }
-
-                // Updating the last seen value of the character
-                seen[s[end]] = end;
-                maximumLength = Math.Max(maximumLength,
-                    end - start + 1);
+                length++;
+                dict[s[i]] = i;
+                result = Math.Max(length, result);
             }
-
-            return maximumLength;
-        }
-        
-        // Time: O(n)
-        // Space: O(min(size of string, size of charset ))
-
-        private bool ContainRepetition(string input,
-            int start,
-            int end)
-        {
-            var charSet = new HashSet<char>();
-
-            for (var i = start; i <= end; i++)
+            else
             {
-                if (!charSet.Add(input[i]))
-                {
-                    return true;
-                }
+                length = i - dict[s[i]];
+                left = dict[s[i]] + 1;
+                dict[s[i]] = i;
             }
-
-            return false;
         }
+
+        return result;
     }
 }

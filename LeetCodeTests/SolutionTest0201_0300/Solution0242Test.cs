@@ -2,34 +2,46 @@
 using LeetCode.Solution0201_0300;
 using NUnit.Framework;
 
-namespace LeetCodeTests.SolutionTest0201_0300
+namespace LeetCodeTests.SolutionTest0201_0300;
+
+[TestFixture]
+[Category("SolutionTest0201_0300")]
+public class Solution0242Test
 {
-    [TestFixture]
-    [Category("SolutionTest0201_0300")]
-    public class Solution0242Test
+    [TestCaseSource(nameof(TestCases))]
+    public void IsAnagramTest(string s, string t, bool expected)
     {
-        [TestCase("anagram", "nagaram", true)]
-        [TestCase("rat", "car", false)]
-        [TestCase("apple", "aaaaa", false)]
-        [TestCase("apple", "microsoft", false)]
-        public void IsAnagram_Version1(string s, string t, bool expected)
-        {
-            var solution = new Solution0242();
-            var actual = solution.IsAnagram_Version1(s, t);
+        var solution = new Solution0242();
+        var actual = solution.IsAnagram(s, t);
 
-            actual.Should().Be(expected);
-        }
-        
-        [TestCase("anagram", "nagaram", true)]
-        [TestCase("rat", "car", false)]
-        [TestCase("apple", "aaaaa", false)]
-        [TestCase("apple", "microsoft", false)]
-        public void IsAnagram_Version2(string s, string t, bool expected)
-        {
-            var solution = new Solution0242();
-            var actual = solution.IsAnagram_Version2(s, t);
-
-            actual.Should().Be(expected);
-        }
+        actual.Should().Be(expected);
     }
+
+    private static readonly object[] TestCases =
+    {
+        new object[]
+        {
+            "anagram",
+            "nagaram",
+            true
+        },
+        new object[]
+        {
+            "rat",
+            "car",
+            false
+        },
+        new object[]
+        {
+            "apple",
+            "aaaaa",
+            false
+        },
+        new object[]
+        {
+            "apple",
+            "microsoft",
+            false
+        }
+    };
 }

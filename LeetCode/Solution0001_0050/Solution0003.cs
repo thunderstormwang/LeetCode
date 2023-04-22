@@ -24,10 +24,6 @@ public class Solution0003
         return result;
     }
 
-    // 用 SlideWindow
-    // Time: O(2n) = O(n), 最差情況下, 該字串都是同個字元, 會被 i, j 各走一次 
-    // Space: O(min(size of string, size of charset ))
-
     public int LengthOfLongestSubstring_SlideWindow_Ver2(string s)
     {
         // Creating a set to store the last positions of occurrence
@@ -54,9 +50,6 @@ public class Solution0003
 
         return maximumLength;
     }
-
-    // Time: O(n)
-    // Space: O(min(size of string, size of charset ))
 
     public int LengthOfLongestSubstring_SlideWindow_Ver3(string s)
     {

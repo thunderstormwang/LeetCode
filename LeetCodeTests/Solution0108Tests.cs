@@ -5,7 +5,7 @@ using LeetCodeTests;
 namespace LeetCode.Tests
 {
     [TestFixture()]
-    public class Solution108Tests
+    public class Solution0108Tests
     {
         [TestCaseSource(nameof(TestCases))]
         public void SortedArrayToBSTTest(int[] array, int?[] expectedArray)

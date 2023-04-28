@@ -2,7 +2,8 @@
 
 ## Ver1
 
-沒解出來，沒將問題 generalize
+沒解出來，沒將問題 generalize  
+沒看過解答我絕對想不出來
 
 將字串排序後，就可以分組，可以存在 Dictionary 裡，最後再轉成 List\<List\>
 

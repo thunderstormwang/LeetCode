@@ -15,12 +15,15 @@
 ## 
 
 Majority Element 的定義是出現次數超過 n/2，所以整個陣列只有一個數能符合條件  
-用 temp 儲存目前遇到的 nums[0]，count 為 1  
+用 candidate 儲存目前遇到可能的 Majority Element
+
+candidate 初始化為 nums[0]  
+count 初始化為 1  
 
 輪詢陣列
-- count = 0，令 temp = nums[i]
-- 當 temp == nums[i]，count += 1
-- 當 temp 1= nums[i]，count -= 1
+- count = 0，令 candidate = nums[i]
+- 當 candidate == nums[i]，count += 1
+- 當 candidate != nums[i]，count -= 1
 
 ### 複雜度
 

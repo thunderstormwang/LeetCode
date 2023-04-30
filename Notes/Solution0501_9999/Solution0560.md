@@ -29,12 +29,18 @@
 
 ## Dictionary
 
+沒看解答我想不出來...  
+
 如果 Sum(nums[i], ..., num[j]) 等於 k  
 可以用 Sum(nums[0], ..., num[j]) - Sum(nums[0], ..., num[i]) 取得 Sum(nums[i], ..., num[j])  
 
-如果 target = Sum(nums[0], ..., num[i]) - k 存在於 Dictionary，就代表多 Dictionary[targt] 個組合  
-然後 Sum(nums[0], ..., num[i]) 當作 key 加進 Dicitonary，Value 為出現的次數  
-供後續計算
+所以用 Dictionary 儲存 (Sum(nums[0], ..., num[i]), 此總和出現的次數) 供後續計算  
+
+輪詢陣列  
+計算 sum = Sum(nums[0], ..., num[i])  
+計算 target = sum - k  
+如果 Dictionary[targt] 存在，就代表組合數目增加 Dictionary[targt]  
+更新 Dictionary[sum] 的值  
 
 ### 複雜度
 

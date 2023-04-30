@@ -24,6 +24,6 @@ Anagram 的意思應該是每個字母都要而且也只能用到一次，所以
 #### Time: O(n * log(n))
 - 排序 s: O(n * log(n))
 - 排序 t: O(n * log(n))
-- 比較 s 和 t: n
+- 比較排序後的 s 和 t: n
 
 #### Memory: O(1)

@@ -60,15 +60,17 @@
 所以需要記錄子字串的起始位置
 
 初始化 Dictionary  
-初始化 left  
+初始化 left = -1 
 輪詢陣列
 - 如果 s[i] 沒出現在 Dictionary 或是 Dictionary[s[i]] 小於 left
+  - 字串長度繼續延申
   - 當前長度 length++
   - 更新 Dictionary[s[i]] 為 i
   - 判斷 lenth 是否為目前走過的最大長度
 - else
-  - 將當前長度縮減為 length = i dict[s[i]]
-  - 更新 left 為 i
+  - 子串長度需縮短，改從 dict[s[i]]+1 開始計算
+  - 將當前長度縮減為 length = i - dict[s[i]]
+  - 更新字串起始位置，left 為 dict[s[i]] + 1
   - 將 dict[s[i]] 更新為 i
 
 ### 複雜度

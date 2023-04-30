@@ -18,7 +18,7 @@
 
 ## SlideWindow + Two Pointer
 
-好難...的確是 hard
+好難...，generalize 不出規則來，的確是 hard
 
 ADOBECODEBANC
 

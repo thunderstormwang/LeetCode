@@ -158,8 +158,4 @@ public class Solution0054
 
         return result;
     }
-
-    // 這題沒用到演算法, 就是考寫程式的功力
-    // 矩形有四個邊, 在每一個方向走 row-1 或是 column-1 步, 就不用考慮是否要包含邊界的問題, 走完一圈就往內圈走
-    // 最後要考慮只剩 1條 row 或是只剩 1條 column 的 special case
 }

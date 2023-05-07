@@ -13,7 +13,7 @@ public class Solution0037
         new HashSet<char>[3] { new HashSet<char>(), new HashSet<char>(), new HashSet<char>() }
     };
 
-    public void SolveSudoku(char[][] board)
+    public void SolveSudoku_Ver1(char[][] board)
     {
         for (var i = 0; i < _number; i++)
         {
@@ -34,10 +34,10 @@ public class Solution0037
             }
         }
 
-        Backtrack(0, 0, board);
+        Backtrack_Ver1(0, 0, board);
     }
 
-    private bool Backtrack(int row, int column, char[][] board)
+    private bool Backtrack_Ver1(int row, int column, char[][] board)
     {
         if (row == _number && column == 0)
         {
@@ -54,7 +54,7 @@ public class Solution0037
 
         if (board[row][column] != '.')
         {
-            return Backtrack(nextRow, nextColumn, board);
+            return Backtrack_Ver1(nextRow, nextColumn, board);
         }
 
         for (var i = 1; i <= _number; i++)
@@ -71,7 +71,7 @@ public class Solution0037
             _columnSet[column].Add(candidate);
             _subBoxSet[row / 3][column / 3].Add(candidate);
 
-            if (Backtrack(nextRow, nextColumn, board))
+            if (Backtrack_Ver1(nextRow, nextColumn, board))
             {
                 return true;
             }
@@ -84,7 +84,80 @@ public class Solution0037
 
         return false;
     }
-    
-    // Time: O(9^m) -- m 為 「.」的個數, 每個「.」有 9 個選擇
-    // Memory: O(m) -- m 為 「.」的個數, 最多遞迴 一層
+
+    public void SolveSudoku_Ver2(char[][] board)
+    {
+        Backtrack_Ver2(board, 0, 0);
+    }
+
+    private bool Backtrack_Ver2(char[][] board, int i, int j)
+    {
+        if (i == _number && j == 0)
+        {
+            return true;
+        }
+
+        var addRow = (j + 1) % _number == 0 ? 1 : 0;
+        var nextRow = i + addRow;
+        var nextColumn = (j + 1) % _number;
+
+        if (board[i][j] != '.')
+        {
+            return Backtrack_Ver2(board, nextRow, nextColumn);
+        }
+
+        var number = 1;
+        while (number <= 9)
+        {
+            var candidate = number.ToString()[0];
+            if (CheckCandidate(board, i, j, candidate))
+            {
+                if (Backtrack_Ver2(board, nextRow, nextColumn))
+                {
+                    return true;
+                }
+            }
+
+            number++;
+        }
+
+        board[i][j] = '.';
+
+        return false;
+    }
+
+    private bool CheckCandidate(char[][] board, int row, int column, char candidate)
+    {
+        for (var j = 0; j < _number; j++)
+        {
+            if (board[row][j] == candidate)
+            {
+                return false;
+            }
+        }
+
+        for (var i = 0; i < _number; i++)
+        {
+            if (board[i][column] == candidate)
+            {
+                return false;
+            }
+        }
+        
+        var blockTopLeftRow = row / 3 * 3;
+        var blockTopLeftColumn = column / 3 * 3;
+        
+        for(var i = blockTopLeftRow; i < blockTopLeftRow + 3; i++)
+        {
+            for(var j = blockTopLeftColumn; j < blockTopLeftColumn + 3; j++)
+            {
+                if(board[i][j] == candidate)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 }

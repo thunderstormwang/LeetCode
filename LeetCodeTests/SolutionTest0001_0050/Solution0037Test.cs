@@ -9,11 +9,21 @@ namespace LeetCodeTests.SolutionTest0001_0050;
 public class Solution0037Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void SolveSudoku(char[][] board, char[][] expected)
+    public void SolveSudoku_Ver1Test(char[][] board, char[][] expected)
     {
         var solution = new Solution0037();
 
-        solution.SolveSudoku(board);
+        solution.SolveSudoku_Ver1(board);
+
+        board.Should().BeEquivalentTo(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void SolveSudoku_Ver2Test(char[][] board, char[][] expected)
+    {
+        var solution = new Solution0037();
+
+        solution.SolveSudoku_Ver2(board);
 
         board.Should().BeEquivalentTo(expected);
     }

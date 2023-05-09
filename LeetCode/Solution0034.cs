@@ -87,11 +87,7 @@
             return result;
         }
 
-        private void Find(int[] nums,
-            int start,
-            int end,
-            int target,
-            int[] result)
+        private void Find(int[] nums, int start, int end, int target, int[] result)
         {
             if (start > end)
             {
@@ -102,19 +98,11 @@
 
             if (target < nums[index])
             {
-                Find(nums,
-                    start,
-                    index - 1,
-                    target,
-                    result);
+                Find(nums, start, index - 1, target, result);
             }
             else if (target > nums[index])
             {
-                Find(nums,
-                    index + 1,
-                    end,
-                    target,
-                    result);
+                Find(nums, index + 1, end, target, result);
             }
             else
             {
@@ -124,17 +112,8 @@
                 result[0] = result[0] < index ? result[0] : index;
                 result[1] = result[1] > index ? result[1] : index;
 
-                Find(nums,
-                    start,
-                    index - 1,
-                    target,
-                    result);
-
-                Find(nums,
-                    index + 1,
-                    end,
-                    target,
-                    result);
+                Find(nums, start, index - 1, target, result);
+                Find(nums, index + 1, end, target, result);
             }
         }
     }

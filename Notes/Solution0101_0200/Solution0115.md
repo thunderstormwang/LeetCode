@@ -1,6 +1,6 @@
 # Solution0115
 
-與 [Solution0392](Solution0392.md) 不同，無法再用雙指針了
+與 [Solution0392](../Solution0301_0500/Solution0392.md) 不同，無法再用雙指針了
 
 ## 動態規劃 - 2維陣列
 

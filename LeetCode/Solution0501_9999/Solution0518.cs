@@ -45,7 +45,7 @@ public class Solution0518
     /// <param name="amount"></param>
     /// <param name="coins"></param>
     /// <returns></returns>
-    public object Change_Ver2(int amount, int[] coins)
+    public int Change_Ver2(int amount, int[] coins)
     {
         var dp = new int[amount + 1];
 

@@ -1,12 +1,12 @@
-# Solution0518
+# Solution0377
 
 ## 動態規劃 - 完全背包 1維陣列
 
-跟 [Solution0518](Solution0518.md) 就差在迴圈的順序
+跟 [Solution0518](../Solution0501_9999/Solution0518.md) 就差在迴圈的順序
 
-我的解讀是 d[j] 可能是和為 j 的排列數
+因為這題是求排列數，所以物品的順序有差 {物品1, 物品2} 若符合題意，那麼 {物品2, 物品1} 也符合題意，且視為不同答案
 
-d [j] = d[j - num<sub>n-1</sub>] + ... + d[j - num<sub>0</sub>]
+d[j] = d[j - num<sub>n-1</sub>] + ... + d[j - num<sub>0</sub>]
 
 ### 複雜度
 

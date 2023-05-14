@@ -22,7 +22,7 @@ public class Solution0337
         var rightResult = Traverse(root.right);
 
         var pickCurrentNode = leftResult.NotPickCurr + rightResult.NotPickCurr + root.val;
-        var notPickCurrentNode = leftResult.PickCurr + rightResult.PickCurr;
+        var notPickCurrentNode = Math.Max(leftResult.PickCurr, leftResult.NotPickCurr) + Math.Max(rightResult.PickCurr, rightResult.NotPickCurr);
 
         return (pickCurrentNode, notPickCurrentNode);
     }

@@ -30,6 +30,16 @@ public class Solution0337Test
         {
             new int?[] { 3, 4, 5, 1, 3, null, 1 },
             9
+        },
+        new object[]
+        {
+            new int?[] { 4, 1, null, 2, null, null, null, 3 },
+            7
+        },
+        new object[]
+        {
+            new int?[] { 2, 1, 3, null, 4 },
+            7
         }
     };
 }

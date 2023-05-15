@@ -3,7 +3,7 @@
 public class Solution0416
 {
     /// <summary>
-    /// 2 維 Dynamic Programming 陣列
+    /// 01 背包 2維陣列
     /// </summary>
     /// <param name="nums"></param>
     /// <returns></returns>
@@ -51,7 +51,7 @@ public class Solution0416
     }
 
     /// <summary>
-    /// 1 維 Dynamic Programming 陣列
+    /// 01 背包 1維陣列
     /// </summary>
     /// <param name="nums"></param>
     /// <returns></returns>

@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace LeetCode.Solution0301_0500;
+﻿namespace LeetCode.Solution0301_0500;
 
 public class Solution0474
 {
@@ -10,10 +8,7 @@ public class Solution0474
     /// <param name="strs"></param>
     /// <param name="m"></param>
     /// <param name="n"></param>
-    /// <param name="i"></param>
-    /// <param name="i1"></param>
     /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
     public int FindMaxForm_Ver1(string[] strs, int m, int n)
     {
         var dp = new int [strs.Length + 1][][];

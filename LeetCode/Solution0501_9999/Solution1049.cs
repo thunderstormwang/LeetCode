@@ -3,7 +3,7 @@
 public class Solution1049
 {
     /// <summary>
-    /// 2 維 Dynamic Programming 陣列
+    /// 01背包 2維陣列
     /// </summary>
     /// <param name="stones"></param>
     /// <returns></returns>
@@ -47,7 +47,7 @@ public class Solution1049
     }
 
     /// <summary>
-    /// 1 維 Dynamic Programming 陣列
+    /// 01背包 1維陣列
     /// </summary>
     /// <param name="stones"></param>
     /// <returns></returns>

@@ -2,7 +2,8 @@
 
 public class Solution0004
 {
-    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2) 
+    {
         if(nums2.Length < nums1.Length)
         {
             return FindMedianSortedArrays(nums2, nums1);

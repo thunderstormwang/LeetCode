@@ -4,14 +4,10 @@
 
 ## Ver1 先找 Row 再找 Column
 
-我直覺想到這樣，但不是很好寫  
-主要是找 Row 時，得用 Binary Search 的變型，因為不一定會找到相符的 target
+我直覺想到這種寫法，但不是很好寫  
 
-如果 matrix[middle][0] <= target，令 left = middle  
-反之，令 right = middle - 1
-如果迴圈終止條件仍用 left <= middle 那麼可能會進入無窮迴圈，將終止條件改為 right - left > 1  
-剩兩個元素時，如果 matrix[right][0] <= target，就使用 right 那條 row 往下找，否則就用 left 那條 row  
- 
+在是找 Row 時，可參考 [Solution0981](../Solution0501_9999/Solution0981.md) 的做法，讓 left 指向指向第一個大於等於 target 的 index，然後回傳 left - 1，如果 left 算出來是 0，代表矩陣內所有元素都比 target 大，可以回傳 false
+
 而找 Column 就是標準的 Binary Search
 
 ### 複雜度

@@ -23,6 +23,26 @@ dp[i] 有兩種可能
 ### 找出 dp 初始值
 - dp[0] = 工作<sub>0</sub>0 的收益
 
+### Binary Search
+
+假如有三個工作，工作的開始和結束時間都一樣，都是 0~3，就收益不一樣: [10, 20, 30]  
+由 dp 的推導可以知道，會算出
+- dp[0] = 10
+- dp[1] = 20
+- dp[2] = 30
+
+假設有第 4 個工作且開始時間是 3，它應該要拿 dp[2] 去計算才會被少算  
+所以要辛算 dp[i] 的收益，要從已經計算過的 dp 中，找到最後一個結束時間 小於等於 工作<sub>i</sub> 的起始時間  
+這情況就很適合用 Binary Search
+
+我們無法直接判斷 array[middle] 是否就是我們要的最後一個結束時間 小於等於 工作<sub>i</sub> 的起始時間  
+只能繼續往下找
+- 當 array[middle] 結束時間 <= 工作<sub>i</sub> 的開始時間
+  - 記錄 middle 到 PrevIndex
+  - left = middle + 1
+- 當 array[middle] 結束時間 > 工作<sub>i</sub> 的開始時間
+  - right = middle - 1
+
 ### 複雜度
 
 #### Time: O(n<sup>2</sup>)
@@ -79,6 +99,8 @@ profit: { 20, 20, 100, 70, 60 }
 
 感覺是可行，但是超時了....  
 原因在於計算 dp[i][j] 時，如果選 工作<sub>i</sub> 的公式是 工作<sub>i</sub> 的收益 + dp[i-1][prevIndex]，只要 j >= 工作<sub>i</sub> 的結束時間，都會計算出同樣的值，也就是作重覆的計算，然後 LeetCode 就用了龐大的數據來讓你過不了
+
+### 複雜度
 
 #### Time: O(n * MaxEndTime)
 - 排序: O(n * log(n))

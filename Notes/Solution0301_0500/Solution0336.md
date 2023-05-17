@@ -16,7 +16,8 @@
 
 ## Hash Table
 
-好難...我只想得出暴力法，更進階的做法完全 generalize 不出來..    
+好難...我只想得出暴力法，更進階的做法完全 generalize 不出來..  
+目前覺得最難的，看別人解答也看半天  
 
 用 Dictionary 儲存 (字串, index)  
 

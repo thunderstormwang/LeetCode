@@ -32,19 +32,19 @@ public class Solution0153
         var left = 0;
         var right = nums.Length - 1;
 
-        while (right - left >= 2)
+        while (left < right)
         {
             var middle = (left + right) / 2;
-            if (nums[middle] < nums[right])
+            if (nums[middle] <= nums[right])
             {
                 right = middle;
             }
             else
             {
-                left = middle;
+                left = middle + 1;
             }
         }
 
-        return nums[left] < nums[right] ? nums[left] : nums[right];
+        return nums[right];
     }
 }

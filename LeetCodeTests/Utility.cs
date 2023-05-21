@@ -179,5 +179,47 @@ namespace LeetCodeTests
                    && CheckBinaryTree(root1.left, root2.left)
                    && CheckBinaryTree(root1.right, root2.right);
         }
+
+        public static bool CheckGraphNode(GraphNode node1, GraphNode node2, Dictionary<int, GraphNode> dict1, Dictionary<int, GraphNode> dict2)
+        {
+            if (node1 == null && node2 == null)
+            {
+                return true;
+            }
+
+            if (node1 == null || node2 == null)
+            {
+                return false;
+            }
+
+            if (node1.neighbors == null && node2.neighbors == null)
+            {
+                return true;
+            }
+
+            if (dict1.ContainsKey(node1.val) && dict2.ContainsKey(node2.val))
+            {
+                return true;
+            }
+
+            if (dict1.ContainsKey(node1.val) && !dict2.ContainsKey(node2.val)
+                || (!dict1.ContainsKey(node1.val) && dict2.ContainsKey(node2.val)))
+            {
+                return false;
+            }
+
+            if ((node1.neighbors == null && node2.neighbors != null)
+                || (node1.neighbors != null && node2.neighbors == null)
+                || (node1.neighbors.Count != node2.neighbors.Count))
+            {
+                return false;
+            }
+
+            for (var i = 0; i < node1.neighbors.Count; i++)
+            {
+                return node1.val == node2.val
+                       && CheckGraphNode(node1.neighbors[i], node2.neighbors[i], dict1, dict2);
+            }
+        }
     }
 }

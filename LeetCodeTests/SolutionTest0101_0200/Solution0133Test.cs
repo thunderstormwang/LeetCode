@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LeetCode.Models;
 using LeetCode.Solution0101_0200;
 using NUnit.Framework;
 
@@ -6,7 +7,7 @@ namespace LeetCodeTests.SolutionTest0101_0200;
 
 [TestFixture]
 [Category("SolutionTest0101_0200")]
-public class Solution00133Test
+public class Solution0133Test
 {
     [TestCaseSource(nameof(TestCases))]
     public void PCloneGraph_DFSTest(int[][] adjList, int[][] expectedAdjList)
@@ -14,10 +15,12 @@ public class Solution00133Test
         // todo BuildGraph
         // todo CheckGraph
 
-        var solution = new Solution0133();
-        // var actual = solution.CloneGraph_DFS(root);
+        var root = Utility.BuildGraphNode(adjList);
 
-        //actual.Should().Equal(expected);
+        var solution = new Solution0133();
+        var actual = solution.CloneGraph_DFS(root);
+
+        Utility.CheckGraphNode(root, actual, new Dictionary<int, GraphNode>(), new Dictionary<int, GraphNode>()).Should().BeTrue();
     }
     
     [TestCaseSource(nameof(TestCases))]
@@ -25,11 +28,13 @@ public class Solution00133Test
     {
         // todo BuildGraph
         // todo CheckGraph
+        
+        var root = Utility.BuildGraphNode(adjList);
 
         var solution = new Solution0133();
-        // var actual = solution.CloneGraph_DFS(root);
+        var actual = solution.CloneGraph_DFS(root);
 
-        //actual.Should().Equal(expected);
+        Utility.CheckGraphNode(root, actual, new Dictionary<int, GraphNode>(), new Dictionary<int, GraphNode>()).Should().BeTrue();
     }
 
     private static readonly object[] TestCases =

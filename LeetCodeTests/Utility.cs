@@ -180,6 +180,42 @@ namespace LeetCodeTests
                    && CheckBinaryTree(root1.right, root2.right);
         }
 
+        public static GraphNode BuildGraphNode(int[][] adjList)
+        {
+            if (adjList == null)
+            {
+                return null;
+            }
+            
+            var dict = new Dictionary<int, GraphNode>();
+
+            for (var i = 0; i < adjList.Length; i++)
+            {
+                var value = i + 1;
+
+                if (!dict.ContainsKey(value))
+                {
+                    GraphNode temp = new GraphNode(value);
+                    dict.Add(value, temp);
+                }
+
+                GraphNode node = dict[value];
+
+                foreach (var item in adjList[i])
+                {
+                    if (!dict.ContainsKey(item))
+                    {
+                        GraphNode temp = new GraphNode(item);
+                        dict.Add(item, temp);
+                    }
+
+                    node.neighbors.Add(dict[item]);
+                }
+            }
+
+            return dict[1];
+        }
+
         public static bool CheckGraphNode(GraphNode node1, GraphNode node2, Dictionary<int, GraphNode> dict1, Dictionary<int, GraphNode> dict2)
         {
             if (node1 == null && node2 == null)
@@ -208,18 +244,26 @@ namespace LeetCodeTests
                 return false;
             }
 
-            if ((node1.neighbors == null && node2.neighbors != null)
+            if ((node1.val != node2.val)
+                || (node1.neighbors == null && node2.neighbors != null)
                 || (node1.neighbors != null && node2.neighbors == null)
                 || (node1.neighbors.Count != node2.neighbors.Count))
             {
                 return false;
             }
+            
+            dict1.Add(node1.val, node1);
+            dict2.Add(node2.val, node2);
 
             for (var i = 0; i < node1.neighbors.Count; i++)
             {
-                return node1.val == node2.val
-                       && CheckGraphNode(node1.neighbors[i], node2.neighbors[i], dict1, dict2);
+                if (!CheckGraphNode(node1.neighbors[i], node2.neighbors[i], dict1, dict2))
+                {
+                    return false;
+                }
             }
+
+            return true;
         }
     }
 }

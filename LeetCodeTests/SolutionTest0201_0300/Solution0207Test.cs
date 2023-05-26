@@ -25,6 +25,15 @@ public class Solution0207Test
 
         actual.Should().Be(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void CanFinish_Ver3Test(int numCourses, int[][] prerequisites, bool expected)
+    {
+        var solution = new Solution0207();
+        var actual = solution.CanFinish_Ver3(numCourses, prerequisites);
+
+        actual.Should().Be(expected);
+    }
 
     private static readonly object[] TestCases =
     {

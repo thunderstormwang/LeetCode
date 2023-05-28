@@ -2,7 +2,7 @@
 
 ## 暴力法
 
-在 s[0] 比較 s[0]~s[p.Length-1] 和 p
+在 s[0] 比較 s[0]~s[p.Length-1] 和 p  
 ...  
 在 s[s.Length-p.Length] 比較 s[s.Length-p.Length]~s[s.Length-1] 和 p
 

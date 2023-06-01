@@ -9,10 +9,19 @@ namespace LeetCodeTests.SolutionTest0501_9999;
 public class Solution0721Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void AccountsMergeTest(IList<IList<string>> accounts, IList<IList<string>> expected)
+    public void AccountsMerge_Ver1Test(IList<IList<string>> accounts, IList<IList<string>> expected)
     {
         var solution = new Solution0721();
-        var actual = solution.AccountsMerge(accounts);
+        var actual = solution.AccountsMerge_Ver1(accounts);
+
+        actual.Should().BeEquivalentTo(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void AccountsMerge_Ver2Test(IList<IList<string>> accounts, IList<IList<string>> expected)
+    {
+        var solution = new Solution0721();
+        var actual = solution.AccountsMerge_Ver2(accounts);
 
         actual.Should().BeEquivalentTo(expected);
     }

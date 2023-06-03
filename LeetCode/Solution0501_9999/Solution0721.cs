@@ -67,6 +67,8 @@ public class Solution0721
     {
         var result = new List<IList<string>>();
         var emailAccountDict = new Dictionary<string, List<int>>();
+        var visited = new int [accounts.Count];
+        var queue = new Queue<int>();
 
         for (var i = 0; i < accounts.Count; i++)
         {
@@ -80,9 +82,6 @@ public class Solution0721
                 emailAccountDict[accounts[i][j]].Add(i);
             }
         }
-
-        var queue = new Queue<int>();
-        var visited = new int [accounts.Count];
 
         for (var cnt = 0; cnt < accounts.Count; cnt++)
         {

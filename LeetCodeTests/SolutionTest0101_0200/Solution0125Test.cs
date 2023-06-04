@@ -38,7 +38,6 @@ namespace LeetCodeTests.SolutionTest0101_0200
                 "race a car",
                 false
             },
-            
             new object[]
             {
                 " ",

@@ -34,9 +34,9 @@ public class Solution0994
 
         while (queue.Count != 0 && freshOrange > 0)
         {
-            var count = queue.Count;
+            var queueCount = queue.Count;
 
-            for (var cnt = 0; cnt < count; cnt++)
+            for (var cnt = 0; cnt < queueCount; cnt++)
             {
                 var rotten = queue.Dequeue();
 

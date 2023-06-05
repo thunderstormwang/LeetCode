@@ -17,9 +17,9 @@ DFS 不適合用這題是因為，一路走到底的路徑不一定就是最短�
 再從 queue 取出所有元素，令它叫 words  
 輪詢 words，令 word[cnt] 為目前輪詢到的字串，從 word[cnt] 每個位置，嘗試用 'a'~'z' 去取代成為 newWord  
 如果 newWord 存在於 wordSet，就放入 queue，並將 newWord 從 wordSet 中移除，避免進入無窮迴圈  
-輪詢完 words，就結束一輪，深度加 1  
+輪詢完 words，就結束這一輪，深度加 1  
 
-重覆上述過程，直到找到 endWord，那就回傳深度加 1，或是 queue 沒元素，就代表無法從 beginWord 變到 endWord，回傳 0
+重覆上述過程，如果有找到 endWord，那就回傳深度加 1，或是 queue 沒元素，就表示無法從 beginWord 變到 endWord，回傳 0
 
 ### 複雜度
 - wordList 長度: n
@@ -27,7 +27,7 @@ DFS 不適合用這題是因為，一路走到底的路徑不一定就是最短�
 
 #### Time: O(n * l * 26)
 - 建立 wordSet: O(n * l) 
-- 每個字串最多被放入 queue 一次，被放入 queue 的字串，在每個 index 會被用 26 個字母做替換: O(n * l * 26)
+- 每個字串最多被放入 queue 一次，且被放入 queue 的字串，在每個 index 會被用 26 個字母做替換: O(n * l * 26)
 
 #### Space: O(n)
 - wordSet 最多放入 n: O(n)
@@ -35,8 +35,14 @@ DFS 不適合用這題是因為，一路走到底的路徑不一定就是最短�
 
 ---
 
-## Ver1 - BFS
+## Ver2 - Bidirectional BFS
 
-#### Time: O()
+同 ver1 做法，改建立兩個 set，每次都從從數量較少的 set 開始做 BFS
 
-#### Space: O()
+#### Time: O(n * l * 26)
+- 建立 wordSet: O(n * l) 
+- 每個字串最多被放入 set1 或 set2 一次，且被放入 queue 的字串，在每個 index 會被用 26 個字母做替換: O(n * l * 26)
+
+#### Space: O(n)
+- wordSet 最多放入 n: O(n)
+- set1 和 set2 最多放入 n: O(n)

@@ -3,7 +3,7 @@
 public class Solution0207
 {
     /// <summary>
-    /// Topological Sort
+    /// Topological Sort - DFS
     /// </summary>
     /// <param name="numCourses"></param>
     /// <param name="prerequisites"></param>
@@ -121,7 +121,7 @@ public class Solution0207
     }
 
     /// <summary>
-    /// Breadth First Search
+    /// Topological Sort - BFS
     /// </summary>
     /// <param name="numCourses"></param>
     /// <param name="prerequisites"></param>

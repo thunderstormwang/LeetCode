@@ -34,7 +34,7 @@ public class Solution0310
             var queue = new Queue<int>();
             var visited = new int [n];
             var depth = 0;
-            var hasBreak = false;
+            var hasMoreHeight = false;
 
             queue.Enqueue(i);
             visited[i] = 1;
@@ -43,7 +43,7 @@ public class Solution0310
             {
                 if (depth > minHeight)
                 {
-                    hasBreak = true;
+                    hasMoreHeight = true;
                     break;
                 }
 
@@ -73,7 +73,7 @@ public class Solution0310
                 }
             }
 
-            if (hasBreak)
+            if (hasMoreHeight)
             {
                 continue;
             }

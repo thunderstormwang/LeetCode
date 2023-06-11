@@ -9,10 +9,19 @@ namespace LeetCodeTests.SolutionTest0301_0500;
 public class Solution0417Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void CanPartition_Ver2Test(int[][] heights, IList<IList<int>> expected)
+    public void PacificAtlantic_Ver1Test(int[][] heights, IList<IList<int>> expected)
     {
         var solution = new Solution0417();
-        var actual = solution.PacificAtlantic(heights);
+        var actual = solution.PacificAtlantic_Ver1(heights);
+
+        actual.Should().BeEquivalentTo(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void PacificAtlantic_Ver2Test(int[][] heights, IList<IList<int>> expected)
+    {
+        var solution = new Solution0417();
+        var actual = solution.PacificAtlantic_Ver2(heights);
 
         actual.Should().BeEquivalentTo(expected);
     }

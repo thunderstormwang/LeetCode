@@ -2,10 +2,12 @@
 
 public class Solution0417
 {
-    // BFS
-    // DFS
-    
-    public IList<IList<int>> PacificAtlantic(int[][] heights)
+    /// <summary>
+    /// BFS
+    /// </summary>
+    /// <param name="heights"></param>
+    /// <returns></returns>
+    public IList<IList<int>> PacificAtlantic_Ver1(int[][] heights)
     {
         var pacific = new int [heights.Length][];
         var atlantic = new int [heights.Length][];
@@ -16,6 +18,7 @@ public class Solution0417
             new int[] { 0, -1 },
             new int[] { 0, 1 },
         };
+        var result = new List<IList<int>>();
 
         for (var i = 0; i < heights.Length; i++)
         {
@@ -23,45 +26,28 @@ public class Solution0417
             atlantic[i] = new int [heights[i].Length];
         }
 
+        var pacificQueue = new Queue<int[]>();
+        var atlanticQueue = new Queue<int[]>();
         for (var i = 0; i < heights.Length; i++)
         {
-            var queue = new Queue<int[]>();
+            pacific[i][0] = 1;
+            pacificQueue.Enqueue(new int[] { i, 0 });
 
-            if (pacific[i][0] == 0)
-            {
-                pacific[i][0] = 1;
-                queue.Enqueue(new int[] { i, 0 });
-                BFS(heights, queue, pacific, directions);
-            }
-
-            if (atlantic[i][heights[i].Length - 1] == 0)
-            {
-                atlantic[i][heights[i].Length - 1] = 1;
-                queue.Enqueue(new int[] { i, heights[i].Length - 1 });
-                BFS(heights, queue, atlantic, directions);
-            }
+            atlantic[i][heights[i].Length - 1] = 1;
+            atlanticQueue.Enqueue(new int[] { i, heights[i].Length - 1 });
         }
 
         for (var j = 0; j < heights[0].Length; j++)
         {
-            var queue = new Queue<int[]>();
+            pacific[0][j] = 1;
+            pacificQueue.Enqueue(new int[] { 0, j });
 
-            if (pacific[0][j] == 0)
-            {
-                pacific[0][j] = 1;
-                queue.Enqueue(new int[] { 0, j });
-                BFS(heights, queue, pacific, directions);
-            }
-
-            if (atlantic[heights.Length - 1][j] == 0)
-            {
-                atlantic[heights.Length - 1][j] = 1;
-                queue.Enqueue(new int[] { heights.Length - 1, j });
-                BFS(heights, queue, atlantic, directions);
-            }
+            atlantic[heights.Length - 1][j] = 1;
+            atlanticQueue.Enqueue(new int[] { heights.Length - 1, j });
         }
 
-        var result = new List<IList<int>>();
+        BreadthFirstSearch(heights, pacificQueue, pacific, directions);
+        BreadthFirstSearch(heights, atlanticQueue, atlantic, directions);
 
         for (var i = 0; i < heights.Length; i++)
         {
@@ -77,7 +63,57 @@ public class Solution0417
         return result;
     }
 
-    private void BFS(int[][] heights, Queue<int[]> queue, int[][] flow, int[][] directions)
+    /// <summary>
+    /// DFS
+    /// </summary>
+    /// <param name="heights"></param>
+    /// <returns></returns>
+    public IList<IList<int>> PacificAtlantic_Ver2(int[][] heights)
+    {
+        var pacific = new int [heights.Length][];
+        var atlantic = new int [heights.Length][];
+        var directions = new int[][]
+        {
+            new int[] { -1, 0 },
+            new int[] { 1, 0 },
+            new int[] { 0, -1 },
+            new int[] { 0, 1 },
+        };
+        var result = new List<IList<int>>();
+
+        for (var i = 0; i < heights.Length; i++)
+        {
+            pacific[i] = new int [heights[i].Length];
+            atlantic[i] = new int [heights[i].Length];
+        }
+
+        for (var i = 0; i < heights.Length; i++)
+        {
+            DepthFirstSearch(i, 0, heights, pacific, directions, 0);
+            DepthFirstSearch(i, heights[i].Length - 1, heights, atlantic, directions, 0);
+        }
+
+        for (var j = 0; j < heights[0].Length; j++)
+        {
+            DepthFirstSearch(0, j, heights, pacific, directions, 0);
+            DepthFirstSearch(heights.Length - 1, j, heights, atlantic, directions, 0);
+        }
+
+        for (var i = 0; i < heights.Length; i++)
+        {
+            for (var j = 0; j < heights[i].Length; j++)
+            {
+                if (pacific[i][j] == 1 && atlantic[i][j] == 1)
+                {
+                    result.Add(new List<int>() { i, j });
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private void BreadthFirstSearch(int[][] heights, Queue<int[]> queue, int[][] flow, int[][] directions)
     {
         while (queue.Count != 0)
         {
@@ -97,6 +133,24 @@ public class Solution0417
                 flow[newLand[0]][newLand[1]] = 1;
                 queue.Enqueue(newLand);
             }
+        }
+    }
+
+    private void DepthFirstSearch(int i, int j, int[][] heights, int[][] flow, int[][] directions, int lastHeight)
+    {
+        if (i < 0 || i >= heights.Length
+                  || j < 0 || j >= heights[i].Length
+                  || flow[i][j] == 1 || lastHeight > heights[i][j])
+        {
+            return;
+        }
+
+        flow[i][j] = 1;
+
+        for (var cnt = 0; cnt < directions.Length; cnt++)
+        {
+            var newLand = new int[] { i + directions[cnt][0], j + directions[cnt][1] };
+            DepthFirstSearch(newLand[0], newLand[1], heights, flow, directions, heights[i][j]);
         }
     }
 }

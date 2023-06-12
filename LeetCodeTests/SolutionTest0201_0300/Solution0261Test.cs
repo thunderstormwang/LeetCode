@@ -9,10 +9,19 @@ namespace LeetCodeTests.SolutionTest0201_0300;
 public class Solution0261Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void CanAttendMeetingsTest(int n, int[][] edges, bool expected)
+    public void ValidTree_Ver1Test(int n, int[][] edges, bool expected)
     {
         var solution = new Solution0261();
-        var actual = solution.ValidTree(n, edges);
+        var actual = solution.ValidTree_Ver1(n, edges);
+
+        actual.Should().Be(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ValidTree_Ver2Test(int n, int[][] edges, bool expected)
+    {
+        var solution = new Solution0261();
+        var actual = solution.ValidTree_Ver2(n, edges);
 
         actual.Should().Be(expected);
     }

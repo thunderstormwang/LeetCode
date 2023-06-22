@@ -1,8 +1,4 @@
-﻿using System.Data;
-using System.Diagnostics;
-using System.Runtime.Intrinsics.Arm;
-
-namespace LeetCode.Solution0501_9999;
+﻿namespace LeetCode.Solution0501_9999;
 
 public class Solution0787
 {
@@ -64,6 +60,15 @@ public class Solution0787
         return dist[dst] == int.MaxValue ? -1 : dist[dst];
     }
 
+    /// <summary>
+    /// 動態規劃 - 二維陣列
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="flights"></param>
+    /// <param name="src"></param>
+    /// <param name="dst"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
     public int FindCheapestPrice_Ver2(int n, int[][] flights, int src, int dst, int k)
     {
         var dist = new int [k + 2][];
@@ -91,13 +96,20 @@ public class Solution0787
 
                 dist[cnt][flights[i][1]] = Math.Min(dist[cnt][flights[i][1]], dist[cnt - 1][flights[i][0]] + flights[i][2]);
             }
-            
-            Debug.WriteLine($"cnt = {cnt}, {string.Join(", ", dist[cnt])}");
         }
 
         return dist[k + 1][dst] == int.MaxValue ? -1 : dist[k + 1][dst];
     }
-    
+
+    /// <summary>
+    /// 動態規劃 - 一維陣列
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="flights"></param>
+    /// <param name="src"></param>
+    /// <param name="dst"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
     public int FindCheapestPrice_Ver3(int n, int[][] flights, int src, int dst, int k)
     {
         var dist = new int [n];
@@ -122,8 +134,6 @@ public class Solution0787
             }
 
             dist = temp;
-            
-            Debug.WriteLine($"cnt = {cnt}, {string.Join(", ", dist)}");
         }
 
         return dist[dst] == int.MaxValue ? -1 : dist[dst];

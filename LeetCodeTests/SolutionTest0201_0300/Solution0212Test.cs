@@ -40,6 +40,15 @@ public class Solution0212Test
             },
             new string[] { "abcb" },
             new string[] { }
+        },
+        new object[]
+        {
+            new char[][]
+            {
+                new char[] { 'a', 'a' }
+            },
+            new string[] { "aaa" },
+            new string[] { }
         }
     };
 }

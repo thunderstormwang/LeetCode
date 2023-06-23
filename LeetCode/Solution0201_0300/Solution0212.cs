@@ -30,7 +30,7 @@ public class Solution0212
         return result;
     }
 
-    private void DepthFirstSearch(char[][] board, int[] curr, TrieNode node, int[][] directions, List<string> result)
+    private void DepthFirstSearch(char[][] board, int[] curr, TrieNode parentNode, int[][] directions, List<string> result)
     {
         // 邊界判斷和當前字母是否已被訪問過
         if (curr[0] < 0 || curr[0] >= board.Length || curr[1] < 0 || curr[1] >= board[curr[0]].Length || board[curr[0]][curr[1]] == '#')
@@ -38,18 +38,18 @@ public class Solution0212
 
         // 取得當前字母的節點
         var ch = board[curr[0]][curr[1]];
-        var nextNode = node.Get(ch);
+        var currNode = parentNode.Get(ch);
 
         // 當前字母的節點，則此路徑不會匹配任何單詞，不用再走下去
-        if (nextNode == null)
+        if (currNode == null)
             return;
 
         // 判斷是否找到單詞
-        if (!string.IsNullOrEmpty(nextNode.word))
+        if (!string.IsNullOrEmpty(currNode.Word))
         {
-            result.Add(nextNode.word);
+            result.Add(currNode.Word);
             // 避免重覆增加同樣單詞
-            nextNode.word = null;
+            currNode.Word = null;
         }
 
         // 將當前字母標記已被訪問過
@@ -59,7 +59,7 @@ public class Solution0212
         for (var i = 0; i < directions.Length; i++)
         {
             var next = new int[] { curr[0] + directions[i][0], curr[1] + directions[i][1] };
-            DepthFirstSearch(board, next, nextNode, directions, result);
+            DepthFirstSearch(board, next, currNode, directions, result);
         }
 
         // 將當前字母標記未被訪問過
@@ -87,7 +87,7 @@ public class Solution0212
             }
 
             // 最後一個節點保存完整的單詞
-            node.word = word;
+            node.Word = word;
         }
 
         return root;

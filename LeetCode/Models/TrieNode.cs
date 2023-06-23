@@ -2,9 +2,9 @@
 
 public class TrieNode 
 {
-    public string word;
+    public string Word;
     
-    private TrieNode[] children;
+    private readonly TrieNode[] children;
     
     public TrieNode() 
     {

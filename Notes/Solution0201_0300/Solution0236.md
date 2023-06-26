@@ -1,5 +1,7 @@
 # Solution0236 Lowest Common Ancestor of a Binary Tree
 
+跟 [Solution0235](Solution0235.md) 很像
+
 Ver1 是自己想的做法，寫起來有點卡卡的，覺得有重覆的計算，但也想不到怎麼優化，寫完後再去看解答寫出 Ver2
 
 ## Ver1

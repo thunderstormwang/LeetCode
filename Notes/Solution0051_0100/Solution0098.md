@@ -19,10 +19,11 @@
 ## Ver 2
 
 限縮每個節點的值的範圍  
-將 min 預設為 long.MinValue, max 預設為 long.MaxValue
+root 的範圍會是 min < root < max  
+則遞迴到 root.left 的可容許範圍會是 min < root.left < root  
+則遞迴到 root.right 的可容許範圍會是 root < root.right < max
 
-則 node.left 的可容許範圍是 min < node.left < node  
-則 node.right 的可容許範圍是 node < node.right < max
+因為 testcase 裡有 int.MaxValue，將 min 預設為 long.MinValue, max 預設為 long.MaxValue
   
 ### 複雜度
 

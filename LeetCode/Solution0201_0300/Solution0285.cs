@@ -16,7 +16,6 @@ public class Solution0285
 
     public TreeNode InorderSuccessor_Ver2(TreeNode root, TreeNode p)
     {
-        TreeNode pre = null;
         TreeNode successor = null;
 
         PrefixSearch(root, p, ref successor);

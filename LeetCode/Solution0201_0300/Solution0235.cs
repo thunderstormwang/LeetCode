@@ -18,10 +18,10 @@ public class Solution0235
             (p, q) = (q, p);
         }
 
-        return DepthFirstSearch(root, p, q);
+        return PrefixSearch(root, p, q);
     }
 
-    private TreeNode DepthFirstSearch(TreeNode root, TreeNode p, TreeNode q)
+    private TreeNode PrefixSearch(TreeNode root, TreeNode p, TreeNode q)
     {
         if (root.val > p.val && root.val < q.val)
         {
@@ -35,10 +35,10 @@ public class Solution0235
 
         if (root.val < p.val && root.val < q.val)
         {
-            return DepthFirstSearch(root.right, p, q);
+            return PrefixSearch(root.right, p, q);
         }
 
-        return DepthFirstSearch(root.left, p, q);
+        return PrefixSearch(root.left, p, q);
     }
 
     /// <summary>

@@ -8,38 +8,38 @@ public class Solution0230
     {
         var list = new List<int>();
 
-        DepthFirstSearch_Ver1(root, list);
+        InorderSearch_Ver1(root, list);
 
         return list[k - 1];
     }
 
-    private void DepthFirstSearch_Ver1(TreeNode root, List<int> list)
+    private void InorderSearch_Ver1(TreeNode root, List<int> list)
     {
         if (root == null)
         {
             return;
         }
 
-        DepthFirstSearch_Ver1(root.left, list);
+        InorderSearch_Ver1(root.left, list);
         list.Add(root.val);
-        DepthFirstSearch_Ver1(root.right, list);
+        InorderSearch_Ver1(root.right, list);
     }
 
     public int KthSmallest_Ver2(TreeNode root, int k)
     {
-        var result = DepthFirstSearch_Ver2(root, 0, k);
+        var result = InorderSearch_Ver2(root, k, 0);
 
         return result.Value;
     }
 
-    private (int Value, int Number) DepthFirstSearch_Ver2(TreeNode root, int number, int k)
+    private (int Value, int Number) InorderSearch_Ver2(TreeNode root, int k, int count)
     {
         if (root == null)
         {
-            return (-1, number);
+            return (-1, count);
         }
 
-        var left = DepthFirstSearch_Ver2(root.left, number, k);
+        var left = InorderSearch_Ver2(root.left, k, count);
 
         if (left.Number == k)
         {
@@ -52,6 +52,6 @@ public class Solution0230
             return (root.val, rootNumber);
         }
 
-        return DepthFirstSearch_Ver2(root.right, rootNumber, k);
+        return InorderSearch_Ver2(root.right, k, rootNumber);
     }
 }

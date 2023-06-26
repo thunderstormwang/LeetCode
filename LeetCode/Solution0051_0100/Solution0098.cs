@@ -8,7 +8,7 @@ public class Solution0098
     {
         var list = new List<int>();
 
-        DepthFirstSearch_Ver1(root, list);
+        InorderSearch(root, list);
 
         for (var i = 0; i < list.Count - 1; i++)
         {
@@ -21,41 +21,41 @@ public class Solution0098
         return true;
     }
 
-    private void DepthFirstSearch_Ver1(TreeNode root, List<int> list)
+    private void InorderSearch(TreeNode root, List<int> list)
     {
         if (root == null)
         {
             return;
         }
 
-        DepthFirstSearch_Ver1(root.left, list);
+        InorderSearch(root.left, list);
         list.Add(root.val);
-        DepthFirstSearch_Ver1(root.right, list);
+        InorderSearch(root.right, list);
     }
 
-    public object IsValidBST_Ver2(TreeNode root)
+    public bool IsValidBST_Ver2(TreeNode root)
     {
-        return DepthFirstSearch_Ver2(root, long.MinValue, long.MaxValue);      
+        return PrefixSearch(root, long.MinValue, long.MaxValue);      
     }
 
-    private bool DepthFirstSearch_Ver2(TreeNode root, long minValue, long maxValue)
+    private bool PrefixSearch(TreeNode root, long minValue, long maxValue)
     {
         if(root == null)
         {
             return true;
         }
 
-        if(minValue >= root.val || maxValue <= root.val)
+        if(root.val <= minValue || root.val >= maxValue)
         {
             return false;
         }
 
-        if(!DepthFirstSearch_Ver2(root.left, minValue, root.val))
+        if(!PrefixSearch(root.left, minValue, root.val))
         {
             return false;
         }
 
-        if(!DepthFirstSearch_Ver2(root.right, root.val, maxValue))
+        if(!PrefixSearch(root.right, root.val, maxValue))
         {
             return false;
         }

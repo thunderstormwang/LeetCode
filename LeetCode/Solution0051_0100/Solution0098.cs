@@ -35,10 +35,10 @@ public class Solution0098
 
     public bool IsValidBST_Ver2(TreeNode root)
     {
-        return PrefixSearch(root, long.MinValue, long.MaxValue);      
+        return PreorderSearch(root, long.MinValue, long.MaxValue);      
     }
 
-    private bool PrefixSearch(TreeNode root, long minValue, long maxValue)
+    private bool PreorderSearch(TreeNode root, long minValue, long maxValue)
     {
         if(root == null)
         {
@@ -50,12 +50,12 @@ public class Solution0098
             return false;
         }
 
-        if(!PrefixSearch(root.left, minValue, root.val))
+        if(!PreorderSearch(root.left, minValue, root.val))
         {
             return false;
         }
 
-        if(!PrefixSearch(root.right, root.val, maxValue))
+        if(!PreorderSearch(root.right, root.val, maxValue))
         {
             return false;
         }

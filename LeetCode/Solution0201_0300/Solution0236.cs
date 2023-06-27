@@ -13,7 +13,7 @@ public class Solution0236
 
     public TreeNode LowestCommonAncestor_Ver2(TreeNode root, TreeNode p, TreeNode q)
     {
-        return PrefixSearch(root, p, q);
+        return PreorderSearch(root, p, q);
     }
 
     private TreeNode PostorderSearch(TreeNode root, TreeNode p, TreeNode q, out bool foundP, out bool foundQ)
@@ -51,7 +51,7 @@ public class Solution0236
         return foundP && foundQ ? root : null;
     }
 
-    private TreeNode PrefixSearch(TreeNode root, TreeNode p, TreeNode q)
+    private TreeNode PreorderSearch(TreeNode root, TreeNode p, TreeNode q)
     {
         if (root == null)
         {
@@ -63,8 +63,8 @@ public class Solution0236
             return root;
         }
 
-        var left = PrefixSearch(root.left, p, q);
-        var right = PrefixSearch(root.right, p, q);
+        var left = PreorderSearch(root.left, p, q);
+        var right = PreorderSearch(root.right, p, q);
 
         if (left != null && right != null)
         {

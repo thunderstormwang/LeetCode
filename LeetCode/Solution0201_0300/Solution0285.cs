@@ -18,7 +18,7 @@ public class Solution0285
     {
         TreeNode successor = null;
 
-        PrefixSearch(root, p, ref successor);
+        PreorderSearch(root, p, ref successor);
 
         return successor;
     }
@@ -47,7 +47,7 @@ public class Solution0285
         InorderSearch(root.right, p, ref pre, ref successor);
     }
 
-    private void PrefixSearch(TreeNode root, TreeNode p, ref TreeNode successor)
+    private void PreorderSearch(TreeNode root, TreeNode p, ref TreeNode successor)
     {
         if (root == null)
         {
@@ -56,7 +56,7 @@ public class Solution0285
 
         if (root.val > p.val)
         {
-            PrefixSearch(root.left, p, ref successor);
+            PreorderSearch(root.left, p, ref successor);
             if (successor == null)
             {
                 successor = root;
@@ -64,7 +64,7 @@ public class Solution0285
         }
         else
         {
-            PrefixSearch(root.right, p, ref successor);
+            PreorderSearch(root.right, p, ref successor);
         }
     }
 }

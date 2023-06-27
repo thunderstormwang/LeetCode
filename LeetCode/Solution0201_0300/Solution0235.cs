@@ -18,10 +18,10 @@ public class Solution0235
             (p, q) = (q, p);
         }
 
-        return PrefixSearch(root, p, q);
+        return PreorderSearch(root, p, q);
     }
 
-    private TreeNode PrefixSearch(TreeNode root, TreeNode p, TreeNode q)
+    private TreeNode PreorderSearch(TreeNode root, TreeNode p, TreeNode q)
     {
         if (root.val > p.val && root.val < q.val)
         {
@@ -35,10 +35,10 @@ public class Solution0235
 
         if (root.val < p.val && root.val < q.val)
         {
-            return PrefixSearch(root.right, p, q);
+            return PreorderSearch(root.right, p, q);
         }
 
-        return PrefixSearch(root.left, p, q);
+        return PreorderSearch(root.left, p, q);
     }
 
     /// <summary>

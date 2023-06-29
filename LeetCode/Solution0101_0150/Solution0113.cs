@@ -1,92 +1,86 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TreeNode = LeetCode.Models.TreeNode;
+﻿using LeetCode.Models;
 
-namespace LeetCode.Solution0101_0150
+namespace LeetCode.Solution0101_0150;
+
+public class Solution0113
 {
-    public class Solution0113
+    /// <summary>
+    /// Recursive
+    /// </summary>
+    /// <param name="root"></param>
+    /// <param name="targetSum"></param>
+    /// <returns></returns>
+    public IList<IList<int>> PathSum_Ver1(TreeNode root, int targetSum)
     {
-        public IList<IList<int>> PathSum_Recursive(TreeNode root, int targetSum)
-        {
-            IList<IList<int>> result = new List<IList<int>>();
-            if (root == null)
-            {
-                return result;
-            }
+        var result = new List<IList<int>>();
 
-            DepthFirstSearch(root, targetSum, new List<int>(), result);
+        PreorderSearch(root, targetSum, new List<int>(), result);
 
-            return result;
-        }
-
-        public IList<IList<int>> PathSum_Iterative(TreeNode root, int targetSum)
-        {
-            IList<IList<int>> result = new List<IList<int>>();
-            if (root == null)
-            {
-                return result;
-            }
-
-            var stack = new Stack<(TreeNode Node, int TargetSum, List<int> CurrPath)>();
-
-            stack.Push((root, targetSum, new List<int>()));
-            while (stack.Count != 0)
-            {
-                var item = stack.Pop();
-                item.TargetSum -= item.Node.val;
-                item.CurrPath.Add(item.Node.val);
-                if (item.Node.left == null && item.Node.right == null && item.TargetSum == 0)
-                {
-                    result.Add(item.CurrPath);
-                    continue;
-                }
-
-                if (item.Node.right != null)
-                {
-                    stack.Push((item.Node.right, item.TargetSum, new List<int>(item.CurrPath.ToArray())));
-                }
-
-                if (item.Node.left != null)
-                {
-                    stack.Push((item.Node.left, item.TargetSum, new List<int>(item.CurrPath.ToArray())));
-                }
-            }
-
-            return result;
-        }
-
-        private void DepthFirstSearch(TreeNode root, int targetSum, IList<int> currPath, IList<IList<int>> allPaths)
-        {
-            targetSum -= root.val;
-            currPath.Add(root.val);
-            if (root.left == null && root.right == null && targetSum == 0)
-            {
-                allPaths.Add(currPath.ToArray());
-                currPath.RemoveAt(currPath.Count - 1);
-                return;
-            }
-
-            if (root.left != null)
-            {
-                DepthFirstSearch(root.left,
-                    targetSum,
-                    currPath,
-                    allPaths);
-            }
-
-            if (root.right != null)
-            {
-                DepthFirstSearch(root.right,
-                    targetSum,
-                    currPath,
-                    allPaths);
-            }
-
-            currPath.RemoveAt(currPath.Count - 1);
-        }
+        return result;
     }
-    
-    // Time: O(N)
-    // Space: O(log(N))
+
+    private void PreorderSearch(TreeNode root, int targetSum, IList<int> currPath, IList<IList<int>> allPaths)
+    {
+        if (root == null)
+        {
+            return;
+        }
+
+        targetSum -= root.val;
+        currPath.Add(root.val);
+        if (targetSum == 0 && root.left == null && root.right == null)
+        {
+            allPaths.Add(currPath.ToArray());
+        }
+
+        PreorderSearch(root.left, targetSum, currPath, allPaths);
+        PreorderSearch(root.right, targetSum, currPath, allPaths);
+
+        currPath.RemoveAt(allPaths.Count - 1);
+    }
+
+    /// <summary>
+    /// Iterative
+    /// </summary>
+    /// <param name="root"></param>
+    /// <param name="targetSum"></param>
+    /// <returns></returns>
+    public IList<IList<int>> PathSum_Ver2(TreeNode root, int targetSum)
+    {
+        var result = new List<IList<int>>();
+        if (root == null)
+        {
+            return result;
+        }
+
+        var stack = new Stack<(TreeNode Node, int TargetSum, List<int> CurrPath)>();
+
+        stack.Push((root, targetSum, new List<int>()));
+        while (stack.Count != 0)
+        {
+            var item = stack.Pop();
+            item.TargetSum -= item.Node.val;
+            item.CurrPath.Add(item.Node.val);
+            if (item.Node.left == null && item.Node.right == null && item.TargetSum == 0)
+            {
+                result.Add(item.CurrPath);
+                continue;
+            }
+
+            if (item.Node.right != null)
+            {
+                stack.Push((item.Node.right, item.TargetSum, new List<int>(item.CurrPath.ToArray())));
+            }
+
+            if (item.Node.left != null)
+            {
+                stack.Push((item.Node.left, item.TargetSum, new List<int>(item.CurrPath.ToArray())));
+            }
+        }
+
+        return result;
+    }
 }
+
+// Time: O(N)
+// Space: O(log(N))

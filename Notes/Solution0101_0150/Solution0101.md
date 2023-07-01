@@ -42,4 +42,4 @@
 - 需要遍歷每個節點 n 次: O(n)
 
 #### Space: O(n)
-- queue 最多放 n 個元素 n 次: O(n)
+- queue 最多放 n 個元素: O(n)

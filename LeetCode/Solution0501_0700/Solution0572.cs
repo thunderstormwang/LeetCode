@@ -1,157 +1,173 @@
 ﻿using LeetCode.Models;
 
-namespace LeetCode.Solution0501_0700
+namespace LeetCode.Solution0501_0700;
+
+public class Solution0572
 {
-    public class Solution0572
+    /// <summary>
+    /// DFS Recursive
+    /// </summary>
+    /// <param name="root"></param>
+    /// <param name="subRoot"></param>
+    /// <returns></returns>
+    public bool IsSubtree_Ver1(TreeNode root, TreeNode subRoot)
     {
-        public bool IsSubtree_DFS_Recursive(TreeNode root,
-            TreeNode subRoot)
+        if (root == null)
         {
-            if (root == null)
-            {
-                return false;
-            }
-
-            return IsSameTree_DFS_Recursive(root, subRoot) 
-                   || IsSubtree_DFS_Recursive(root.left, subRoot) 
-                   || IsSubtree_DFS_Recursive(root.right, subRoot);
-        }
-
-        public bool IsSubtree_DFS_Iterative(TreeNode root, TreeNode subRoot)
-        {
-            var stack = new Stack<TreeNode>();
-            stack.Push(root);
-
-            while (stack.Count != 0)
-            {
-                var node = stack.Pop();
-                if (node == null)
-                {
-                    continue;
-                }
-
-                if (IsSameTree_DFS_Iterative(node, subRoot))
-                {
-                    return true;
-                }
-
-                stack.Push(node.right);
-                stack.Push(node.left);
-            }
-
             return false;
         }
 
-        public bool IsSubtree_BFS(TreeNode root, TreeNode subRoot)
+        return IsSameTree_InorderSearch_Ver1(root, subRoot) 
+               || IsSubtree_Ver1(root.left, subRoot) 
+               || IsSubtree_Ver1(root.right, subRoot);
+    }
+
+    /// <summary>
+    /// DFS Iterative
+    /// </summary>
+    /// <param name="root"></param>
+    /// <param name="subRoot"></param>
+    /// <returns></returns>
+    public bool IsSubtree_Ver2(TreeNode root, TreeNode subRoot)
+    {
+        var stack = new Stack<TreeNode>();
+        stack.Push(root);
+
+        while (stack.Count != 0)
         {
-            var queue = new Queue<TreeNode>();
-
-            queue.Enqueue(root);
-            while (queue.Count != 0)
+            var node = stack.Pop();
+            if (node == null)
             {
-                var node = queue.Dequeue();
-                if (node == null)
-                {
-                    continue;
-                }
-
-                if (IsSameTree_BFS(node, subRoot))
-                {
-                    return true;
-                }
-
-                queue.Enqueue(node.left);
-                queue.Enqueue(node.right);
+                continue;
             }
 
-            return false;
-        }
-
-        private bool IsSameTree_DFS_Recursive(TreeNode p, TreeNode q)
-        {
-            if (p == null && q == null)
+            if (IsSameTree_InorderSearch_Ver2(node, subRoot))
             {
                 return true;
             }
 
-            if (p == null || q == null)
+            stack.Push(node.right);
+            stack.Push(node.left);
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// BFS
+    /// </summary>
+    /// <param name="root"></param>
+    /// <param name="subRoot"></param>
+    /// <returns></returns>
+    public bool IsSubtree_Ver3(TreeNode root, TreeNode subRoot)
+    {
+        var queue = new Queue<TreeNode>();
+
+        queue.Enqueue(root);
+        while (queue.Count != 0)
+        {
+            var node = queue.Dequeue();
+            if (node == null)
+            {
+                continue;
+            }
+
+            if (IsSameTree_BFS(node, subRoot))
+            {
+                return true;
+            }
+
+            queue.Enqueue(node.left);
+            queue.Enqueue(node.right);
+        }
+
+        return false;
+    }
+
+    private bool IsSameTree_InorderSearch_Ver1(TreeNode p, TreeNode q)
+    {
+        if (p == null && q == null)
+        {
+            return true;
+        }
+
+        if (p == null || q == null)
+        {
+            return false;
+        }
+
+        return p.val == q.val 
+               && IsSameTree_InorderSearch_Ver1(p.left, q.left) 
+               && IsSameTree_InorderSearch_Ver1(p.right, q.right);
+    }
+
+    private bool IsSameTree_InorderSearch_Ver2(TreeNode p, TreeNode q)
+    {
+        var stack = new Stack<TreeNode>();
+
+        stack.Push(p);
+        stack.Push(q);
+        while (stack.Count != 0)
+        {
+            var subRoot = stack.Pop();
+            var root = stack.Pop();
+
+            if (root == null && subRoot == null)
+            {
+                continue;
+            }
+
+            if (root == null || subRoot == null)
             {
                 return false;
             }
 
-            return p.val == q.val 
-                   && IsSameTree_DFS_Recursive(p.left, q.left) 
-                   && IsSameTree_DFS_Recursive(p.right, q.right);
-        }
-
-        private bool IsSameTree_DFS_Iterative(TreeNode p, TreeNode q)
-        {
-            var stack = new Stack<TreeNode>();
-
-            stack.Push(p);
-            stack.Push(q);
-            while (stack.Count != 0)
+            if (root.val != subRoot.val)
             {
-                var subRoot = stack.Pop();
-                var root = stack.Pop();
-
-                if (root == null && subRoot == null)
-                {
-                    continue;
-                }
-
-                if (root == null || subRoot == null)
-                {
-                    return false;
-                }
-
-                if (root.val != subRoot.val)
-                {
-                    return false;
-                }
-
-                stack.Push(root.right);
-                stack.Push(subRoot.right);
-                stack.Push(root.left);
-                stack.Push(subRoot.left);
+                return false;
             }
 
-            return true;
+            stack.Push(root.right);
+            stack.Push(subRoot.right);
+            stack.Push(root.left);
+            stack.Push(subRoot.left);
         }
 
-        private bool IsSameTree_BFS(TreeNode p, TreeNode q)
+        return true;
+    }
+
+    private bool IsSameTree_BFS(TreeNode p, TreeNode q)
+    {
+        var queue = new Queue<TreeNode>();
+
+        queue.Enqueue(p);
+        queue.Enqueue(q);
+        while (queue.Count != 0)
         {
-            var queue = new Queue<TreeNode>();
+            var root = queue.Dequeue();
+            var subRoot = queue.Dequeue();
 
-            queue.Enqueue(p);
-            queue.Enqueue(q);
-            while (queue.Count != 0)
+            if (root == null && subRoot == null)
             {
-                var root = queue.Dequeue();
-                var subRoot = queue.Dequeue();
-
-                if (root == null && subRoot == null)
-                {
-                    continue;
-                }
-
-                if (root == null || subRoot == null)
-                {
-                    return false;
-                }
-
-                if (root.val != subRoot.val)
-                {
-                    return false;
-                }
-
-                queue.Enqueue(root.left);
-                queue.Enqueue(subRoot.left);
-                queue.Enqueue(root.right);
-                queue.Enqueue(subRoot.right);
+                continue;
             }
 
-            return true;
+            if (root == null || subRoot == null)
+            {
+                return false;
+            }
+
+            if (root.val != subRoot.val)
+            {
+                return false;
+            }
+
+            queue.Enqueue(root.left);
+            queue.Enqueue(subRoot.left);
+            queue.Enqueue(root.right);
+            queue.Enqueue(subRoot.right);
         }
+
+        return true;
     }
 }

@@ -10,13 +10,25 @@ namespace LeetCodeTests.SolutionTest0201_0300;
 public class Solution0297Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void InorderSuccessor_Ver2Test(int?[] inputArray, int?[] expectedArray)
+    public void SerializeAndDeserialize_Ver1Test(int?[] inputArray, int?[] expectedArray)
     {
         var root = Utility.BuildTree(inputArray, 0);
         var expected = Utility.BuildTree(expectedArray, 0);
 
         var solution = new Solution0297();
-        var actual = solution.Deserialize(solution.Serialize(root));
+        var actual = solution.Deserialize_Ver1(solution.Serialize_Ver1(root));
+
+        Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void SerializeAndDeserialize_Ver2Test(int?[] inputArray, int?[] expectedArray)
+    {
+        var root = Utility.BuildTree(inputArray, 0);
+        var expected = Utility.BuildTree(expectedArray, 0);
+
+        var solution = new Solution0297();
+        var actual = solution.Deserialize_Ver2(solution.Serialize_Ver2(root));
 
         Utility.CheckBinaryTree(actual, expected).Should().BeTrue();
     }

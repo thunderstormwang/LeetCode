@@ -59,7 +59,7 @@ public class Solution0102
     }
 
     /// <summary>
-    /// DFS Prefix
+    /// DFS Preorder
     /// </summary>
     /// <param name="root"></param>
     /// <returns></returns>

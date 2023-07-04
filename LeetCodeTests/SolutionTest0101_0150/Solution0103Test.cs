@@ -9,12 +9,34 @@ namespace LeetCodeTests.SolutionTest0101_0150;
 public class Solution0103Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void ZigzagLevelOrderTest(int?[] array, IList<IList<int>> expected)
+    public void ZigzagLevelOrder_Ver1Test(int?[] array, IList<IList<int>> expected)
     {
         var root = Utility.BuildTree(array, 0);
 
         var solution = new Solution0103();
-        var actual = solution.ZigzagLevelOrder(root);
+        var actual = solution.ZigzagLevelOrder_Ver1(root);
+
+        actual.Should().BeEquivalentTo(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ZigzagLevelOrder_Ver2Test(int?[] array, IList<IList<int>> expected)
+    {
+        var root = Utility.BuildTree(array, 0);
+
+        var solution = new Solution0103();
+        var actual = solution.ZigzagLevelOrder_Ver2(root);
+
+        actual.Should().BeEquivalentTo(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ZigzagLevelOrder_Ver3Test(int?[] array, IList<IList<int>> expected)
+    {
+        var root = Utility.BuildTree(array, 0);
+
+        var solution = new Solution0103();
+        var actual = solution.ZigzagLevelOrder_Ver3(root);
 
         actual.Should().BeEquivalentTo(expected);
     }

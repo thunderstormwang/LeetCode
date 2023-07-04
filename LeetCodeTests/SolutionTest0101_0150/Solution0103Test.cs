@@ -40,6 +40,17 @@ public class Solution0103Test
 
         actual.Should().BeEquivalentTo(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ZigzagLevelOrder_Ver4Test(int?[] array, IList<IList<int>> expected)
+    {
+        var root = Utility.BuildTree(array, 0);
+
+        var solution = new Solution0103();
+        var actual = solution.ZigzagLevelOrder_Ver4(root);
+
+        actual.Should().BeEquivalentTo(expected);
+    }
 
     private static readonly object[] TestCases =
     {

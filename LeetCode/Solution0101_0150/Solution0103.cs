@@ -39,6 +39,8 @@ public class Solution0103
             {
                 result.Add(list);
             }
+
+            depth++;
         }
 
         return result;
@@ -88,7 +90,7 @@ public class Solution0103
 
         return result;
     }
-    
+
     public IList<IList<int>> ZigzagLevelOrder_Ver3(TreeNode root)
     {
         var result = new List<IList<int>>();
@@ -126,8 +128,44 @@ public class Solution0103
             {
                 result.Add(list);
             }
+
+            depth++;
         }
 
         return result;
+    }
+
+    public object ZigzagLevelOrder_Ver4(TreeNode root)
+    {
+        var result = new List<IList<int>>();
+        
+        InorderSearch(root, 0, result);
+
+        return result;
+    }
+
+    private void InorderSearch(TreeNode root, int depth, IList<IList<int>> result)
+    {
+        if (root == null)
+        {
+            return;
+        }
+
+        if (result.Count - 1 < depth)
+        {
+            result.Add(new List<int>());
+        }
+
+        if (depth % 2 == 0)
+        {
+            result[depth].Add(root.val);
+        }
+        else
+        {
+            result[depth].Insert(0, root.val);
+        }
+
+        InorderSearch(root.left, depth + 1, result);
+        InorderSearch(root.right, depth + 1, result);
     }
 }

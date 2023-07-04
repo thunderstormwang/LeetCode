@@ -38,6 +38,10 @@
 
 ## Ver3 Breadth First Search 調整放入的位置
 
+一樣逐層並都由左至右遍歷所有節點  
+depth % 2 = 0 就將節點插入到 list 的最後一個位置  
+依 depth % 2 = 1 就將節點插入到 list 的第 0 個位置
+
 ### 複雜度
 
 #### Time: O(n)
@@ -49,6 +53,10 @@
 ---
 
 ## Ver4 Depth First Search 調整放入的位置
+
+用 preorder 的順序遍歷所有節點  
+depth % 2 = 0 就將節點插入到 list 的最後一個位置  
+依 depth % 2 = 1 就將節點插入到 list 的第 0 個位置
 
 ### 複雜度
 

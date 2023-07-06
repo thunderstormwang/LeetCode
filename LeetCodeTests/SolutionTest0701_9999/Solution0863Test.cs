@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LeetCode.Models;
 using LeetCode.Solution0701_9999;
 using NUnit.Framework;
 
@@ -9,16 +10,42 @@ namespace LeetCodeTests.SolutionTest0701_9999;
 public class Solution0863Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void ZigzagLevelOrder_Ver4Test(int?[] array, int target, int k, IList<int> expected)
+    public void DistanceKTest(int?[] array, int target, int k, IList<int> expected)
     {
         var root = Utility.BuildTree(array, 0);
-        
-        // todo 找 target
+        var targetNode = FindTarget(root, target);
 
         var solution = new Solution0863();
-        var actual = solution.DistanceK(root);
+        var actual = solution.DistanceK(root, targetNode, k);
 
         actual.Should().BeEquivalentTo(expected);
+    }
+
+    private TreeNode FindTarget(TreeNode root, int target)
+    {
+        if (root == null)
+        {
+            return null;
+        }
+        
+        if (root.val == target)
+        {
+            return root;
+        }
+        
+        var left = FindTarget(root.left, target);
+        if (left != null)
+        {
+            return left;
+        }
+        
+        var right = FindTarget(root.right, target);
+        if (right != null)
+        {
+            return right;
+        }
+
+        return null;
     }
 
     private static readonly object[] TestCases =

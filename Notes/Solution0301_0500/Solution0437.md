@@ -23,11 +23,11 @@ path sum，有符合就加 １
 跟 [Solution0560](../Solution0501_0700/Solution0560.md) 一樣的解法，我又忘了...
 所以 leetcode 的順序很爛，將變型題擺在基本題型的前面
 
-遞迴時，計算累計的路徑總和 currSum  
-如果 dict[currSum - targetSum] 存在，將此值計入結果    
-dict[currSum] += 1  
+遞迴時，用 currSum 計算累計的路徑總和  
+如果 dict[currSum - targetSum] 存在，代表找到組合，將此值計入結果    
+dict[currSum] += 1，給子節點做計算  
 遞迴呼叫傳入子節點  
-dict[currSum] -= 1  
+dict[currSum] -= 1，離開當前節點之前，要做復原動作  
 回傳當前節點結果 加上 子節點回傳的結果  
 
 ### 複雜度

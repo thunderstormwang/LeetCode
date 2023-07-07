@@ -1,32 +1,26 @@
-﻿namespace LeetCode.Solution0301_0500
+﻿namespace LeetCode.Solution0301_0500;
+
+public class Solution0383
 {
-    public class Solution0383
+    public bool CanConstruct(string ransomNote, string magazine)
     {
-        public bool CanConstruct(string ransomNote, string magazine)
+        var array = new int [26];
+
+        for (var i = 0; i < magazine.Length; i++)
         {
-            var array = new int[26];
-            foreach (var item in magazine)
-            {
-                array[item - 'a']++;
-            }
-
-            foreach (var item in ransomNote)
-            {
-                array[item - 'a']--;
-            }
-
-            foreach (var item in array)
-            {
-                if (item < 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            array[magazine[i] - 'a']++;
         }
-        
-        // Time: O(N)
-        // Space: O(1)
+
+        for (var i = 0; i < ransomNote.Length; i++)
+        {
+            array[ransomNote[i] - 'a']--;
+
+            if (array[ransomNote[i] - 'a'] < 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

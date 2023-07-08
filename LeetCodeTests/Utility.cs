@@ -110,6 +110,31 @@ namespace LeetCodeTests
 
             return dummyNode.next;
         }
+        
+        public static ListNode BuildListNode(int[] input, int pos)
+        {
+            ListNode result = null;
+            ListNode tail = null;
+
+            for (var i = input.Length - 1; i >= 0; i--)
+            {
+                var temp = result;
+                result = new ListNode(input[i]);
+                result.next = temp;
+
+                if (tail == null)
+                {
+                    tail = result;
+                }
+
+                if (i == pos)
+                {
+                    tail.next = result;
+                }
+            }
+
+            return result;
+        }
 
         public static Node Build_N_ary_Tree(int?[] array)
         {

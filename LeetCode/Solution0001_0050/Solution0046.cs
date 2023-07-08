@@ -2,10 +2,41 @@
 
 public class Solution0046
 {
-    private int[] _nums;
-    private bool[] _used;
+    /// <summary>
+    /// Backtrack
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public IList<IList<int>> Permute_Ver1(int[] nums)
+    {
+        var used = new bool [nums.Length];
+        var result = new List<IList<int>>();
 
-    public IList<IList<int>> Permute_Iterative(int[] nums)
+        Backtrack_Ver1(nums, used, new List<int>(), result);
+
+        return result;
+    }
+
+    /// <summary>
+    /// Backtrack - Swap
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public IList<IList<int>> Permute_Ver2(int[] nums)
+    {
+        var result = new List<IList<int>>();
+
+        Backtrack_Ver2(nums, 0, result);
+
+        return result;
+    }
+
+    /// <summary>
+    /// Iteration
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public IList<IList<int>> Permute_Ver3(int[] nums)
     {
         IList<IList<int>> result = new List<IList<int>>() { new List<int>() { nums[0] } };
 
@@ -29,70 +60,46 @@ public class Solution0046
         return result;
     }
 
-    /// <summary>
-    /// Time: O(N!) -- N 個元素一共有 N! 種排列
-    /// <br/>
-    /// <br/>Memory: O(N) -- 最多遞迴 N 層, 加上長度為 N 的陣列記錄被使用過的元素 O(N) + O(N) 仍為 O(N)
-    /// </summary>
-    /// <param name="nums"></param>
-    /// <returns></returns>
-    public IList<IList<int>> Permute_Recursive(int[] nums)
+    private void Backtrack_Ver1(int[] nums, bool[] used, List<int> curr, IList<IList<int>> result)
     {
-        _nums = nums;
-        _used = new bool [nums.Length];
-        var result = new List<IList<int>>();
-
-        Backtrack(new List<int>(), result);
-
-        return result;
-    }
-
-    public IList<IList<int>> Permute_RecursiveSwap(int[] nums)
-    {
-        _nums = nums;
-        var result = new List<IList<int>>();
-
-        Backtrack_Swap(0, result);
-
-        return result;
-    }
-
-    private void Backtrack(List <int> curr, IList<IList<int>> result)
-    {
-        if (curr.Count == _nums.Length)
+        if (curr.Count == nums.Length)
         {
             result.Add(curr.ToArray());
             return;
         }
 
-        for (var i = 0; i < _nums.Length; i++)
+        for (var i = 0; i < nums.Length; i++)
         {
-            if (_used[i])
+            if (used[i])
             {
                 continue;
             }
-                
-            curr.Add(_nums[i]);
-            _used[i] = true;
-            Backtrack(curr, result);
-            curr.RemoveAt(curr.Count-1);
-            _used[i] = false;
+
+            curr.Add(nums[i]);
+            used[i] = true;
+
+            Backtrack_Ver1(nums, used, curr, result);
+
+            curr.RemoveAt(curr.Count - 1);
+            used[i] = false;
         }
     }
 
-    private void Backtrack_Swap(int index, IList<IList<int>> result)
+    private void Backtrack_Ver2(int[] nums, int index, IList<IList<int>> result)
     {
-        if (index == _nums.Length)
+        if (index == nums.Length)
         {
-            result.Add(new List<int>(_nums));
+            result.Add(new List<int>(nums));
             return;
         }
 
-        for (var i = index; i < _nums.Length; i++)
+        for (var i = index; i < nums.Length; i++)
         {
-            (_nums[i], _nums[index]) = (_nums[index], _nums[i]);
-            Backtrack_Swap(index + 1, result);
-            (_nums[i], _nums[index]) = (_nums[index], _nums[i]);
+            (nums[i], nums[index]) = (nums[index], nums[i]);
+
+            Backtrack_Ver2(nums, index + 1, result);
+
+            (nums[i], nums[index]) = (nums[index], nums[i]);
         }
     }
 }

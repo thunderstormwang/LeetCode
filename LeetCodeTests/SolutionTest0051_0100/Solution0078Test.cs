@@ -9,10 +9,19 @@ namespace LeetCodeTests.SolutionTest0051_0100;
 public class Solution0078Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void SubsetsTest(int[] inputArray, int[][] expectedArray)
+    public void Subsets_Ver1Test(int[] inputArray, int[][] expectedArray)
     {
         var solution = new Solution0078();
-        var actual = solution.Subsets(inputArray);
+        var actual = solution.Subsets_Ver1(inputArray);
+
+        actual.Should().BeEquivalentTo(expectedArray);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void Subsets_Ver2Test(int[] inputArray, int[][] expectedArray)
+    {
+        var solution = new Solution0078();
+        var actual = solution.Subsets_Ver2(inputArray);
 
         actual.Should().BeEquivalentTo(expectedArray);
     }

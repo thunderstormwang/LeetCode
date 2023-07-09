@@ -1,83 +1,100 @@
 ﻿using System.Text;
 
-namespace LeetCode.Solution0001_0050
+namespace LeetCode.Solution0001_0050;
+
+public class Solution0017
 {
-    public class Solution0017
+    /// <summary>
+    /// Recursive
+    /// </summary>
+    /// <param name="digits"></param>
+    /// <returns></returns>
+    public IList<string> LetterCombinations_Ver1(string digits)
     {
-        private readonly string[][] _letterArray = new string[][]
+        if (digits.Length == 0)
         {
-            new string[] { "a", "b", "c" },
-            new string[] { "d", "e", "f" },
-            new string[] { "g", "h", "i" },
-            new string[] { "j", "k", "l" },
-            new string[] { "m", "n", "o" },
-            new string[] { "p", "q", "r", "s" },
-            new string[] { "t", "u", "v" },
-            new string[] { "w", "x", "y", "z" },
+            return new List<string>();
+        }
+
+        var result = new List<string>();
+        var dict = new Dictionary<char, string[]>()
+        {
+            { '2', new string[] { "a", "b", "c" } },
+            { '3', new string[] { "d", "e", "f" } },
+            { '4', new string[] { "g", "h", "i" } },
+            { '5', new string[] { "j", "k", "l" } },
+            { '6', new string[] { "m", "n", "o" } },
+            { '7', new string[] { "p", "q", "r", "s" } },
+            { '8', new string[] { "t", "u", "v" } },
+            { '9', new string[] { "w", "x", "y", "z" } }
         };
+        Backtrack(digits, dict, 0, new StringBuilder(), result);
 
-        public IList<string> LetterCombinations_Iterative(string digits)
+        return result;
+    }
+
+    /// <summary>
+    /// Iterative
+    /// </summary>
+    /// <param name="digits"></param>
+    /// <returns></returns>
+    public IList<string> LetterCombinations_Ver2(string digits)
+    {
+        if (digits.Length == 0)
         {
-            var result = new List<string>();
-            for (var i = digits.Length - 1; i >= 0; i--)
+            return new List<string>();
+        }
+
+        var result = new List<string>() { string.Empty };
+        var dict = new Dictionary<char, string[]>()
+        {
+            { '2', new string[] { "a", "b", "c" } },
+            { '3', new string[] { "d", "e", "f" } },
+            { '4', new string[] { "g", "h", "i" } },
+            { '5', new string[] { "j", "k", "l" } },
+            { '6', new string[] { "m", "n", "o" } },
+            { '7', new string[] { "p", "q", "r", "s" } },
+            { '8', new string[] { "t", "u", "v" } },
+            { '9', new string[] { "w", "x", "y", "z" } }
+        };
+        var index = 0;
+
+        while (index < digits.Length)
+        {
+            var candidates = dict[digits[index]];
+            var temp = new List<string>();
+
+            for (var i = 0; i < result.Count; i++)
             {
-                if (i == digits.Length - 1)
+                var target = result[i];
+                for (var j = 0; j < candidates.Length; j++)
                 {
-                    result = new List<string>(_letterArray[FindIndex(digits[i].ToString())]);
-                    continue;
+                    temp.Add(target + candidates[j]);
                 }
-
-                var tempResult = new List<string>();
-                var currentStr = _letterArray[FindIndex(digits[i].ToString())];
-                foreach (var item in currentStr)
-                {
-                    foreach (var preItem in result)
-                    {
-                        var temp = preItem.Insert(0, item);
-                        tempResult.Add(temp);
-                    }
-                }
-
-                result = tempResult;
             }
 
-            return result;
+            result = temp;
+            index++;
         }
 
-        public IList<string> LetterCombinations_Recursive(string digits)
+        return result;
+    }
+
+    private void Backtrack(string digits, Dictionary<char, string[]> dict, int index, StringBuilder strBuilder, IList<string> result)
+    {
+        if (index == digits.Length)
         {
-            var result = new List<string>();
-            if (digits.Length == 0)
-            {
-                return result;
-            }
-
-            FindCombinations(digits, 0, new StringBuilder(), result);
-
-            return result;
+            result.Add(strBuilder.ToString());
+            return;
         }
 
-        private void FindCombinations(string digits, int index, StringBuilder strBuilder, IList<string> result)
+        var candidates = dict[digits[index]];
+
+        foreach (var item in candidates)
         {
-            if (index == digits.Length)
-            {
-                result.Add(strBuilder.ToString());
-                return;
-            }
-
-            var currentStr = _letterArray[FindIndex(digits[index].ToString())];
-
-            foreach (var item in currentStr)
-            {
-                strBuilder.Append(item);
-                FindCombinations(digits, index + 1, strBuilder, result);
-                strBuilder.Remove(strBuilder.Length - 1, 1);
-            }
-        }
-
-        private int FindIndex(string input)
-        {
-            return int.Parse(input) - 2;
+            strBuilder.Append(item);
+            Backtrack(digits, dict, index + 1, strBuilder, result);
+            strBuilder.Remove(strBuilder.Length - 1, 1);
         }
     }
 }

@@ -1,44 +1,80 @@
 ﻿using LeetCode.Models;
 
-namespace LeetCode.Solution0201_0300
+namespace LeetCode.Solution0201_0300;
+
+public class Solution0206
 {
-    public class Solution0206
+    /// <summary>
+    /// Iterative
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public ListNode ReverseList_Ver1(ListNode head)
     {
-        public ListNode ReverseList_Iterative(ListNode head)
+        var dummyNode = new ListNode(0);
+        while (head != null)
         {
-            var dummyNode = new ListNode(0);
-            while (head != null)
-            {
-                var temp = head.next;
-                head.next = dummyNode.next;
-                dummyNode.next = head;
-                head = temp;
-            }
-
-            return dummyNode.next;
+            var temp = head.next;
+            head.next = dummyNode.next;
+            dummyNode.next = head;
+            head = temp;
         }
 
-        public ListNode ReverseList_Recursive(ListNode head)
+        return dummyNode.next;
+    }
+
+    /// <summary>
+    /// Recursive
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public ListNode ReverseList_Ver2(ListNode head)
+    {
+        var dummyNode = new ListNode(0);
+        Recursive(dummyNode, head);
+        return dummyNode.next;
+    }
+
+    /// <summary>
+    /// Two Pointer
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns></returns>
+    public ListNode ReverseList_Ver3(ListNode head)
+    {
+        if (head == null)
         {
-            var dummyNode = new ListNode(0);
-            Recursive(dummyNode, head);
-            return dummyNode.next;
+            return head;
         }
 
-        private void Recursive(ListNode dummyNode, ListNode currNode)
-        {
-            if (currNode == null)
-            {
-                return;
-            }
+        var dummyNode = new ListNode(0);
+        var slow = head;
+        var fast = head.next;
 
-            var temp = currNode.next;
-            currNode.next = dummyNode.next;
-            dummyNode.next = currNode;
-            Recursive(dummyNode, temp);
+        while (fast != null)
+        {
+            slow.next = dummyNode.next;
+            dummyNode.next = slow;
+            slow = fast;
+            fast = fast.next;
         }
 
-        // Time: O(N)
-        // Space: O(1)
+        slow.next = dummyNode.next;
+        dummyNode.next = slow;
+
+        return dummyNode.next;
+    }
+
+    private void Recursive(ListNode dummyNode, ListNode currNode)
+    {
+        if (currNode == null)
+        {
+            return;
+        }
+
+        var temp = currNode.next;
+        currNode.next = dummyNode.next;
+        dummyNode.next = currNode;
+        Recursive(dummyNode, temp);
     }
 }

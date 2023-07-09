@@ -9,19 +9,19 @@ namespace LeetCodeTests.SolutionTest0051_0100;
 public class Solution0051Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void SolveNQueens(int n, IList<IList<string>> expected)
+    public void SolveNQueens_Ver1Test(int n, IList<IList<string>> expected)
     {
         var solution = new Solution0051();
-        var actual = solution.SolveNQueens(n);
+        var actual = solution.SolveNQueens_Ver1(n);
 
         actual.Should().BeEquivalentTo(expected);
     }
     
     [TestCaseSource(nameof(TestCases))]
-    public void SolveNQueens_1Dim(int n, IList<IList<string>> expected)
+    public void SolveNQueens_Ver2Test(int n, IList<IList<string>> expected)
     {
         var solution = new Solution0051();
-        var actual = solution.SolveNQueens_1Dim(n);
+        var actual = solution.SolveNQueens_Ver2(n);
 
         actual.Should().BeEquivalentTo(expected);
     }

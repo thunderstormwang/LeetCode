@@ -4,14 +4,12 @@ namespace LeetCode.Solution0051_0100;
 
 public class Solution0051
 {
-    private int _n;
-
-    public IList<IList<string>> SolveNQueens(int n)
+    public IList<IList<string>> SolveNQueens_Ver1(int n)
     {
-        _n = n;
-
         var result = new List<IList<string>>();
-        Backtrack(new List<string>(), result);
+        
+        Backtrack_Ver1(n, new List<string>(), result);
+        
         return result;
     }
 
@@ -24,11 +22,10 @@ public class Solution0051
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
-    public IList<IList<string>> SolveNQueens_1Dim(int n)
+    public IList<IList<string>> SolveNQueens_Ver2(int n)
     {
-        _n = n;
         var columns = new List<IList<int>>();
-        Backtrack_1Dim(0, new int [n], columns);
+        Backtrack_Ver2(n, 0, new int [n], columns);
 
         var result = new List<IList<string>>();
         foreach (var item in columns)
@@ -49,32 +46,34 @@ public class Solution0051
         return result;
     }
 
-    private void Backtrack(List<string> curr, List<IList<string>> result)
+    private void Backtrack_Ver1(int n, IList<string> curr, IList<IList<string>> result)
     {
-        if (curr.Count == _n)
+        if (curr.Count == n)
         {
             result.Add(curr.ToArray());
             return;
         }
 
-        for (var j = 0; j < _n; j++)
+        for (var j = 0; j < n; j++)
         {
             var row = curr.Count;
-            if (!IsValid(row, j, curr))
+            if (!IsValid_Ver1(curr, row, j, n))
             {
                 continue;
             }
 
             var stringBuilder = new StringBuilder();
-            stringBuilder.Append('.', _n);
+            stringBuilder.Append('.', n);
             stringBuilder.Replace('.', 'Q', j, 1);
             curr.Add(stringBuilder.ToString());
-            Backtrack(curr, result);
+            
+            Backtrack_Ver1(n, curr, result);
+            
             curr.RemoveAt(curr.Count - 1);
         }
     }
 
-    private bool IsValid(int row, int column, List<string> curr)
+    private bool IsValid_Ver1(IList<string> curr, int row, int candidateColumn, int n)
     {
         var i = 0;
         var j = 0;
@@ -82,55 +81,65 @@ public class Solution0051
         // 直線上不能有其它皇后
         for (i = row - 1; i >= 0; i--)
         {
-            if (curr[i][column] == 'Q')
+            if (curr[i][candidateColumn] == 'Q')
             {
                 return false;
             }
         }
 
         // 對角線上不能有其它皇后
-        for (i = row - 1, j = column - 1; i >= 0 && j >= 0; i--, j--)
+        i = curr.Count - 1;
+        j = candidateColumn - 1;
+        while(i >= 0 && j >= 0)
         {
-            if (curr[i][j] == 'Q')
+            if(curr[i][j] == 'Q')
             {
                 return false;
             }
+
+            i--;
+            j--;
         }
 
         // 對角線上不能有其它皇后
-        for (i = row - 1, j = column + 1; i >= 0 && j < _n; i--, j++)
+        i = curr.Count - 1;
+        j = candidateColumn + 1;
+        while(i >= 0 && j < n)
         {
-            if (curr[i][j] == 'Q')
+            if(curr[i][j] == 'Q')
             {
                 return false;
             }
+
+            i--;
+            j++;
         }
 
         return true;
     }
 
-    private void Backtrack_1Dim(int index, int[] curr, IList<IList<int>> result)
+    private void Backtrack_Ver2(int n, int index, int[] curr, IList<IList<int>> result)
     {
-        if (index == _n)
+        if (index == n)
         {
             result.Add(curr.ToArray());
             return;
         }
 
-        for (var j = 0; j < _n; j++)
+        for (var j = 0; j < n; j++)
         {
-            if (!IsValid_1Dim(index, j, curr))
+            if (!IsValid_Ver2(index, j, curr))
             {
                 continue;
             }
 
             curr[index] = j;
-            Backtrack_1Dim(index + 1, curr, result);
+            Backtrack_Ver2(n, index + 1, curr, result);
             curr[index] = 0;
         }
     }
 
-    private bool IsValid_1Dim(int row, int column, int[] curr)
+    private bool IsValid_Ver2(int row, int column, int[] curr)
     {
         for (var i = row - 1; i >= 0; i--)
         {
@@ -149,8 +158,4 @@ public class Solution0051
 
         return true;
     }
-
-    // Time: O(N!) -- 第一個皇后有 N 個位置可選, 第二個皇后有 N-1 個位置可選 ... 最後一個皇后有 1 個位置可選
-    // 所以有 N!
-    // Space: O(N) -- 最多遞迴 N 層
 }

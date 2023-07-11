@@ -2,7 +2,7 @@
 
 ## Ver1 - Iterative
 
-只須四步驟
+反轉每個節點只需四行程式碼: 一個 temp 和 三個指標轉向
 
 建立 temp 節點，指向 head.next  
 將 head.next 指向 newHead  

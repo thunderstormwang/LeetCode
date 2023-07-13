@@ -31,6 +31,16 @@ public class Solution0328Test
         {
             new int[] { 2, 1, 3, 5, 6, 4, 7 },
             new int[] { 2, 3, 6, 7, 1, 5, 4 }
+        },
+        new object[]
+        {
+            new int[] { 1 },
+            new int[] { 1 }
+        },
+        new object[]
+        {
+            new int[] { 1, 2 },
+            new int[] { 1, 2 }
         }
     };
 }

@@ -42,7 +42,10 @@ public class Solution0328
         }
 
         oddEnd.next = evenDummyNode.next;
-        evenEnd.next = null;
+        if (evenEnd != null)
+        {
+            evenEnd.next = null;
+        }
 
         return oddDummyNode.next;
     }

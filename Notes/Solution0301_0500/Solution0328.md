@@ -2,10 +2,12 @@
 
 ## Ver1 
 
-跟 143 很像
+我用跟 [Solution0143](../Solution0101_0150/Solution0143.md) 很像的解法  
+拆成兩個 list，再組合
 
-這種要求不能建立新 node 的，如果想要一次過，連每個節點的 node.next 是否指向 null 都要考慮進去
+遇到要求只能使用原本 list 的題目，如果想要一次過，要考慮將 list 拆掉後，個別 list 的最後一個節點是否有指向 null
 
-#### Time: O()
+#### Time: O(n)
+- 需要遍歷所有節點: O(n)
 
-#### Space: O()
+#### Space: O(1)

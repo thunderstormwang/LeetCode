@@ -1,43 +1,38 @@
-﻿using System.Collections.Generic;
+﻿namespace LeetCode.Solution0001_0050;
 
-namespace LeetCode.Solution0001_0050
+public class Solution0020
 {
-    public class Solution0020
+    public bool IsValid(string s)
     {
-        public bool IsValid(string s)
+        var stack = new Stack<char>();
+        var dict = new Dictionary<char, char>()
         {
-            var stack = new Stack<char>();
-            var dict = new Dictionary<char, char>()
-            {
-                { '(', ')' },
-                { '[', ']' },
-                { '{', '}' },
-            };
+            { ')', '(' },
+            { ']', '[' },
+            { '}', '{' }
+        };
 
-            foreach (var item in s)
+        for(var i = 0; i < s.Length; i++)
+        {
+            if(!dict.ContainsKey(s[i]))
             {
-                if (dict.ContainsKey(item))
-                {
-                    stack.Push(dict[item]);
-                }
-                else if (stack.Count == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    var pop = stack.Pop();
-                    if (item != pop)
-                    {
-                        return false;
-                    }
-                }
+                stack.Push(s[i]);
+                continue;
             }
 
-            return stack.Count == 0;
+            if(stack.Count == 0)
+            {
+                return false;
+            }
+
+            var temp = stack.Pop();
+
+            if(dict[s[i]] != temp)
+            {
+                return false;
+            }
         }
 
-        // Time: O(N)
-        // Space: O(N)
+        return stack.Count == 0;
     }
 }

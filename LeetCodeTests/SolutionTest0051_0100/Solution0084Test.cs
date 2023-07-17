@@ -21,13 +21,23 @@ public class Solution0084Test
     {
         new object[]
         {
-            new int[] { 2,1,5,6,2,3 },
+            new int[] { 2, 1, 5, 6, 2, 3 },
             10
         },
         new object[]
         {
-            new int[] { 2,4 },
+            new int[] { 2, 4 },
             4
+        },
+        new object[]
+        {
+            new int[] { 1, 2, 3, 3, 2, 1 },
+            8
+        },
+        new object[]
+        {
+            new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 0, 1 },
+            1
         }
     };
 }

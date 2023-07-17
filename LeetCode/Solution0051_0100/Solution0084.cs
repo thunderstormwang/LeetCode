@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace LeetCode.Solution0051_0100;
+﻿namespace LeetCode.Solution0051_0100;
 
 public class Solution0084
 {
@@ -9,9 +7,7 @@ public class Solution0084
         var result = 0;
         var stack = new Stack<int>();
 
-        stack.Push(0);
-
-        for (var i = 1; i < heights.Length; i++)
+        for (var i = 0; i < heights.Length; i++)
         {
             if (stack.Count == 0 || heights[i] >= heights[stack.Peek()])
             {

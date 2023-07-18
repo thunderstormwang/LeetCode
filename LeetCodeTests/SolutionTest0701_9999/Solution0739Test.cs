@@ -9,19 +9,19 @@ namespace LeetCodeTests.SolutionTest0701_9999;
 public class Solution0739Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void DailyTemperatures_BrutalTest(int[] temperatures, int[] expected)
+    public void DailyTemperatures_Ver1Test(int[] temperatures, int[] expected)
     {
         var solution = new Solution0739();
-        var actual = solution.DailyTemperatures_Brutal(temperatures);
+        var actual = solution.DailyTemperatures_Ver1(temperatures);
 
         actual.Should().Equal(expected);
     }
 
     [TestCaseSource(nameof(TestCases))]
-    public void DailyTemperatures_StackTest(int[] temperatures, int[] expected)
+    public void DailyTemperatures_Ver2Test(int[] temperatures, int[] expected)
     {
         var solution = new Solution0739();
-        var actual = solution.DailyTemperatures_Stack(temperatures);
+        var actual = solution.DailyTemperatures_Ver2(temperatures);
 
         actual.Should().Equal(expected);
     }

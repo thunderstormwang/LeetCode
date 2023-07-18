@@ -2,7 +2,12 @@
 
 public class Solution0739
 {
-    public int[] DailyTemperatures_Brutal(int[] temperatures)
+    /// <summary>
+    /// Brutal Force
+    /// </summary>
+    /// <param name="temperatures"></param>
+    /// <returns></returns>
+    public int[] DailyTemperatures_Ver1(int[] temperatures)
     {
         var result = new int [temperatures.Length];
 
@@ -21,29 +26,37 @@ public class Solution0739
         return result;
     }
 
-    public int[] DailyTemperatures_Stack(int[] temperatures)
+    /// <summary>
+    /// Monotonic Stack
+    /// </summary>
+    /// <param name="temperatures"></param>
+    /// <returns></returns>
+    public int[] DailyTemperatures_Ver2(int[] temperatures)
     {
         var result = new int [temperatures.Length];
         var stack = new Stack<int>();
 
-        stack.Push(0);
-
-        for (var i = 1; i < temperatures.Length; i++)
+        for (var i = 0; i < temperatures.Length; i++)
         {
-            while (stack.Count > 0)
+            if (stack.Count == 0 || temperatures[stack.Peek()] >= temperatures[i])
             {
-                var top = stack.Pop();
+                stack.Push(i);
+                continue;
+            }
 
-                if (temperatures[top] >= temperatures[i])
-                {
-                    stack.Push(top);
-                    break;
-                }
-
-                result[top] = i - top;
+            while (stack.Count > 0 && temperatures[stack.Peek()] < temperatures[i])
+            {
+                var curr = stack.Pop();
+                result[curr] = i - curr;
             }
 
             stack.Push(i);
+        }
+
+        while (stack.Count > 0)
+        {
+            var curr = stack.Pop();
+            result[curr] = 0;
         }
 
         return result;

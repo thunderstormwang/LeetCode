@@ -1,6 +1,8 @@
 # Solution0739
 
-## 暴力法
+我喜歡這題, 很容易就想到暴力法怎麼解, 然後再去想該怎麼優化
+
+## Ver1 - 暴力法
 
 暴力法很容易想，很意外沒超時  
 
@@ -17,21 +19,32 @@
 
 ---
 
-## Stack
+## Ver2 - Monotonic Stack - 單調棧
 
-想出暴力法後，直覺認為有 O(n) 的解法，不過沒想到...
+又是一題證明 LeetCode 順序很爛的例子，這題應該比
+- [Solution0084](../Solution0051_0100/Solution0084.md)
+- [Solution0042](../Solution0001_0050/Solution0042.md)
 
-建立 Stack，儲存走過的 index  
-並將 Stack 的元素保持為越往頂端，則溫度越低，也就是單調棧  
+還前面才是
 
-跑迴圈，每個 temperatures<sub>i</sub> 做跟 Stack 的第一個元素比較
-- temperatures<sub>i</sub> <= temperatures<sub>top</sub>，將 i 也 push 進 stack，然後看下一個 i
-- temperatures<sub>i</sub> > temperatures<sub>top</sub>
-  - 跑迴圈，逐一取出 Stack 的第一個元素，只要 temperatures<sub>i</sub> > temperatures<sub>top</sub>，temperatures<sub>top</sub> 就找到比它大的下一個溫度，index 距離為 i - top
-  - temperatures<sub>i</sub> <= temperatures<sub>top</sub>，將 i 也 push 進 stack，然後看下一個 i
+使用 Stack，儲存 index，越往頂端，temperatures<sub>i</sub> 則越高，形成遞減形式的單調棧  
+
+遍歷 temperatures，假設當前 index 為 i，且假定 Stack 的頂端元素是 curr
+- 如果 temperatures[i] <= temperatures[curr]
+  - stack.Push(i)
+- 如果 temperatures[i] > temperatures[curr]，代表 curr 找到下一個溫度比它高的日子
+  - curr = stack.Pop();
+  - 計算 i 離 curr 有多少日子
+  - 更新 curr
+  - 重覆上述過程直到 temperatures[i] <= temperatures[curr] 或是 stack 沒有元素為止
+  - Stack.Push(i) 
+
+遍歷完 heights，仍需將 stack 清空，流程與上述相同，但這些剩下的元素都找不到下一個溫度比它高的日子
 
 ### 複雜度
 
 #### Time: O(n)
+- 寫出來會發現很多層迴圈，不過 height 每個元素只會被放入 stack 一次，且取出時它離下一個溫度較高的天數，所以是 n 次運算: O(n)
 
 #### Memory: O(n)
+- Stack 最多儲的元素: O(n)

@@ -9,21 +9,21 @@ namespace LeetCodeTests.SolutionTest0001_0050;
 public class Solution0042Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void Trap_Stack_Ver1Test(int[] heights, int expected)
+    public void Trap_Ver1Test(int[] heights, int expected)
     {
         var solution = new Solution0042();
 
-        var actual = solution.Trap_Stack_Ver1(heights);
+        var actual = solution.Trap_Ver1(heights);
 
         actual.Should().Be(expected);
     }
 
     [TestCaseSource(nameof(TestCases))]
-    public void Trap_Stack_Ver2Test(int[] heights, int expected)
+    public void Trap_Ver2Test(int[] heights, int expected)
     {
         var solution = new Solution0042();
 
-        var actual = solution.Trap_Stack_Ver2(heights);
+        var actual = solution.Trap_Ver2(heights);
 
         actual.Should().Be(expected);
     }

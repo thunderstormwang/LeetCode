@@ -17,10 +17,10 @@ public class Solution0084
 
             while (stack.Count != 0 && heights[i] < heights[stack.Peek()])
             {
-                var pop = stack.Pop();
+                var curr = stack.Pop();
                 var left = stack.Count == 0 ? 0 : stack.Peek() + 1;
                 var right = i - 1;
-                result = Math.Max(result, (right - left + 1) * heights[pop]);
+                result = Math.Max(result, (right - left + 1) * heights[curr]);
             }
 
             stack.Push(i);
@@ -28,10 +28,10 @@ public class Solution0084
 
         while (stack.Count != 0)
         {
-            var pop = stack.Pop();
+            var curr = stack.Pop();
             var left = stack.Count == 0 ? 0 : stack.Peek() + 1;
             var right = heights.Length - 1;
-            result = Math.Max(result, (right - left + 1) * heights[pop]);
+            result = Math.Max(result, (right - left + 1) * heights[curr]);
         }
 
         return result;

@@ -1,10 +1,8 @@
-﻿using System.Diagnostics;
-
-namespace LeetCode.Solution0001_0050;
+﻿namespace LeetCode.Solution0001_0050;
 
 public class Solution0042
 {
-    public int Trap_Stack_Ver1(int[] height)
+    public int Trap_Ver1(int[] height)
     {
         var indexStack = new Stack<int>();
         var leftHeight = height[0];
@@ -47,28 +45,37 @@ public class Solution0042
         return result;
     }
 
-    public int Trap_Stack_Ver2(int[] height)
+    /// <summary>
+    /// Monotonic Stack
+    /// </summary>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public int Trap_Ver2(int[] height)
     {
         var result = 0;
         var stack = new Stack<int>();
 
-        stack.Push(0);
-
-        for (var i = 1; i < height.Length; i++)
+        for (var i = 0; i < height.Length; i++)
         {
-            if (stack.Count == 1 || height[i] <= height[stack.Peek()])
+            if (stack.Count == 0 || height[i] <= height[stack.Peek()])
             {
                 stack.Push(i);
                 continue;
             }
 
-            while (stack.Count >= 2 && height[i] > height[stack.Peek()])
+            while (stack.Count > 0 && height[stack.Peek()] < height[i])
             {
-                var pop = stack.Pop();
+                if (stack.Count < 2)
+                {
+                    stack.Pop();
+                    continue;
+                }
+
+                var curr = stack.Pop();
                 var left = stack.Peek();
                 var right = i;
                 var minHeight = Math.Min(height[left], height[right]);
-                result += Math.Max((right - left - 1) * (minHeight - height[pop]), 0);
+                result += (minHeight - height[curr]) * (right - left - 1);
             }
 
             stack.Push(i);

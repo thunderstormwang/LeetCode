@@ -2,8 +2,6 @@
 
 我喜歡這題, 很容易就想到暴力法怎麼解, 然後再去想該怎麼優化
 
-解法同 [Solution0042](../Solution0001_0050/Solution0042.md)，不過是遞增形式的單調棧
-
 ## 暴力法
 
 在每個 height<sub>i</sub> 往左找第一個比它小的高度，也往右找找第一個比它小的高度  
@@ -19,20 +17,23 @@
 
 ---
 
-## 單調棧
+## Monotonic Stack 單調棧
 
-使用 Stack，儲存 index，越往頂端，height<sub>index</sub> 則越高，形成遞增形式的單調棧
+解法同 [Solution0042](../Solution0001_0050/Solution0042.md)，不過是遞增形式的單調棧
+
+使用 Stack，儲存 index，越往頂端，heights<sub>index</sub> 則越高，形成遞增形式的單調棧
 
 遍歷 heights，假設當前 index 為 i，且假定 Stack 的頂端元素是 curr
-- 如果 height<sub>i</sub> >= heights[curr]
+- 如果 heights<sub>i</sub> >= heights[curr]
   - Stack.Push(i)  
-- 如果 height<sub>i</sub> < heights[curr]，代表 curr 已各在左右找到第一個比它小的高度
+- 如果 heights<sub>i</sub> < heights[curr]，代表 curr 已各在左右找到第一個比它小的高度
   - left = Stack.Pop()
   - right = i - 1
-  - 因為是單調棧，此時 Stack 的頂端元素所對應的高度也會小於等於 height[curr]，left = Stack.Count == 0 ? 0 : Stack.Peek() + 1
-  - 當前面積 = height[curr] * (right - left + 1)
+  - 因為是單調棧，此時 Stack 的頂端元素所對應的高度也會小於等於 heights[curr]，left = Stack.Count == 0 ? 0 : Stack.Peek() + 1
+  - 當前面積 = heights[curr] * (right - left + 1)
   - 更新 curr
-  - 重覆上述過程直到 height<sub>i</sub> >= heights[curr] 為止
+  - 重覆上述過程直到 heights<sub>i</sub> >= heights[curr] 為止
+  - 將 i 放入 Stack
 
 遍歷完 heights，仍需將 stack 清空，流程與上述相同
 

@@ -27,7 +27,7 @@
 
 相加後取最大: O(n * m)
 
-#### Memory: O()
+#### Memory: O(n * m)
 - 建立 busStopRoute: O(n * m)
 - 建立 visited 陣列: O(n)
 - 最差情況下，每個公車路線上的每個公車站都被放入 queue: O(n * m)

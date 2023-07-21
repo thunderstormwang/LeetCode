@@ -5,18 +5,12 @@ public class Solution0227
     public int Calculate(string s)
     {
         var result = 0;
-        var stack = new Stack<string>();
+        var stack = new Stack<int>();
+        var operationSymbol = '+';
         var index = 0;
 
         while (index < s.Length)
         {
-            if (s[index] == '+' || s[index] == '-' || s[index] == '*' || s[index] == '/')
-            {
-                stack.Push(s[index].ToString());
-                index++;
-                continue;
-            }
-
             if (s[index] >= '0' && s[index] <= '9')
             {
                 var i = index;
@@ -25,46 +19,37 @@ public class Solution0227
                     i++;
                 }
 
-                var temp = s.Substring(index, i - index);
+                var temp = int.Parse(s.Substring(index, i - index));
 
-                if (stack.Count == 0)
+                if (operationSymbol == '+')
                 {
                     stack.Push(temp);
                 }
-                else
+
+                if (operationSymbol == '-')
                 {
-                    if (stack.Peek() == "+")
-                    {
-                        stack.Pop();
-                        stack.Push(temp);
-                    }
-                    else if (stack.Peek() == "-")
-                    {
-                        stack.Pop();
-                        stack.Push('-' + temp);
-                    }
-                    else if (stack.Peek() == "*")
-                    {
-                        var num2 = int.Parse(temp);
-                        stack.Pop();
-                        var num1 = int.Parse(stack.Pop());
-                        stack.Push((num1 * num2).ToString());
-                    }
-                    else if (stack.Peek() == "/")
-                    {
-                        var num2 = int.Parse(temp);
-                        stack.Pop();
-                        var num1 = int.Parse(stack.Pop());
-                        stack.Push((num1 / num2).ToString());
-                    }
-                    else
-                    {
-                        stack.Push(temp);
-                    }
+                    stack.Push(-1 * temp);
+                }
+
+                if (operationSymbol == '*')
+                {
+                    var num1 = stack.Pop();
+                    stack.Push(num1 * temp);
+                }
+
+                if (operationSymbol == '/')
+                {
+                    var num1 = stack.Pop();
+                    stack.Push(num1 / temp);
                 }
 
                 index = i;
                 continue;
+            }
+
+            if (s[index] == '+' || s[index] == '-' || s[index] == '*' || s[index] == '/')
+            {
+                operationSymbol = s[index];
             }
 
             index++;
@@ -72,7 +57,7 @@ public class Solution0227
 
         while (stack.Count != 0)
         {
-            result += int.Parse(stack.Pop());
+            result += stack.Pop();
         }
 
         return result;

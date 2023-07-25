@@ -1,6 +1,6 @@
 # Solution0718
 
-其實一開始想說只能用 BFS，看了解答才想到原來 DFS 也通
+其實一開始想說只能用 BFS，看了解答才想到原來 DFS 也可以解
 
 ## Breadth First Seach
 

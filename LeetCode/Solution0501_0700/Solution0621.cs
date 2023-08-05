@@ -54,19 +54,19 @@ public class Solution0621
         var maxFreq = 0;
         var maxTasks = 0;
 
-        for(var i = 0; i < tasks.Length; i++)
+        for (var i = 0; i < tasks.Length; i++)
         {
             array[tasks[i] - 'A']++;
         }
 
-        for(var i = 0; i < array.Length; i++)
+        for (var i = 0; i < array.Length; i++)
         {
-            if(array[i] == maxFreq)
+            if (array[i] == maxFreq)
             {
                 maxTasks++;
             }
 
-            if(array[i] > maxFreq)
+            if (array[i] > maxFreq)
             {
                 maxFreq = array[i];
                 maxTasks = 1;
@@ -74,5 +74,36 @@ public class Solution0621
         }
 
         return Math.Max((maxFreq - 1) * (n + 1) + maxTasks, tasks.Length);
+    }
+
+    public int LeastInterval_Ver3(char[] tasks, int n)
+    {
+        var array = new int [26];
+        var maxFreq = 0;
+        var maxTasks = 0;
+
+        for (var i = 0; i < tasks.Length; i++)
+        {
+            array[tasks[i] - 'A']++;
+        }
+
+        for (var i = 0; i < array.Length; i++)
+        {
+            if (array[i] == maxFreq)
+            {
+                maxTasks++;
+            }
+
+            if (array[i] > maxFreq)
+            {
+                maxFreq = array[i];
+                maxTasks = 1;
+            }
+        }
+
+        var emptySlots = ((n + 1) - maxTasks) * (maxFreq - 1);
+        var leftTasks = tasks.Length - maxTasks * maxFreq;
+        var idle = Math.Max(0, emptySlots - leftTasks);
+        return tasks.Length + idle;
     }
 }

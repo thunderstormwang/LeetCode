@@ -27,6 +27,16 @@ public class Solution0621Test
 
         actual.Should().Be(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void LeastInterval_Ver3Test(char[] tasks, int n, int expected)
+    {
+        var solution = new Solution0621();
+
+        var actual = solution.LeastInterval_Ver3(tasks, n);
+
+        actual.Should().Be(expected);
+    }
 
     private static readonly object[] TestCases =
     {

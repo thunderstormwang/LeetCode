@@ -9,10 +9,20 @@ namespace LeetCodeTests.SolutionTest0101_0150;
 public class Solution0139Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void Partition_Index(string s, IList<string> wordDict, bool expected)
+    public void WordBreak_Ver1Test(string s, IList<string> wordDict, bool expected)
     {
         var solution = new Solution0139();
-        var actual = solution.WordBreak(s, wordDict);
+        var actual = solution.WordBreak_Ver1(s, wordDict);
+
+        actual.Should().Be(expected);
+    }
+
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void WordBreak_Ver2Test(string s, IList<string> wordDict, bool expected)
+    {
+        var solution = new Solution0139();
+        var actual = solution.WordBreak_Ver2(s, wordDict);
 
         actual.Should().Be(expected);
     }

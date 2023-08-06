@@ -4,22 +4,19 @@ public class Solution0076
 {
     public string MinWindow_Ver1(string s, string t)
     {
-        var bestLeft = -1;
         var minLength = int.MaxValue;
+        var bestLeft = -1;
+        var array = new int [128];
         var notMatched = 0;
-        var dict = new Dictionary<char, int>();
 
         for (var i = 0; i < t.Length; i++)
         {
-            if (!dict.ContainsKey(t[i]))
+            if (array[t[i]] == 0)
             {
-                dict.Add(t[i], 1);
                 notMatched++;
             }
-            else
-            {
-                dict[t[i]]++;
-            }
+
+            array[t[i]]++;
         }
 
         var left = 0;
@@ -27,30 +24,24 @@ public class Solution0076
 
         while (right < s.Length)
         {
-            if (dict.ContainsKey(s[right]))
+            array[s[right]]--;
+            if (array[s[right]] == 0)
             {
-                dict[s[right]]--;
-                if (dict[s[right]] == 0)
-                {
-                    notMatched--;
-                }
+                notMatched--;
             }
 
             while (notMatched == 0)
             {
                 if (minLength > right - left + 1)
                 {
-                    bestLeft = left;
                     minLength = right - left + 1;
+                    bestLeft = left;
                 }
 
-                if (dict.ContainsKey(s[left]))
+                array[s[left]]++;
+                if (array[s[left]] > 0)
                 {
-                    dict[s[left]]++;
-                    if (dict[s[left]] > 0)
-                    {
-                        notMatched++;
-                    }
+                    notMatched++;
                 }
 
                 left++;
@@ -84,30 +75,33 @@ public class Solution0076
 
         while (right < s.Length)
         {
-            array[s[right]]--;
-            if (array[s[right]] == 0)
+            while(right < s.Length && notMatched != 0)
             {
-                notMatched--;
-            }
+                array[s[right]]--;
+                if (array[s[right]] == 0)
+                {
+                    notMatched--;
+                }
 
+                right++;
+            }
+            
             while (notMatched == 0)
             {
+                if (minLength > right - 1 - left + 1)
+                {
+                    minLength = right - 1 - left + 1;
+                    bestLeft = left;
+                }
+
                 array[s[left]]++;
                 if (array[s[left]] > 0)
                 {
                     notMatched++;
                 }
 
-                if (minLength > right - left + 1)
-                {
-                    minLength = right - left + 1;
-                    bestLeft = left;
-                }
-
                 left++;
             }
-
-            right++;
         }
 
         return bestLeft == -1 ? string.Empty : s.Substring(bestLeft, minLength);

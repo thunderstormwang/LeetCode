@@ -9,21 +9,21 @@ namespace LeetCodeTests.SolutionTest0051_0100;
 public class Solution0053Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void MaxSubArray_DPTest(int[] array, int expected)
+    public void MaxSubArray_Ver1Test(int[] array, int expected)
     {
         var solution = new Solution0053();
 
-        var actual = solution.MaxSubArray_DP(array);
+        var actual = solution.MaxSubArray_Ver1(array);
 
         actual.Should().Be(expected);
     }
 
     [TestCaseSource(nameof(TestCases))]
-    public void MaxSubArray_GreedyTest(int[] array, int expected)
+    public void MaxSubArray_Ver2Test(int[] array, int expected)
     {
         var solution = new Solution0053();
 
-        var actual = solution.MaxSubArray_Greedy(array);
+        var actual = solution.MaxSubArray_Ver2(array);
 
         actual.Should().Be(expected);
     }

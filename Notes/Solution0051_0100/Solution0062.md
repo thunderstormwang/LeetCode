@@ -1,6 +1,6 @@
 # Solution0062
 
-## 動態規劃
+## Ver1 - Dynamic Programming
 
 ### 定義 dp
 到 m, n 的所有不同路徑 = dp(m,n)  
@@ -14,16 +14,23 @@
   
 ### 複雜度
 
-#### Time: O(M * N)
+#### Time: O(n*m)
 
-#### Space: O(M * N)
+#### Space: O(n*m)
 
 ---
 
-## 數學
+## Ver2 - Math
 
-一共有 (m-1) + (n-1) = m + n -2 步要走，其中 (m-1) 步要往下走，
-
+一共有 (m-1) + (n-1) = m + n -2 步要走，其中 (m-1) 步要往下走，  
 相當於在 m + n -2 個空格中挑出 m-1 個空格往下走
 
 也就是計算 C<sup>m + n -2</sup><sub>m - 1</sub>
+
+套公式解需要注意是否有溢位的問題
+
+### 複雜度
+
+#### Time: O(Min(n, m))
+
+#### Space: O(1)

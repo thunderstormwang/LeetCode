@@ -2,16 +2,12 @@
 
 public class Solution0062
 {
-    public int UniquePaths(int m, int n)
+    public int UniquePaths_Ver1(int m, int n)
     {
         var dp = new int [m][];
         for (var i = 0; i < m; i++)
         {
             dp[i] = new int [n];
-        }
-
-        for (var i = 0; i < m; i++)
-        {
             dp[i][0] = 1;
         }
 
@@ -29,5 +25,21 @@ public class Solution0062
         }
 
         return dp[m - 1][n - 1];
+    }
+
+    public int UniquePaths_Ver2(int m, int n)
+    {
+        var allHoles = m - 1 + n - 1;
+        var selectedHoles = m <= n ? m - 1 : n - 1;
+
+        var result = 1L;
+
+        for (var i = 1; i <= selectedHoles; i++)
+        {
+            result *= (allHoles - (i - 1));
+            result /= i;
+        }
+
+        return (int)result;
     }
 }

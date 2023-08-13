@@ -27,6 +27,26 @@ public class Solution0070Test
 
         actual.Should().Be(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void ClimbStairs_Ver3Test(int n, int expected)
+    {
+        var solution = new Solution0070();
+
+        var actual = solution.ClimbStairs_Ver3(n);
+
+        actual.Should().Be(expected);
+    }
+
+    [TestCaseSource(nameof(TestCases))]
+    public void ClimbStairs_Ver4Test(int n, int expected)
+    {
+        var solution = new Solution0070();
+
+        var actual = solution.ClimbStairs_Ver4(n);
+
+        actual.Should().Be(expected);
+    }
 
     private static readonly object[] TestCases =
     {

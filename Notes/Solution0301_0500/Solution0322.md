@@ -2,7 +2,7 @@
 
 ## Ver1 - 動態規劃 - 完全背包 2維陣列
 
-完全背包問題的變型題
+[動態規劃-完全背包](https://github.com/thunderstormwang/CodingNotes/blob/main/Algorithms/dynamic_programing_knapsack_problem.md) 的變型題
 
 ### 找出 dp 和下標的的意義
 
@@ -15,8 +15,8 @@
 在推導過程中畫出二維陣列會較好理解
 
 dp[i][j] 的來源有 2:
-- 不使用或是無法使用 硬幣<sub>i</sub>，dp[i-1][j]
-- 使用 硬幣<sub>i</sub>，dp[i][j-硬幣<sub>i</sub>] + 1，硬幣<sub>i</sub> <= j <= amount
+- 不使用或是無法使用 硬幣<sub>i</sub>，dp[i - 1][j]
+- 使用 硬幣<sub>i</sub>，dp[i][j - 硬幣<sub>i</sub>] + 1，硬幣<sub>i</sub> <= j <= amount
 
 兩者取最小
 

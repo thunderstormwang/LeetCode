@@ -15,39 +15,29 @@ public class Solution0416
             return false;
         }
 
-        var weight = sum / 2;
-        var dp = new int [nums.Length][];
-        for (var i = 0; i < nums.Length; i++)
+        var targetSum = sum / 2;
+        var dp = new int [nums.Length + 1][];
+        for (var i = 0; i <= nums.Length; i++)
         {
-            dp[i] = new int[weight + 1];
+            dp[i] = new int[targetSum + 1];
         }
 
-        for (var i = 0; i < nums.Length; i++)
+        for (var i = 1; i <= nums.Length; i++)
         {
-            dp[i][0] = 0;
-        }
-
-        for (var j = nums[0]; j <= weight; j++)
-        {
-            dp[0][j] = nums[0];
-        }
-
-        for (var i = 1; i < nums.Length; i++)
-        {
-            for (var j = 1; j <= weight; j++)
+            for (var j = 1; j <= targetSum; j++)
             {
-                if (j < nums[i])
+                if (j < nums[i - 1])
                 {
                     dp[i][j] = dp[i - 1][j];
                 }
                 else
                 {
-                    dp[i][j] = Math.Max(dp[i - 1][j], dp[i - 1][j - nums[i]] + nums[i]);
+                    dp[i][j] = Math.Max(dp[i - 1][j], dp[i - 1][j - nums[i - 1]] + nums[i - 1]);
                 }
             }
         }
 
-        return dp[nums.Length - 1][weight] == weight;
+        return dp[nums.Length][targetSum] == targetSum;
     }
 
     /// <summary>
@@ -58,30 +48,23 @@ public class Solution0416
     public bool CanPartition_Ver2(int[] nums)
     {
         var sum = nums.Sum();
+
         if (sum % 2 == 1)
         {
             return false;
         }
 
-        var weight = sum / 2;
-        var dp = new int [weight + 1];
-        
-        for (var j = nums[0]; j <= weight; j++)
+        var targetSum = sum / 2;
+        var dp = new int [targetSum + 1];
+
+        for (var i = 1; i <= nums.Length; i++)
         {
-            dp[j] = nums[0];
-        }
-        
-        for (var i = 1; i < nums.Length; i++)
-        {
-            for (var j = weight; j >= 1; j--)
+            for (var j = targetSum; j >= nums[i - 1]; j--)
             {
-                if (j >= nums[i])
-                {
-                    dp[j] = Math.Max(dp[j], dp[j - nums[i]] + nums[i]);
-                }
+                dp[j] = Math.Max(dp[j], dp[j - nums[i - 1]] + nums[i - 1]);
             }
         }
 
-        return dp[weight] == weight;
+        return dp[targetSum] == targetSum;
     }
 }

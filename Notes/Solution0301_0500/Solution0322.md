@@ -1,8 +1,8 @@
 # Solution0322 Coin Change
 
-## Ver1 - 動態規劃 - 完全背包 2維陣列
-
 [動態規劃-完全背包](https://github.com/thunderstormwang/CodingNotes/blob/main/Algorithms/dynamic_programing_knapsack_problem.md) 的變型題
+
+## Ver1 - 動態規劃 - 完全背包 2維陣列
 
 ### 找出 dp 和下標的的意義
 

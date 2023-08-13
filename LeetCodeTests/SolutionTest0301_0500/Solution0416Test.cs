@@ -12,6 +12,7 @@ public class Solution0416Test
     public void CanPartition_Ver1Test(int[] nums, bool expected)
     {
         var solution = new Solution0416();
+        
         var actual = solution.CanPartition_Ver1(nums);
 
         actual.Should().Be(expected);
@@ -21,6 +22,7 @@ public class Solution0416Test
     public void CanPartition_Ver2Test(int[] nums, bool expected)
     {
         var solution = new Solution0416();
+        
         var actual = solution.CanPartition_Ver2(nums);
 
         actual.Should().Be(expected);

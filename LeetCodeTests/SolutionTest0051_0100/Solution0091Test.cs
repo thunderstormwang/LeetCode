@@ -9,11 +9,21 @@ namespace LeetCodeTests.SolutionTest0051_0100;
 public class Solution0091Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void NumDecodingsTest(string s, int expected)
+    public void NumDecodings_Ver1Test(string s, int expected)
     {
         var solution = new Solution0091();
 
-        var actual = solution.NumDecodings(s);
+        var actual = solution.NumDecodings_Ver1(s);
+
+        actual.Should().Be(expected);
+    }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void NumDecodings_Ver2Test(string s, int expected)
+    {
+        var solution = new Solution0091();
+
+        var actual = solution.NumDecodings_Ver2(s);
 
         actual.Should().Be(expected);
     }
@@ -54,6 +64,11 @@ public class Solution0091Test
         {
             "230",
             0
+        },
+        new object[]
+        {
+            "27",
+            1
         }
     };
 }

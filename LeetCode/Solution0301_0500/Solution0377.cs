@@ -11,10 +11,12 @@ public class Solution0377
         {
             for (var i = 0; i < nums.Length; i++)
             {
-                if (j >= nums[i])
+                if (j < nums[i])
                 {
-                    dp[j] += dp[j - nums[i]];
+                    continue;
                 }
+
+                dp[j] += dp[j - nums[i]];
             }
         }
 

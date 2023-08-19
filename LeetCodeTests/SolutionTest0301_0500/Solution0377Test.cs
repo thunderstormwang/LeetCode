@@ -12,6 +12,7 @@ public class Solution0377Test
     public void CombinationSum4Test(int[] nums, int target, int expected)
     {
         var solution = new Solution0377();
+        
         var actual = solution.CombinationSum4(nums, target);
 
         actual.Should().Be(expected);

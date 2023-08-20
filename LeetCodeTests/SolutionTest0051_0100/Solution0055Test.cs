@@ -13,7 +13,7 @@ public class Solution0055Test
     {
         var solution = new Solution0055();
         
-        var actual = solution.CanJump_Ver2(nums);
+        var actual = solution.CanJump_Ver1(nums);
 
         actual.Should().Be(expected);
     }

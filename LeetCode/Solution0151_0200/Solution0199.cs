@@ -69,7 +69,7 @@ public class Solution0199
             return;
         }
 
-        if (result.Count < depth + 1)
+        if (result.Count < depth)
         {
             result.Add(root.val);
         }
@@ -77,14 +77,4 @@ public class Solution0199
         PreorderSearch(root.right, depth + 1, result);
         PreorderSearch(root.left, depth + 1, result);
     }
-
-    // DFS
-    // Time: O(N)
-    // Space: O(N)
-
-    // ======
-
-    // BFS
-    // Time: O(N)
-    // Space: O(N)
 }

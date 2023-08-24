@@ -19,7 +19,7 @@ public class Solution0113
         return result;
     }
 
-    private void PreorderSearch(TreeNode root, int targetSum, IList<int> currPath, IList<IList<int>> allPaths)
+    private void PreorderSearch(TreeNode root, int targetSum, IList<int> currPath, IList<IList<int>> result)
     {
         if (root == null)
         {
@@ -30,13 +30,13 @@ public class Solution0113
         currPath.Add(root.val);
         if (targetSum == 0 && root.left == null && root.right == null)
         {
-            allPaths.Add(currPath.ToArray());
+            result.Add(currPath.ToArray());
         }
 
-        PreorderSearch(root.left, targetSum, currPath, allPaths);
-        PreorderSearch(root.right, targetSum, currPath, allPaths);
+        PreorderSearch(root.left, targetSum, currPath, result);
+        PreorderSearch(root.right, targetSum, currPath, result);
 
-        currPath.RemoveAt(allPaths.Count - 1);
+        currPath.RemoveAt(currPath.Count - 1);
     }
 
     /// <summary>

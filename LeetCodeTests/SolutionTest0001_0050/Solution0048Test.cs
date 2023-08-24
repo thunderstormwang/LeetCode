@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Numerics;
+using FluentAssertions;
 using LeetCode.Solution0001_0050;
 using NUnit.Framework;
 
@@ -11,24 +12,44 @@ public class Solution0048Test
     [TestCaseSource(nameof(TestCases))]
     public void Rotate_Ver1Test(int[][] matrix, int[][] expected)
     {
-        var solution = new Solution0048();
-        solution.Rotate_Ver1(matrix);
-
-        for (var i = 0; i < matrix.Length; i++)
+        var copyMatrix = new int [matrix.Length][];
+        for(var i = 0; i < matrix.Length; i++)
         {
-            matrix[i].Should().Equal(expected[i]);
+            copyMatrix[i] = new int[matrix[i].Length];
+            for (var j = 0; j < matrix[i].Length; j++)
+            {
+                copyMatrix[i][j] = matrix[i][j];
+            }
+        }
+        var solution = new Solution0048();
+        
+        solution.Rotate_Ver1(copyMatrix);
+
+        for (var i = 0; i < copyMatrix.Length; i++)
+        {
+            copyMatrix[i].Should().Equal(expected[i]);
         }
     }
     
     [TestCaseSource(nameof(TestCases))]
     public void Rotate_Ver2Test(int[][] matrix, int[][] expected)
     {
-        var solution = new Solution0048();
-        solution.Rotate_Ver2(matrix);
-
-        for (var i = 0; i < matrix.Length; i++)
+        var copyMatrix = new int [matrix.Length][];
+        for(var i = 0; i < matrix.Length; i++)
         {
-            matrix[i].Should().Equal(expected[i]);
+            copyMatrix[i] = new int[matrix[i].Length];
+            for (var j = 0; j < matrix[i].Length; j++)
+            {
+                copyMatrix[i][j] = matrix[i][j];
+            }
+        }
+        var solution = new Solution0048();
+        
+        solution.Rotate_Ver2(copyMatrix);
+
+        for (var i = 0; i < copyMatrix.Length; i++)
+        {
+            copyMatrix[i].Should().Equal(expected[i]);
         }
     }
 

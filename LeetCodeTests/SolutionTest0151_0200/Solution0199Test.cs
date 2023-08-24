@@ -9,7 +9,7 @@ namespace LeetCodeTests.SolutionTest0151_0200;
 public class Solution0199Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void RightSideView_Ver1(int?[] array, int[] expected)
+    public void RightSideView_Ver1Test(int?[] array, int[] expected)
     {
         var root = Utility.BuildTree(array, 0);
 
@@ -20,7 +20,7 @@ public class Solution0199Test
     }
 
     [TestCaseSource(nameof(TestCases))]
-    public void RightSideView_Ver2(int?[] array, int[] expected)
+    public void RightSideView_Ver2Test(int?[] array, int[] expected)
     {
         var root = Utility.BuildTree(array, 0);
 

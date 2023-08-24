@@ -27,6 +27,16 @@ public class Solution0287Test
 
         actual.Should().Be(expected);
     }
+    
+    [TestCaseSource(nameof(TestCases))]
+    public void FindDuplicate_Ver3Test(int[] nums, int expected)
+    {
+        var solution = new Solution0287();
+
+        var actual = solution.FindDuplicate_Ver3(nums);
+
+        actual.Should().Be(expected);
+    }
 
     private static readonly object[] TestCases =
     {

@@ -1,4 +1,4 @@
-# Solution0721
+# Solution0721 Accounts Merge
 
 好難...，我發覺我在量少的情況都是硬解，無法想出 generalize 的解法，那當然寫不出程式  
 看懂別人怎麼解後，也覺得難向人解釋解法...  

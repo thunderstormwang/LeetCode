@@ -1,4 +1,4 @@
-# Solution0169
+# Solution0169 Majority Element
 
 ## 暴力法
 

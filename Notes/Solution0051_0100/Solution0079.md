@@ -1,4 +1,4 @@
-# Solution0094
+# Solution0079 Word Search
 
 難得做到一看就會的題目
 

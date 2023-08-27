@@ -1,4 +1,4 @@
-# Solution0518
+# Solution0525 Contiguous Array
 
 ## 暴力法
 

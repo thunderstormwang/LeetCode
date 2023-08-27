@@ -1,4 +1,4 @@
-# Solution0300
+# Solution0300 Longest Increasing Subsequence
 
 ## Ver1 - Dynamic Programming
 

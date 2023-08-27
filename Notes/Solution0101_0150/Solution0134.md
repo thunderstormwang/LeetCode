@@ -1,4 +1,4 @@
-# Solution0134
+# Solution0134 Gas Station
 
 ## 暴力法
 

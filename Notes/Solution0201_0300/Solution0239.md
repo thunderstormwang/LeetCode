@@ -1,4 +1,4 @@
-# Solution0239
+# Solution0239 Sliding Window Maximum
 
 ## 暴力法
 

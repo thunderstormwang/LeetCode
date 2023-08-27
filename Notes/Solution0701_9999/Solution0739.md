@@ -1,4 +1,4 @@
-# Solution0739
+# Solution0739 Daily Temperatures
 
 我喜歡這題, 很容易就想到暴力法怎麼解, 然後再去想該怎麼優化
 

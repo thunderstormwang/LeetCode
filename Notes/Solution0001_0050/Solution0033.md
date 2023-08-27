@@ -1,4 +1,4 @@
-# Solution0033
+# Solution0033 Search in Rotated Sorted Array
 
 ## Binary Search
 

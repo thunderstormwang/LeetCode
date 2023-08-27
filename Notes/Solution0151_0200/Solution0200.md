@@ -1,4 +1,4 @@
-# Solution0200
+# Solution0200 Number of Islands
 
 ## Depth First Seach
 

@@ -1,4 +1,4 @@
-# Solution1730
+# Solution1730 Shortest Path to Get Food
 
 難得 graph 中有一看就會的題目
 

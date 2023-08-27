@@ -1,4 +1,4 @@
-# Solution0148 Sort List
+# Solution0146 LRU Cache
 
 一開始想用 linked list 和 Dictionary 去做  
 發現很難...  

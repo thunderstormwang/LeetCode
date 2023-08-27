@@ -1,4 +1,4 @@
-# Solution0207
+# Solution0207 Course Schedule
 
 有想到是找 cycle，不過看到輸入卻想不到怎麼下手  
 原來要先從建立出鄰接表開始做  

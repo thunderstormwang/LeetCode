@@ -1,4 +1,4 @@
-# Solution0005
+# Solution0005 Longest Palindromic Substring
 
 ## 暴力法
 

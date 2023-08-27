@@ -1,4 +1,4 @@
-# Solution0074
+# Solution0074 Search a 2D Matrix
 
 二分法的變型，主要還是找出怎麼切半的方法
 

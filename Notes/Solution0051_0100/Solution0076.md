@@ -1,4 +1,4 @@
-# Solution0076
+# Solution0076 Minimum Window Substring
 
 ## 暴力法
 

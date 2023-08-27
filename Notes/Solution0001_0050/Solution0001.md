@@ -1,4 +1,4 @@
-# Solution0001
+# Solution0001 Two Sum
 
 ## 暴力法
 

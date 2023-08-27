@@ -1,4 +1,4 @@
-# Solution0424
+# Solution0424 Longest Repeating Character Replacement
 
 ## Sliding Window
 

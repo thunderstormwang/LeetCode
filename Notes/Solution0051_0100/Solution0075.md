@@ -1,4 +1,4 @@
-# Solution0075
+# Solution0075 ort Colors
 
 ## 暴力法
 

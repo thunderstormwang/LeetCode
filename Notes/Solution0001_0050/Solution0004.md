@@ -1,4 +1,4 @@
-# Solution0004
+# Solution0004 Median of Two Sorted Arrays
 
 ## Binary Search
 

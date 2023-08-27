@@ -1,4 +1,4 @@
-# Solution0036
+# Solution0036 Valid Sudoku
 
 考驗寫程式的功力  
 檢查 row, column 很簡單  

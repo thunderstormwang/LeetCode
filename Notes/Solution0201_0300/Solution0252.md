@@ -1,4 +1,4 @@
-# Solution0252
+# Solution0252 Meeting Rooms
 
 ## 暴力法
 

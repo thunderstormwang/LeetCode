@@ -1,4 +1,4 @@
-# Solution0001
+# Solution0008 String to Integer (atoi)
 
 不難，可是太多 special case..  
 提交後會發現題目應該多給些範例

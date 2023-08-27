@@ -1,4 +1,4 @@
-# Solution0217
+# Solution0217 Contains Duplicate
 
 ## 暴力法
 

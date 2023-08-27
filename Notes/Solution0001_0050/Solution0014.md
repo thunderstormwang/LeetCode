@@ -1,4 +1,4 @@
-# Solution0014
+# Solution0014 Longest Common Prefix
 
 ## 垂直比較
 

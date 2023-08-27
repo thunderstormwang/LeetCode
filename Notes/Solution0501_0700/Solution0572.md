@@ -1,4 +1,4 @@
-# Solution0101 Same Tree
+# Solution0572 Same Tree
 
 ## Ver1 - Depth First Search - Recursive
 

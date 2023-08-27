@@ -1,4 +1,4 @@
-# Solution0063 Add Binary
+# Solution0067 Add Binary
 
 ## Ver1
 

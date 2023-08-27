@@ -1,4 +1,4 @@
-# Solution0977
+# Solution0977 Squares of a Sorted Array
 
 ## 暴力法
 

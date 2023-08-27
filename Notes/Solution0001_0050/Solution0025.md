@@ -1,4 +1,4 @@
-# Solution0020 Reverse Nodes in k-Group
+# Solution0025 Reverse Nodes in k-Group
 
 ## Ver1
 

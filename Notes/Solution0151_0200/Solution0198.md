@@ -1,4 +1,4 @@
-# Solution0198
+# Solution0198 House Robber
 
 ## Ver1 - Dynamic Programming
 

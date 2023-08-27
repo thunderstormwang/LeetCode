@@ -1,4 +1,4 @@
-# Solution0242
+# Solution0242 Valid Anagram
 
 ## Dictionary
 

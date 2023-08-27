@@ -1,4 +1,4 @@
-# Solution0435
+# Solution0435 Non-overlapping Intervals
 
 因為做過 [Solution0452](Solution0452.md)，覺得應該要排序  
 然後輪詢陣列，如果 interval[i] 跟 interval[i-1] 重疊，跳過區間數就加 1，  

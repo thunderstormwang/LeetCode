@@ -1,4 +1,4 @@
-# Solution1235
+# Solution1235 Maximum Profit in Job Scheduling
 
 ## 動態規劃 + Binary Search - Ver1
 

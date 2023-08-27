@@ -1,4 +1,4 @@
-# Solution0153
+# Solution0153 Find Minimum in Rotated Sorted Array
 
 二分法的變型，主要還是找出怎麼切半的方法
 

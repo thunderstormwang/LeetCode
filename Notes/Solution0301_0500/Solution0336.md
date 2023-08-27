@@ -1,4 +1,4 @@
-# Solution0336
+# Solution0336 Palindrome Pairs
 
 ## 暴力法
 

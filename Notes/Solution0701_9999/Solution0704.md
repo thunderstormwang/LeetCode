@@ -1,4 +1,4 @@
-# Solution0704
+# Solution0704 Binary Search
 
 ## Binary Search
 

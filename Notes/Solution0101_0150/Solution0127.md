@@ -1,4 +1,4 @@
-# Solution0127
+# Solution0127 Word Ladder
 
 看完題目，第一個想法是要建立鄰接表，計算所有輸入的字串算出兩兩之間的字元差異  
 再找出從 beginWord 到 endWord 的路，且每次移動只能走差異為 1 的路徑  

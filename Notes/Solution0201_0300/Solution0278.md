@@ -1,4 +1,4 @@
-# Solution0278
+# Solution0278 First Bad Version
 
 ## Binary Search
 

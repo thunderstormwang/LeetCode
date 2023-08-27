@@ -1,4 +1,4 @@
-# Solution0261
+# Solution0261 Graph Valid Tree
 
 因為 tree 的定義是
 - 不能有 cycle

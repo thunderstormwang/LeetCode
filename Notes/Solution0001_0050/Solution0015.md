@@ -1,4 +1,4 @@
-# Solution0015
+# Solution0015 3Sum
 
 ## 暴力法
 

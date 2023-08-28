@@ -182,8 +182,6 @@
 
 ## Trie
 
-Trie
-
 [Solution0208 Implement Trie (Prefix Tree)](/Notes/Solution0201_0300/Solution0208.md)  
 [Solution0139 Word Break](/Notes/Solution0101_0150/Solution0139.md)  
 [Solution0211 Design Add and Search Words Data Structure](/Notes/Solution0201_0300/Solution0211.md)  

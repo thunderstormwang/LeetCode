@@ -1,4 +1,4 @@
-# Solution0075 ort Colors
+# Solution0075 Sort Colors
 
 ## 暴力法
 
@@ -22,7 +22,7 @@
 ### 複雜度
 
 #### Time: O(n)
-走兩遍陣列仍算作 O(n)
+遍歷陣列兩遍: O(n)
 
 #### Space: O(1)
 

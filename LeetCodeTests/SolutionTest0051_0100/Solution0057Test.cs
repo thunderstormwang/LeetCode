@@ -9,7 +9,7 @@ namespace LeetCodeTests.SolutionTest0051_0100;
 public class Solution0057Test
 {
     [TestCaseSource(nameof(TestCases))]
-    public void RotateTest(int[][] intervals, int[] newInterval, int[][] expected)
+    public void InsertTest(int[][] intervals, int[] newInterval, int[][] expected)
     {
         var solution = new Solution0057();
         var actual = solution.Insert(intervals, newInterval);

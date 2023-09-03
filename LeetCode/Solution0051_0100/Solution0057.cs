@@ -2,20 +2,21 @@
 
 public class Solution0057
 {
-    public int[][] Insert(int[][] intervals, int[] newInterval) {
-        var result = new List<int []>();
+    public int[][] Insert(int[][] intervals, int[] newInterval)
+    {
+        var result = new List<int[]>();
         var i = 0;
         var newIntervalAdded = false;
 
-        for(i = 0; i < intervals.Length; i++)
+        for (i = 0; i < intervals.Length; i++)
         {
-            if(intervals[i][1] < newInterval[0])
+            if (intervals[i][1] < newInterval[0])
             {
                 result.Add(intervals[i]);
                 continue;
             }
 
-            if(intervals[i][0] > newInterval[1])
+            if (intervals[i][0] > newInterval[1])
             {
                 result.Add(newInterval);
                 newIntervalAdded = true;
@@ -26,12 +27,12 @@ public class Solution0057
             newInterval[1] = Math.Max(newInterval[1], intervals[i][1]);
         }
 
-        for(; i < intervals.Length; i++)
+        for (; i < intervals.Length; i++)
         {
             result.Add(intervals[i]);
         }
 
-        if(!newIntervalAdded)
+        if (!newIntervalAdded)
         {
             result.Add(newInterval);
         }

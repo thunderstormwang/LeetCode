@@ -3,7 +3,7 @@
 ## Array
 
 [Solution0001 Two Sum](/Notes/Solution0001_0050/Solution0001.md)  
-[Solution0121 Best Time to Buy and Sell Stock](/Notes/Solution0121_0150/Solution0121.md)  
+[Solution0121 Best Time to Buy and Sell Stock](/Notes/Solution0101_0150/Solution0121.md)  
 [Solution0057 Insert Interval](/Notes/Solution0051_0100/Solution0057.md)  
 [Solution0015 3Sum](/Notes/Solution0001_0050/Solution0015.md)  
 [Solution0238 Product of Array Except Self](/Notes/Solution0201_0300/Solution0238.md)  

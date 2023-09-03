@@ -25,8 +25,9 @@ nums[n-2] 跟 nums[n-1] 確認區間是否重疊
 ### 複雜度
 
 #### Time: O(n * log(n))
-排序 -- n * log(n)  
-輪詢陣列 -- n  
-取最大項 -- n * log(n)  
+- 排序: O(n * log(n))
+- 輪詢陣列: O(n)
+
+取最大項: O(n * log(n))
 
 #### Space: O(1)

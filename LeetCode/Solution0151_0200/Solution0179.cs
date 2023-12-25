@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace LeetCode.Solution0151_0150;
+namespace LeetCode.Solution0151_0200;
 
 public class Solution0179
 {

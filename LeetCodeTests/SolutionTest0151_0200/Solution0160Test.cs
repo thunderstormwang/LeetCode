@@ -1,6 +1,6 @@
 using FluentAssertions;
 using LeetCode.Models;
-using LeetCode.Solution0151_0150;
+using LeetCode.Solution0151_0200;
 using NUnit.Framework;
 
 namespace LeetCodeTests.SolutionTest0151_0200

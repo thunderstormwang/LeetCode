@@ -219,3 +219,11 @@
 [Solution0050 Pow(x, n)](/Notes/Solution0001_0050/Solution0050.md)  
 [Solution0007 Reverse Integer](/Notes/Solution0001_0050/Solution0007.md)  
 [Solution0009 Palindrome Number](/Notes/Solution0001_0050/Solution0009.md)  
+
+---
+
+# 其它題目
+
+[Solution0198 House Robber](/Notes/Solution0151_0200/Solution0198.md)  
+[Solution0213 House Robber II](/Notes/Solution0201_0300/Solution0213.md)  
+[Solution0337 House Robber III](/Notes/Solution0301_0500/Solution0337.md)

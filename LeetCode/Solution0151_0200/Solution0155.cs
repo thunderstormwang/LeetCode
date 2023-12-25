@@ -1,4 +1,4 @@
-﻿namespace LeetCodeTests.SolutionTest0151_0200;
+﻿namespace LeetCode.Solution0151_0200;
 
 public class Solution0155
 {

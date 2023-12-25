@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using LeetCodeTests.Solution0200_0300;
+using LeetCode.Solution0201_0300;
 using NUnit.Framework;
 
 namespace LeetCodeTests.SolutionTest0201_0300;

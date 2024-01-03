@@ -229,11 +229,11 @@ Solution0227 Basic Calculator II
 Solution0337 Basic Calculator III  
 Solution0770 Basic Calculator IV  
 
-Solution0322 Coin Change  
+[Solution0322 Coin Change](/Notes/Solution0301_0500/Solution0332.md)  
 Solution0518 Coin Change II  
 
-Solution0039 Combination Sum  
-Solution0040 Combination Sum II  
+[Solution0039 Combination Sum](/Notes/Solution0001_0050/Solution0039.md)  
+[Solution0040 Combination Sum II](/Notes/Solution0001_0050/Solution0040.md)  
 Solution0216 Combination Sum III  
 Solution0337 Combination Sum IV  
 

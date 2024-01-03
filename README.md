@@ -224,6 +224,20 @@
 
 # 其它題目
 
+Solution0224 Basic Calculator  
+Solution0227 Basic Calculator II  
+Solution0337 Basic Calculator III  
+Solution0770 Basic Calculator IV  
+
+Solution0322 Coin Change  
+Solution0518 Coin Change II  
+
+Solution0039 Combination Sum  
+Solution0040 Combination Sum II  
+Solution0216 Combination Sum III  
+Solution0337 Combination Sum IV  
+
 [Solution0198 House Robber](/Notes/Solution0151_0200/Solution0198.md)  
 [Solution0213 House Robber II](/Notes/Solution0201_0300/Solution0213.md)  
-[Solution0337 House Robber III](/Notes/Solution0301_0500/Solution0337.md)
+[Solution0337 House Robber III](/Notes/Solution0301_0500/Solution0337.md)  
+Solution0770 House Robber IV

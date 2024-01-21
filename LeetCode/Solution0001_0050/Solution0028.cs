@@ -35,8 +35,8 @@ public class Solution0028
         {
             return -1;
         }
-            
-        var lspArray = GetLspArray(needle);
+        
+        var lpsArray = GetLpsArray(needle);
 
         var i = 0;
         var j = 0;
@@ -50,7 +50,7 @@ public class Solution0028
             }
             else if (j > 0)
             {
-                j = lspArray[j - 1];
+                j = lpsArray[j - 1];
             }
             else
             {
@@ -66,7 +66,7 @@ public class Solution0028
         return -1;
     }
 
-    private int[] GetLspArray(string needle)
+    private int[] GetLpsArray(string needle)
     {
         var result = new int [needle.Length];
 

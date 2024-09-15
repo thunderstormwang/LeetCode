@@ -2,7 +2,7 @@
 
 ## 動態規劃
 
-跟 [Solution123](Solution0123.md) 類似
+跟 [Solution123](../Solution0101_0150/Solution0123.md) 類似
 
 ### 複雜度
 

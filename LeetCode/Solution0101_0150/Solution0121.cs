@@ -9,11 +9,7 @@ public class Solution0121
         {
             for (var j = i + 1; j < prices.Length; j++)
             {
-                int tempProfit = prices[j] - prices[i];
-                if (tempProfit > result)
-                {
-                    result = tempProfit;
-                }
+                result = Math.Max(result, prices[j] - prices[i]);
             }
         }
 
@@ -43,12 +39,12 @@ public class Solution0121
             dp[i] = new int[2];
         }
 
-        dp[0][0] = prices[0];
+        dp[0][0] = -prices[0];
 
         for (var i = 1; i < prices.Length; i++)
         {
-            dp[i][0] = Math.Min(dp[i - 1][0], prices[i]);
-            dp[i][1] = Math.Max(dp[i - 1][1], prices[i] - dp[i - 1][0]);
+            dp[i][0] = Math.Max(dp[i - 1][0], -prices[i]);
+            dp[i][1] = Math.Max(dp[i - 1][1], dp[i - 1][0] + prices[i]);
         }
 
         return dp[prices.Length - 1][1];

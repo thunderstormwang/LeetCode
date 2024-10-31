@@ -24,12 +24,14 @@ public class Solution0188
 
         for (var i = 1; i < prices.Length; i++)
         {
-            dp[i][0] = Math.Max(dp[i - 1][0], -prices[i]);
-        }
-        for (var i = 1; i < prices.Length; i++)
-        {
-            for (var j = 1; j < 2 * k; j++)
+            for (var j = 0; j < 2 * k; j++)
             {
+                if (j == 0)
+                {
+                    dp[i][j] = Math.Max(dp[i - 1][j], -prices[i]);
+                    continue;
+                }
+
                 if (j % 2 == 0)
                 {
                     dp[i][j] = Math.Max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i]);

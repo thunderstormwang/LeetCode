@@ -12,7 +12,7 @@ public class Solution0123
 
         dp[0][0] = -prices[0];
         dp[0][1] = 0;
-        dp[0][2] = -prices[0];
+        dp[0][2] = dp[0][1] - prices[0];
         dp[0][3] = 0;
 
         for (var i = 1; i < prices.Length; i++)

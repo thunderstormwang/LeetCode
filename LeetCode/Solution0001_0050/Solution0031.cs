@@ -31,9 +31,7 @@ public class Solution0031
                 candidateIndex = i;
             }
 
-            var temp = nums[candidateIndex];
-            nums[candidateIndex] = nums[targetIndex];
-            nums[targetIndex] = temp;
+            (nums[candidateIndex], nums[targetIndex]) = (nums[targetIndex], nums[candidateIndex]);
         }
 
         var startIndex = lastIncrIndex == -1 ? 0 : lastIncrIndex;
@@ -41,9 +39,7 @@ public class Solution0031
 
         while (startIndex < endIndex)
         {
-            var temp = nums[startIndex];
-            nums[startIndex] = nums[endIndex];
-            nums[endIndex] = temp;
+            (nums[startIndex], nums[endIndex]) = (nums[endIndex], nums[startIndex]);
 
             startIndex++;
             endIndex--;

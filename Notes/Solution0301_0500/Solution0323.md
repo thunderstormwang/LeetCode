@@ -74,7 +74,7 @@ result 即為答案
 
 ---
 
-## Unition Find
+## Union Find
 
 初始將每個節點視為孤島，若發現可合併，就將孤島的數量減 1
 
